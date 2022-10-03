@@ -17,6 +17,13 @@
       "withTest": false,
       "withStory": false,
       "withLazy": false
+    },
+    "blog-post": {
+      "path": "src/pages/blog-post",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
     }
   }
 }

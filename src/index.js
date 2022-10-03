@@ -12,12 +12,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Pages
 import Home from './pages/Home/Home';
 
+// Cursos
+import DesarrolloMoviles from './pages/DesarrolloMoviles/DesarrolloMoviles';
+
+// Entradas
+import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
+
 // Router
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Home />
   },
+  {
+    path: "/cursos/desarrollo-de-software-para-plataformas-moviles",
+    element: <DesarrolloMoviles />,
+  },
+  {
+    path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql",
+    element: <AplicacionAndroidNodejsMysql />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

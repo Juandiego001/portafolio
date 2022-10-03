@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
 // Components of bootstrap
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+
 
 const Header = () => (
   <Container className="bg-dark text-light text-center py-3" fluid>
-    <h1>
+    <a className="nav-link text-light" href="/">
+      <h1>
       Juan Diego Cobo Cabal
-    </h1>
+      </h1>
+    </a>
   </Container>
 );
 
