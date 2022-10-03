@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

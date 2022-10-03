@@ -36,7 +36,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
       
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/carpetas-proyecto.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/carpetas-proyecto.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -55,7 +55,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/archivos-layouts.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/archivos-layouts.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -64,7 +64,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-75" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/gui-activity-main.png"} />
+        <img className="w-75" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/gui-activity-main.PNG"} />
       </Container>
       
       <p className="mt-3">
@@ -74,7 +74,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/text-size.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/text-size.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -83,7 +83,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/activity-temporal-user.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/activity-temporal-user.PNG"} />
       </Container>
 
       <h2 className="h2 text-dark mt-5">
@@ -101,7 +101,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/npm-init.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/npm-init.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -116,7 +116,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/npm-install.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/npm-install.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -127,7 +127,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/require-index.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/require-index.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -137,7 +137,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/conexion-mysql-index.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/conexion-mysql-index.PNG"} />
       </Container>
       
       <p className="mt-3">
@@ -162,7 +162,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/ruta-inicial.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/ruta-inicial.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -170,7 +170,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/escuchando-puerto.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/escuchando-puerto.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -191,11 +191,11 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/script-database.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/script-database.PNG"} />
       </Container>
 
       <Container className="text-center mt-3" fluid>
-        <img className="w-25" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/results-script.png"} />
+        <img className="w-25" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/results-script.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -227,7 +227,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
       
       <Container className="text-center mt-3" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/ruta-prueba.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/ruta-prueba.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -238,7 +238,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center mt-3" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/modificacion-ruta.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/modificacion-ruta.PNG"} />
       </Container>
 
       <p className="mt-3">
@@ -246,7 +246,7 @@ const AplicacionAndroidNodejsMysql = () => (
       </p>
 
       <Container className="text-center mt-3" fluid>
-        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/resultados-ruta-prueba.png"} />
+        <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/resultados-ruta-prueba.PNG"} />
       </Container>
       
       <p className="mt-3">
