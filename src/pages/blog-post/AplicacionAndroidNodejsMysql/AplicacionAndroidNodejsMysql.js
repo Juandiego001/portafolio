@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AplicacionAndroidNodejsMysql.module.css';
 
@@ -9,7 +9,14 @@ import Menu from '../../../components/Menu/Menu';
 // Bootstrap components
 import Container from 'react-bootstrap/Container';
 
-const AplicacionAndroidNodejsMysql = () => (
+const AplicacionAndroidNodejsMysql = () => {
+
+  // Setting title
+  useEffect(() => {
+    document.title = "Aplicación Android + Node.js + MySQL | Desarrollo de software para plataformas móviles"
+  }, []);
+
+  return (
   <div className="mb-4">
     <Header />
     <Menu />
@@ -257,7 +264,8 @@ const AplicacionAndroidNodejsMysql = () => (
       
     </Container>
   </div>
-);
+  )
+};
 
 AplicacionAndroidNodejsMysql.propTypes = {};
 

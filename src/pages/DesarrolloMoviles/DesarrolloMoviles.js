@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import styles from './DesarrolloMoviles.module.css';
 
@@ -11,7 +11,14 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-const DesarrolloMoviles = () => (
+const DesarrolloMoviles = () => {
+
+  // Setting title
+  useEffect(() => {
+    document.title = "Desarrollo de software para plataformas móviles"
+  }, []);
+
+  return (
   <div>
     <Header />
     <Menu />
@@ -34,7 +41,8 @@ const DesarrolloMoviles = () => (
       </Card>
     </Container>
   </div>
-);
+  )
+};
 
 DesarrolloMoviles.propTypes = {};
 
