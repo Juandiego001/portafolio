@@ -14,6 +14,7 @@ import Home from './pages/Home/Home';
 // Cursos
 import DesarrolloMoviles from './pages/DesarrolloMoviles/DesarrolloMoviles';
 import SeguridadInformatica from './pages/SeguridadInformatica/SeguridadInformatica';
+import BasesDatos2 from './pages/BasesDatos2/BasesDatos2';
 
 // Entradas
 import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/cursos/seguridad-informatica",
     element: <SeguridadInformatica />,
+  },
+  {
+    path: "/cursos/bases-de-datos-2",
+    element: <BasesDatos2 />,
   },
   {
     path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql",
