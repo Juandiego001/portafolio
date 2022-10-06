@@ -224,6 +224,25 @@ const AplicacionAndroidNodejsMysql = () => {
       </p>
 
       <p>
+        Es posible que surga un error acerca de los protocolos de autenticación de MySQL, es decir, nos sale un error simiar a:
+        <pre>
+          <code className="language-plaintext">
+          Client does not support authentication protocol requested by server; consider upgrading MySQL client
+          </code>
+        </pre>
+        
+        Para arreglar este error basta con ejecutar el siguiente comando en la terminal de MySQL:
+        <pre>
+          <code className="language-plaintext">
+            ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+          </code>
+        </pre>
+
+        Donde <code>root</code> corresponde al usuario del MySQL, <code>localhost</code> a la direccion IP (se puede dejar como <code>localhost </code> 
+        si se está trabajando en una máquina de manera local) y <code>password</code> como la contraseña del usuario de MySQL.
+      </p>
+
+      <p>
         <b>Nota</b><br/>
         En este punto se puede generar un error ya que se estará intentando correr diferentes aplicaciones
         en el mismo puerto. Para ello, lo que podremos hacer es cambiar la constante del puerto
@@ -317,9 +336,24 @@ const AplicacionAndroidNodejsMysql = () => {
 
         Ahora bien, cuando se esté declarando la URL se debe asignar la URL de la máquina donde estará corriendo el servidor de acuerdo a su interfaz correspondiente.
         Para ello, basta con dirigirse a la consola de comandos y digitar <code className="language-dos">ipconfig (para Windows y MAC) e ifconfig (para Linux). </code>
-        Luego de esto, tenemos que dirigirnos al <code className="language-xml">manifest</code> del proyecto y agregar el método
-        <code className="langauge-xml"> onClick</code> al botón de <code>iniciar sesión.</code> Hecho esto, nuestro <code>manifest</code> debería lucir de la siguiente manera:
-        
+        Luego de esto, tenemos que dirigirnos al <code className="language-xml">activity main</code> del proyecto y agregar el método
+        <code className="langauge-xml"> onClick</code> al botón de <code>iniciar sesión.</code> Hecho esto, nuestro <code>activity main</code> debería lucir de la siguiente manera:
+          
+        <pre>
+          <code>
+
+          </code>
+        </pre>
+
+        Luego de esto, procedemos a realizar algunas pruebas cargando el aplicativo en nuestro teléfono, o con uno de los emuladores de Android Studio. Para 
+        este caso, utilizaré el emulador. Ahora la cuestión sería que cuando hiciesemos click en el botón de iniciar sesión, se debería, por el momento, enviar una petición
+        <code> GET</code> al servidor y con esa petición GET obtener la misma respuesta que obtuvimos cuando ejecutamos el servidor
+        y accedimos a <code>localhost:3001.</code><br /><br /> 
+
+        <b>Nota</b><br />
+        En caso de que surga un error de conexión y se haya verificado anteriormente la dirección ip, es posible
+        que esto se deba a temas de firewall y seguridad de las redes del entorno (por ejemplo en universidades,
+         colegios y entidades del gobierno es posible que no funcione por dichas características de la red).
       </p>
 
 
