@@ -15,7 +15,7 @@ const DesarrolloMoviles = () => {
 
   // Setting title
   useEffect(() => {
-    document.title = "Desarrollo de software para plataformas móviles"
+    document.title = "Desarrollo de software para plataformas móviles";
   }, []);
 
   return (

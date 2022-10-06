@@ -1,6 +1,8 @@
 import { React, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AplicacionAndroidNodejsMysql.module.css';
+import "highlight.js/styles/github.css";
+import hljs from "highlight.js";
 
 // Custom components
 import Header from '../../../components/Header/Header';
@@ -13,7 +15,8 @@ const AplicacionAndroidNodejsMysql = () => {
 
   // Setting title
   useEffect(() => {
-    document.title = "Aplicación Android + Node.js + MySQL | Desarrollo de software para plataformas móviles"
+    document.title = "Aplicación Android + Node.js + MySQL | Desarrollo de software para plataformas móviles";
+    hljs.highlightAll();
   }, []);
 
   return (
@@ -103,8 +106,8 @@ const AplicacionAndroidNodejsMysql = () => {
         El servidor se desarrollará empleando el framework de <i>Express</i> y la librería de mysql para
         conectarse con la base de datos.<br /><br/>
         
-        Para comenzar, nos dirigimos a la carpeta desde la consola de comandos y ejecutamos la instrucción
-        <i>npm init</i> y establecemos las características del proyecto.
+        Para comenzar, nos dirigimos a la carpeta desde la consola de comandos y ejecutamos la instrucción <code>npm init</code> y 
+        establecemos las características del proyecto.
       </p>
 
       <Container className="text-center" fluid>
@@ -155,10 +158,8 @@ const AplicacionAndroidNodejsMysql = () => {
         el conector de mysql). Por tal razón, en caso de tener MySQL corriendo en otro puerto se deberá
         agregar un nuevo par llave-valor que sea:<br /><br />
         <pre>
-          <code>
-            {
-              "port: número del puerto en cuestión"
-            }
+          <code className="language-plaintext">
+              port: número del puerto en cuestión
           </code>
         </pre>
       </p>
@@ -261,7 +262,67 @@ const AplicacionAndroidNodejsMysql = () => {
         que todo está funcionando correctamente.
       </p>
 
-      
+      <h2 className="h2 text-dark mt-5">
+        Pruebas Android - Servidor
+      </h2>
+
+      <p>
+        Una vez que ya tenemos nuestro servidor funcionando y conectado con nuestra base de datos MySQL, lo que nos queda es empezar a hacer las conexiones con nuestro
+        Android Studio. Para ello, lo primero que debemos hacer es modificar nuestra clase <code>Main.java</code> y agregar las siguientes librerías:
+        <pre>
+          <code className="language-java">
+            {
+              "import java.io.BufferedReader;\n" +
+              "import java.io.InputStreamReader;\n" +
+              "import java.net.URL;\n" +
+              "import java.net.HttpURLConnection;\n"
+            }
+          </code>
+        </pre>
+      </p>
+
+      <p>
+        Luego de ello creamos un método al que denominaremos <code className="language-plaintext">iniciar sesión</code> que contedrá lo siguiente:
+
+        <pre>
+          <code className="language-java">
+            {
+              "Thread thread = new Thread(new Runnable() {\n\n" +
+
+                  "\t@Override\n" +
+                  "\tpublic void run() {\n" +
+                      "\t\ttry  {\n" +
+                          '\t\t\tURL url = new URL("http://192.168.1.10:3001");\n' +
+                          "\t\t\tHttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();\n" +
+                          "\t\t\tBufferedReader rd = new BufferedReader(new InputStreamReader(\n" +
+                                  "\t\t\t\turlConnection.getInputStream()));\n" +
+                          
+                          '\t\t\tString allData = "";\n' +
+                          "\t\t\tString line;\n" +
+                          "\t\t\twhile ((line = rd.readLine()) != null) {\n" +
+                              '\t\t\t\tLog.i("data", line);\n' +
+                          "\t\t\t}\n\n" +
+                        
+                      "\t\t} catch (Exception e) {\n" +
+                          '\t\t\tLog.d("Error on sign up", "Ocurrió un error al intentar iniciar sesión.");\n' +
+                          '\t\t\tLog.d("Error on sign up", e.toString());\n' +
+                      "\t\t}\n" +
+                  "\t}\n" +
+              "});\n\n" +
+            
+              "thread.start();"
+            }
+          </code>
+        </pre>
+
+        Ahora bien, cuando se esté declarando la URL se debe asignar la URL de la máquina donde estará corriendo el servidor de acuerdo a su interfaz correspondiente.
+        Para ello, basta con dirigirse a la consola de comandos y digitar <code className="language-dos">ipconfig (para Windows y MAC) e ifconfig (para Linux). </code>
+        Luego de esto, tenemos que dirigirnos al <code className="language-xml">manifest</code> del proyecto y agregar el método
+        <code className="langauge-xml"> onClick</code> al botón de <code>iniciar sesión.</code> Hecho esto, nuestro <code>manifest</code> debería lucir de la siguiente manera:
+        
+      </p>
+
+
     </Container>
   </div>
   )
