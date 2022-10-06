@@ -11,7 +11,7 @@ const Menu = () => (
       <Nav.Link className="text-light" href="/cursos/desarrollo-de-software-para-plataformas-moviles">Desarrollo de software para plataformas móviles</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link className="text-light" href="/cursos/desarrollo-de-software-para-plataformas-moviles">Seguridad informática</Nav.Link>
+      <Nav.Link className="text-light" href="/cursos/seguridad-informatica">Seguridad informática</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link className="text-light" href="/cursos/desarrollo-de-software-para-plataformas-moviles">Servicios telemáticos</Nav.Link>
