@@ -15,7 +15,7 @@ const SeguridadInformatica = () => {
 
   useEffect(() => {
     document.title = "Seguridad Informática";
-  }, [])
+  }, []);
 
   return (
     <div>

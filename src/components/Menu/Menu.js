@@ -26,7 +26,7 @@ const Menu = () => (
       <Nav.Link className="text-light" href="/cursos/desarrollo-de-software-para-plataformas-moviles">Ideas y oportunidades de negocio</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link className="text-light" href="/cursos/desarrollo-de-software-para-plataformas-moviles">Maratón de programación</Nav.Link>
+      <Nav.Link className="text-light" href="/cursos/maraton-de-programacion">Maratón de programación</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link className="text-light" href="/cursos/bases-de-datos-2">Bases de datos 2</Nav.Link>

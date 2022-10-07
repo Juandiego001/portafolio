@@ -15,9 +15,11 @@ import Home from './pages/Home/Home';
 import DesarrolloMoviles from './pages/DesarrolloMoviles/DesarrolloMoviles';
 import SeguridadInformatica from './pages/SeguridadInformatica/SeguridadInformatica';
 import BasesDatos2 from './pages/BasesDatos2/BasesDatos2';
+import MaratonProgramacion from './pages/MaratonProgramacion/MaratonProgramacion';
 
 // Entradas
 import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
+import ProblemaMochila from './pages/blog-post/ProblemaMochila/ProblemaMochila';
 
 // Router
 const router = createBrowserRouter([
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: "/cursos/bases-de-datos-2",
     element: <BasesDatos2 />,
+  },
+  {
+    path: "/cursos/maraton-de-programacion",
+    element: <MaratonProgramacion />,
+  },
+  {
+    path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila",
+    element: <ProblemaMochila />,
   },
   {
     path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql",
