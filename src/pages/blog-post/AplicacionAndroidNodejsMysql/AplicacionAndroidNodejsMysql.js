@@ -337,24 +337,59 @@ const AplicacionAndroidNodejsMysql = () => {
         Ahora bien, cuando se esté declarando la URL se debe asignar la URL de la máquina donde estará corriendo el servidor de acuerdo a su interfaz correspondiente.
         Para ello, basta con dirigirse a la consola de comandos y digitar <code className="language-dos">ipconfig (para Windows y MAC) e ifconfig (para Linux). </code>
         Luego de esto, tenemos que dirigirnos al <code className="language-xml">activity main</code> del proyecto y agregar el método
-        <code className="langauge-xml"> onClick</code> al botón de <code>iniciar sesión.</code> Hecho esto, nuestro <code>activity main</code> debería lucir de la siguiente manera:
+        <code className="langauge-xml"> onClick</code> al botón de <code>iniciar sesión.</code> Hecho esto, nuestro botón de iniciar sesión 
+        en el <code>activity main</code> debería lucir de la siguiente manera:
           
         <pre>
-          <code>
-
+          <code className="language-xml">
+            {
+              "<Button\n" +
+            '  android:id="@+id/button"\n' +
+            '  android:layout_width="wrap_content"\n' +
+            '  android:layout_height="wrap_content"\n' +
+            '  android:layout_marginTop="52dp"\n' +
+            '  android:text="Iniciar sesión"\n' +
+            '  android:onClick="iniciarSesion"\n' +
+            '  app:layout_constraintBottom_toBottomOf="parent"\n' +
+            '  app:layout_constraintEnd_toEndOf="parent"\n' +
+            '  app:layout_constraintHorizontal_bias="0.498"\n' +
+            '  app:layout_constraintStart_toStartOf="parent"\n' +
+            '  app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"\n' +
+            '  app:layout_constraintVertical_bias="0.05" /> \n'
+            }
           </code>
         </pre>
 
         Luego de esto, procedemos a realizar algunas pruebas cargando el aplicativo en nuestro teléfono, o con uno de los emuladores de Android Studio. Para 
         este caso, utilizaré el emulador. Ahora la cuestión sería que cuando hiciesemos click en el botón de iniciar sesión, se debería, por el momento, enviar una petición
         <code> GET</code> al servidor y con esa petición GET obtener la misma respuesta que obtuvimos cuando ejecutamos el servidor
-        y accedimos a <code>localhost:3001.</code><br /><br /> 
+        y accedimos a <code>localhost:3001.</code> En mi caso, cuando hice click en el emulador visualicé el siguiente mensaje: <br /><br /> 
+      </p>
 
+      <Container className="text-center mt-3" fluid>
+        <img className="w-75" src={process.env.PUBLIC_URL + "/septimo-semestre/desarrollo-moviles/aplicacion-android-nodejs-mysql/imgs/pruebas-android-servidor.PNG"} />
+      </Container>
+
+      <p className="mt-5">
         <b>Nota</b><br />
         En caso de que surga un error de conexión y se haya verificado anteriormente la dirección ip, es posible
         que esto se deba a temas de firewall y seguridad de las redes del entorno (por ejemplo en universidades,
-         colegios y entidades del gobierno es posible que no funcione por dichas características de la red).
+        colegios y entidades del gobierno es posible que no funcione por dichas características de la red).<br /><br />
+
+        Con lo anterior podemos concluir que ya está funcionando nuestro proceso de conexión Android - Servidor. Ahora bien,
+        tenemos que configurar nuestra clase <code>Main.java</code> para que haga peticiones <code>POST</code> con el objetivo
+        de probar el inicio de sesión.
       </p>
+
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>POST</code> para iniciar sesión
+      </h2>
+
+      <p>
+        
+      </p>
+
+
 
 
     </Container>
