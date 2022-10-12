@@ -16,10 +16,13 @@ import DesarrolloMoviles from './pages/DesarrolloMoviles/DesarrolloMoviles';
 import SeguridadInformatica from './pages/SeguridadInformatica/SeguridadInformatica';
 import BasesDatos2 from './pages/BasesDatos2/BasesDatos2';
 import MaratonProgramacion from './pages/MaratonProgramacion/MaratonProgramacion';
+import ServiciosTelematicos from './pages/ServiciosTelematicos/ServiciosTelematicos';
 
 // Entradas
 import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
 import ProblemaMochila from './pages/blog-post/ProblemaMochila/ProblemaMochila';
+import AplicacionFlaskCentos from './pages/blog-post/AplicacionFlaskCentos/AplicacionFlaskCentos';
+import AplicacionFlaskSwagger from './pages/blog-post/AplicacionFlaskSwagger/AplicacionFlaskSwagger';
 
 // Router
 const router = createBrowserRouter([
@@ -36,6 +39,18 @@ const router = createBrowserRouter([
     element: <SeguridadInformatica />,
   },
   {
+    path: "/cursos/servicios-telematicos",
+    element: <ServiciosTelematicos />,
+  },
+  {
+    path: "/cursos/servicios-telematicos/entradas/aplicacion-flask-centos",
+    element: <AplicacionFlaskCentos />,
+  },
+  {
+    path: "/cursos/servicios-telematicos/entradas/aplicacion-flask-swagger",
+    element: <AplicacionFlaskSwagger />,
+  },
+  {
     path: "/cursos/bases-de-datos-2",
     element: <BasesDatos2 />,
   },
@@ -49,7 +64,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql",
-    element: <AplicacionAndroidNodejsMysql />,
+    element: <AplicacionAndroidNodejsMysql />
   }
 ]);
 
