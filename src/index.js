@@ -23,6 +23,7 @@ import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNod
 import ProblemaMochila from './pages/blog-post/ProblemaMochila/ProblemaMochila';
 import AplicacionFlaskCentos from './pages/blog-post/AplicacionFlaskCentos/AplicacionFlaskCentos';
 import AplicacionFlaskSwagger from './pages/blog-post/AplicacionFlaskSwagger/AplicacionFlaskSwagger';
+import AplicacionFlaskMySql from './pages/blog-post/AplicacionFlaskMySQL/AplicacionFlaskMySQL';
 
 // Router
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/cursos/servicios-telematicos/entradas/aplicacion-flask-swagger",
     element: <AplicacionFlaskSwagger />,
+  },
+  {
+    path: "/cursos/servicios-telematicos/entradas/aplicacion-flask-mysql",
+    element: <AplicacionFlaskMySql />,
   },
   {
     path: "/cursos/bases-de-datos-2",
