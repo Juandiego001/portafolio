@@ -710,6 +710,74 @@ const AplicacionAndroidNodejsMysql = () => {
           </code>
         </pre>
       </p>
+      
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>GET</code> para iniciar sesión - Nodejs
+      </h2>
+
+      <p>
+        Ahora bien, para configurar el inicio de sesión del servidor debemos tener un código similar
+        a:
+
+        <pre>
+          <code className="language-javascript">
+            {
+              '// Routes\n' +
+              "app.route('/')\n" +
+              '...\n' +
+              '.get((req, res) => {\n' +
+              '    let cedula = req.query.cedula;\n' +
+              '    let contrasena = req.query.contrasena;\n\n' +
+
+              '    let query_iniciar = "SELECT * FROM `USUARIO` WHERE `cedula` = ? AND `contrasena` = ?";\n\n' +
+
+              '    connection.query(query_iniciar, [cedula, contrasena], (err, results, fields) => {\n' +
+              '        if (err) {\n' +
+              '            console.log("There was an error");\n' +
+              '            console.log(err);\n' +
+              '            res.json({\n' +
+              "                    'code': 500,\n" +
+              "                    'message': " + '"There was an server error."\n' +
+              '            });\n' +
+              "        } else {\n\n" +
+
+              '            if (results.length > 0) {\n' +
+              '                res.json({\n' +
+              "                    'code': 200,\n" +
+              "                    'message': 'Get values with success.',\n" +
+              "                    'data': results[0]\n" +
+              '                });\n' +
+              '            } else {\n' +
+              '                res.json({\n' +
+              "                    'code': 300,\n" +
+              "                    'message': 'There are no users in the database with that values.',\n" +
+              '                });\n' +
+              '            }\n' +
+              '        }\n' +
+              '    })\n' +
+              '})\n'
+            }
+          </code>
+        </pre>
+
+        Básicamente lo que hacemos aquí es recibir los valores que están en el query. Luego, creamos una variable
+        que hará referencia a la consulta y se utilizará el método <code>.query</code> para enviar la consulta
+        a la base de datos. Posteriormente verificamos si hubo un error o no y retornamos el código
+        al cliente android que corresponde.
+      </p>
+
+      <p className="bg-info p-3">
+        Debido a que se está trabajando con una sola entidad (<code>Usuarios</code>), tenemos una única ruta. Sin embargo,
+        si tuviesemos varias entidades, lo más probable es que desearamos varias rutas:
+        <ul>
+          <li>Clientes {'->'} '/clientes'</li>
+          <li>Vehículos {'->'} '/vehiculos'</li>
+          <li>Materias {'->'} '/materias'</li>
+          <li>Y así sucesivamente...</li>
+        </ul>
+
+        Eso sí, teniendo en mente esto, tendríamos que agregar cada petición para cada ruta.
+      </p>
 
       <h2 className="h2 text-dark mt-5">
         Petición <code>POST</code> para registrarse - Android
@@ -1058,14 +1126,595 @@ const AplicacionAndroidNodejsMysql = () => {
         los datos en el <code>body,</code> y no en el query. Esto implica crear una nueva variable
         denominada de tipo <code>OutputStream</code> con la que se especificará el body de la petición.
       </p>
+      
+      <p className="p-3 bg-info">
+        También es importante tener en cuenta la parte final del método. Debido a que se están utilizando hilos
+        se buscó preveer algún error relacionado a la memoria, pues si creamos múltiples hilos puede
+        generar problemas para el dispositivo. Por ello, lo que se hace es que <b>si el hilo existe,</b>{' '}
+        que lo detenga.
+      </p>
+      
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>POST</code> para registrarse - Nodejs
+      </h2>
+
+      <p>
+        Para realizar el registro de usuarios el código desde el servidor puede ser similar al siguiente:
+
+        <pre>
+          <code className="language-javascript">
+            {
+              "// Routes\n" +
+              "app.route('/')\n" +
+              '...\n' +
+              '.post((req, res) => {\n' +
+              '  let cedula = req.body.cedula;\n' +
+              '  let contrasena = req.body.contrasena;\n' +
+              '  let nombre = req.body.nombre;\n' +
+              '  let apellido = req.body.apellido;\n' +
+              '  let telefono = req.body.telefono;\n\n' +
+
+              '  let query_registrarse = "INSERT INTO `USUARIO` VALUES(?, ?, ?, ?, ?)"\n\n' +
+
+              '  connection.query(query_registrarse, [cedula, contrasena, nombre, apellido, telefono], \n' +
+              '    (err, results, fields) => {\n' +
+              '        if (err) {\n' +
+              '            res.json({\n' +
+              "                'code': 300,\n" +
+              "                'message': 'There was an error while trying to sing up'\n" +
+              '            })\n' +
+              '        } else {\n' +
+              '            res.json({\n' +
+              "                'code': 200,\n" +
+              "                'message': 'Successful sing up'\n" +
+              '            })\n' +
+              '        }\n' +
+              '    });\n' +
+              '})\n'
+            }
+          </code>
+        </pre>
+
+        Como se puede observar, la diferencia radica en que se lee el body. También se cambia el query 
+        de un <code>SELECT</code> a un <code>INSERT</code> ya que vamos a crear un usuario.
+      </p>
 
       <h2 className="h2 text-dark mt-5">
         Petición <code>PUT</code> para actualizar los datos - Android
       </h2>
 
+      <p>
+        Como lo he configurado, tanto la actualización como la eliminación de la cuenta se hará en el mismo layout.
+        Este layout lo he denominado <code>activity_user.xml</code> y luce de la siguiente manera:
+
+        <pre>
+          <code className="language-xml">
+            {
+              '<?xml version="1.0" encoding="utf-8"?>\n' +
+              '  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"\n' +
+              '      xmlns:app="http://schemas.android.com/apk/res-auto"\n' +
+              '      xmlns:tools="http://schemas.android.com/tools"\n' +
+              '      android:layout_width="match_parent"\n' +
+              '      android:layout_height="match_parent"\n' +
+              '      tools:context=".UserActivity">\n\n' +
+
+              '      <TextView\n' +
+              '          android:id="@+id/textView"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Bienvenido señor/a"\n' +
+              '          android:textSize="30dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.088"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.023" />\n\n' +
+
+              '      <TextView\n' +
+              '          android:id="@+id/textView5"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Cedula"\n' +
+              '          android:textSize="20dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.045"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.092" />\n\n' +
+
+              '      <EditText\n' +
+              '          android:id="@+id/edTelefonoUser"\n' +
+              '          android:layout_width="0dp"\n' +
+              '          android:layout_height="37dp"\n' +
+              '          android:layout_marginStart="15dp"\n' +
+              '          android:layout_marginTop="20dp"\n' +
+              '          android:layout_marginEnd="15dp"\n' +
+              '          android:ems="10"\n' +
+              '          android:inputType="textPersonName"\n' +
+              '          android:minHeight="48dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.0"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toBottomOf="@+id/textView"\n' +
+              '          app:layout_constraintVertical_bias="0.593" />\n\n' +
+
+              '      <TextView\n' +
+              '          android:id="@+id/textView6"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Contraseña"\n' +
+              '          android:textSize="20dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.051"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.218" />\n\n' +
+
+              '      <EditText\n' +
+              '          android:id="@+id/edApellidoUser"\n' +
+              '          android:layout_width="0dp"\n' +
+              '          android:layout_height="37dp"\n' +
+              '          android:layout_marginStart="15dp"\n' +
+              '          android:layout_marginTop="20dp"\n' +
+              '          android:layout_marginEnd="15dp"\n' +
+              '          android:ems="10"\n' +
+              '          android:inputType="textPersonName"\n' +
+              '          android:minHeight="48dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="1.0"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toBottomOf="@+id/textView"\n' +
+              '          app:layout_constraintVertical_bias="0.449" />\n\n' +
+
+              '      <TextView\n' +
+              '          android:id="@+id/textView8"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Nombre"\n' +
+              '          android:textSize="20dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.047"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.343" />\n\n' +
+
+              '      <EditText\n' +
+              '          android:id="@+id/edNombreUser"\n' +
+              '          android:layout_width="0dp"\n' +
+              '          android:layout_height="37dp"\n' +
+              '          android:layout_marginStart="15dp"\n' +
+              '          android:layout_marginTop="20dp"\n' +
+              '          android:layout_marginEnd="15dp"\n' +
+              '          android:ems="10"\n' +
+              '          android:inputType="textPersonName"\n' +
+              '          android:minHeight="48dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.0"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toBottomOf="@+id/textView"\n' +
+              '          app:layout_constraintVertical_bias="0.312" />\n\n' +
+
+              '      <TextView\n' +
+              '          android:id="@+id/textView9"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Apellido"\n' +
+              '          android:textSize="20dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.047"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.464" />\n' +
+
+              '      <EditText\n' +
+              '          android:id="@+id/edContrasenaUser"\n' +
+              '          android:layout_width="379dp"\n' +
+              '          android:layout_height="37dp"\n' +
+              '          android:layout_marginStart="15dp"\n' +
+              '          android:layout_marginTop="20dp"\n' +
+              '          android:layout_marginEnd="15dp"\n' +
+              '          android:ems="10"\n' +
+              '          android:inputType="textPersonName"\n' +
+              '          android:minHeight="48dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.0"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toBottomOf="@+id/textView"\n' +
+              '          app:layout_constraintVertical_bias="0.169" />\n\n' +
+
+              '      <TextView\n' +
+              '          android:id="@+id/textView10"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Telefono"\n' +
+              '          android:textSize="20dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.048"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.59" />\n\n' +
+
+              '      <EditText\n' +
+              '          android:id="@+id/edCedulaUser"\n' +
+              '          android:layout_width="379dp"\n' +
+              '          android:layout_height="37dp"\n' +
+              '          android:layout_marginStart="15dp"\n' +
+              '          android:layout_marginTop="20dp"\n' +
+              '          android:layout_marginEnd="15dp"\n' +
+              '          android:ems="10"\n' +
+              '          android:inputType="textPersonName"\n' +
+              '          android:minHeight="48dp"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.0"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toBottomOf="@+id/textView"\n' +
+              '          app:layout_constraintVertical_bias="0.025" />\n\n' +
+
+              '      <Button\n' +
+              '          android:id="@+id/button2"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Regresar"\n' +
+              '          android:onClick="regresar"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.103"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.797" />\n\n' +
+
+              '      <Button\n' +
+              '          android:id="@+id/button4"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Eliminar cuenta"\n' +
+              '          android:onClick="eliminar"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.493"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.976" />\n\n' +
+
+              '      <Button\n' +
+              '          android:id="@+id/button3"\n' +
+              '          android:layout_width="wrap_content"\n' +
+              '          android:layout_height="wrap_content"\n' +
+              '          android:text="Actualizar"\n' +
+              '          android:onClick="actualizar"\n' +
+              '          app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '          app:layout_constraintEnd_toEndOf="parent"\n' +
+              '          app:layout_constraintHorizontal_bias="0.875"\n' +
+              '          app:layout_constraintStart_toStartOf="parent"\n' +
+              '          app:layout_constraintTop_toTopOf="parent"\n' +
+              '          app:layout_constraintVertical_bias="0.797" />\n\n' +
+
+              '  </androidx.constraintlayout.widget.ConstraintLayout>\n'
+            }
+          </code>
+        </pre>
+
+        Ahora bien, el código del método que se ha denominado <code>actualizar</code>  y que se ha creado en el archivo <code>User.java</code>
+        {' '} sería así:
+
+        <pre>
+          <code className="language-java">
+            {
+              "public void actualizar(View v) {\n" +
+              "    Thread thread = new Thread(new Runnable() {\n\n" +
+
+              "        @Override\n" +
+              "        public void run() {\n" +
+              "            try {\n" +
+              "                edCedulaUser = (EditText) findViewById(R.id.edCedulaUser);\n" +
+              "                edContrasenaUser = (EditText) findViewById(R.id.edContrasenaUser);\n" +
+              "                edNombreUser = (EditText) findViewById(R.id.edNombreUser);\n" +
+              "                edApellidoUser = (EditText) findViewById(R.id.edApellidoUser);\n" +
+              "                edTelefonoUser = (EditText) findViewById(R.id.edTelefonoUser);\n\n" +
+
+              "                String nuevaCedula = edCedulaUser.getText().toString();\n" +
+              "                String nuevaContrasena = edContrasenaUser.getText().toString();\n" +
+              "                String nuevoNombre = edNombreUser.getText().toString();\n" +
+              "                String nuevoApellido = edApellidoUser.getText().toString();\n" +
+              "                String nuevoTelefono = edTelefonoUser.getText().toString();\n\n" +
+
+              '                URL url = new URL(String.format("http://%s:3001", ip));\n' +
+              "                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();\n" +
+              '                String charset = "UTF-8";\n' +
+              "                urlConnection.setDoOutput(true);\n" +
+              '                urlConnection.setRequestMethod("PUT");\n' +
+              '                urlConnection.setRequestProperty("Accept-Charset", charset);\n' +
+              '                urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);\n\n' +
+
+              "                Context context = getApplicationContext();\n\n" +
+
+              '                String query = String.format("cedulaOriginal=%s&" +\n' +
+              '                        "nuevaCedula=%s&" +\n' +
+              '                        "nuevaContrasena=%s&" +\n' +
+              '                        "nuevoNombre=%s&" +\n' +
+              '                        "nuevoApellido=%s&" +\n' +
+              '                        "nuevoTelefono=%s&",\n' +
+              "                        URLEncoder.encode(cedulaOriginal, charset),\n" +
+              "                        URLEncoder.encode(nuevaCedula, charset),\n" +
+              "                        URLEncoder.encode(nuevaContrasena, charset),\n" +
+              "                        URLEncoder.encode(nuevoNombre, charset),\n" +
+              "                        URLEncoder.encode(nuevoApellido, charset),\n" +
+              "                        URLEncoder.encode(nuevoTelefono, charset));\n\n" +
+
+              "                OutputStream output = urlConnection.getOutputStream();\n" +
+              "                output.write(query.getBytes(charset));\n\n" +
+
+              "                BufferedReader rd = new BufferedReader(new InputStreamReader(\n" +
+              "                        urlConnection.getInputStream()));\n\n" +
+
+              "                String jsonResponse = rd.readLine();\n\n" +
+
+              "                JSONObject jsonValue = new JSONObject(jsonResponse);\n" +
+              '                int code = jsonValue.getInt("code");\n\n' +
+
+              "                if (code == 200) {\n" +
+              "                    // We have to change the values of the editText\n" +
+              "                    edCedulaUser.setText(nuevaCedula);\n" +
+              "                    cedulaOriginal = nuevaCedula;\n" +
+              "                    edContrasenaUser.setText(nuevaContrasena);\n" +
+              "                    edNombreUser.setText(nuevoNombre);\n" +
+              "                    edApellidoUser.setText(nuevoApellido);\n" +
+              "                    edTelefonoUser.setText(nuevoTelefono);\n\n" +
+
+              "                    UserActivity.this.runOnUiThread(new Runnable() {\n" +
+              "                        public void run() {\n" +
+              '                            Toast toast = Toast.makeText(context, "Se han efectuado los cambios con éxito!", Toast.LENGTH_SHORT);\n' +
+              "                            toast.show();\n" +
+              "                        }\n" +
+              "                    });\n" +
+              "                } else {\n" +
+              "                    // Rollback the data to the original\n" +
+              "                    edCedulaUser.setText(cedulaOriginal);\n" +
+              "                    edContrasenaUser.setText(edContrasenaUser.getText().toString());\n" +
+              "                    edNombreUser.setText(edNombreUser.getText().toString());\n" +
+              "                    edApellidoUser.setText(edApellidoUser.getText().toString());\n" +
+              "                    edTelefonoUser.setText(edTelefonoUser.getText().toString());\n" +
+
+              "                    UserActivity.this.runOnUiThread(new Runnable() {\n" +
+              "                        public void run() {\n" +
+              '                            Toast toast = Toast.makeText(context, "No se lograron efectuar los cambios.", Toast.LENGTH_SHORT);\n' +
+              "                            toast.show();\n" +
+              "                        }\n" +
+              "                    });\n" +
+              "                }\n" +
+              "            } catch (Exception e) {\n" +
+              '                Log.d("Error", "Ocurrió un error al intentar actualizar los datos del usuario");\n' +
+              '                Log.d("Error", e.toString());\n' +
+              "            }\n" +
+              "        }\n" +
+              "    });\n\n" +
+
+              "    if (thread.isAlive()) {\n" +
+              "        // Ending thread after there was a successful login\n" +
+              "        thread.interrupt();\n" +
+              "    }\n\n" +
+
+              "    thread.start();\n" +
+              "}\n"
+            }
+          </code>
+        </pre>
+      </p>
+
+      <p className="p-3 bg-warning">
+        Un detalle a tener en cuenta es que cuando se inicia sesión, la cédula original con la que se inició sesión se almacena en
+        una variable global. Esto se hace para que en caso de que se desee actualizar la cédula, se tenga la referencia
+        de la original para cambiarla a la nueva.
+      </p>
+      
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>PUT</code> para actualizar los datos - Nodejs
+      </h2>
+
+      <p>
+        La petición put para actualizar los datos desde Nodejs sería similar a:
+
+        <pre>
+          <code className="language-javascript">
+            {
+              "// Routes\n" +
+              "app.route('/')\n" +
+              '...\n' +
+              '.put((req, res) => {\n' +
+              '  let cedulaOriginal = req.body.cedulaOriginal;\n' +
+              '  let nuevaCedula = req.body.nuevaCedula;\n' +
+              '  let nuevaContrasena = req.body.nuevaContrasena;\n' +
+              '  let nuevoNombre = req.body.nuevoNombre;\n' +
+              '  let nuevoApellido = req.body.nuevoApellido;\n' +
+              '  let nuevoTelefono = req.body.nuevoTelefono;\n\n' +
+
+              '  let query_actualizar = "UPDATE `USUARIO` SET `cedula` = ?, `contrasena` = ?, `nombre` = ?, " +\n' +
+              '      "`apellido` = ?, `telefono` = ? WHERE cedula = ?";\n\n' +
+
+              '  connection.query(query_actualizar, [nuevaCedula, nuevaContrasena, nuevoNombre, nuevoApellido, \n' +
+              '      nuevoTelefono, cedulaOriginal], (err, results, fields) => {\n' +
+              '          if (err) {\n' +
+              '              res.json({\n' +
+              "                  'code': 300,\n" +
+              "                  'message': 'Failed on update'\n" +
+              '              })\n' +
+              '          } else {\n' +
+              '              res.json({\n' +
+              "                  'code': 200,\n" +
+              "                  'message': 'Successful update'\n" +
+              '              })\n' +
+              '          }\n' +
+              '      })\n' +
+              '})\n'
+            }
+          </code>
+        </pre>
+      </p>
+
+      <p className="p-3 bg-info">
+        Aquí es importante tener en cuenta que para poder actualizar los datos del usuario
+        se tiene que tomar como referencia la llave primaria - que en este caso es la cédula -,
+        original.
+      </p>
+
       <h2 className="h2 text-dark mt-5">
         Petición <code>DELETE</code> para eliminar cuenta - Android
       </h2>
+
+      <p>
+        Ahora para eliminar la cuenta, muy parecido a los métodos anteriores tenemos:
+
+        <pre>
+          <code className="language-java">
+            {
+              'public void eliminar(View v) {\n' +
+              '    Thread thread = new Thread(new Runnable() {\n' +
+              '        @Override\n' +
+              '        public void run() {\n' +
+              '            try {\n' +
+              '                URL url = new URL(String.format("http://%s:3001", ip));\n' +
+              '                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();\n' +
+              '                String charset = "UTF-8";\n' +
+              '                urlConnection.setDoOutput(true);\n' +
+              '                urlConnection.setRequestMethod("DELETE");\n' +
+              '                urlConnection.setRequestProperty("Accept-Charset", charset);\n' +
+              '                urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);\n\n' +
+
+              '                Context context = getApplicationContext();\n\n' +
+
+              '                String query = String.format("cedula=%s", cedulaOriginal);\n\n' +
+
+              '                OutputStream out = urlConnection.getOutputStream();\n' +
+              '                out.write(query.getBytes());\n\n' +
+
+              '                BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));\n\n' +
+
+              '                String jsonString = rd.readLine();\n\n' +
+
+              '                JSONObject jsonValue = new JSONObject(jsonString);\n' +
+              '                int code = jsonValue.getInt("code");\n\n' +
+
+              '                if (code == 200) {\n' +
+              '                    UserActivity.this.runOnUiThread(new Runnable() {\n' +
+              '                        @Override\n' +
+              '                        public void run() {\n' +
+              '                            Toast toast = Toast.makeText(context, "La cuenta fue eliminada con éxito!", Toast.LENGTH_SHORT);\n' +
+              '                            toast.show();\n' +
+              '                        }\n' +
+              '                    });\n\n' +
+
+              '                    // We have to go back to the login screen\n' +
+              '                    startActivity(new Intent(UserActivity.this, MainActivity.class));\n' +
+              '                } else {\n' +
+              '                    UserActivity.this.runOnUiThread(new Runnable() {\n' +
+              '                        @Override\n' +
+              '                        public void run() {\n' +
+              '                            Toast toast = Toast.makeText(context, "No se puedo eliminar la cuenta!", Toast.LENGTH_SHORT);\n' +
+              '                            toast.show();\n' +
+              '                        }\n' +
+              '                    });\n' +
+              '                }\n\n' +
+
+              '            } catch (Exception e) {\n' +
+              '                Log.d("Error", "Ocurrió un error al intentar eliminar la cuenta.");\n' +
+              '                Log.d("Error", e.toString());\n' +
+              '            }\n' +
+              '        }\n' +
+              '    });\n\n' +
+
+              '    if (thread.isAlive()) {\n' +
+              '        thread.interrupt();\n' +
+              '    }\n\n' +
+
+              '    thread.start();\n' +
+              '}\n'
+            }
+          </code>
+        </pre>
+      </p>
+
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>DELETE</code> para eliminar cuenta - Nodejs
+      </h2>
+
+      <p>
+        Finalmente, el código en Nodejs para eliminar la cuenta:
+
+        <pre>
+          <code className="language-javascript">
+            {
+              ".delete((req, res) => {\n" +
+              "    let cedula = req.body.cedula;\n\n" +
+
+              '    let query_eliminar = "DELETE FROM `USUARIO` WHERE `cedula` = ?";\n\n' +
+
+              "    connection.query(query_eliminar, [cedula], (err, results, fields) => {\n" +
+              "        if (err) {\n" +
+              "            res.json({\n" +
+              "                'code': 300,\n" +
+              "                'message': 'Failed on delete user'\n" +
+              "            })\n" +
+              "        } else {\n" +
+              "            res.json({\n" +
+              "                'code': 200,\n" +
+              "                'message': 'User deleted with success'\n" +
+              "            })\n" +
+              "        }\n" +
+              "    })\n" +
+              "})\n"
+            }
+          </code>
+        </pre>
+      </p>
+
+      <h2 className="h2 text-dark mt-5">
+        Tener en cuenta
+      </h2>
+
+      <p>
+        <ul>
+          <li>
+            Es importante agregar los permisos necesarios para el funcionamiento de la app. Para esto agregar en el android manifest:
+
+            <pre>
+              <code className="language-xml">
+                {
+                  '<uses-permission android:name="android.permission.INTERNET" />'
+                }
+              </code>
+            </pre>
+          </li>
+          <li>Agregar los métodos con el parámetro de tipo <code>View</code> para poder agregarlos en el <code>onClick</code> del <code>xml</code>.</li>
+          <li>Cambiar la ip a la que corresponda.</li>
+          <li>Establecer el puerto donde corre el servidor en cada llamado a la <code>URL</code>. En nuestro caso, fue el puerto <code>3001.</code></li>
+        </ul>
+      </p>
+
+      <h2 className="h2 text-dark mt-5">
+        Finaización
+      </h2>
+
+      <p>
+        Esta ha sido una guía corta para desarrollar una aplicación full stack con Android Studio + Nodejs + Mysql.
+        <br /><br />
+        El código del proyecto se encontrará en mi repositorio de github. Mi nombre de usuario es <code>Juandiego001</code> y
+        el link del proyecto lo pueden encontrar <a href="https://github.com/Juandiego001/aplicacion-full-stack" target="_blank">aquí</a>.
+        <br /><br/>
+        Cualquier duda, queja, recomendación o donación que deseen realizar me pueden contactar por telegram: <a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
+        <br /><br />
+        Espero les haya sido de gran ayuda :)
+      </p>
 
     </Container>
   </div>
