@@ -524,15 +524,548 @@ const AplicacionAndroidNodejsMysql = () => {
       </p>
 
       <h2 className="h2 text-dark mt-5">
-        Petición <code>POST</code> para iniciar sesión
+        Petición <code>GET</code> para iniciar sesión - Android
       </h2>
 
       <p>
-        
+        Si todo lo anterior nos ha funcionado podemos empezar a realizar las configuraciones que de verdad nos atañen. Para comenzar
+        con la configuración <code>get</code> de inicio de sesión, debemos tener algo muy similar al código pasado. Lo único que varía
+        es que envíaremos los datos como un <code>query</code> en la url de la siguiente manera:
+
+        <pre>
+          <code className="language-java">
+            {
+              "edCedula = (EditText) findViewById(R.id.edCedula);\n" + 
+              "edContrasena = (EditText) findViewById(R.id.edContrasena);\n\n" + 
+
+              "String cedula = edCedula.getText().toString();\n" + 
+              "String contrasena = edContrasena.getText().toString();\n\n" + 
+
+              'String query = String.format("?cedula=%s&contrasena=%s",\n' + 
+              "  URLEncoder.encode(cedula, charset),\n" + 
+              "  URLEncoder.encode(contrasena, charset));\n\n" +
+
+              'URL url = new URL(String.format("http://%s:3001/%s", ip, query));\n' +
+              "HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();\n" +
+              'urlConnection.setRequestMethod("GET");\n' +
+              'urlConnection.setRequestProperty("Accept-Charset", charset);\n' +
+              'urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);\n' +
+              "..."
+            }
+          </code>
+        </pre>
+
+        En las primeras dos líneas lo que se hace es obtener el <code>EditText</code> por medio del <code>id</code> definido en el
+        archivo <code>layout.</code> Luego, lo que se hace es obtener los valores ingresados en cada uno de los EditText
+        y se agregan a una variable <code>query.</code> Finalmente, se declara una variable de tipo <code>URL</code> que
+        se utilizará para iniciar la conexión configurando algunas características adicionales.
+        <br /><br />
+        Después debemos buscar obtener la respuesta otorgada por el servidor. El código correspondiente a esta parte
+        luce así:
+
+        <pre>
+          <code className="language-java">
+            {
+              'BufferedReader rd = new BufferedReader(new InputStreamReader(\n' +
+              '                  urlConnection.getInputStream()));\n\n' +
+
+              'String jsonResponse = rd.readLine();\n\n' +
+              'JSONObject jsonValue = new JSONObject(jsonResponse);\n' +
+              'int code = jsonValue.getInt("code");\n\n' +
+              'if (code == 200) {\n' +
+              '    JSONObject data = jsonValue.getJSONObject("data");\n' +
+              '    String nombre = data.getString("nombre");\n' +
+              '    String apellido = data.getString("apellido");\n' +
+              '    String telefono = data.getString("telefono");\n\n' +
+
+              '    MainActivity.this.runOnUiThread(new Runnable() {\n' +
+              '        public void run() {\n' +
+              '            Toast toast = Toast.makeText(context, "Welcome!", Toast.LENGTH_SHORT);\n' +
+              '            toast.show();\n' +
+              '        }\n' +
+              '    });\n\n' +
+
+              '    // Passing data to another Activity\n' +
+              '    Intent i = new Intent(MainActivity.this, UserActivity.class);\n' +
+              '    i.putExtra("cedula", cedula);\n' +
+              '    i.putExtra("contrasena", contrasena);\n' +
+              '    i.putExtra("nombre", nombre);\n' +
+              '    i.putExtra("apellido", apellido);\n' +
+              '    i.putExtra("telefono", telefono);\n' +
+              '    startActivity(i);\n' +
+              '} else {\n' +
+              '    MainActivity.this.runOnUiThread(new Runnable() {\n' +
+              '        public void run() {\n' +
+              '            Toast toast = Toast.makeText(context, "Wrong credentials!", Toast.LENGTH_SHORT);\n' +
+              '            toast.show();\n' +
+              '        }\n' +
+              '    });\n' +
+              '}\n' +
+              '...'
+            }
+          </code>
+        </pre>
+
+        Aquí básicamente creamos un objeto de tipo <code>BufferedReader</code> a partir
+        del <code>InputStreamReader</code> del objeto de la conexión. Luego de ello, guardamos lo retornado
+        en la variable de tipo <code>String</code> llamada <code>jsonResponse</code>. Luego, esta variable
+        se convierte a un objeto de tipo <code>JSONObject</code> del cual obtenemos el parámetro de <code>code</code>
+        para verificar si es un <span className="text-success fw-bold">200.</span>
+        <br /><br />
+        Así, obtenemos los demás datos restantes del JSONObject y generamos un <code>Toast</code> para
+        informarle al usuario que su inicio de sesión ha sido exitoso.
       </p>
 
+      <p className="bg-warning p-3">
+        <b>¡Atención!</b><br /><br />
+        Como se puede ver en el código, el toast se genera en una función denominada <code>runOnUiThread</code> y
+        esto se debe a que el método está corriendo en un hilo paralelo (<code>Thread</code>).
+      </p>
 
+      <p>
+        Lugo de ello, si efectivamente los datos fueron correctos, se pasará al otro <code>activity</code> con
+        los datos correspondientes. El código completo del método de iniciar sesión luce así:
 
+        <pre>
+          <code className="language-java">
+            {
+              'public void iniciarSesion(View v) {\n' +
+              '    Thread thread = new Thread(new Runnable() {\n\n' +
+
+              '      @Override\n' +
+              '      public void run() {\n' +
+              '          try {\n' +
+              '              String charset = "UTF-8";\n\n' +
+
+              '              edCedula = (EditText) findViewById(R.id.edCedula);\n' +
+              '              edContrasena = (EditText) findViewById(R.id.edContrasena);\n\n' +
+
+              '              String cedula = edCedula.getText().toString();\n' +
+              '              String contrasena = edContrasena.getText().toString();\n\n' +
+
+              '              String query = String.format("?cedula=%s&contrasena=%s",\n' +
+              '                      URLEncoder.encode(cedula, charset),\n' +
+              '                      URLEncoder.encode(contrasena, charset));\n\n' +
+
+              '              Context context = getApplicationContext();\n\n' +
+
+              '              URL url = new URL(String.format("http://%s:3001/%s", ip, query));\n' +
+              '              HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();\n' +
+              '              urlConnection.setRequestMethod("GET");\n' +
+              '              urlConnection.setRequestProperty("Accept-Charset", charset);\n' +
+              '              urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);\n' +
+
+              '              BufferedReader rd = new BufferedReader(new InputStreamReader(\n' +
+              '                      urlConnection.getInputStream()));\n\n' +
+
+              '              String jsonResponse = rd.readLine();\n\n' +
+
+              '              JSONObject jsonValue = new JSONObject(jsonResponse);\n' +
+              '              int code = jsonValue.getInt("code");\n\n' +
+
+              '              if (code == 200) {\n' +
+              '                  JSONObject data = jsonValue.getJSONObject("data");\n' +
+              '                  String nombre = data.getString("nombre");\n' +
+              '                  String apellido = data.getString("apellido");\n' +
+              '                  String telefono = data.getString("telefono");\n\n' +
+
+              '                  MainActivity.this.runOnUiThread(new Runnable() {\n' +
+              '                      public void run() {\n' +
+              '                          Toast toast = Toast.makeText(context, "Welcome!", Toast.LENGTH_SHORT);\n' +
+              '                          toast.show();\n' +
+              '                      }\n' +
+              '                  });\n\n' +
+
+              '                  // Passing data to another Activity\n' +
+              '                  Intent i = new Intent(MainActivity.this, UserActivity.class);\n' +
+              '                  i.putExtra("cedula", cedula);\n' +
+              '                  i.putExtra("contrasena", contrasena);\n' +
+              '                  i.putExtra("nombre", nombre);\n' +
+              '                  i.putExtra("apellido", apellido);\n' +
+              '                  i.putExtra("telefono", telefono);\n' +
+              '                  startActivity(i);\n' +
+              '              } else {\n' +
+              '                  MainActivity.this.runOnUiThread(new Runnable() {\n' +
+              '                      public void run() {\n' +
+              '                          Toast toast = Toast.makeText(context, "Wrong credentials!", Toast.LENGTH_SHORT);\n' +
+              '                          toast.show();\n' +
+              '                      }\n' +
+              '                  });\n' +
+              '              }\n' +
+              '          } catch (Exception e) {\n' +
+              '            Log.d("Error on sign up", "Ocurrió un error al intentar iniciar sesión.");\n' +
+              '            Log.d("Error on sign up", e.toString());\n' +
+              '          }\n' +
+              '      }\n' +
+              '  });\n\n' +
+
+              '  if (thread.isAlive()) {\n' +
+              '    // Ending thread after there was a successful login\n' +
+              '    thread.interrupt();\n' +
+              '  }\n\n' +
+
+              '  thread.start();\n' +
+              '}\n'
+            }
+          </code>
+        </pre>
+      </p>
+
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>POST</code> para registrarse - Android
+      </h2>
+
+      <p>
+        Para crear un usuario primero debemos agregar un botón de registrarse similar al de iniciar sesión
+        que se vio en la parte del inicio. Este botón se deberá configurar para pasar a un nuevo activity 
+        donde se efectuará dicho registro. En mi caso, he creado un activity llamado <code>activity_register</code>
+        {' '}que contiene lo siguiente:
+
+        <pre>
+          <code className="language-xml">
+            {
+              '<?xml version="1.0" encoding="utf-8"?>\n' +
+              '<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"\n' +
+              '    xmlns:app="http://schemas.android.com/apk/res-auto"\n' +
+              '    xmlns:tools="http://schemas.android.com/tools"\n' +
+              '    android:layout_width="match_parent"\n' +
+              '    android:layout_height="match_parent">\n\n' +
+
+              '    <TextView\n' +
+              '        android:id="@+id/textView3"\n' +
+              '        android:layout_width="wrap_content"\n' +
+              '        android:layout_height="wrap_content"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="4dp"\n' +
+              '        android:layout_marginEnd="296dp"\n' +
+              '        android:layout_marginBottom="2dp"\n' +
+              '        android:text="Cédula"\n' +
+              '        android:textSize="32dp"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/edCedulaReg"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toTopOf="parent" />\n\n' +
+
+              '    <EditText\n' +
+              '        android:id="@+id/edCedulaReg"\n' +
+              '        android:layout_width="368dp"\n' +
+              '        android:layout_height="48dp"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="2dp"\n' +
+              '        android:layout_marginEnd="23dp"\n' +
+              '        android:layout_marginBottom="4dp"\n' +
+              '        android:ems="10"\n' +
+              '        android:inputType="textPersonName"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/textView4"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/textView3" />\n\n' +
+
+              '    <TextView\n' +
+              '        android:id="@+id/textView4"\n' +
+              '        android:layout_width="wrap_content"\n' +
+              '        android:layout_height="wrap_content"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="4dp"\n' +
+              '        android:layout_marginEnd="226dp"\n' +
+              '        android:layout_marginBottom="2dp"\n' +
+              '        android:text="Contraseña"\n' +
+              '        android:textSize="32dp"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/edContrasenaReg"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/edCedulaReg" />\n\n' +
+
+              '    <EditText\n' +
+              '        android:id="@+id/edContrasenaReg"\n' +
+              '        android:layout_width="368dp"\n' +
+              '        android:layout_height="48dp"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="2dp"\n' +
+              '        android:layout_marginEnd="23dp"\n' +
+              '        android:layout_marginBottom="4dp"\n' +
+              '        android:ems="10"\n' +
+              '        android:inputType="textPersonName"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/textView7"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintHorizontal_bias="0.0"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/textView4" />\n\n' +
+
+              '    <TextView\n' +
+              '        android:id="@+id/textView7"\n' +
+              '        android:layout_width="wrap_content"\n' +
+              '        android:layout_height="wrap_content"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="4dp"\n' +
+              '        android:layout_marginEnd="295dp"\n' +
+              '        android:layout_marginBottom="2dp"\n' +
+              '        android:text="Nombre"\n' +
+              '        android:textSize="32dp"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/edNombreReg"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintHorizontal_bias="0.0"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/edContrasenaReg" />\n\n' +
+
+              '    <EditText\n' +
+              '        android:id="@+id/edNombreReg"\n' +
+              '        android:layout_width="368dp"\n' +
+              '        android:layout_height="48dp"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="2dp"\n' +
+              '        android:layout_marginEnd="22dp"\n' +
+              '        android:layout_marginBottom="4dp"\n' +
+              '        android:ems="10"\n' +
+              '        android:inputType="textPersonName"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/textView11"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/textView7" />\n\n' +
+
+              '    <TextView\n' +
+              '        android:id="@+id/textView11"\n' +
+              '        android:layout_width="wrap_content"\n' +
+              '        android:layout_height="wrap_content"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="4dp"\n' +
+              '        android:layout_marginEnd="272dp"\n' +
+              '        android:layout_marginBottom="2dp"\n' +
+              '        android:text="Apellido"\n' +
+              '        android:textSize="32dp"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/edApellidoReg"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/edNombreReg" />\n\n' +
+
+              '    <EditText\n' +
+              '        android:id="@+id/edApellidoReg"\n' +
+              '        android:layout_width="368dp"\n' +
+              '        android:layout_height="48dp"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="2dp"\n' +
+              '        android:layout_marginEnd="23dp"\n' +
+              '        android:layout_marginBottom="4dp"\n' +
+              '        android:ems="10"\n' +
+              '        android:inputType="textPersonName"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/textView12"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/textView11" />\n\n' +
+
+              '    <TextView\n' +
+              '        android:id="@+id/textView12"\n' +
+              '        android:layout_width="wrap_content"\n' +
+              '        android:layout_height="wrap_content"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="4dp"\n' +
+              '        android:layout_marginEnd="261dp"\n' +
+              '        android:layout_marginBottom="2dp"\n' +
+              '        android:text="Telefono"\n' +
+              '        android:textSize="32dp"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/edTelefonoReg"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/edApellidoReg" />\n\n' +
+
+              '    <EditText\n' +
+              '        android:id="@+id/edTelefonoReg"\n' +
+              '        android:layout_width="368dp"\n' +
+              '        android:layout_height="48dp"\n' +
+              '        android:layout_marginStart="15dp"\n' +
+              '        android:layout_marginTop="2dp"\n' +
+              '        android:layout_marginEnd="22dp"\n' +
+              '        android:layout_marginBottom="4dp"\n' +
+              '        android:ems="10"\n' +
+              '        android:inputType="textPersonName"\n' +
+              '        app:layout_constraintBottom_toTopOf="@+id/button5"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/textView12" />\n' +
+
+              '    <Button\n' +
+              '        android:id="@+id/button5"\n' +
+              '        android:layout_width="wrap_content"\n' +
+              '        android:layout_height="wrap_content"\n' +
+              '        android:layout_marginStart="300dp"\n' +
+              '        android:layout_marginTop="17dp"\n' +
+              '        android:layout_marginEnd="80dp"\n' +
+              '        android:layout_marginBottom="10dp"\n' +
+              '        android:text="Cancelar"\n' +
+              '        android:onClick="cancelar"\n' +
+              '        app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '        app:layout_constraintEnd_toEndOf="parent"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/edTelefonoReg" />\n\n' +
+
+              '    <Button\n' +
+              '        android:id="@+id/button6"\n' +
+              '        android:layout_width="wrap_content"\n' +
+              '        android:layout_height="wrap_content"\n' +
+              '        android:layout_marginStart="50dp"\n' +
+              '        android:layout_marginTop="24dp"\n' +
+              '        android:layout_marginEnd="100dp"\n' +
+              '        android:layout_marginBottom="10dp"\n' +
+              '        android:text="Registrarse"\n' +
+              '        android:onClick="registrarse"\n' +
+              '        app:layout_constraintBottom_toBottomOf="parent"\n' +
+              '        app:layout_constraintEnd_toStartOf="@+id/button5"\n' +
+              '        app:layout_constraintStart_toStartOf="parent"\n' +
+              '        app:layout_constraintTop_toBottomOf="@+id/edTelefonoReg" />\n' +
+              '</androidx.constraintlayout.widget.ConstraintLayout>'
+            }
+          </code>
+        </pre>
+      </p>
+
+      <p className="bg-warning p-3">
+        Hay que tener en cuenta que para los botones ya se han definido los métodos por lo que en caso de 
+        cambiar el nombre de los métodos se debe tener en cuenta también cambiar la propiedad <code>onClick</code> 
+        {' '}del xml.
+      </p>
+
+      <p>
+        Ahora bien, para pasar del activity_main al acitivty_register se debe crear un método en la clase{' '}
+        <code>Main.java</code> que active dicha ejecución, de esta manera:
+
+        <pre className="m-0">
+          <code className="m-0 p-3 language-java">
+            {
+              'public void irRegistrarse(View v) {\n' +
+              '  // We travel the user to the next activity\n' +
+              '  startActivity(new Intent(MainActivity.this, RegistrarseActivity.class));\n' +
+              '}'
+            }
+          </code>
+        </pre>
+
+      </p>
+
+      <p className="p-3 bg-warning">
+        Recordar agregar el método onClick dentro del xml.
+      </p>
+
+      <p>
+        Una vez, nos encontramos en la interfaz de registro, debemos crear un método (que 
+        en nuestro caso se ha denominado <code>registrarse</code>) y que debe contener lo 
+        siguiente:
+
+        <pre>
+          <code className="language-java">
+            {
+              'public void registrarse(View v) {\n' +
+              '  Thread thread = new Thread(new Runnable() {\n' +
+              '      @Override\n' +
+              '      public void run() {\n' +
+              '          try {\n' +
+              '              String cedula = edCedulaReg.getText().toString();\n' +
+              '              String contrasena = edContrasenaReg.getText().toString();\n' +
+              '              String nombre = edNombreReg.getText().toString();\n' +
+              '              String apellido = edApellidoReg.getText().toString();\n' +
+              '              String telefono = edTelefonoReg.getText().toString();\n\n' +
+
+              '              URL url = new URL(String.format("http://%s:3001", ip));\n' +
+              '              HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();\n' +
+              '              String charset = "UTF-8";\n' +
+              '              urlConnection.setDoOutput(true);\n' +
+              '              urlConnection.setRequestMethod("POST");\n' +
+              '              urlConnection.setRequestProperty("Accept-Charset", charset);\n' +
+              '              urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);\n\n' +
+
+              '              Context context = getApplicationContext();\n\n' +
+
+              '              String query = String.format("cedula=%s&" +\n\n' +
+              '                      "contrasena=%s&" +\n' +
+              '                      "nombre=%s&" +\n' +
+              '                      "apellido=%s&" +\n' +
+              '                      "telefono=%s&",\n' +
+              '                      URLEncoder.encode(cedula, charset),\n' +
+              '                      URLEncoder.encode(contrasena, charset),\n' +
+              '                      URLEncoder.encode(nombre, charset),\n' +
+              '                      URLEncoder.encode(apellido, charset),\n' +
+              '                      URLEncoder.encode(telefono, charset));\n\n' +
+
+              '              OutputStream out = urlConnection.getOutputStream();\n' +
+              '              out.write(query.getBytes());\n\n' +
+
+              '              BufferedReader rd = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));\n\n' +
+
+              '              String jsonString = rd.readLine();\n' +
+              '              JSONObject jsonValue = new JSONObject(jsonString);\n\n' +
+
+              '              int code = jsonValue.getInt("code");\n\n' +
+
+              '              if (code == 200) {\n' +
+              '                  RegistrarseActivity.this.runOnUiThread(new Runnable() {\n' +
+              '                      @Override\n' +
+              '                      public void run() {\n' +
+              '                          Toast toast = Toast.makeText(context, "Se registrado el usuario con éxito!", Toast.LENGTH_SHORT);\n' +
+              '                          toast.show();\n' +
+              '                      }\n' +
+              '                  });\n\n' +
+
+              '                  // After sing up we move to the login screen\n' +
+              '                  startActivity(new Intent(RegistrarseActivity.this, MainActivity.class));\n' +
+              '              } else {\n' +
+              '                  RegistrarseActivity.this.runOnUiThread(new Runnable() {\n' +
+              '                      @Override\n' +
+              '                      public void run() {\n' +
+              '                          Toast toast = Toast.makeText(context, "No se logró crear el usuario", Toast.LENGTH_SHORT);\n' +
+              '                          toast.show();\n' +
+              '                      }\n' +
+              '                  });\n' +
+              '              }\n' +
+              '          } catch (Exception e) {\n' +
+              '              Log.d("Error", "Ocurrió un error mientras se intentaba registrar el usuario");\n' +
+              '          }\n' +
+              '      }\n' +
+              '  });\n\n' +
+
+              '  // Check if the thread have been already created\n' +
+              '  if (thread.isAlive()) {\n' +
+              '      thread.interrupt();\n' +
+              '  }\n\n' +
+
+              '  thread.start();\n' +
+              '}\n'
+            }
+          </code>
+        </pre>
+      </p>
+
+      <p className="bg-info p-3">
+        Aquí es importante tener en cuenta que el proceso es muy repetitivo y similar a todos los demás. Básicamente
+        lo único que cambia es el método especificado (<code>GET, POST, PUT o DELETE</code>).
+        <br /><br />
+        Por otro lado, es importante tener en cuenta que se han declarado algunas variables globales. Por ejemplo,
+        la variable <code>ip.</code> Con ella lo que se hace es declarar la ip de la máquina donde correrá el servidor.
+        Si se utilizará el emulador de Android Studio se puede utilizar <code>localhost</code> aunque siempre
+        es más recomendable utilizar la propia dirección ip. En mi caso, mi variable global está declarada de la siguiente manera:
+
+        <pre className="m-0">
+          <code className="p-3 bg-info language-java">
+            {
+              'public class RegistrarseActivity extends AppCompatActivity {\n' +
+              '    ...\n' +
+              '    String ip = "172.30.96.1";'
+            }
+          </code>
+        </pre>
+      </p>
+
+      <p>
+        Ahora bien, la diferencia con la petición GET, es que las peticiones POST, PUT y DELETE enviarán
+        los datos en el <code>body,</code> y no en el query. Esto implica crear una nueva variable
+        denominada de tipo <code>OutputStream</code> con la que se especificará el body de la petición.
+      </p>
+
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>PUT</code> para actualizar los datos - Android
+      </h2>
+
+      <h2 className="h2 text-dark mt-5">
+        Petición <code>DELETE</code> para eliminar cuenta - Android
+      </h2>
 
     </Container>
   </div>
