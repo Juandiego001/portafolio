@@ -42,16 +42,16 @@ const AplicacionFlaskMySql = () => {
         más cómodo, pues podría utilizarse un IDE como <code>Visual Studio Code</code> en vez de únicamente <b>vim.</b>{' '}
         Por mi parte utilizaré Code y por ello se deben tener <b>todos los módulos de python</b> y el manejador
         de MySQL instalado. Los módulos de python se pueden instalar en la máquina local ejecutando:
-
-        <pre>
-          <code className="bg-warning pt-3 pb-0 language-cmd">
-            {
-              "pip3 install Flask\n" +
-              "pip3 install flask-mysqldb"
-            }
-          </code>
-        </pre>
       </p>
+
+      <pre>
+        <code className="bg-warning pt-3 pb-0 language-cmd">
+          {
+            "pip3 install Flask\n" +
+            "pip3 install flask-mysqldb"
+          }
+        </code>
+      </pre>
 
       <h2 className="h2 text-dark mt-5">
         Introducción
@@ -99,11 +99,15 @@ const AplicacionFlaskMySql = () => {
       
       <p>
         Luego de esto deberemos ejecutar:
-        <pre className="d-inline m-0">
-          <code clasName="language-cmd">
-            vagrant up server
-          </code>
-        </pre>
+      </p>
+
+      <pre className="d-inline m-0">
+        <code className="language-cmd">
+          vagrant up server
+        </code>
+      </pre>
+
+      <p>
         y deberá empezar a correr nuestra máquina virtual.
       </p>
 
@@ -178,68 +182,78 @@ const AplicacionFlaskMySql = () => {
         se solicita una contraseña, se deberá visualizar en los logs de mysql. Para visualizar los logs se puede ejecutar
         el siguiente comando:
 
-        <pre>
-          <code className="language-cmd">
-            sudo cat /var/log/mysql/mysqld.log 
-          </code>
-        </pre>
-        
+      </p>
+
+      <pre>
+        <code className="language-cmd">
+          sudo cat /var/log/mysql/mysqld.log 
+        </code>
+      </pre>
+      
+      <p>
         Este comando nos arrojará información acerca del servicio. Aquí podemos ver si se ha generado una contraseña random
         por defecto:
-        
+      </p>
 
-        <pre>
-          <code className="language-cmd">
-            {
-              "2022-10-12T21:50:08.795229Z 0 [System] [MY-013169] [Server] /usr/libexec/mysqld (mysqld 8.0.26) initializing of server in progress as process 36553\n" +
-              "2022-10-12T21:50:08.803942Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.\n" +
-              "2022-10-12T21:50:09.585654Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.\n" +
-              "2022-10-12T21:50:10.245691Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main\n" +
-              "2022-10-12T21:50:10.245897Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main\n" +
-              "2022-10-12T21:50:10.279980Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.\n" +
-              "2022-10-12T21:50:12.831739Z 0 [System] [MY-010116] [Server] /usr/libexec/mysqld (mysqld 8.0.26) starting as process 36596\n" +
-              "2022-10-12T21:50:12.852659Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.\n" +
-              "2022-10-12T21:50:13.459178Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.\n" +
-              "2022-10-12T21:50:14.108367Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main\n" +
-              "2022-10-12T21:50:14.108643Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main\n" +
-              "2022-10-12T21:50:14.112215Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.\n" +
-              "2022-10-12T21:50:14.112345Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.\n" +
-              "2022-10-12T21:50:14.134993Z 0 [System] [MY-010931] [Server] /usr/libexec/mysqld: ready for connections. Version: '8.0.26'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  Source distribution.\n" +
-              "2022-10-12T21:50:14.135064Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/lib/mysql/mysqlx.sock\n"
-            }
-          </code>
-        </pre>
-
+      <pre>
+        <code className="language-cmd">
+          {
+            "2022-10-12T21:50:08.795229Z 0 [System] [MY-013169] [Server] /usr/libexec/mysqld (mysqld 8.0.26) initializing of server in progress as process 36553\n" +
+            "2022-10-12T21:50:08.803942Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.\n" +
+            "2022-10-12T21:50:09.585654Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.\n" +
+            "2022-10-12T21:50:10.245691Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main\n" +
+            "2022-10-12T21:50:10.245897Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main\n" +
+            "2022-10-12T21:50:10.279980Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.\n" +
+            "2022-10-12T21:50:12.831739Z 0 [System] [MY-010116] [Server] /usr/libexec/mysqld (mysqld 8.0.26) starting as process 36596\n" +
+            "2022-10-12T21:50:12.852659Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.\n" +
+            "2022-10-12T21:50:13.459178Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.\n" +
+            "2022-10-12T21:50:14.108367Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main\n" +
+            "2022-10-12T21:50:14.108643Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main\n" +
+            "2022-10-12T21:50:14.112215Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.\n" +
+            "2022-10-12T21:50:14.112345Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.\n" +
+            "2022-10-12T21:50:14.134993Z 0 [System] [MY-010931] [Server] /usr/libexec/mysqld: ready for connections. Version: '8.0.26'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  Source distribution.\n" +
+            "2022-10-12T21:50:14.135064Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/lib/mysql/mysqlx.sock\n"
+          }
+        </code>
+      </pre>
+      
+      <p>
         Así pues, cuando observamos el log, vemos que en nuestro caso, se generó una contraseña vacía por lo que tendremos que cambiarla accediendo a MySQL. Para esto
         se deben ejecutar los siguientes comandos:
+      </p>
 
-        <pre>
-          <code className="language-cmd">
-            {
-              "mysql -u root\n" +
-              "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Autonoma123*';"
-            }
-          </code>
-        </pre>
-
+      <pre>
+        <code className="language-cmd">
+          {
+            "mysql -u root\n" +
+            "ALTER USER 'root'@'localhost' IDENTIFIED BY 'Autonoma123*';"
+          }
+        </code>
+      </pre>
+      
+      <p>
         Si los comandos anteriores nos resultan en:
+      </p>
 
-        <pre className="m-0">
-          <code className="p-3 language-cmd">
-            Query OK, 0 rows affected (0.01 sec)
-          </code>
-        </pre>
-
+      <pre className="m-0">
+        <code className="p-3 language-cmd">
+          Query OK, 0 rows affected (0.01 sec)
+        </code>
+      </pre>
+      
+      <p>
         es porque todo se ha ejecutado correctamente y nuestra nueva contraseña para iniciar sesión será la que hayamos establecido (en este caso <code>Autonoma123*</code>).
         Ahora, cuando vayamos a iniciar en MySQL tendremos que agregar siempre la flag <code>-p</code> y digitar
         la contraseña adecuada, es decir:
+      </p>
 
-        <pre className="m-0">
-          <code className="p-3 language-cmd">
-            mysql -u root -p
-          </code>
-        </pre>
-
+      <pre className="m-0">
+        <code className="p-3 language-cmd">
+          mysql -u root -p
+        </code>
+      </pre>
+      
+      <p>
         y luego digitar la contraseña.
       </p>
 
@@ -276,22 +290,22 @@ const AplicacionFlaskMySql = () => {
       <p>
         Para iniciar el proyecto de Flask, crearé una carpeta que se llamará <code>app-flask-mysql</code> dentro de la cual incluiré 
         toda la configuración correspondiente. La configuración básica luce así:
-        
-        <pre className="m-0">
-          <code className="p-3 language-cmd">
-            {
-              "app-flask-mysql/\n" +
-              "  app/\n" +
-              "    __init__.py\n" +
-              "    views.py\n" +
-              "    templates/\n" +
-              "    static/\n" +
-              "  config.py\n" +
-              "  run.py\n"
-            }
-          </code>
-        </pre>
       </p>
+
+      <pre className="m-0">
+        <code className="p-3 language-cmd">
+          {
+            "app-flask-mysql/\n" +
+            "  app/\n" +
+            "    __init__.py\n" +
+            "    views.py\n" +
+            "    templates/\n" +
+            "    static/\n" +
+            "  config.py\n" +
+            "  run.py\n"
+          }
+        </code>
+      </pre>
 
       <p>
         El primer archivo que se aconseja modificar es el <code>__init__.py</code> donde se inicializará el servidor Flask,
@@ -496,8 +510,9 @@ const AplicacionFlaskMySql = () => {
         </pre>
       </p>
       
-      <p className="bg-info p-3">
-        <h4>¿Cómo agregar componentes <code>examples</code> de bootstrap?</h4>
+      <div className="bg-info p-3 p">
+        <span className="h4">¿Cómo agregar componentes <code>examples</code> de bootstrap?</span>
+
         <ol>
           <li>Ir a la página de <a href="https://getbootstrap.com/docs/5.2/examples/" target="_blank">examples</a> de bootstrap.</li>
           <li>Seleccionar algún elemento deseado (snippets, custom components, frameworks, etc.).</li>
@@ -506,61 +521,122 @@ const AplicacionFlaskMySql = () => {
           <li>Luego hacer clic derecho y en la parte de <code>copy</code> seleccionar <code>Copy element</code>.</li>
           <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/aplicacion-flask-mysql/parte-2-examples.png"} />
         </ol>
-      </p>
+      </div>
+
 
       <p>
         El contenedor <code>{'<div id="content">'}</code> es el que utilzaremos como referencia para agregar
         todo el contenido de las demás páginas ya que solo cambiará el contenido, pero el <code>header</code>{' '}
         y el <code>footer</code> permanecerán igual (por esto le llamamos plantilla). Ahora, procederemos agregando algo
         sencillo en el <code>about.html</code> y en el <code>contact.html</code>:
+      </p>
 
-        <pre>
-          <code className="language-html">
-            {
-              '<!-- about.html -->\n' +
-              '{% extends "index.html" %}\n' +
-              '{% block content %}\n' +
-              '<h2>About</h2>\n' +
-              '<p>\n' +
-              '    My name is su-nombre.\n' +
-              '</p>\n' +
-              '{% endblock %}\n\n' +
+      <pre>
+        <code className="language-html">
+          {
+            '<!-- about.html -->\n' +
+            '{% extends "index.html" %}\n' +
+            '{% block content %}\n' +
+            '<h2>About</h2>\n' +
+            '<p>\n' +
+            '    My name is su-nombre.\n' +
+            '</p>\n' +
+            '{% endblock %}\n\n' +
 
-              '<!-- contact.html -->\n' +
-              '{% extends "index.html" %}\n' +
-              '{% block content %}\n' +
-              '<h2>Contact</h2>\n' +
-              '<p>\n' +
-              '    My telegram <a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>\n' +
-              '</p>\n' +
-              '{% endblock %}\n'
-            }
-          </code>
-        </pre>
-
+            '<!-- contact.html -->\n' +
+            '{% extends "index.html" %}\n' +
+            '{% block content %}\n' +
+            '<h2>Contact</h2>\n' +
+            '<p>\n' +
+            '    My telegram <a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>\n' +
+            '</p>\n' +
+            '{% endblock %}\n'
+          }
+        </code>
+      </pre>
+      
+      <p>
         Ahora para renderizar el contenido en el navegador se debe utilizar la función <code>render_template</code> de flask.
         Para utilizar esta función en el <code>views.py</code> hacemos:
+      </p>
 
-        <pre>
-          <code className="language-python">
-            {
-              "@app.route('/')\n" +
-              'def index():\n' +
-              '    return render_template("index.html")\n' +
+      <pre>
+        <code className="language-python">
+          {
+            "@app.route('/')\n" +
+            'def index():\n' +
+            '    return render_template("index.html")\n' +
 
-              "@app.route('/about')\n" +
-              'def about():\n' +
-              '    return render_template("about.html")\n' +
+            "@app.route('/about')\n" +
+            'def about():\n' +
+            '    return render_template("about.html")\n' +
 
-              "@app.route('/contact')\n" +
-              'def contact():\n' +
-              '    return render_template("contact.html")\n'
-            }
-          </code>
-        </pre>
-
+            "@app.route('/contact')\n" +
+            'def contact():\n' +
+            '    return render_template("contact.html")\n'
+          }
+        </code>
+      </pre>
+      
+      <p>
         Posteriormente, procedemos a configurar la sección de <code>articles.html</code>.
       </p>
+
+      <h2 className="h2 text-dark mt-5">
+        Desarollo de <code>articles.html</code>
+      </h2>
+
+      <p>
+        El contenido de <code>articles.html</code> hereda igualmente el menú de navegación y el footer. El contenido principal de esta página
+        será una tabla que contenga cada una de las columnas del artículo con tres botones para agregar, editar o borrar.
+        La tabla fue copiada de los <code>examples</code> de bootstrap y su código es el siguiente:
+      </p>
+
+      <pre>
+        <code className="language-html">
+            {
+              '<div class="row text-center mx-5">\n' +
+              '  <div class="col p-3 border">\n' +
+              '     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addArticle">\n' +
+              '        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">\n' +
+              '            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>\n' +
+              '        </svg>\n' +
+              '     </button>\n' +
+              '  </div>\n' +
+              '  <div class="col p-3 border d-flex justify-content-center align-items-center">id</div>\n' +
+              '  <div class="col p-3 border d-flex justify-content-center align-items-center">title</div>\n' +
+              '  <div class="col p-3 border d-flex justify-content-center align-items-center">body</div>\n' +
+              '  <div class="col p-3 border d-flex justify-content-center align-items-center">author</div>\n' +
+              '  <div class="col p-3 border d-flex justify-content-center align-items-center">date</div>\n' +
+              '</div>'
+            }
+        </code>
+      </pre>
+
+      <p>
+        El código anterior ha de lucir así:
+      </p>
+
+      <div className="row text-center mx-5">
+        <div className="col p-3 border">
+            <button type="button" className="btn btn-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                </svg>
+            </button>
+        </div>
+        <div className="col p-3 border d-flex justify-content-center align-items-center">id</div>
+        <div className="col p-3 border d-flex justify-content-center align-items-center">title</div>
+        <div className="col p-3 border d-flex justify-content-center align-items-center">body</div>
+        <div className="col p-3 border d-flex justify-content-center align-items-center">author</div>
+      </div>
+
+      <p className="mt-5">
+        El funcionamiento de la tabla para agregar, editar y borrar se hará mediante ventas de confirmación. Estas ventanas de confirmación
+        se denominan en Bootstrap como <code>Modals.</code> En este{' '}
+        <a href="https://getbootstrap.com/docs/5.2/components/modal/" target="_blank">link</a> podrán acceder a la guía de los modales.
+      </p>
+  
 
     </Container>
   </div>
