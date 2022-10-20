@@ -10,9 +10,14 @@ import Menu from '../../../components/Menu/Menu';
 
 // Bootstrap components
 import Container from 'react-bootstrap/Container';
+
 const ProblemaMochila = () => {
 
-
+  // Setting title
+  useEffect(() => {
+    document.title = "Problema de la mochila | Maratón de programación";
+    hljs.highlightAll();
+  }, []);
 
   return (
     <div className="mb-4">

@@ -15,7 +15,7 @@ const MetasploitKaliWindowsXp = () => {
 
   // Setting title
   useEffect(() => {
-    document.title = "Metasploit Kali + Windows XP | Servicios telemáticos";
+    document.title = "Metasploit Kali + Windows XP | Seguridad informática";
     hljs.highlightAll();
   }, []);
 

@@ -30,6 +30,18 @@ const ServiciosTelematicos = () => {
 
       <Card className="mt-3">
         <Card.Body>
+          <Card.Title>Rest API + Centos 8</Card.Title>
+          <Card.Text>
+            Desarrollo de práctica para crear una Rest API
+            en una máquina virtual Centos 8 utilizando el framework
+            de python flask y nodejs.
+          </Card.Text>
+          <Button variant="dark" href="/cursos/servicios-telematicos/entradas/rest-api-centos">Ver entrada</Button>
+        </Card.Body>
+      </Card>
+
+      <Card className="mt-3">
+        <Card.Body>
           <Card.Title>Aplicación Flask + MySQL + Centos 8</Card.Title>
           <Card.Text>
             Desarrollo de práctica para construir una aplicación
