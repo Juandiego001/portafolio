@@ -26,6 +26,18 @@ const SeguridadInformatica = () => {
       <h1 className="h1 text-dark">
         Seguridad informática
       </h1>
+
+      <Card className="mt-3">
+        <Card.Body>
+          <Card.Title>Metasploit Kali + Windows XP</Card.Title>
+          <Card.Text>
+            Desarrollo de laboratorio para explotar una vulnerabilidad de 
+            un sistema operativo Windows XP mediante otro sistema operativo
+            Kali Linux.
+          </Card.Text>
+          <Button variant="dark" href="/cursos/seguridad-informatica/entradas/metasploit-kali-windows-xp">Ver entrada</Button>
+        </Card.Body>
+      </Card>
     </Container>
   </div>
   )

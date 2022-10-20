@@ -24,6 +24,7 @@ import ProblemaMochila from './pages/blog-post/ProblemaMochila/ProblemaMochila';
 import AplicacionFlaskCentos from './pages/blog-post/AplicacionFlaskCentos/AplicacionFlaskCentos';
 import AplicacionFlaskSwagger from './pages/blog-post/AplicacionFlaskSwagger/AplicacionFlaskSwagger';
 import AplicacionFlaskMySql from './pages/blog-post/AplicacionFlaskMySQL/AplicacionFlaskMySQL';
+import MetasploitKaliWindowsXp from './pages/blog-post/MetasploitKaliWindowsXP/MetasploitKaliWindowsXP';
 
 // Router
 const router = createBrowserRouter([
@@ -36,8 +37,16 @@ const router = createBrowserRouter([
     element: <DesarrolloMoviles />,
   },
   {
+    path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql",
+    element: <AplicacionAndroidNodejsMysql />
+  },
+  {
     path: "/cursos/seguridad-informatica",
     element: <SeguridadInformatica />,
+  },
+  {
+    path: "/cursos/seguridad-informatica/entradas/metasploit-kali-windows-xp",
+    element: <MetasploitKaliWindowsXp />,
   },
   {
     path: "/cursos/servicios-telematicos",
@@ -66,10 +75,6 @@ const router = createBrowserRouter([
   {
     path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila",
     element: <ProblemaMochila />,
-  },
-  {
-    path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql",
-    element: <AplicacionAndroidNodejsMysql />
   }
 ]);
 
