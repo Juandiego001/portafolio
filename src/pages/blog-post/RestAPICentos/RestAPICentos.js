@@ -31,7 +31,7 @@ const RestApiCentos = () => {
 
         <p>
           En la presente entrada se explicará como desarrollar una Rest API utilizando el framework
-          de python llamado flask y nodejs. Esta práctica la estaremos desarrollando desde una máquina local
+          de python llamado flask y nodejs con express. Esta práctica la estaremos desarrollando desde una máquina local
           y finalmente la desplegaremos en una máquina virtual Centos 8.
         </p>
 
@@ -87,7 +87,7 @@ const RestApiCentos = () => {
 
           <p>
             Ejecute el siguiente comando desde su <code>cmd</code> ubicandose
-            en su archivo <code>Vagrantfile</code> anterior:
+            en la misma carpeta donde editó su <code>Vagrantfile</code> anterior:
           </p>
 
           <pre>
@@ -168,7 +168,7 @@ const RestApiCentos = () => {
 
           <p>
             Finalmente, para probar que efectivamente está corriendo el aplicativo busque
-            desde el navegador chrome desde su máquina anfitrión:
+            desde el navegador chrome de su máquina anfitrión:
           </p>
 
           <pre>
@@ -194,7 +194,7 @@ const RestApiCentos = () => {
           </pre>
 
           <p>
-            Una vez en la máquina <code>client</code> ejecute:
+            Una vez haya iniciado la máquina <code>client</code> ejecute:
           </p>
 
           <pre>
@@ -243,7 +243,83 @@ const RestApiCentos = () => {
 
         <div className="mt-5">
           <h2>Desarrollo expres - Nodejs</h2>
+          <p>
+            Continuando con Nodejs tendremos que realizar primero la instalación de <code>nodejs</code> desde 
+            la máquina de server:
+          </p>
 
+          <pre>
+            <code className="language-cmd">
+              {
+                'curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -\n' +
+                'sudo yum install -y nodejs'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Para verificar que <code>nodejs</code> fue correctamente instalado digite:
+          </p>
+
+          <pre>
+            <code className="language-cmd">
+              {
+                'node -version\n' + 
+                'npm -version'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Luego, proceda a copiar el siguiente repositorio ejecutando:
+          </p>
+
+          <pre>
+            <code className="language-cmd">
+              {
+                'git clone https://github.com/Juandiego001/rest-api-nodejs-servicios-telematicos'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Ejecute posteriormente:
+          </p>
+
+          <pre>
+            <code className="language-cmd">
+              {
+                'cd rest-api-nodejs-servicios-telematicos\n' +
+                'node index.js'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Realice la misma prueba que mencionada en la sección anterior
+            para comprobar que todo está funcionando correctamente.
+          </p>
+        </div>
+
+        <div className="bg-info p-5 my-5">
+          <h2>Para hacer diferentes peticiones</h2>
+          <p>
+            Desde la máquina de Windows es posible comprobar si el proyecto está corriendo
+            correctamente. Para ello deberá instalar <a href="https://www.postman.com/downloads/" target="_blank">postman</a>.
+            <br /><br />
+            Este es un aplicativo que permite ejecutar todas las peticiones posibles sin la necesidad de registrarse
+            o iniciar sesión. Para ello, una vez ha finalizado la descarga y ha abierto el programa deberá seleccionar
+            la parte de <b>skip</b> para utilizar postman <b>sin cuenta alguna</b>.
+          </p>
+
+          <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/instalacion-postman.png"} />
+
+          <p>
+            Luego para empezar a hacer las peticiones se da click en el <code>+</code> del aplicativo y
+            se define la petición, ruta y contenido en el body (se debe establecer que será un JSON).
+          </p>
+
+          <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/utilizacion-postman.png"} />
         </div>
 
     </Container>
