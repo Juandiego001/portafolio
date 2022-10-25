@@ -251,7 +251,7 @@ const RestApiCentos = () => {
           <pre>
             <code className="language-cmd">
               {
-                'curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -\n' +
+                'curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -\n' +
                 'sudo yum install -y nodejs'
               }
             </code>
@@ -314,7 +314,7 @@ const RestApiCentos = () => {
 
           <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/instalacion-postman.png"} />
 
-          <p>
+          <p className="mt-3">
             Luego para empezar a hacer las peticiones se da click en el <code>+</code> del aplicativo y
             se define la petición, ruta y contenido en el body (se debe establecer que será un JSON).
           </p>
