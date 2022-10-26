@@ -30,6 +30,17 @@ const ServiciosTelematicos = () => {
 
       <Card className="mt-3">
         <Card.Body>
+          <Card.Title>Json Placeholder + Centos 8</Card.Title>
+          <Card.Text>
+            Desarrollo de práctica para crear una Rest API
+            en una máquina virtual Centos 8 utilizando JSON Placeholder.
+          </Card.Text>
+          <Button variant="dark" href="/cursos/servicios-telematicos/entradas/json-placeholder-centos">Ver entrada</Button>
+        </Card.Body>
+      </Card>
+
+      <Card className="mt-3">
+        <Card.Body>
           <Card.Title>Rest API + Centos 8</Card.Title>
           <Card.Text>
             Desarrollo de práctica para crear una Rest API

@@ -26,6 +26,7 @@ import AplicacionFlaskSwagger from './pages/blog-post/AplicacionFlaskSwagger/Apl
 import AplicacionFlaskMySql from './pages/blog-post/AplicacionFlaskMySQL/AplicacionFlaskMySQL';
 import MetasploitKaliWindowsXp from './pages/blog-post/MetasploitKaliWindowsXP/MetasploitKaliWindowsXP';
 import RestApiCentos from './pages/blog-post/RestAPICentos/RestAPICentos';
+import JsonPlaceHolderCentos from './pages/blog-post/JsonPlaceHolderCentos/JsonPlaceHolderCentos';
 
 // Router
 const router = createBrowserRouter([
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: "/cursos/servicios-telematicos/entradas/rest-api-centos",
     element: <RestApiCentos />,
+  },
+  {
+    path: "/cursos/servicios-telematicos/entradas/json-placeholder-centos",
+    element: <JsonPlaceHolderCentos />,
   },
   {
     path: "/cursos/bases-de-datos-2",
