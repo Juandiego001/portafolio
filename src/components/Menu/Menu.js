@@ -31,6 +31,9 @@ const Menu = () => (
     <Nav.Item>
       <Nav.Link className="text-light" href="/cursos/bases-de-datos-2">Bases de datos 2</Nav.Link>
     </Nav.Item>
+    <Nav.Item>
+      <Nav.Link className="text-light" href="/cursos/proyecto-informatico-2">Proyecto informático 2</Nav.Link>
+    </Nav.Item>
   </Nav>
 );
 

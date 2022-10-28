@@ -29,10 +29,21 @@ const MaratonProgramacion = () => {
 
       <Card className="mt-3">
         <Card.Body>
+          <Card.Title>El problema de la gasolinera</Card.Title>
+          <Card.Text>
+            Análisis y solución del problema de la gasolinera.
+            Una variante del problema de la mochila.
+          </Card.Text>
+          <Button variant="dark" href="/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera">Ver entrada</Button>
+        </Card.Body>
+      </Card>
+
+      <Card className="mt-3">
+        <Card.Body>
           <Card.Title>El problema de la mochila</Card.Title>
           <Card.Text>
             Análisis y solución de uno de los problemas más
-            famosos de la programación dinámica
+            famosos de la programación dinámica.
           </Card.Text>
           <Button variant="dark" href="/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila">Ver entrada</Button>
         </Card.Body>

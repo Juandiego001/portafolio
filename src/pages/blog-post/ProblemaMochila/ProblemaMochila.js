@@ -34,9 +34,9 @@ const ProblemaMochila = () => {
         </h2>
 
         <p>
-            Un excursionista debe decidir, entre n objetos, cuales de ellos va a llevarse en su
-            mochila. Cada objeto supone para el excursionista un beneficio c<sub>j</sub> y ocupa una capacidad de a<sub>j</sub>. 
-            La mochila tiene una capacidad máxima b.
+            Un excursionista debe decidir, entre <code>n</code> objetos, cuales de ellos va a llevarse en su
+            mochila. Cada objeto supone para el excursionista un beneficio <code>c<sub>j</sub></code> y ocupa una capacidad de <code>a<sub>j</sub></code>. 
+            La mochila tiene una capacidad máxima <code>b.</code>
         </p>
 
         <h2 className="h2 text-dark mt-5">

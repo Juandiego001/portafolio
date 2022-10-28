@@ -19,7 +19,7 @@ const ServiciosTelematicos = () => {
   }, []);
 
   return (
-  <div className={styles.ServiciosTelematicos}>
+  <div>
     <Header />
     <Menu />
 

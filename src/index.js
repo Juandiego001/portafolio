@@ -17,6 +17,7 @@ import SeguridadInformatica from './pages/SeguridadInformatica/SeguridadInformat
 import BasesDatos2 from './pages/BasesDatos2/BasesDatos2';
 import MaratonProgramacion from './pages/MaratonProgramacion/MaratonProgramacion';
 import ServiciosTelematicos from './pages/ServiciosTelematicos/ServiciosTelematicos';
+import ProyectoInformatico2 from './pages/ProyectoInformatico2/ProyectoInformatico2';
 
 // Entradas
 import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
@@ -27,6 +28,8 @@ import AplicacionFlaskMySql from './pages/blog-post/AplicacionFlaskMySQL/Aplicac
 import MetasploitKaliWindowsXp from './pages/blog-post/MetasploitKaliWindowsXP/MetasploitKaliWindowsXP';
 import RestApiCentos from './pages/blog-post/RestAPICentos/RestAPICentos';
 import JsonPlaceHolderCentos from './pages/blog-post/JsonPlaceHolderCentos/JsonPlaceHolderCentos';
+import ReactTypeScriptMySql from './pages/blog-post/ReactTypeScriptMySQL/ReactTypeScriptMySQL';
+import ProblemaGasolinera from './pages/blog-post/ProblemaGasolinera/ProblemaGasolinera';
 
 // Router
 const router = createBrowserRouter([
@@ -85,7 +88,19 @@ const router = createBrowserRouter([
   {
     path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila",
     element: <ProblemaMochila />,
-  }
+  },
+  {
+    path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera",
+    element: <ProblemaGasolinera />,
+  },
+  {
+    path: "/cursos/proyecto-informatico-2",
+    element: <ProyectoInformatico2 />,
+  },
+  {
+    path: "/cursos/proyecto-informatico-2/entradas/react-typescript-mysql-imgs",
+    element: <ReactTypeScriptMySql />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
