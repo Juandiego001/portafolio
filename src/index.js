@@ -30,6 +30,7 @@ import RestApiCentos from './pages/blog-post/RestAPICentos/RestAPICentos';
 import JsonPlaceHolderCentos from './pages/blog-post/JsonPlaceHolderCentos/JsonPlaceHolderCentos';
 import ReactTypeScriptMySql from './pages/blog-post/ReactTypeScriptMySQL/ReactTypeScriptMySQL';
 import ProblemaGasolinera from './pages/blog-post/ProblemaGasolinera/ProblemaGasolinera';
+import IoTUbidots from './pages/blog-post/IoTUbidots/IoTUbidots';
 
 // Router
 const router = createBrowserRouter([
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: "/cursos/servicios-telematicos/entradas/json-placeholder-centos",
     element: <JsonPlaceHolderCentos />,
+  },
+  {
+    path: "/cursos/servicios-telematicos/entradas/iot-ubidots",
+    element: <IoTUbidots />,
   },
   {
     path: "/cursos/bases-de-datos-2",
