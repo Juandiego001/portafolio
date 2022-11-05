@@ -31,6 +31,8 @@ import JsonPlaceHolderCentos from './pages/blog-post/JsonPlaceHolderCentos/JsonP
 import ReactTypeScriptMySql from './pages/blog-post/ReactTypeScriptMySQL/ReactTypeScriptMySQL';
 import ProblemaGasolinera from './pages/blog-post/ProblemaGasolinera/ProblemaGasolinera';
 import IoTUbidots from './pages/blog-post/IoTUbidots/IoTUbidots';
+import AplicacionAndroidFirebase from './pages/blog-post/AplicacionAndroidFirebase/AplicacionAndroidFirebase';
+import AplicacionAndroidGps from './pages/blog-post/AplicacionAndroidGPS/AplicacionAndroidGPS';
 
 // Router
 const router = createBrowserRouter([
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
   {
     path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql",
     element: <AplicacionAndroidNodejsMysql />
+  },
+  {
+    path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-firebase",
+    element: <AplicacionAndroidFirebase />
+  },
+  {
+    path: "/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-gps",
+    element: <AplicacionAndroidGps />
   },
   {
     path: "/cursos/seguridad-informatica",

@@ -30,6 +30,29 @@ const DesarrolloMoviles = () => {
 
       <Card className="mt-3">
         <Card.Body>
+          <Card.Title>Aplicación Android + GPS</Card.Title>
+          <Card.Text>
+            Desarrollo de práctica para generar una aplicación Android que
+            permita hacer uso de la API de localización mediante GPS.
+          </Card.Text>
+          <Button variant="dark" href="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-gps">Ver entrada</Button>
+        </Card.Body>
+      </Card>
+
+      <Card className="mt-3">
+        <Card.Body>
+          <Card.Title>Aplicación Android + Firebase</Card.Title>
+          <Card.Text>
+            Desarrollo de práctica para conectar una aplicación Android
+            con el servicio de Google denominado Firebase para el 
+            control de usuarios.
+          </Card.Text>
+          <Button variant="dark" href="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-firebase">Ver entrada</Button>
+        </Card.Body>
+      </Card>
+
+      <Card className="mt-3">
+        <Card.Body>
           <Card.Title>Aplicación Android + Node.js + MySQL</Card.Title>
           <Card.Text>
             Desarrollo de práctica para conectar una aplicación Android
