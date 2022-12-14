@@ -6,30 +6,26 @@ import hljs from "highlight.js";
 
 // Custom components
 import Header from '../../../components/Header/Header';
-import Menu from '../../../components/Menu/Menu';
-
-// Bootstrap components
-import Container from 'react-bootstrap/Container';
+import Footer from '../../../components/Footer/Footer';
 
 const IoTUbidots = () => {
-    // Setting title
-    useEffect(() => {
-      document.title = "IoT Ubidots | Servicios telemáticos";
-      hljs.highlightAll();
-    }, []);
+  // Setting title
+  useEffect(() => {
+    document.title = "IoT Ubidots | Servicios telemáticos";
+    hljs.highlightAll();
+  }, []);
 
   return (
     <div className="mb-4">
       <Header />
-      <Menu />
 
-      <Container className="mt-4 px-5" fluid>
+      <div className="container-fluid my-5 px-5">
         <h1 className="h1 text-dark">
           Iot Ubidots
         </h1>
 
         <p>
-          La presente es una práctica para aproximarse al tema de internet de las cosas. Utilizaremos python para hacer las peticiones 
+          La presente es una práctica para aproximarse al tema de internet de las cosas. Utilizaremos python para hacer las peticiones
           y la plataforma de Ubidots para las simluaciones.
         </p>
 
@@ -125,7 +121,7 @@ const IoTUbidots = () => {
           </pre>
 
           <p>
-            Y así ya estaremos conectados a nuestra máquina Centos.<br /> 
+            Y así ya estaremos conectados a nuestra máquina Centos.<br />
             <i>Se recomienda realizar <code>sudo -i</code> para iniciar como <code>root</code>.</i>
           </p>
         </div>
@@ -220,7 +216,7 @@ const IoTUbidots = () => {
             El token se puede encontrar en la página de Ubidots, una vez hemos iniciado sesión, haciendo click
             en nuestro ícono de usuario y posteriormente haciendo click en <code>My Profile</code> y luego
             dirigiendose a <code>API Credentials.</code>
-            <br/><br />
+            <br /><br />
             También, haciendo click en el ícono de usuario y posteriormente haciendo click en <code>API Credentials</code>{' '}
             directamente.
           </p>
@@ -230,7 +226,7 @@ const IoTUbidots = () => {
           <h2>
             Verificación de funcionamiento
           </h2>
-          
+
           <p>
             Para verificar que todo está funcionando correctamente deberemos ejecutar:
           </p>
@@ -299,18 +295,18 @@ const IoTUbidots = () => {
           </h2>
 
           <p>
-            Para hacer las pruebas con <code>curl</code> ejecute desde una máquina centos lo siguiente (reemplazando los valores de <code>your-token</code> y 
+            Para hacer las pruebas con <code>curl</code> ejecute desde una máquina centos lo siguiente (reemplazando los valores de <code>your-token</code> y
             {' '}<code>your-device</code> por los que les corresponde):
           </p>
 
           <pre>
             <code className="language-cmd">
               {
-                "curl -d " + "'{" + '"temperature":"32","humidity":"40","speed":"30", "height":"55"}' + "' -H "+ '"Content-Type: application/json" -X POST http://things.ubidots.com/api/v1.6/devices/your-device/?token=your-token'
+                "curl -d " + "'{" + '"temperature":"32","humidity":"40","speed":"30", "height":"55"}' + "' -H " + '"Content-Type: application/json" -X POST http://things.ubidots.com/api/v1.6/devices/your-device/?token=your-token'
               }
             </code>
           </pre>
-          
+
           <p>
             Aquí lo que se está haciendo es enviar nuevos valores a <code>machine.</code>
             <br /><br />
@@ -321,15 +317,15 @@ const IoTUbidots = () => {
               <li>Seleccionar el método <code>POST</code>.</li>
               <li>Dirigirse a: <code>Body {'->'} Raw {'->'} Json.</code></li>
               <li>
-                Agregar: 
+                Agregar:
 
                 <pre>
                   <code>
                     {
                       '{\n' +
-                      ' "temperature": "32",\n' + 
-                      ' "humidity": "40",\n' + 
-                      ' "speed": "30",\n' + 
+                      ' "temperature": "32",\n' +
+                      ' "humidity": "40",\n' +
+                      ' "speed": "30",\n' +
                       ' "height": "55"\n' +
                       '}'
                     }
@@ -338,7 +334,7 @@ const IoTUbidots = () => {
               </li>
             </ol>
           </p>
-          
+
           <p>
             Si para todos los datos enviados se retorna un valor de <code>201</code> es porque todo habrá funcionado correctamente.
           </p>
@@ -354,7 +350,7 @@ const IoTUbidots = () => {
             y luego seleccionar <code>data.</code>{' '} Ahí, seleccionar <code>events</code> y  seleccionar el dispositivo, variable y método
             de alerta que deseemos obtener.
           </p>
-          
+
           <div className="text-center my-5">
             <img className="w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/iot-ubidots/events.PNG"} />
           </div>
@@ -371,9 +367,12 @@ const IoTUbidots = () => {
             Espero les haya sido de gran ayuda :)
           </p>
         </div>
-      </Container>
+      </div>
+
+      <Footer />
     </div>
-)};
+  )
+};
 
 IoTUbidots.propTypes = {};
 

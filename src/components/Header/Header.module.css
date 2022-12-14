@@ -1,3 +1,10 @@
-.Header {
-    
+.ContainerHeader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FontGoogle {
+    font-family: 'Yellowtail', cursive;
 }

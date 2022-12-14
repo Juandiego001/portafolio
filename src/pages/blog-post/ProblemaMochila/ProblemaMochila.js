@@ -6,10 +6,7 @@ import hljs from "highlight.js";
 
 // Custom components
 import Header from '../../../components/Header/Header';
-import Menu from '../../../components/Menu/Menu';
-
-// Bootstrap components
-import Container from 'react-bootstrap/Container';
+import Footer from '../../../components/Footer/Footer';
 
 const ProblemaMochila = () => {
 
@@ -22,9 +19,8 @@ const ProblemaMochila = () => {
   return (
     <div className="mb-4">
       <Header />
-      <Menu />
 
-      <Container className="mt-4 px-5" fluid>
+      <div className="container-fluid my-5 px-5">
         <h1 className="h1 text-dark">
           El problema de la mochila
         </h1>
@@ -34,9 +30,9 @@ const ProblemaMochila = () => {
         </h2>
 
         <p>
-            Un excursionista debe decidir, entre <code>n</code> objetos, cuales de ellos va a llevarse en su
-            mochila. Cada objeto supone para el excursionista un beneficio <code>c<sub>j</sub></code> y ocupa una capacidad de <code>a<sub>j</sub></code>. 
-            La mochila tiene una capacidad máxima <code>b.</code>
+          Un excursionista debe decidir, entre <code>n</code> objetos, cuales de ellos va a llevarse en su
+          mochila. Cada objeto supone para el excursionista un beneficio <code>c<sub>j</sub></code> y ocupa una capacidad de <code>a<sub>j</sub></code>.
+          La mochila tiene una capacidad máxima <code>b.</code>
         </p>
 
         <h2 className="h2 text-dark mt-5">
@@ -46,7 +42,9 @@ const ProblemaMochila = () => {
         <p>
           El código de la solución del ejercicio se encuentra <a href="https://replit.com/@JUANDIEGODIEG45/Geometria#main.cpp" target="_blank">aqui.</a>
         </p>
-      </Container>
+      </div>
+
+      <Footer />
     </div>
   )
 };

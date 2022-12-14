@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -18,6 +18,9 @@ import BasesDatos2 from './pages/BasesDatos2/BasesDatos2';
 import MaratonProgramacion from './pages/MaratonProgramacion/MaratonProgramacion';
 import ServiciosTelematicos from './pages/ServiciosTelematicos/ServiciosTelematicos';
 import ProyectoInformatico2 from './pages/ProyectoInformatico2/ProyectoInformatico2';
+import FormulacionProyectos from './pages/FormulacionProyectos/FormulacionProyectos';
+import GestionInnovacion from './pages/GestionInnovacion/GestionInnovacion';
+import IdeasOportunidades from './pages/IdeasOportunidades/IdeasOportunidades';
 
 // Entradas
 import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
@@ -116,13 +119,24 @@ const router = createBrowserRouter([
     path: "/cursos/proyecto-informatico-2/entradas/react-typescript-mysql-imgs",
     element: <ReactTypeScriptMySql />,
   },
+  {
+    path: "/cursos/ideas-y-oportunidades-de-negocio",
+    element: <IdeasOportunidades />,
+  },
+  {
+    path: "/cursos/formulacion-y-evaluacion-de-proyectos",
+    element: <FormulacionProyectos />,
+  },
+  {
+    path: "/cursos/gestion-de-la-innovacion",
+    element: <GestionInnovacion />,
+  }
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );
 
 // If you want to start measuring performance in your app, pass a function

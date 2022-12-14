@@ -6,10 +6,7 @@ import hljs from "highlight.js";
 
 // Custom components
 import Header from '../../../components/Header/Header';
-import Menu from '../../../components/Menu/Menu';
-
-// Bootstrap components
-import Container from 'react-bootstrap/Container';
+import Footer from '../../../components/Footer/Footer';
 
 const AplicacionAndroidGps = () => {
 
@@ -22,9 +19,8 @@ const AplicacionAndroidGps = () => {
   return (
     <div className="mb-4">
       <Header />
-      <Menu />
 
-      <Container className="mt-4 px-5" fluid>
+      <div className="container-fluid my-5 px-5">
         <h1 className="h1 text-dark">
           Aplicación Android + GPS
         </h1>
@@ -36,9 +32,12 @@ const AplicacionAndroidGps = () => {
             de los usuarios.
           </p>
         </div>
-      </Container>
+      </div>
+
+      <Footer />
     </div>
-  )};
+  )
+};
 
 AplicacionAndroidGps.propTypes = {};
 

@@ -1,55 +1,52 @@
 import { React, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MaratonProgramacion.module.css';
+import { Link } from 'react-router-dom';
 
 // Custom components
 import Header from '../../components/Header/Header';
-import Menu from '../../components/Menu/Menu';
-
-// Bootstrap components
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Footer from '../../components/Footer/Footer';
 
 const MaratonProgramacion = () => {
 
   useEffect(() => {
-    document.title = "Maraton de programación";
+    document.title = "Maratón de programación | Juan Diego Cobo Cabal";
   }, []);
 
   return (
     <div>
-    <Header />
-    <Menu />
+      <Header />
 
-    <Container className="mt-4 px-5" fluid>
-      <h1 className="h1 text-dark">
-        Maratón de programación
-      </h1>
+      <div className="container-fluid my-5 px-5">
+        <h1 className="h1 text-dark">
+          Maratón de programación
+        </h1>
 
-      <Card className="mt-3">
-        <Card.Body>
-          <Card.Title>El problema de la gasolinera</Card.Title>
-          <Card.Text>
-            Análisis y solución del problema de la gasolinera.
-            Una variante del problema de la mochila.
-          </Card.Text>
-          <Button variant="dark" href="/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera">Ver entrada</Button>
-        </Card.Body>
-      </Card>
+        <div className="card mt-3">
+          <div className="card-body">
+            <h5 className="card-title">El problema de la gasolinera</h5>
+            <p className="card-text">
+              Análisis y solución del problema de la gasolinera.
+              Una variante del problema de la mochila.
+            </p>
+            <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera">Ver entrada</Link>
+          </div>
+        </div>
 
-      <Card className="mt-3">
-        <Card.Body>
-          <Card.Title>El problema de la mochila</Card.Title>
-          <Card.Text>
-            Análisis y solución de uno de los problemas más
-            famosos de la programación dinámica.
-          </Card.Text>
-          <Button variant="dark" href="/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila">Ver entrada</Button>
-        </Card.Body>
-      </Card>
-    </Container>
-  </div>
+        <div className="card mt-3">
+          <div className="card-body">
+            <h5 className="card-title">El problema de la mochila</h5>
+            <p className="card-text">
+              Análisis y solución de uno de los problemas más
+              famosos de la programación dinámica.
+            </p>
+            <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila">Ver entrada</Link>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
   )
 };
 

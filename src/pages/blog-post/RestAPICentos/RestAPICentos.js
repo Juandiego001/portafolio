@@ -6,10 +6,7 @@ import hljs from "highlight.js";
 
 // Custom components
 import Header from '../../../components/Header/Header';
-import Menu from '../../../components/Menu/Menu';
-
-// Bootstrap components
-import Container from 'react-bootstrap/Container';
+import Footer from '../../../components/Footer/Footer';
 
 const RestApiCentos = () => {
 
@@ -21,10 +18,9 @@ const RestApiCentos = () => {
 
   return (
     <div className="mb-4">
-    <Header />
-    <Menu />
+      <Header />
 
-    <Container className="mt-4 px-5" fluid>
+      <div className="container-fluid my-5 px-5">
         <h1 className="h1 text-dark">
           Rest API + Centos 8
         </h1>
@@ -41,8 +37,8 @@ const RestApiCentos = () => {
           </h2>
 
           <p>
-            A continuación se listarán una serie de comandos y archivos que se deben ejecutar y crear 
-            con el objetivo de probar de manera rápida el aplicativo y hacer las modificaciones deseadas. 
+            A continuación se listarán una serie de comandos y archivos que se deben ejecutar y crear
+            con el objetivo de probar de manera rápida el aplicativo y hacer las modificaciones deseadas.
             <br /><br />
             Para comenzar, desde su <code>cmd:</code>
           </p>
@@ -180,7 +176,7 @@ const RestApiCentos = () => {
           </pre>
 
           <p>
-            Para el siguiente punto (probando el comando <code>curl</code> desde otra máquina), devuelvase 
+            Para el siguiente punto (probando el comando <code>curl</code> desde otra máquina), devuelvase
             a su máquina y ejecute:
           </p>
 
@@ -204,7 +200,7 @@ const RestApiCentos = () => {
               }
             </code>
           </pre>
-          
+
           <div className="bg-warning p-3">
             <b>Atención.</b>
             <br /><br />
@@ -244,7 +240,7 @@ const RestApiCentos = () => {
         <div className="mt-5">
           <h2>Desarrollo expres - Nodejs</h2>
           <p>
-            Continuando con Nodejs tendremos que realizar primero la instalación de <code>nodejs</code> desde 
+            Continuando con Nodejs tendremos que realizar primero la instalación de <code>nodejs</code> desde
             la máquina de server:
           </p>
 
@@ -264,7 +260,7 @@ const RestApiCentos = () => {
           <pre>
             <code className="language-cmd">
               {
-                'node -version\n' + 
+                'node -version\n' +
                 'npm -version'
               }
             </code>
@@ -322,8 +318,10 @@ const RestApiCentos = () => {
           <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/utilizacion-postman.png"} />
         </div>
 
-    </Container>
-  </div>
+      </div>
+
+      <Footer />
+    </div>
   )
 };
 
