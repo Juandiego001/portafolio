@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './AplicacionFlaskCentos.module.css';
 import "highlight.js/styles/github.css";
 import hljs from "highlight.js";
+import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../../components/Header/Header';
@@ -10,44 +11,72 @@ import Footer from '../../../components/Footer/Footer';
 
 const AplicacionFlaskCentos = () => {
 
-  // Setting title
   useEffect(() => {
-    document.title = "Aplicación Flask + Centos 7 | Servicios telemáticos";
+    window.scrollTo(0, 0);
     hljs.highlightAll();
   }, []);
 
   return (
-    <div className="mb-4">
-      <Header />
+    <>
+      <Helmet>
+        <title>Aplicación Flask + CentOS 7 | Servicios telemáticos</title>
+        <meta name="author" content="Juan Diego Cobo Cabal"></meta>
+        <meta name="description" content="
+          Desarrollo de aplicación web en python utilizando Flask 
+          y desplegando el servicio en una máquina CentOS 7."></meta>
+        <meta name="keywords" content="
+          aplicación flask centos,
+          aplicación flask centos 7,
+          Aplicación Flask CentOS 7,
+          Aplicación Flask con CentOS 7 Servicios,
+          Aplicacion Flask con CentOS 7 Servicios telemáticos,
+          Aplicacion Flask con CentOS 7 Servicios telematicos,
+          Aplicación Flask con CentOS 7 Servicios telemáticos,
+          Aplicación Flask con CentOS 7 Servicios telematicos,
+          Aplicación Flask + CentOS 7 Servicios,
+          Aplicacion Flask + CentOS 7 Servicios telemáticos,
+          Aplicacion Flask + CentOS 7 Servicios telematicos,
+          Aplicación Flask + CentOS 7 Servicios telemáticos,
+          Aplicación Flask + CentOS 7 Servicios telematicos,
+          JDCC, 
+          Juan, 
+          Juan Diego, 
+          Juan Diego Cobo, 
+          Juan Diego Cobo Cabal"></meta>
+      </Helmet>
 
-      <div className="container-fluid my-5 px-5">
-        <h1 className="h1 text-dark">
-          Aplicación Flask + Centos 7
-        </h1>
+      <div className="mb-4">
+        <Header />
 
-        <p>
-          En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de Centos 7.
-          La diferencia a tener en cuenta con otras versiones de Centos tales como la 8 es la instalación del módulo  <code>mod_wsgi.</code>
-        </p>
+        <div className="container-fluid my-5 px-5">
+          <h1 className="h1 text-dark">
+            Aplicación Flask + CentOS 7
+          </h1>
 
-        <h2 className="h2 text-dark mt-5">
-          Introducción
-        </h2>
+          <p>
+            En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de CentOS 7.
+            La diferencia a tener en cuenta con otras versiones de CentOS tales como la 8 es la instalación del módulo  <code>mod_wsgi.</code>
+          </p>
 
-        <p>
-          Para iniciar tendremos en cuenta el siguiente Vagrantfile:
-        </p>
+          <h2 className="h2 text-dark mt-5">
+            Introducción
+          </h2>
 
-        <pre>
-          <code>
+          <p>
+            Para iniciar tendremos en cuenta el siguiente Vagrantfile:
+          </p>
 
-          </code>
-        </pre>
+          <pre>
+            <code>
 
+            </code>
+          </pre>
+
+        </div>
+
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
+    </>
   )
 };
 
