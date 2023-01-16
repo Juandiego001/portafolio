@@ -73,31 +73,13 @@ const Menu = (props) => {
 
               <ul className={"nav flex-column text-start " + (drpDwnObl ? "d-block" : "d-none")}>
                 <li>
-                  <Link to="/cursos/seguridad-informatica" className="nav-link text-start btn btn-dark text-light p-3">
-                    Seguridad informática
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/cursos/servicios-telematicos" className="nav-link text-start btn btn-dark text-light p-3">
-                    Servicios telemáticos
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/cursos/bases-de-datos-2" className="nav-link text-start btn btn-dark text-light p-3">
+                  <Link to="/cursos/bases-de-datos-2" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Bases de datos 2
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/cursos/proyecto-informatico-2" className="nav-link text-start btn btn-dark text-light p-3">
-                    Proyecto informático 2
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/cursos/gestion-de-la-innovacion" className="nav-link text-start btn btn-dark text-light p-3">
+                  <Link to="/cursos/gestion-de-la-innovacion" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Gestión de la innovación
                   </Link>
                 </li>
@@ -114,7 +96,7 @@ const Menu = (props) => {
 
               <ul className={"nav flex-column text-start " + (drpDwnElc1 ? "d-block" : "d-none")}>
                 <li>
-                  <Link to="/cursos/maraton-de-programacion" className="nav-link text-start btn btn-dark text-light p-3">
+                  <Link to="/cursos/maraton-de-programacion" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Maratón de programación
                   </Link>
                 </li>
@@ -131,20 +113,68 @@ const Menu = (props) => {
 
               <ul className={"nav flex-column text-start " + (drpDwnElc2 ? "d-block" : "d-none")}>
                 <li>
-                  <Link to="/cursos/desarrollo-de-software-para-plataformas-moviles" className="nav-link text-start btn btn-dark text-light p-3">
+                  <Link to="/cursos/desarrollo-de-software-para-plataformas-moviles" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Desarrollo de software para plataformas móviles
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/cursos/ideas-y-oportunidades-de-negocio" className="nav-link text-start btn btn-dark text-light p-3">
+                  <Link to="/cursos/hacking-etico" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Hacking ético
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/ideas-y-oportunidades-de-negocio" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Ideas y oportunidades de negocio
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/cursos/formulacion-y-evaluacion-de-proyectos" className="nav-link text-start btn btn-dark text-light p-3">
+                  <Link to="/cursos/formulacion-y-evaluacion-de-proyectos" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Formulación y evaluación de proyectos
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/servicios-telematicos" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Servicios telemáticos
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/proyecto-informatico-1" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Proyecto informático 1
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/proyecto-informatico-2" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Proyecto informático 2
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/administracion-para-ingenieros" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Administración para ingenieros
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/informatica-forense" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Informática forense
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/auditoria-de-sistemas" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Auditoría de sistemas
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/seminario-de-ingeniera-informatica" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Seminario de ingeniería informática
                   </Link>
                 </li>
               </ul>

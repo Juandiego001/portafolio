@@ -57,7 +57,7 @@ const BasesDatos2 = () => {
                 la creación de inserciones, triggers y funciones en el manejador
                 de bases de datos Oracle.
               </p>
-              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql">Ver entrada</Link>
+              <Link className="btn btn-dark" to="/cursos/bases-de-datos-2/entradas/inserciones-triggers-funciones-oracle">Ver entrada</Link>
             </div>
           </div>
         </div>

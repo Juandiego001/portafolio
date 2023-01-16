@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="container-fluid row m-0 p-0 g-0">
       <div className="col display-flex d-flex justify-content-center align-items-center m-0 p-0">
-        <Link to="/" className="btn">
+        <Link to="/" className="btn" rel="index,follow">
           <h1 className={"display-1 text-light d-flex justify-content-center align-items-center p-0 m-0 pb-3 " + styles.FontGoogle}>
             J
           </h1>
@@ -19,12 +19,12 @@ const Footer = () => {
           <div className="col m-0 p-0 d-flex justify-content-center align-items-center">
             <ul className="nav flex-column">
               <li className="nav-item border-bottom border-light">
-                <Link className="nav-link text-light text-center" to="/cursos">
+                <Link className="nav-link text-light text-center" to="/cursos" rel="index,follow">
                   Cursos
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light text-center" to="/evaluaciones">
+                <Link className="nav-link text-light text-center" to="/evaluaciones" rel="index,follow">
                   Evaluaciones
                 </Link>
               </li>
@@ -33,17 +33,17 @@ const Footer = () => {
           <div className="col m-0 p-0 d-flex justify-content-center align-items-center">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <Link className="nav-link text-light text-center" to="/">
+                <Link className="nav-link text-light text-center" to="/" rel="index,follow">
                   Home
                 </Link>
               </li>
               <li className="nav-item border-bottom border-top border-light">
-                <Link className="nav-link text-light text-center" to="/acercade">
+                <Link className="nav-link text-light text-center" to="/acercade" rel="index,follow">
                   Acerca de
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light text-center" to="/contacto">
+                <Link className="nav-link text-light text-center" to="/contacto" rel="index,follow">
                   Contacto
                 </Link>
               </li>

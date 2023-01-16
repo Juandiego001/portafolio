@@ -10,6 +10,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Pages
 import Home from './pages/Home/Home';
+import Contacto from './pages/Contacto/Contacto';
+import Evaluaciones from './pages/Evaluaciones/Evaluaciones';
+import AcercaDe from './pages/AcercaDe/AcercaDe';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 // Cursos
 import DesarrolloMoviles from './pages/DesarrolloMoviles/DesarrolloMoviles';
@@ -21,6 +25,12 @@ import ProyectoInformatico2 from './pages/ProyectoInformatico2/ProyectoInformati
 import FormulacionProyectos from './pages/FormulacionProyectos/FormulacionProyectos';
 import GestionInnovacion from './pages/GestionInnovacion/GestionInnovacion';
 import IdeasOportunidades from './pages/IdeasOportunidades/IdeasOportunidades';
+import AdministracionIngenieros from './pages/AdministracionIngenieros/AdministracionIngenieros';
+import AuditoriaSistemas from './pages/AuditoriaSistemas/AuditoriaSistemas';
+import HackingEtico from './pages/HackingEtico/HackingEtico';
+import InformaticaForense from './pages/InformaticaForense/InformaticaForense';
+import ProyectoInformatico1 from './pages/ProyectoInformatico1/ProyectoInformatico1';
+import SeminarioInformatica from './pages/SeminarioInformatica/SeminarioInformatica';
 
 // Entradas
 import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
@@ -36,12 +46,14 @@ import ProblemaGasolinera from './pages/blog-post/ProblemaGasolinera/ProblemaGas
 import IoTUbidots from './pages/blog-post/IoTUbidots/IoTUbidots';
 import AplicacionAndroidFirebase from './pages/blog-post/AplicacionAndroidFirebase/AplicacionAndroidFirebase';
 import AplicacionAndroidGps from './pages/blog-post/AplicacionAndroidGPS/AplicacionAndroidGPS';
+import InsTrigFuncOracle from './pages/blog-post/InsTrigFuncOracle/InsTrigFuncOracle';
 
 // Router
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home />,
+    errorElement: <ErrorPage />
   },
   {
     path: "/cursos/desarrollo-de-software-para-plataformas-moviles",
@@ -99,6 +111,10 @@ const router = createBrowserRouter([
     path: "/cursos/bases-de-datos-2",
     element: <BasesDatos2 />,
   },
+    {
+      path: "/cursos/bases-de-datos-2/entradas/inserciones-triggers-funciones-oracle",
+      element: <InsTrigFuncOracle />,
+    },
   {
     path: "/cursos/maraton-de-programacion",
     element: <MaratonProgramacion />,
@@ -130,7 +146,43 @@ const router = createBrowserRouter([
   {
     path: "/cursos/gestion-de-la-innovacion",
     element: <GestionInnovacion />,
-  }
+  },
+  {
+    path: "/cursos/administracion-para-ingenieros",
+    element: <AdministracionIngenieros />
+  },
+  {
+    path: "/cursos/auditoria-de-sistemas",
+    element: <AuditoriaSistemas />
+  },
+  {
+    path: "/contacto",
+    element: <Contacto />
+  },
+  {
+    path: "/evaluaciones",
+    element: <Evaluaciones />
+  },
+  {
+    path: "/cursos/hacking-etico",
+    element: <HackingEtico />
+  },
+  {
+    path: "/cursos/informatica-forense",
+    element: <InformaticaForense />
+  },
+  {
+    path: "/cursos/proyecto-informatico-1",
+    element: <ProyectoInformatico1 />
+  },
+  {
+    path: "/cursos/seminario-de-ingeniera-informatica",
+    element: <SeminarioInformatica />
+  },
+  {
+    path: "/acercade",
+    element: <AcercaDe />
+  },
 
 ]);
 
