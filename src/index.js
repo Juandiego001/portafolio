@@ -47,6 +47,7 @@ import IoTUbidots from './pages/blog-post/IoTUbidots/IoTUbidots';
 import AplicacionAndroidFirebase from './pages/blog-post/AplicacionAndroidFirebase/AplicacionAndroidFirebase';
 import AplicacionAndroidGps from './pages/blog-post/AplicacionAndroidGPS/AplicacionAndroidGPS';
 import InsTrigFuncOracle from './pages/blog-post/InsTrigFuncOracle/InsTrigFuncOracle';
+import CombinaPermut from './pages/blog-post/CombinaPermut/CombinaPermut';
 
 // Router
 const router = createBrowserRouter([
@@ -119,14 +120,18 @@ const router = createBrowserRouter([
     path: "/cursos/maraton-de-programacion",
     element: <MaratonProgramacion />,
   },
-  {
-    path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila",
-    element: <ProblemaMochila />,
-  },
-  {
-    path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera",
-    element: <ProblemaGasolinera />,
-  },
+    {
+      path: "/cursos/maraton-de-programacion/entradas/combinaciones-y-permutaciones",
+      element: <CombinaPermut />,
+    },
+    {
+      path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila",
+      element: <ProblemaMochila />,
+    },
+    {
+      path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera",
+      element: <ProblemaGasolinera />,
+    },
   {
     path: "/cursos/proyecto-informatico-2",
     element: <ProyectoInformatico2 />,
