@@ -87,15 +87,43 @@ const CombinaPermut = () => {
             va removiendo y agregando según corresponda.<br /><br />
 
             Sin embargo, como se puede observar, este algoritmo solo aplica para valores consecutivos,
-            es decir, arreglos con elementos: {"{1,2,3,4... n}"}, por lo que para que se adapte 
+            es decir, arreglos con elementos: {"{1,2,3,4... n}"}, por lo que para que se adapte
             a cualquier elemento, el algoritmo debe ser modificado similar a la siguiente forma:
           </p>
 
-          <pre>
+          <pre className="language-c++">
             <code>
-              
+              {
+                "void algoritmoModificado(int k, vector<int> v) {\n" +
+                "\tif (k == v.size()){\n" +
+                "\t\tsubAllModificado.push_back(subModificado);\n" +
+                "\t} else {\n" +
+                "\t\tsubModificado.push_back(v[k]);\n" +
+                "\t\talgoritmoModificado(k+1, v);\n" +
+                "\t\tsubModificado.pop_back();\n" +
+                "\t\talgoritmoModificado(k+1, v);\n" +
+                "\t}\n" +
+                "}\n"
+              }
             </code>
           </pre>
+
+          <p>
+            La diferencia fundamental de este algoritmo en comparación con el anterior es que 
+            se toman los elementos directamente con el índice del vector: <code>v[k]</code>{' '}
+            por lo que se estará operando directamente sobre los elementos y no con elementos
+            consecutivos. A su vez, es importante resaltar que se podría declarar el vector
+            de elementos como global (queda a decisión del programador).<br /><br />
+            
+            El código contemplando ambos algoritmos puede encontrarse{' '}
+            <a href="https://replit.com/@JUANDIEGODIEG45/Subconjuntos-y-permutaciones-10#main.cpp" target="_blank">aqui.</a>
+          </p>
+
+          <h2 className="text-dark">Permutaciones</h2>
+
+          <p>
+            Ahora bien, similar al vector que teníamos en.
+          </p>
 
         </div>
 
