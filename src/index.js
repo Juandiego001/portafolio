@@ -47,7 +47,7 @@ import IoTUbidots from './pages/blog-post/IoTUbidots/IoTUbidots';
 import AplicacionAndroidFirebase from './pages/blog-post/AplicacionAndroidFirebase/AplicacionAndroidFirebase';
 import AplicacionAndroidGps from './pages/blog-post/AplicacionAndroidGPS/AplicacionAndroidGPS';
 import InsTrigFuncOracle from './pages/blog-post/InsTrigFuncOracle/InsTrigFuncOracle';
-import CombinaPermut from './pages/blog-post/CombinaPermut/CombinaPermut';
+import SubPermut from './pages/blog-post/SubPermut/SubPermut';
 
 // Router
 const router = createBrowserRouter([
@@ -121,8 +121,8 @@ const router = createBrowserRouter([
     element: <MaratonProgramacion />,
   },
     {
-      path: "/cursos/maraton-de-programacion/entradas/combinaciones-y-permutaciones",
-      element: <CombinaPermut />,
+      path: "/cursos/maraton-de-programacion/entradas/subconjuntos-y-permutaciones",
+      element: <SubPermut />,
     },
     {
       path: "/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila",

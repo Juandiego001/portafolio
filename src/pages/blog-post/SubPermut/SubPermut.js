@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styles from './CombinaPermut.module.css';
+import styles from './SubPermut.module.css';
 import hljs from "highlight.js";
 import { Helmet } from 'react-helmet';
 
@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 import Header from '../../../components/Header/Header';
 import Footer from '../../../components/Footer/Footer';
 
-const CombinaPermut = () => {
+const SubPermut = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -109,12 +109,12 @@ const CombinaPermut = () => {
           </pre>
 
           <p>
-            La diferencia fundamental de este algoritmo en comparación con el anterior es que 
+            La diferencia fundamental de este algoritmo en comparación con el anterior es que
             se toman los elementos directamente con el índice del vector: <code>v[k]</code>{' '}
             por lo que se estará operando directamente sobre los elementos y no con elementos
             consecutivos. A su vez, es importante resaltar que se podría declarar el vector
             de elementos como global (queda a decisión del programador).<br /><br />
-            
+
             El código contemplando ambos algoritmos puede encontrarse{' '}
             <a href="https://replit.com/@JUANDIEGODIEG45/Subconjuntos-y-permutaciones-10#main.cpp" target="_blank">aqui.</a>
           </p>
@@ -122,8 +122,49 @@ const CombinaPermut = () => {
           <h2 className="text-dark">Permutaciones</h2>
 
           <p>
-            Ahora bien, similar al vector que teníamos en.
+            Ahora bien, similar al vector que teníamos en la parte de subconjuntos ({"{1, 2, 3}"}), si quisieramos
+            hallar todas las permutaciones posibles de los elementos, tendríamos que retornar los siguientes valores:
           </p>
+
+          <pre className="language-html">
+            <code>
+              {
+                "{1, 2, 3}\n" +
+                "{1, 3, 2}\n" +
+                "{2, 1, 3}\n" +
+                "{2, 3, 1}\n" +
+                "{3, 1, 2}\n" +
+                "{3, 2, 1}\n"
+              }
+            </code>
+          </pre>
+
+          <p>
+            Para esto, lo que hacemos es construir una función muy similar a la de los subconjuntos
+            con la variación de que tendremos un arreglo que irá validando si un valor ha sido
+            añadido a la permutación en cuestión. El algoritmo que nos proporciona el libro es:
+          </p>
+
+          <pre className="language-c++">
+            <code>
+              {
+                "void search() {\n" +
+                "\tif (permutation.size() == n) {\n" +
+                "\t\t// se procesa la permutación\n" +
+                "\t} else {\n" +
+                "\t\tfor (int i = 1; i <= n; i++) {\n" +
+                "\t\t\tif (chosen[i]) continue;\n" +
+                "\t\t\tchosen[i] = true;\n" +
+                "\t\t\tpermutation.push_back(i);\n" +
+                "\t\t\tsearch();\n" +
+                "\t\t\tchosen[i] = false;\n" +
+                "\t\t\tpermutation.pop_back();\n" +
+                "\t\t}\n" +
+                "\t}\n" +
+                "}\n"
+              }
+            </code>
+          </pre>
 
         </div>
 
@@ -133,8 +174,8 @@ const CombinaPermut = () => {
   )
 };
 
-CombinaPermut.propTypes = {};
+SubPermut.propTypes = {};
 
-CombinaPermut.defaultProps = {};
+SubPermut.defaultProps = {};
 
-export default CombinaPermut;
+export default SubPermut;

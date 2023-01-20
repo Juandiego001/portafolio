@@ -61,12 +61,12 @@ const MaratonProgramacion = () => {
 
           <div className="card mt-3">
             <div className="card-body">
-              <h5 className="card-title">Combinaciones y permutaciones</h5>
+              <h5 className="card-title">Subconjuntos y permutaciones</h5>
               <p className="card-text">
-                Explicación de algoritmos utilizando recursividad de combinaciones
+                Explicación de algoritmos utilizando recursividad de subconjuntos
                 y permutaciones en el lenguaje C++.
               </p>
-              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/combinaciones-y-permutaciones">Ver entrada</Link>
+              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/subconjuntos-y-permutaciones">Ver entrada</Link>
             </div>
           </div>
 
