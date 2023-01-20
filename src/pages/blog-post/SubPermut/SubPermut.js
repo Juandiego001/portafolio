@@ -165,7 +165,23 @@ const SubPermut = () => {
               }
             </code>
           </pre>
+          
+          <p>
+            Sin embargo, surge un problema similar al de los subconjuntos, pues este algoritmo
+            esta diseñado exclusivamente para elementos consecutivos donde <code>n</code>{' '}
+            establece el límite de elementos a los que se les hallará la permutación. Por ello,
+            si modificamos medianamente el código podremos resultar con un algoritmo que nos permite
+            hallar todas las posibles permutaciones independientemente de si son números consecutivos
+            o no:
+          </p>
 
+          <pre className="language-c++">
+            <code>
+              {
+                
+              }
+            </code>
+          </pre>
         </div>
 
         <Footer />
