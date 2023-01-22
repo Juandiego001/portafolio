@@ -15,10 +15,12 @@ const Menu = (props) => {
   const [drpDwnObl, setDrpDwnObl] = useState(false);
   const [drpDwnElc1, setDrpDwnElc1] = useState(false);
   const [drpDwnElc2, setDrpDwnElc2] = useState(false);
+  const [drpDwnElc3, setDrpDwnElc3] = useState(false);
 
   const [caret1, setCaret1] = useState(true);
   const [caret2, setCaret2] = useState(true);
   const [caret3, setCaret3] = useState(true);
+  const [caret4, setCaret4] = useState(true);
 
   function handleShowMenu() {
     setShowMenu(!showMenu);
@@ -39,8 +41,13 @@ const Menu = (props) => {
     setCaret3(!caret3);
   }
 
+  function handleDrpDwnElc3() {
+    setDrpDwnElc3(!drpDwnElc3);
+    setCaret4(!caret4);
+  }
+
   return (
-    <div className={"bg-dark " +  styles.MenuPosition}>
+    <div className={"bg-dark " + styles.MenuPosition}>
       <button className={"btn border-0 bg-dark text-light m-0 p-0 h-100 " + styles.OffCanvasMenu} onClick={handleShowMenu}>
         <h1 className="bg-dark m-0 p-0 h-100 border-start border-light d-flex justify-content-center align-items-center px-4">
           <FontAwesomeIcon icon={faBars} />
@@ -73,8 +80,26 @@ const Menu = (props) => {
 
               <ul className={"nav flex-column text-start " + (drpDwnObl ? "d-block" : "d-none")}>
                 <li>
-                  <Link to="/cursos/bases-de-datos-2" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
-                    Bases de datos 2
+                  <Link to="/cursos/probabilidad-y-estadistica" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Probabilidad y estadística
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/actividad-complementaria" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Actividad complementaria
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/fisica-2" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Física 2
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/ambiente-y-desarrollo-sostenible" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Ambiente y desarrollo sostenible
                   </Link>
                 </li>
 
@@ -112,6 +137,66 @@ const Menu = (props) => {
               </button>
 
               <ul className={"nav flex-column text-start " + (drpDwnElc2 ? "d-block" : "d-none")}>
+                <li>
+                  <Link to="/cursos/bases-de-datos-1" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Bases de datos 1
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/bases-de-datos-2" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Bases de datos 2
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/estructuras-de-datos-y-algoritmos-1" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Estructuras de datos y algoritmos 1
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/estructuras-de-datos-y-algoritmos-2" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Estructuras de datos y algoritmos 2
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/arquitectura-de-computadores" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Arquitectura de computadores
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/ingenieria-de-software-1" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Ingeniería de software 1
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/ingenieria-de-software-2" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Ingeniería de software 2
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/programacion-en-ambiente-web" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Programación en ambiente web
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/redes-de-datos" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Redes de datos
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/sistemas-operativos" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Sistemas operativos
+                  </Link>
+                </li>
+
                 <li>
                   <Link to="/cursos/desarrollo-de-software-para-plataformas-moviles" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Desarrollo de software para plataformas móviles
@@ -181,6 +266,37 @@ const Menu = (props) => {
                 <li>
                   <Link to="/cursos/seminario-de-ingeniera-informatica" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Seminario de ingeniería informática
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/investigacion-de-operaciones" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Investigación de operaciones
+                  </Link>
+                </li>
+
+                <li>
+                  <Link to="/cursos/pensamiento-sistemico" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Pensamiento sistémico
+                  </Link>
+                </li>
+
+              </ul>
+            </li>
+
+            {/* Component humanista */}
+            <li className="nav-item p-3" onClick={handleDrpDwnElc3}>
+              <button className="btn border-0 text-light w-100 text-start p-0 m-0">
+                <h6 className="border-bottom border-light pb-3">
+                  Component humanista{' '}
+                  <FontAwesomeIcon icon={caret4 ? faCaretDown : faCaretUp} />
+                </h6>
+              </button>
+
+              <ul className={"nav flex-column text-start " + (drpDwnElc3 ? "d-block" : "d-none")}>
+                <li>
+                  <Link to="/cursos/identidades-y-cultura" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Identidades y cultura
                   </Link>
                 </li>
               </ul>

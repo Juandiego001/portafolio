@@ -1,0 +1,57 @@
+import { React, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import styles from './ProbabilidadEstadistica.module.css';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
+// Custom components
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+
+const ProbabilidadEstadistica = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <Helmet>
+        <title>Probabilidad y estadística | Juan Diego Cobo Cabal</title>
+        <meta name="author" content="Juan Diego Cobo Cabal"></meta>
+        <meta name="description" content="
+          Variables de estudio, escalas de medición,
+          tipos de variables, distribuciones de frecuencias,
+          distribuciones de probabilidad y demás."></meta>
+        <meta name="keywords" content="
+          probabilidad estadistica juan diego cobo cabal,
+          probabilidad estadistica jdcc,
+          probabilidad estadistica,
+          probabilidad y estadistica jdcc,
+          probabilidad y estadistica juan diego cobo cabal,
+          probabilidad y estadística jdcc,
+          probabilidad y estadística juan diego cobo cabal,
+          Probabilidad y estadística JDCC,
+          Probabilidad y estadística Juan Diego Cobo Cabal" />
+      </Helmet>
+
+      <div>
+        <Header />
+
+        <div className="container-fluid my-5 px-5">
+          <h1 className="h1 text-dark">
+            Probabilidad y estadística
+          </h1>
+        </div>
+
+        <Footer />
+      </div>
+    </>
+  )
+};
+
+ProbabilidadEstadistica.propTypes = {};
+
+ProbabilidadEstadistica.defaultProps = {};
+
+export default ProbabilidadEstadistica;

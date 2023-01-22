@@ -31,6 +31,22 @@ import HackingEtico from './pages/HackingEtico/HackingEtico';
 import InformaticaForense from './pages/InformaticaForense/InformaticaForense';
 import ProyectoInformatico1 from './pages/ProyectoInformatico1/ProyectoInformatico1';
 import SeminarioInformatica from './pages/SeminarioInformatica/SeminarioInformatica';
+import ProbabilidadEstadistica from './pages/ProbabilidadEstadistica/ProbabilidadEstadistica';
+import ActividadComplementaria from './pages/ActividadComplementaria/ActividadComplementaria';
+import Fisica2 from './pages/Fisica2/Fisica2';
+import AmbienteSostenible from './pages/AmbienteSostenible/AmbienteSostenible';
+import BasesDatos1 from './pages/BasesDatos1/BasesDatos1';
+import Estructuras1 from './pages/Estructuras1/Estructuras1';
+import Estructuras2 from './pages/Estructuras2/Estructuras2';
+import ArquitecturaComputadores from './pages/ArquitecturaComputadores/ArquitecturaComputadores';
+import IngeSoft1 from './pages/IngeSoft1/IngeSoft1';
+import IngeSoft2 from './pages/IngeSoft2/IngeSoft2';
+import AmbienteWeb from './pages/AmbienteWeb/AmbienteWeb';
+import RedesDatos from './pages/RedesDatos/RedesDatos';
+import SistemasOperativos from './pages/SistemasOperativos/SistemasOperativos';
+import InvestigacionOperaciones from './pages/InvestigacionOperaciones/InvestigacionOperaciones';
+import PensamientoSistemico from './pages/PensamientoSistemico/PensamientoSistemico';
+import IdentidadesCultura from './pages/IdentidadesCultura/IdentidadesCultura';
 
 // Entradas
 import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
@@ -188,6 +204,72 @@ const router = createBrowserRouter([
     path: "/acercade",
     element: <AcercaDe />
   },
+  {
+    path: "/cursos/probabilidad-y-estadistica",
+    element: <ProbabilidadEstadistica />
+  },
+  {
+    path: "/cursos/actividad-complementaria",
+    element: <ActividadComplementaria />
+  },
+  {
+    path: "/cursos/fisica-2",
+    element: <Fisica2 />
+  },
+  {
+    path: "/cursos/ambiente-y-desarrollo-sostenible",
+    element: <AmbienteSostenible />
+  },
+  {
+    path: "/cursos/bases-de-datos-1",
+    element: <BasesDatos1 />
+  },
+  {
+    path: "/cursos/estructuras-de-datos-y-algoritmos-1",
+    element: <Estructuras1 />
+  },
+  {
+    path: "/cursos/estructuras-de-datos-y-algoritmos-2",
+    element: <Estructuras2 />
+  },
+  {
+    path: "/cursos/arquitectura-de-computadores",
+    element: <ArquitecturaComputadores />
+  },
+  {
+    path: "/cursos/ingenieria-de-software-1",
+    element: <IngeSoft1 />
+  },
+  {
+    path: "/cursos/ingenieria-de-software-2",
+    element: <IngeSoft2 />
+  },
+  {
+    path: "/cursos/programacion-en-ambiente-web",
+    element: <AmbienteWeb />
+  },
+  {
+    path: "/cursos/redes-de-datos",
+    element: <RedesDatos />
+  },
+  {
+    path: "/cursos/sistemas-operativos",
+    element: <SistemasOperativos />
+  },
+  {
+    path: "/cursos/investigacion-de-operaciones",
+    element: <InvestigacionOperaciones />
+  },
+  {
+    path: "/cursos/pensamiento-sistemico",
+    element: <PensamientoSistemico />
+  },
+  {
+    path: "/cursos/identidades-y-cultura",
+    element: <IdentidadesCultura />
+  },
+
+
 
 ]);
 
