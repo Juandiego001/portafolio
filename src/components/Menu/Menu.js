@@ -125,6 +125,12 @@ const Menu = (props) => {
                 </li>
 
                 <li>
+                  <Link to="/cursos/seguridad-informatica" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                    Seguridad informatica
+                  </Link>
+                </li>
+
+                <li>
                   <Link to="/cursos/ideas-y-oportunidades-de-negocio" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Ideas y oportunidades de negocio
                   </Link>

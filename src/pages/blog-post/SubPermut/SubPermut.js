@@ -203,6 +203,66 @@ const SubPermut = () => {
             </a>
           </p>
 
+          <h2 className="text-dark">Funciones adicionales</h2>
+
+          <p>
+            Además de los algoritmos visualizados anteriormente, C++ posee diferentes 
+            funciones que facilitan el desarrollo. Dos de estas funciones son:{' '}
+            <code>next_permutation</code> y <code>prev_permutation.</code>{' '}
+            Ambas funciones toman una permutación o vector y se encargan de hallar la
+            permutación siguiente y la permutación anterior respectivamente.
+            <br /><br />
+            Ambas funciones retornan <code>1</code> si es posible encontrar la permutación
+            y <code>0</code> en caso de que no. Además, modifican el vector
+            y lo convierten en la permutación deseada.
+          </p>
+          
+          <h5>Código</h5>
+
+          <pre className="language-c++">
+            <code>
+              {
+                "vector<int> v = {1,2,3};\n" +
+                'cout << next_permutation(v.begin(), v.end()) << "\\n";\n' +
+                'cout << v[0] << " " << v[1] << " " << v[2] << "\\n";'
+              }
+            </code>
+          </pre>
+
+          <h5>Salida</h5>
+
+          <pre className="language-plain">
+            <code>
+              {
+                "1\n" +
+                "1 3 2"
+              }
+            </code>
+          </pre>
+
+          <h5>Código</h5>
+
+          <pre className="language-c++">
+            <code>
+              {
+                "vector<int> v = {3,2,1};\n" +
+                'cout << prev_permutation(v.begin(), v.end()) << "\\n";\n' +
+                'cout << v[0] << " " << v[1] << " " << v[2] << "\\n";'
+              }
+            </code>
+          </pre>
+
+          <h5>Salida</h5>
+
+          <pre className="language-plain">
+            <code>
+              {
+                "1\n" +
+                "3 1 2"
+              }
+            </code>
+          </pre>
+
           <h2 className="h2 text-dark mt-5">
             Finaización
           </h2>
@@ -215,6 +275,12 @@ const SubPermut = () => {
             Cualquier duda, queja, recomendación o donación que deseen realizar me pueden contactar por telegram: 
             {' '}<a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
             Espero les haya sido de gran ayuda :)
+          </p>
+
+          <p>
+              Fecha de publicación: 22-01-2023.
+              <br />
+              Autor: Juan Diego Cobo Cabal.
           </p>
         </div>
 
