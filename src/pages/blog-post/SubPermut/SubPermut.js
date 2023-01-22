@@ -170,7 +170,7 @@ const SubPermut = () => {
             Sin embargo, surge un problema similar al de los subconjuntos, pues este algoritmo
             esta diseñado exclusivamente para elementos consecutivos donde <code>n</code>{' '}
             establece el límite de elementos a los que se les hallará la permutación. Por ello,
-            si modificamos medianamente el código podremos resultar con un algoritmo que nos permite
+            si modificamos medianamente el código podremos crear un algoritmo que nos permite
             hallar todas las posibles permutaciones independientemente de si son números consecutivos
             o no:
           </p>
@@ -178,10 +178,44 @@ const SubPermut = () => {
           <pre className="language-c++">
             <code>
               {
-                
+                "void algoritmoModificado() {\n" +
+                "\tif (permutation2.size() == n2) {\n" +
+                "\t\tallPermutations2.push_back(permutation2);\n" +
+                "\t} else {\n" +
+                "\t\tfor (int i = 0; i < n2; i++) {\n" +
+                "\t\t\tif (choosen2[i]) continue;\n" +
+                "\t\t\tchoosen2[i] = true;\n" +
+                "\t\t\tpermutation2.push_back(v[i]);\n" +
+                "\t\t\talgoritmoModificado();\n" +
+                "\t\t\tchoosen2[i] = false;\n" +
+                "\t\t\tpermutation2.pop_back();\n" +
+                "\t\t}\n" +
+                "\t}\n" +
+                "}\n"
               }
             </code>
           </pre>
+
+          <p>
+            El código se puede visualizar{' '}
+            <a href="https://replit.com/@JUANDIEGODIEG45/Subconjuntos-y-permutaciones-20#main.cpp" 
+              target="_blank">aquí.
+            </a>
+          </p>
+
+          <h2 className="h2 text-dark mt-5">
+            Finaización
+          </h2>
+
+          <p>
+            Esta ha sido una guía corta de teoría acerca de la generación de subconjuntos y permutaciones. 
+            Después de cada sección de código modificado se dejaró un enlace para visualizar los algoritmos
+            en la plataforma <code>Replit</code>{' '} (no es necesario registrarse para ver el código).
+            <br /><br />
+            Cualquier duda, queja, recomendación o donación que deseen realizar me pueden contactar por telegram: 
+            {' '}<a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
+            Espero les haya sido de gran ayuda :)
+          </p>
         </div>
 
         <Footer />
