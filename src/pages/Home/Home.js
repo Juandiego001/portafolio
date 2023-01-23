@@ -38,6 +38,17 @@ const Home = () => {
 
           <div className="card mt-3 mx-5">
             <div className="card-body">
+              <h5 className="card-title">Subconjuntos y permutaciones</h5>
+              <p className="card-text">
+                Explicación de algoritmos utilizando recursividad de subconjuntos
+                y permutaciones en el lenguaje C++.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/subconjuntos-y-permutaciones">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mt-3 mx-5">
+            <div className="card-body">
               <h5 className="card-title">Aplicación Android + Node.js + MySQL</h5>
               <p className="card-text">
                 Desarrollo de práctica para conectar una aplicación Android
