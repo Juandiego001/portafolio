@@ -14,6 +14,7 @@ import Contacto from './pages/Contacto/Contacto';
 import Evaluaciones from './pages/Evaluaciones/Evaluaciones';
 import AcercaDe from './pages/AcercaDe/AcercaDe';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import Cursos from './pages/Cursos/Cursos';
 
 // Cursos
 import DesarrolloMoviles from './pages/DesarrolloMoviles/DesarrolloMoviles';
@@ -197,7 +198,7 @@ const router = createBrowserRouter([
     element: <ProyectoInformatico1 />
   },
   {
-    path: "/cursos/seminario-de-ingeniera-informatica",
+    path: "/cursos/seminario-de-ingenieria-informatica",
     element: <SeminarioInformatica />
   },
   {
@@ -268,8 +269,10 @@ const router = createBrowserRouter([
     path: "/cursos/identidades-y-cultura",
     element: <IdentidadesCultura />
   },
-
-
+  {
+    path: "/cursos",
+    element: <Cursos />
+  },
 
 ]);
 

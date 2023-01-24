@@ -264,7 +264,7 @@ const Menu = (props) => {
                 </li>
 
                 <li>
-                  <Link to="/cursos/seminario-de-ingeniera-informatica" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
+                  <Link to="/cursos/seminario-de-ingenieria-informatica" className="nav-link text-start btn btn-dark text-light p-3" rel="index,follow">
                     Seminario de ingeniería informática
                   </Link>
                 </li>

@@ -66,9 +66,20 @@ const AplicacionFlaskCentos = () => {
             Para iniciar tendremos en cuenta el siguiente Vagrantfile:
           </p>
 
-          <pre>
+          <pre className="language-ruby">
             <code>
-
+              {
+                "# -*- mode: ruby -*-\n" +
+                "# vi: set ft=ruby :\n\n" +
+               
+                'Vagrant.configure("2") do |config|\n' +
+                "  config.vm.define :server do |server|\n" +
+                '    server.vm.box = "centos/7"\n' +
+                '    server.vm.network "private_network", ip: "192.168.56.3"\n' +
+                '    server.vm.hostname = "server"\n' +
+                '  end\n' +
+                'end\n'
+              }
             </code>
           </pre>
 
