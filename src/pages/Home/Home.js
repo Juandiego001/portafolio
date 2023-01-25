@@ -36,7 +36,19 @@ const Home = () => {
         <div className="container-fluid my-5">
           <h1 className="m-5">Entradas recientes</h1>
 
-          <div className="card mt-3 mx-5">
+          <div className="card m-5">
+            <div className="card-body">
+              <h5 className="card-title">Aplicación Flask + Centos 7</h5>
+              <p className="card-text">
+                Desarrollo de práctica para construir una aplicación
+                web con el framework de python Flask en una máquina
+                de Centos 7.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-centos">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card m-5">
             <div className="card-body">
               <h5 className="card-title">Subconjuntos y permutaciones</h5>
               <p className="card-text">
@@ -47,7 +59,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card mt-3 mx-5">
+          <div className="card m-5">
             <div className="card-body">
               <h5 className="card-title">Aplicación Android + Node.js + MySQL</h5>
               <p className="card-text">
