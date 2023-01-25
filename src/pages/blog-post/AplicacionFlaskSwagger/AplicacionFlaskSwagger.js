@@ -19,7 +19,7 @@ const AplicacionFlaskSwagger = () => {
   return (
     <>
       <Helmet>
-        <title>Aplicación Flask + Swagger + Centos 8 | Servicios telemáticos</title>
+        <title>Aplicación Flask + Swagger + CentOS 8 | Servicios telemáticos</title>
         <meta name="author" content="Juan Diego Cobo Cabal"></meta>
         <meta name="description" content="
           Desarrollo de una API Rest con python utilizando 
@@ -56,37 +56,106 @@ const AplicacionFlaskSwagger = () => {
 
           <p>
             En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de Centos 8
-            con swagger.
+            con la suite de herramientas denominada <span className="badge text-dark m-0 p-0">Swagger.</span>
           </p>
 
-          <p className="p-3 bg-warning">
+          {/* TENER EN CUENTA ESTO */}
+          {/* <p className={"p-3 " + styles.BgWarning}>
             <b>Atención.</b> Se asume que ya se tiene el proyecto inicial configurado, es decir, que ya está funcionando el tema de apache
             con flask y en general la parte inicial (incluyendo la instalación de los módulos necesarios).
-          </p>
+          </p> */}
 
           <h2 className="h2 text-dark mt-5">
-            Introducción
+            Definición de máquinas en Vagrantfile
           </h2>
 
           <p>
-            En primer lugar lo que se debe hacer es copiar la carpeta de static del proyecto del profesor Oscar del siguiente <a href="https://github.com/omondragon/swagger-example" target="_blank">repo.</a>
-            {' '}Para ello, se utiliza el comando:
+            Para comenzar, tendremos que tener en cuenta el siguiente <code>Vagrantfile:</code>
           </p>
 
           <pre>
-            <code className="language-cmd">
-              git clone https://github.com/omondragon/swagger-example
+            <code className="language-ruby">
+              {
+                '# -*- mode: ruby -*-\n' +
+                '# vi: set ft=ruby :\n' +
+
+                'Vagrant.configure("2") do |config|\n' +
+                '  config.vm.define :server do |server|\n' +
+                '    server.vm.box = "centos/8"\n' +
+                '    server.vm.network "private_network", ip: "192.168.56.3"\n' +
+                '    server.vm.hostname = "server"\n' +
+                '  end\n' +
+                'end'
+              }
             </code>
           </pre>
 
           <p>
-            El proyecto clonado se puede probar ejecutando los siguientes comandos:
+            Posteriormente desde una consola de comandos nos dirigiremos a la carpeta del Vagrantfile e
+            incializaremos la máquina y accederemos a ella con los comandos:
           </p>
 
           <pre>
-            <code className="language-cmd">
+            <code className="language-console">
               {
-                "cd swagger-example\n" +
+                "vagrant up\n" +
+                "vagrant ssh server"
+              }
+            </code>
+          </pre>
+
+          <h2 className="h2 text-dark">
+            Instalación de modulos necesarios
+          </h2>
+
+          <p>
+            Para instalar los módulos necesarios se muestran los comandos a seguir
+            en la parte inferior (si lo desea, puede copiar y pegar los comandos).
+            Luego, copiamos el repositorio del profesor Oscar. El repositorio puede ser
+            encontrado en el siguiente{' '}
+            <a href="https://github.com/omondragon/swagger-example" target="_blank">link.</a>
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Para inciar como root (contraseña 'vagrant', opcional)\n" +
+                "su -\n" +
+                "# ¡Importante! Se debe actualizar el mirror, de lo contrario no se podrá actualizar el repositrio\n" +
+                'sudo sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*\n' +
+                "# Para actualizar el repositorio\n" +
+                "sudo yum update -y\n" +
+                "# Instalación de python\n" +
+                "sudo yum install -y python3\n" +
+                "# Instalación de git\n" +
+                "sudo yum install git -y\n" +
+                "# Instalación del módulo de flask\n" +
+                "sudo pip3 install flask\n" +
+                "# Instalación de net-tools (opcional)\n" +
+                "sudo yum install net-tools -y\n" +
+                "# Clonación del repositorio\n" +
+                "git clone https://github.com/omondragon/swagger-example\n" +
+                "# Instalación de net-tools (opcional)\n" +
+                "sudo yum install net-tools -y\n" +
+                "# Con este módulo podremos recordar nuestra ip utilizando el comando ifconfig"
+              }
+            </code>
+          </pre>
+          
+          <h2 className="h2 text-dark">
+            Probar el proyecto
+          </h2>
+
+          <p>
+            El proyecto clonado se puede probar dirigiendose a la carpeta donde 
+            se clonó el repo y ejecutando los siguientes comandos:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# (Dirigirse a la carpeta del proyecto clonado)\n" +
+                "cd swagger-example\n\n" +
                 "export FLASK_APP=run.py\n" +
                 "python3 -m flask run --host=0.0.0.0"
               }
@@ -94,7 +163,11 @@ const AplicacionFlaskSwagger = () => {
           </pre>
 
           <p>
-            Si el proyecto está cargando correctamente en la ruta <code>/docs</code> se puede continuar con los pasos siguientes.
+            Si el proyecto está funcionando correctamente,
+            podemos verificarlo digitando en el navegador:
+            {' '}<code>192.168.56.3:5000/docs.</code>{' '}
+            Confirmado esto, se puede continuar con los
+            siguientes pasos.
           </p>
 
           <h2 className="h2 text-dark mt-5">
@@ -102,20 +175,22 @@ const AplicacionFlaskSwagger = () => {
           </h2>
 
           <p>
-            Los archivos más importantes para implementar swagger (además de sus instalaciones previamente hechas con <code>npm install</code>)
-            son el <i>views.py</i> y la carpeta de <i>static.</i> Lo que se debe hacer a continuación es dirigirse a la carpeta donde se encuentra
-            la carpeta <i>static</i> <code>(/swagger-example/app/)</code> y copiar esa carpeta ejecutando la siguiente instrucción:
+            Los archivos más importantes para implementar la API de Swagger son el{' '}
+            <code>views.py</code> y la carpeta de <code>static.</code> Lo que hacemos
+            es copiar  la carpeta static (que se encuentra en{' '}
+            <pre className="d-inline"><code className="nohighlight">/swagger-example/app/</code></pre>)
+            ejecutando la siguiente instrucción:
           </p>
 
           <pre>
-            <code className="language-cmd">
-              cp -r static/ ../../myproject/app
+            <code className="language-console">
+              {
+                "# Dependiendo de donde se ha clonado el repo\n" +
+                "# 'myproject' corresponde a la carpeta de su proyecto\n" +
+                'cp -r static/ ../../myproject/app'
+              }
             </code>
           </pre>
-
-          <p>
-            Donde <b>myproject</b> corresponde a como se ha nombrado su proyecto anteriormente.
-          </p>
 
           <h2 className="h2 text-dark mt-5">
             Modificación del <code>views.py</code>
@@ -154,10 +229,10 @@ const AplicacionFlaskSwagger = () => {
                 "        title = fields.Str()\n" +
                 "        body = fields.Str()\n" +
                 "        author = fields.Str()\n" +
-                "        create_date = fields.Date()\n" +
+                "        create_date = fields.Date()\n\n" +
 
                 "class ArticleListResponseSchema(Schema):\n" +
-                "        article_list = fields.List(fields.Nested(ArticleResponseSchema))\n" +
+                "        article_list = fields.List(fields.Nested(ArticleResponseSchema))\n\n" +
 
                 "@app.route('/articles')\n" +
                 "def article():\n" +

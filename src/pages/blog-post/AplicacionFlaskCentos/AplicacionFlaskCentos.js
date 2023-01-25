@@ -102,7 +102,7 @@ const AplicacionFlaskCentos = () => {
                 "su -\n" +
                 "# Para actualizar el repositorio\n" +
                 "sudo yum update -y\n" +
-                "# Se instala el modulo en cuestión\n" +
+                "# Se instala el modulo python en cuestión\n" +
                 "sudo yum install -y python3\n" +
                 "# Instalación de git\n" +
                 "sudo yum install git -y\n" +
