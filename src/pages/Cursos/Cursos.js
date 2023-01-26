@@ -58,12 +58,12 @@ const Cursos = () => {
                 Matemáticas discretas
               </Link> */}
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional}
                 to="/cursos/fisica-2">
                 Física 2
               </Link>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional}
                 to="/cursos/actividad-complementaria">
                 Actividad complementaria
               </Link>
@@ -80,7 +80,7 @@ const Cursos = () => {
                 Quinto semestre
               </h4>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional}
                 to="/cursos/probabilidad-y-estadistica">
                 Probabilidad y estadística
               </Link>
@@ -127,9 +127,14 @@ const Cursos = () => {
                 Investigación de operaciones
               </Link>
 
-              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/estructuras-de-datos-y-algoritmos-2">
                 Estructuras de datos y algoritmos 2
+              </Link>
+
+              <Link className={"text-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.ComponenteHumanistica}
+                to="/cursos/identidades-y-cultura">
+                Identidades y cultura
               </Link>
             </div>
 
@@ -159,12 +164,12 @@ const Cursos = () => {
                 Proyecto informático 1
               </Link>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/administracion-para-ingenieros">
                 Administración para ingenieros
               </Link>
 
-              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/formulacion-y-evaluacion-de-proyectos">
                 Formulación y evaluación de proyectos
               </Link>
@@ -176,12 +181,12 @@ const Cursos = () => {
                 Octavo semestre
               </h4>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/desarrollo-de-software-para-plataformas-moviles">
                 Desarrollo de software para plataformas móviles
               </Link>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.BasicaProfesional}
                 to="/cursos/gestion-de-la-innovacion">
                 Gestión de la innovación
               </Link>
@@ -191,7 +196,7 @@ const Cursos = () => {
                 Seguridad informática
               </Link>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/proyecto-informatico-2">
                 Proyecto informático 2
               </Link>
@@ -201,7 +206,7 @@ const Cursos = () => {
                 Gestión de las tecnologías de la información
               </Link> */}
 
-              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/servicios-telematicos">
                 Servicios telemáticos
               </Link>
@@ -213,27 +218,27 @@ const Cursos = () => {
                 Noveno semestre
               </h4>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/ideas-y-oportunidades-de-negocio">
                 Ideas y oportunidades de negocio
               </Link>
 
-              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={"text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/hacking-etico">
                 Hacking ético
               </Link>
 
-              <Link className={" text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={" text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/seminario-de-ingenieria-informatica">
                 Seminario de ingeniería informática
               </Link>
 
-              <Link className={" text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada} 
+              <Link className={" text-light border-bottom border-dark nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/informatica-forense">
                 Informática forense
               </Link>
 
-              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada } 
+              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.IngenieriaAplicada}
                 to="/cursos/auditoria-de-sistemas">
                 Auditoría de sistemas
               </Link>
@@ -245,7 +250,7 @@ const Cursos = () => {
                 Formación complementaria
               </h4>
 
-              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.FormacionComplementaria } 
+              <Link className={"text-light nav-link text-center d-flex justify-content-center align-items-center py-3 m-0 " + styles.FormacionComplementaria}
                 to="/cursos/maraton-de-programacion">
                 Maratón de programación
               </Link>

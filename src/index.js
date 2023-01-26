@@ -65,6 +65,7 @@ import AplicacionAndroidFirebase from './pages/blog-post/AplicacionAndroidFireba
 import AplicacionAndroidGps from './pages/blog-post/AplicacionAndroidGPS/AplicacionAndroidGPS';
 import InsTrigFuncOracle from './pages/blog-post/InsTrigFuncOracle/InsTrigFuncOracle';
 import SubPermut from './pages/blog-post/SubPermut/SubPermut';
+import TeoriaInicialEstadistica from './pages/blog-post/TeoriaInicialEstadistica/TeoriaInicialEstadistica';
 
 // Router
 const router = createBrowserRouter([
@@ -209,6 +210,10 @@ const router = createBrowserRouter([
     path: "/cursos/probabilidad-y-estadistica",
     element: <ProbabilidadEstadistica />
   },
+    {
+      path: "/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica",
+      element: <TeoriaInicialEstadistica />
+    },
   {
     path: "/cursos/actividad-complementaria",
     element: <ActividadComplementaria />

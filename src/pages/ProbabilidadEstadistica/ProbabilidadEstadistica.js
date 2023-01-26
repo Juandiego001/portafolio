@@ -42,6 +42,18 @@ const ProbabilidadEstadistica = () => {
           <h1 className="h1 text-dark">
             Probabilidad y estadística
           </h1>
+
+
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">Teoría inicial de la estadística</h5>
+              <p className="card-text">
+                Desarrollo de conceptos básicos iniciales de la probabilidad y estadística.
+              </p>
+              <Link className="btn btn-dark" 
+              to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
+            </div>
+          </div>
         </div>
 
         <Footer />
