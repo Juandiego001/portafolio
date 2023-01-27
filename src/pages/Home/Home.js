@@ -38,6 +38,17 @@ const Home = () => {
 
           <div className="card m-5">
             <div className="card-body">
+              <h5 className="card-title">Teoría inicial de la estadística</h5>
+              <p className="card-text">
+                Desarrollo de conceptos básicos iniciales de la probabilidad y estadística.
+              </p>
+              <Link className="btn btn-dark" 
+              to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card m-5">
+            <div className="card-body">
               <h5 className="card-title">Aplicación Flask + Centos 7</h5>
               <p className="card-text">
                 Desarrollo de práctica para construir una aplicación
