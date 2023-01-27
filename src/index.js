@@ -66,6 +66,7 @@ import AplicacionAndroidGps from './pages/blog-post/AplicacionAndroidGPS/Aplicac
 import InsTrigFuncOracle from './pages/blog-post/InsTrigFuncOracle/InsTrigFuncOracle';
 import SubPermut from './pages/blog-post/SubPermut/SubPermut';
 import TeoriaInicialEstadistica from './pages/blog-post/TeoriaInicialEstadistica/TeoriaInicialEstadistica';
+import ConceptosGrafos from './pages/blog-post/ConceptosGrafos/ConceptosGrafos';
 
 // Router
 const router = createBrowserRouter([
@@ -138,6 +139,10 @@ const router = createBrowserRouter([
     path: "/cursos/maraton-de-programacion",
     element: <MaratonProgramacion />,
   },
+    {
+      path: "/cursos/maraton-de-programacion/entradas/conceptos-inciales-de-grafos",
+      element: <ConceptosGrafos />,
+    },
     {
       path: "/cursos/maraton-de-programacion/entradas/subconjuntos-y-permutaciones",
       element: <SubPermut />,

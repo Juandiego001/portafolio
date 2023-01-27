@@ -41,6 +41,12 @@ const TeoriaInicialEstadistica = () => {
             Teoría inicial de la estadística
           </h1>
 
+          <p className="text-start">
+            En esta entrada se explicarán algunos de los conceptos más fundamentales 
+            de la estadística. Además, antes de finalizar se resolverá una actividad
+            de clasificación de variables y de escalas de medición.
+          </p>
+
           <h2 className="h2 text-dark mt-5">
             ¿Qué es la estadística y cuál es su importancia?
           </h2>
