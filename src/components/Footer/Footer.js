@@ -6,56 +6,45 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className="container-fluid row m-0 p-0 g-0">
-      <div className="col display-flex d-flex justify-content-center align-items-center m-0 p-0">
-        <Link to="/" className="btn" rel="index,follow">
-          <h1 className={"display-1 text-light d-flex justify-content-center align-items-center p-0 m-0 pb-3 " + styles.FontGoogle}>
-            J
-          </h1>
-        </Link>
-      </div>
 
-      <div className="col m-0 p-0 bg-dark text-light d-flex">
-        <div className="m-0 p-0 w-100 h-100 row g-0">
-          <div className="col m-0 p-0 d-flex justify-content-center align-items-center">
-            <ul className="nav flex-column">
-              <li className="nav-item border-bottom border-light">
-                <Link className="nav-link text-light text-center" to="/cursos" rel="index,follow">
-                  Cursos
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-light text-center" to="/evaluaciones" rel="index,follow">
-                  Evaluaciones
-                </Link>
-              </li>
-            </ul>
+      <div className="row g-0 gx-3 px-5 py-4 m-0 bg-dark justify-content-md-center">
+        <div className="col-md-3 ">
+          <div className="row g-0 m-0">
+            <Link className="col py-2 nav-link text-light text-center" to="/" rel="index,follow">
+              Home
+            </Link>
+
+            <Link className="col py-2 nav-link text-light text-center" to="/cursos" rel="index,follow">
+              Cursos
+            </Link>
+
+            <Link className="col py-2 nav-link text-light text-center" to="/evaluaciones" rel="index,follow">
+              Evaluaciones
+            </Link>
           </div>
-          <div className="col m-0 p-0 d-flex justify-content-center align-items-center">
-            <ul className="nav flex-column">
-              <li className="nav-item">
-                <Link className="nav-link text-light text-center" to="/" rel="index,follow">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item border-bottom border-top border-light">
-                <Link className="nav-link text-light text-center" to="/acercade" rel="index,follow">
-                  Acerca de
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-light text-center" to="/contacto" rel="index,follow">
-                  Contacto
-                </Link>
-              </li>
-            </ul>
+        </div>
+
+        <div className="col-md-3">
+          <div className="row g-0 m-0">
+            <Link className="col py-2 nav-link text-light text-center" to="/contacto" rel="index,follow">
+              Calculadoras
+            </Link>
+
+            <Link className="col py-2 nav-link text-light text-center" to="/acercade" rel="index,follow">
+              Acerca de
+            </Link>
+
+            <Link className="col py-2 nav-link text-light text-center" to="/contacto" rel="index,follow">
+              Contacto
+            </Link>
           </div>
         </div>
       </div>
 
-      <div className="col-lg-12 m-0 p-0 bg-dark border-top border-light">
-        <h5 className="text-center py-3 text-light p-0 m-0">
+      <div className="m-0 p-0 bg-dark border-top border-light">
+        <p className="text-center py-3 text-light p-0 m-0">
           Todos los derechos reservados &#169;
-        </h5>
+        </p>
       </div>
 
     </div >

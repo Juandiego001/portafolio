@@ -36,7 +36,7 @@ const Home = () => {
         <div className="container-fluid my-5">
           <h1 className="m-5">Entradas recientes</h1>
 
-          <div className="card m-5">
+          <div className="card mx-5 my-4">
             <div className="card-body">
               <h5 className="card-title">Teoría inicial de la estadística</h5>
               <p className="card-text">
@@ -47,7 +47,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card m-5">
+          <div className="card mx-5 my-4">
             <div className="card-body">
               <h5 className="card-title">Aplicación Flask + Centos 7</h5>
               <p className="card-text">
@@ -59,7 +59,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card m-5">
+          <div className="card mx-5 my-4">
             <div className="card-body">
               <h5 className="card-title">Subconjuntos y permutaciones</h5>
               <p className="card-text">
@@ -70,7 +70,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card m-5">
+          <div className="card mx-5 my-4">
             <div className="card-body">
               <h5 className="card-title">Aplicación Android + Node.js + MySQL</h5>
               <p className="card-text">
