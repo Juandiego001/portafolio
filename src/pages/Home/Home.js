@@ -38,6 +38,17 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">Conceptos iniciales de Grafos</h5>
+              <p className="card-text">
+                Conceptos iniciales de grafos: nodos, caminos, tipos de grafos,
+                algoritmos de recorrido de grafos y demás en el lenguaje C++.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/conceptos-inciales-de-grafos">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">Teoría inicial de la estadística</h5>
               <p className="card-text">
                 Desarrollo de conceptos básicos iniciales de la probabilidad y estadística.
