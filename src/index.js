@@ -15,6 +15,7 @@ import Evaluaciones from './pages/Evaluaciones/Evaluaciones';
 import AcercaDe from './pages/AcercaDe/AcercaDe';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Cursos from './pages/Cursos/Cursos';
+import Calculadoras from './pages/Calculadoras/Calculadoras';
 
 // Cursos
 import DesarrolloMoviles from './pages/DesarrolloMoviles/DesarrolloMoviles';
@@ -49,24 +50,38 @@ import InvestigacionOperaciones from './pages/InvestigacionOperaciones/Investiga
 import PensamientoSistemico from './pages/PensamientoSistemico/PensamientoSistemico';
 import IdentidadesCultura from './pages/IdentidadesCultura/IdentidadesCultura';
 
-// Entradas
-import AplicacionAndroidNodejsMysql from './pages/blog-post/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
-import ProblemaMochila from './pages/blog-post/ProblemaMochila/ProblemaMochila';
-import AplicacionFlaskCentos from './pages/blog-post/AplicacionFlaskCentos/AplicacionFlaskCentos';
-import AplicacionFlaskSwagger from './pages/blog-post/AplicacionFlaskSwagger/AplicacionFlaskSwagger';
-import AplicacionFlaskMySql from './pages/blog-post/AplicacionFlaskMySQL/AplicacionFlaskMySQL';
-import MetasploitKaliWindowsXp from './pages/blog-post/MetasploitKaliWindowsXP/MetasploitKaliWindowsXP';
-import RestApiCentos from './pages/blog-post/RestAPICentos/RestAPICentos';
-import JsonPlaceHolderCentos from './pages/blog-post/JsonPlaceHolderCentos/JsonPlaceHolderCentos';
-import ReactTypeScriptMySql from './pages/blog-post/ReactTypeScriptMySQL/ReactTypeScriptMySQL';
-import ProblemaGasolinera from './pages/blog-post/ProblemaGasolinera/ProblemaGasolinera';
-import IoTUbidots from './pages/blog-post/IoTUbidots/IoTUbidots';
-import AplicacionAndroidFirebase from './pages/blog-post/AplicacionAndroidFirebase/AplicacionAndroidFirebase';
-import AplicacionAndroidGps from './pages/blog-post/AplicacionAndroidGPS/AplicacionAndroidGPS';
-import InsTrigFuncOracle from './pages/blog-post/InsTrigFuncOracle/InsTrigFuncOracle';
-import SubPermut from './pages/blog-post/SubPermut/SubPermut';
-import TeoriaInicialEstadistica from './pages/blog-post/TeoriaInicialEstadistica/TeoriaInicialEstadistica';
-import ConceptosGrafos from './pages/blog-post/ConceptosGrafos/ConceptosGrafos';
+// Entradas de:
+// Desarrollo de software para plataformas moviles
+import AplicacionAndroidNodejsMysql from './pages/DesarrolloMoviles/Posts/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
+import AplicacionAndroidFirebase from './pages/DesarrolloMoviles/Posts/AplicacionAndroidFirebase/AplicacionAndroidFirebase';
+import AplicacionAndroidGps from './pages/DesarrolloMoviles/Posts/AplicacionAndroidGPS/AplicacionAndroidGPS';
+
+// Maratón de programación
+import ProblemaMochila from './pages/MaratonProgramacion/Posts/ProblemaMochila/ProblemaMochila';
+import ProblemaGasolinera from './pages/MaratonProgramacion/Posts/ProblemaGasolinera/ProblemaGasolinera';
+import SubPermut from './pages/MaratonProgramacion/Posts/SubPermut/SubPermut';
+import ConceptosGrafos from './pages/MaratonProgramacion/Posts/ConceptosGrafos/ConceptosGrafos';
+
+// Probabilidad y estadística
+import TeoriaInicialEstadistica from './pages/ProbabilidadEstadistica/Posts/TeoriaInicialEstadistica/TeoriaInicialEstadistica';
+
+// Seguridad Informática
+import MetasploitKaliWindowsXp from './pages/SeguridadInformatica/Posts/MetasploitKaliWindowsXP/MetasploitKaliWindowsXP';
+
+// Servicios telemáticos
+import AplicacionFlaskCentos from './pages/ServiciosTelematicos/Posts/AplicacionFlaskCentos/AplicacionFlaskCentos';
+import AplicacionFlaskSwagger from './pages/ServiciosTelematicos/Posts/AplicacionFlaskSwagger/AplicacionFlaskSwagger';
+import AplicacionFlaskMySql from './pages/ServiciosTelematicos/Posts/AplicacionFlaskMySQL/AplicacionFlaskMySQL';
+import RestApiCentos from './pages/ServiciosTelematicos/Posts/RestAPICentos/RestAPICentos';
+import JsonPlaceHolderCentos from './pages/ServiciosTelematicos/Posts/JsonPlaceHolderCentos/JsonPlaceHolderCentos';
+import IoTUbidots from './pages/ServiciosTelematicos/Posts/IoTUbidots/IoTUbidots';
+
+// Proyecto informático 2
+import ReactTypeScriptMySql from './pages/ProyectoInformatico2/Posts/ReactTypeScriptMySQL/ReactTypeScriptMySQL';
+
+// Bases de datos 2
+import InsTrigFuncOracle from './pages/BasesDatos2/Posts/InsTrigFuncOracle/InsTrigFuncOracle';
+
 
 // Router
 const router = createBrowserRouter([
@@ -190,6 +205,10 @@ const router = createBrowserRouter([
   {
     path: "/evaluaciones",
     element: <Evaluaciones />
+  },
+  {
+    path: "/calculadoras",
+    element: <Calculadoras />
   },
   {
     path: "/cursos/hacking-etico",

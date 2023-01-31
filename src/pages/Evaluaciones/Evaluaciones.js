@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import { React, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Evaluaciones.module.css';
 import { Helmet } from 'react-helmet';
@@ -8,6 +8,11 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
 const Evaluaciones = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>

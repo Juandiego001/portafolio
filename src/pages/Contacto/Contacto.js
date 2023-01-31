@@ -8,6 +8,11 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
 const Contacto = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>

@@ -26,7 +26,7 @@ const Footer = () => {
 
         <div className="col-md-3">
           <div className="row g-0 m-0">
-            <Link className="col py-2 nav-link text-light text-center" to="/contacto" rel="index,follow">
+            <Link className="col py-2 nav-link text-light text-center" to="/calculadoras" rel="index,follow">
               Calculadoras
             </Link>
 
