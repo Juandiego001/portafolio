@@ -38,6 +38,18 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">Aplicación Flask + Swagger + Centos 8</h5>
+              <p className="card-text">
+                Desarrollo de práctica para construir una aplicación
+                web con el framework de python Flask y documentar
+                la API con Swagger.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-swagger">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">Conceptos iniciales de Grafos</h5>
               <p className="card-text">
                 Conceptos iniciales de grafos: nodos, caminos, tipos de grafos,

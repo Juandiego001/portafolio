@@ -26,19 +26,19 @@ const AplicacionFlaskSwagger = () => {
           el framework Flask y empleando el aplicativo 
           de documentación de API Swagger."></meta>
         <meta name="keywords" content="
-          aplicación flask mysql swagger centos,
-          aplicación flask mysql swagger centos 8,
-          Aplicación Flask MySQL Swagger CentOS 8,
-          Aplicación Flask con MySQL y Swagger en CentOS 8 Servicios,
-          Aplicacion Flask con MySQL y Swagger en CentOS 8 Servicios telemáticos,
-          Aplicacion Flask con MySQL y Swagger en CentOS 8 Servicios telematicos,
-          Aplicación Flask con MySQL y Swagger en CentOS 8 Servicios telemáticos,
-          Aplicación Flask con MySQL y Swagger en CentOS 8 Servicios telematicos,
-          Aplicación Flask + MySQL + Swagger + CentOS 8 Servicios,
-          Aplicacion Flask + MySQL + Swagger + CentOS 8 Servicios telemáticos,
-          Aplicacion Flask + MySQL + Swagger + CentOS 8 Servicios telematicos,
-          Aplicación Flask + MySQL + Swagger + CentOS 8 Servicios telemáticos,
-          Aplicación Flask + MySQL + Swagger + CentOS 8 Servicios telematicos,
+          aplicación flask mysql swagger apache centos,
+          aplicación flask mysql swagger apache centos 8,
+          Aplicación Flask MySQL Swagger Apache CentOS 8,
+          Aplicación Flask con MySQL y Swagger con Apache en CentOS 8 Servicios,
+          Aplicacion Flask con MySQL y Swagger con Apache en CentOS 8 Servicios telemáticos,
+          Aplicacion Flask con MySQL y Swagger con Apache en CentOS 8 Servicios telematicos,
+          Aplicación Flask con MySQL y Swagger con Apache en CentOS 8 Servicios telemáticos,
+          Aplicación Flask con MySQL y Swagger con Apache en CentOS 8 Servicios telematicos,
+          Aplicación Flask + MySQL + Swagger + Apache + CentOS 8 Servicios,
+          Aplicacion Flask + MySQL + Swagger + Apache + CentOS 8 Servicios telemáticos,
+          Aplicacion Flask + MySQL + Swagger + Apache + CentOS 8 Servicios telematicos,
+          Aplicación Flask + MySQL + Swagger + Apache + CentOS 8 Servicios telemáticos,
+          Aplicación Flask + MySQL + Swagger + Apache + CentOS 8 Servicios telematicos,
           JDCC, 
           Juan, 
           Juan Diego, 
@@ -58,7 +58,8 @@ const AplicacionFlaskSwagger = () => {
             En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de Centos 8
             con la suite de herramientas para analizar API's denominada <span className="badge text-dark m-0 p-0">Swagger.</span>{' '}
             Para ello, se utilizará el repositorio del profesor Oscar Mondragón que contiene un proyecto con Swagger
-            ya implementado.
+            ya implementado. Además, configuraremos el servidor <span className="badge text-dark m-0 p-0">Apache</span>{' '}
+            para ejecutar el proyecto.
           </p>
 
           {/* TENER EN CUENTA ESTO */}
@@ -137,9 +138,25 @@ const AplicacionFlaskSwagger = () => {
                 "sudo yum install net-tools -y\n" +
                 "# Clonación del repositorio\n" +
                 "git clone https://github.com/omondragon/swagger-example\n" +
+                "# Instalación del editor VIM\n" +
+                "sudo yum install vim -y\n" +
                 "# Instalación de net-tools (opcional)\n" +
                 "sudo yum install net-tools -y\n" +
                 "# Con este módulo podremos recordar nuestra ip utilizando el comando ifconfig"
+              }
+            </code>
+          </pre>
+
+          <p>
+            Posteriormente, tendremos que instalar ciertos módulos de python, ejecutando los siguientes comandos:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "pip3 install -U apispec\n" +
+                "pip3 install marshmallow\n" +
+                "pip3 install apispec-webframeworks"
               }
             </code>
           </pre>
@@ -228,9 +245,9 @@ const AplicacionFlaskSwagger = () => {
           </pre>
 
           <p>
-              Donde se visualiza el mensaje de advertencia, se debe reemplazar la dirección IP por la irección de la máquina del lector.
-              Por ejemplo, en mi caso, la url quedaría tal que:{' '}
-              <code>http://192.168.56.3:5000/api/swagger.json.</code>
+            Donde se visualiza el mensaje de advertencia, se debe reemplazar la dirección IP por la dirección de la máquina del lector.
+            Por ejemplo, en mi caso, la URL quedaría tal que:{' '}
+            <code>http://192.168.56.3:5000/api/swagger.json.</code>
           </p>
 
           <h2 className="h2 text-dark mt-5">
@@ -238,60 +255,54 @@ const AplicacionFlaskSwagger = () => {
           </h2>
 
           <p>
-            Hasta el momento el proyecto ha de funcionar con normalidad. Para visualizarlo, 
-            ejecutelo con el comando mencionado anteriormente y 
+            Hasta el momento el proyecto ha de funcionar con normalidad. Para visualizarlo,
+            ejecútelo con el comando mencionado anteriormente y
             acceda a la ruta <code>/docs</code> en el navegador. Sin embargo,
             solo podremos contemplar dos libros que vienen con el repositorio
             del docente. Por ello, lo que haremos a continuación es modificar
-            medianamente el código para poder agregar libros a una función y que 
+            medianamente el código para poder agregar libros a una función y que
             se retornen en la función al momento de visualizar los resultados. Para
-            esto se crea un archivo llamado <code>articles.py</code> que contenga
+            esto se crea un archivo llamado <code>articles.py</code> en la carpeta
+            {' '}<span className="badge text-dark m-0 p-0">/app</span>{' '}
+            donde se encuentre su respectivo archivo <code>__init__.py</code> y que contenga
             una función llamada <code>Articles</code> de la siguiente manera:
           </p>
 
           <pre>
-            <code>
+            <code className="language-python">
               {
-                
+                'from datetime import date\n\n' +
+
+                'def Articles():\n' +
+                '    theArticles = [\n' +
+                '                {\n' +
+                '                    "id": 1,\n' +
+                '                    "title": "Libro 1",\n' +
+                '                    "body": "Descripcion libro 1",\n' +
+                '                    "author": "Autor 1",\n' +
+                '                    "create_date": date(2023,1,5)\n' +
+                '                }\n' +
+                '            ]\n\n' +
+
+                '    return theArticles\n'
               }
             </code>
           </pre>
 
-          {/* <pre>
+          <p>
+            Luego, regresamos a nuestro archivo <code>views.py</code>,
+            importamos la función Articles del archivo
+            {' '}<span className="badge text-dark m-0 p-0">articles.py</span>{' '}
+            y modificamos la función de <code>article</code> aludiendo a la función
+            que hemos creado:
+          </p>
+
+          <pre>
             <code className="language-python">
               {
-                "from flask import render_template\n" +
-                "from app import app\n\n" +
-
-                "from apispec import APISpec\n" +
-                "from apispec.ext.marshmallow import MarshmallowPlugin\n" +
-                "from apispec_webframeworks.flask import FlaskPlugin\n" +
-                "from flask import Flask,jsonify,send_from_directory\n" +
-                "from marshmallow import Schema, fields\n" +
-                "from datetime import date\n\n" +
-
-                "spec = APISpec(\n" +
-                "    title='Flask-api-swagger-doc',\n" +
-                "    version='1.0.0.',\n" +
-                "    openapi_version='3.0.2',\n" +
-                "    plugins=[FlaskPlugin(),MarshmallowPlugin()]\n" +
-                ")\n\n" +
-
-                "@app.route('/api/swagger.json')\n" +
-                "def create_swagger_spec():\n" +
-                "        return jsonify(spec.to_dict())\n\n" +
-
-                "class ArticleResponseSchema(Schema):\n" +
-                "        id = fields.Int()\n" +
-                "        title = fields.Str()\n" +
-                "        body = fields.Str()\n" +
-                "        author = fields.Str()\n" +
-                "        create_date = fields.Date()\n\n" +
-
-                "class ArticleListResponseSchema(Schema):\n" +
-                "        article_list = fields.List(fields.Nested(ArticleResponseSchema))\n\n" +
-
-                "@app.route('/articles')\n" +
+                'from app.articles import Articles\n' +
+                '# ...\n' +
+                '@app.route("/articles")\n' +
                 "def article():\n" +
                 '    """Get List of Articles\n' +
                 "        ---\n" +
@@ -303,86 +314,302 @@ const AplicacionFlaskSwagger = () => {
                 "                    content:\n" +
                 "                        application/json:\n" +
                 "                            schema: ArticleListResponseSchema\n" +
-                '    """"\n\n' +
-
-                "    articles = [\n" +
-                "        {\n" +
-                "            'id': 1,\n" +
-                "            'title': 'Article one',\n" +
-                "            'body': 'Lorem ipsum',\n" +
-                "            'author': 'Gabo',\n" +
-                "            'create_date': date(2021,10,4)\n" +
-                "        },\n" +
-                "        {\n" +
-                "            'id': 2,\n" +
-                "            'title': 'Article two',\n" +
-                "            'body': 'Lorem ipsum',\n" +
-                "            'author': 'Perez',\n" +
-                "            'create_date': date(2021,10,12)\n" +
-                "        }\n" +
-                "    ]\n\n" +
-
+                '    """\n' +
+                "    articles = Articles() # Aqui se agrega la función creada\n" +
                 "    return ArticleListResponseSchema().dump({'article_list':articles})\n\n" +
 
                 "with app.test_request_context():\n" +
-                "    spec.path(view=article)\n\n" +
-
-                "@app.route('/docs')\n" +
-                "@app.route('/docs/<path:path>')\n" +
-                "def swagger_docs(path=None):\n" +
-                "    if not path or path == 'index.html':\n" +
-                "        return render_template('index.html',base_url='/docs')\n" +
-                "    else:\n" +
-                "        return send_from_directory('static', path)\n"
+                "  spec.path(view=article)\n" +
+                "# ..."
               }
             </code>
-          </pre> */}
+          </pre>
 
           <p>
-            Así, la modificación que le hacemos a nuestro <code>views.py</code> es agregarle todo este archivo pero sin reemplazar lo
-            que se tenía anteriormente. Lo único que debemos revisar es la función <code>article</code> que el profesor
-            declaró en su archivo. Es decir, esta función se toma y se le puede cambiar para dejarla de la siguiente manera:
+            Una vez hecho esto se podrá ejecutar el proyecto debidamente (es posible
+            agregar más libros a la función creada sencillamente creando nuevos
+            objetos tal y como se configuró el primer libro).
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Ejecutar el proyecto\n" +
+                "python3 -m flask run --host=0.0.0.0\n" +
+                "# Recordar visualizar en la URL 192.168.56.3:5000"
+              }
+            </code>
+          </pre>
+
+          <p>
+            En caso de que no se pueda visualizar puede deberse a configuraciones del firewall. En ese caso
+            hay dos posibles sugerencias:
+          </p>
+
+          <ol>
+            <li>Deshabilitar el firewall.</li>
+            <li>Agregar reglas al firewall.</li>
+          </ol>
+
+          <p>
+            Para
+            {' '}<span className="badge text-dark m-0 p-0">deshabilitar el firewall</span>{' '}
+            lo único que se debe hacer es ejecutar la siguiente instrucción:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Detenimiento del servicio de firewall\n" +
+                "service firewalld stop\n" +
+                "# Verificación del detenimiento\n" +
+                "service firewalld status"
+              }
+            </code>
+          </pre>
+
+          <p>
+            Para
+            {' '}<span className="badge text-dark m-0 p-0">agregar reglas al firewall</span>{' '}
+            correspondientes a los servicios web se sugiere ejecutar:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Activación de firewall-cmd\n" +
+                "service firewalld start\n" +
+                "# Permitir peticiones al puerto 80\n" +
+                "firewall-cmd --add-port=80/tcp --permanent\n" +
+                "# Permitir peticiones al puerto 22\n" +
+                "firewall-cmd --add-port=22/tcp --permanent\n" +
+                "# Recargar el firewall luego de añadir las reglas\n" +
+                "firewall-cmd --reload\n" +
+                "# Verificacion de las reglas añadidas\n" +
+                "# (Generalmente siempre es de la zona por defecto o sea la zona pública)\n" +
+                "firewall-cmd --zone=public --list-all\n" +
+                "# Si aparece:\n" +
+                "# ports: 80/tcp 22/tcp\n" +
+                "# es porque se han añadido los puertos correctamente"
+              }
+            </code>
+          </pre>
+
+          <h2 className="h2 text-dark mt-5">
+            Configuración del servidor Apache
+          </h2>
+
+          <h3 className="text-dark mt-3">
+            Instalación de módulos adicionales
+          </h3>
+
+          <p>
+            Antes de configurar el servidor apache tendremos que instalar los siguientes modulos:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Instalación del servidor apache\n" +
+                "sudo yum install httpd -y\n" +
+                "# Instalación del módulo mod_wsgi\n" +
+                "# (permite desplegar Flask en Apache)\n" +
+                "sudo yum install python3-mod_wsgi -y\n" +
+                "# Instalación de flask_cors\n" +
+                "# (en nuestro caso, permitirá visualizar la página desde otra máquina)\n" +
+                "pip3 install -U flask-cors\n"
+              }
+            </code>
+          </pre>
+
+          <h3 className="text-dark mt-3">
+            Copia del proyecto y archivo <code>application.wsgi</code>
+          </h3>
+
+          <p>
+            Posteriormente, lo que tendremos que hacer es copiar la carpeta de nuestro
+            proyecto y dirigirla a los archivos de Apache para poder indicarle al
+            servidor que queremos desplegar nuestro proyecto. Para esto hacemos
+            lo siguiente:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Copia del proyecto a /var/www/\n" +
+                "cp -r swagger-example/ /var/www/"
+              }
+            </code>
+          </pre>
+
+          <p>
+            Luego de ello tendremos que crear un archivo denominado
+            {' '}<code>application.wsgi</code>{' '}
+            el cual servirá para definir el path
+            donde construiremos la aplicación. Este archivo
+            debe ser creado en la carpeta
+            {' '}<span className="badge text-dark m-0 p-0">/var/www/swagger-example/</span>{' '}
+            y deberá contener lo siguiente:
+          </p>
+
+          <pre>
+            <code>
+              {
+                '#!/usr/bin/python\n' +
+                'import sys\n' +
+                'sys.path.insert(0,"/var/www/swagger-example/")\n' +
+                'from app import app as application'
+              }
+            </code>
+          </pre>
+
+          <h3 className="text-dark mt-3">
+            Configuración del <code>VirtualHost</code>
+          </h3>
+
+          <p>
+            Finalmente tendremos que modificar el archivo de configuración
+            de apache ubicado en
+            {' '}<span className="badge text-dark m-0 p-0">/etc/httpd/conf/httpd.conf</span>{' '}
+            y agregar nuestro
+            {' '}<span className="badge text-dark m-0 p-0">VirtualHost:</span>
+          </p>
+
+          <pre>
+            <code className="language-html">
+              {
+                "...\n" +
+                "WSGIScriptAlias / /var/www/swagger-example/application.wsgi\n\n" +
+
+                "<VirtualHost *>\n" +
+                "        ServerName www.flask-swagger.com\n" +
+                "        <Directory /var/www/swagger-example/>\n" +
+                "                Order deny,allow\n" +
+                "                Allow from all\n" +
+                "        </Directory>\n" +
+                "</VirtualHost>\n" +
+                "..."
+              }
+            </code>
+          </pre>
+
+          <p>
+            Finalmente, reiniciamos el servicio
+            {' '}<span className="badge text-dark m-0 p-0">httpd</span>{' '}
+            y si todo sale bien podremos visualizar la página en el navegador.
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Para reiniciar el servicio httpd\n" +
+                "service httpd restart\n" +
+                "# Para visualizar en su navegador digita solamente la url de su máquina + /docs\n" +
+                "# En mi caso: 192.168.56.3/docs"
+              }
+            </code>
+          </pre>
+
+          <p>
+            Si <b>NO</b> aparece este mensaje:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                "# Mensaje de error al reiniciar el servicio\n" +
+                "Job for httpd.service failed because the control process exited with error code.\n" +
+                'See "systemctl status httpd.service" and "journalctl -xe" for details.\n' +
+                "# Para verificar cual pudo haber sido el error\n" +
+                "systemctl status httpd"
+              }
+            </code>
+          </pre>
+
+          <p>
+            Es porque el proyecto se ha cargado correctamente en Apache. De lo contrario,
+            observe el error con el comando mostrado y corriga en los archivos
+            como corresponde.
+          </p>
+
+          <h2 className="text-dark mt-5">
+            Modificación de archivos
+          </h2>
+
+          <p>
+            Con el proyecto en Apache configurado correctamente nos quedan los últimos pasos.
+            En primer lugar, se debe importar la función <code>CORS</code> de la librería
+            de python instalada en pasos previos en el archivo <code>views.py</code>.
+            Esta función debe tomar como parámetro la variable
+            {' '}<span className="badge text-dark m-0 p-0">app</span>.
+            Luego de ello, se debe modificar el archivo
+            {' '}<code>index.html</code>{' '}
+            similar a como se modificó anteriormente,
+            solo que en este caso eliminando de la URL el puerto
+            {' '}<code>:5000.</code>
+            {' '}<b>Importante:</b>{' '}
+            ambos cambios deben efectuarse en el directorio
+            {' '}<span className="badge text-dark m-0 p-0">/var/www/swagger-example/.</span>
           </p>
 
           <pre>
             <code className="language-python">
               {
-                '@app.route("/articles-api")\n' +
-                "def articles_api():\n" +
-                '    """Get List of Articles\n' +
-                "        ---\n" +
-                "        get:\n" +
-                "            description: Get List of Articles\n" +
-                "            responses:\n" +
-                "                200:\n" +
-                "                    description: Return an article list\n" +
-                "                    content:\n" +
-                "                        application/json:\n" +
-                "                            schema: ArticleListResponseSchema\n" +
-                '    """\n' +
-                "    articles = Articles()\n" +
-                "    return ArticleListResponseSchema().dump({'article_list':articles})\n\n" +
-                "# Posteriormente esta funcion se le debe modificar el view=como-se-llama-su-funcion\n" +
-                "with app.test_request_context():\n" +
-                "  spec.path(view=articles_api)\n"
+                "# EN EL ARCHIVO views.py\n" +
+                "...\n" +
+                "from flask_cors import CORS\n" +
+                "...\n" +
+                "CORS(app)\n\n" +
+
+                "# EN EL ARCHIVO index.html (ubicado en la carpeta de templates)\n" +
+                "...\n" +
+                'url: "http://192.168.56.3/api/swagger.json",\n' +
+                "..."
               }
             </code>
           </pre>
 
           <p>
-            Cuando se modifique esta función y se haga referencia en la última función mencionada,
-            ya se debe poder visualizar los datos en la ruta de <code>/docs.</code> Se puede
-            probar con el comando:
+            Finalmente, tenderemos que reiniciar el servicio apache:
           </p>
 
           <pre>
-            <code className="langauge-cmd">
-              python3 -m flask run --host=0.0.0.0
+            <code className="language-console">
+              {
+                "# Reiniciar servicio apache\n" +
+                "service httpd restart\n" +
+                "# Verificar estado del servicio\n" +
+                "service httpd status"
+              }
             </code>
           </pre>
 
           <p>
-            Finalmente, lo que queda configurar es el apache.
+            El mensaje
+            {' '}<i>Redirecting to /bin/systemctl status httpd.service</i>{' '}
+            indica que el servicio se ha reiniciado correctamente.
+          </p>
+
+          <h2 className="h2 text-dark mt-5">
+            Finaización
+          </h2>
+
+          <p>
+            Esta ha sido una explicación detallada del proceso
+            para desplegar una aplicación que funcione con la herramienta
+            de Swagger utilizando python con Flask, en el sistema
+            operativo CentoOS 8 y utilizando el servidor Apache.<br /><br />
+
+            Cualquier duda, queja, recomendación o donación que deseen realizar me pueden
+            contactar por telegram:
+            {' '}<a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
+            Espero les haya sido de gran ayuda :)
+          </p>
+
+          <p>
+            Fecha de publicación: 01-02-2023.
+            <br />
+            Autor: Juan Diego Cobo Cabal.
           </p>
         </div>
 
