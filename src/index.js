@@ -82,6 +82,9 @@ import ReactTypeScriptMySql from './pages/ProyectoInformatico2/Posts/ReactTypeSc
 // Bases de datos 2
 import InsTrigFuncOracle from './pages/BasesDatos2/Posts/InsTrigFuncOracle/InsTrigFuncOracle';
 
+// Auditoria de sistemas
+import ConceptosInicialesAuditoria from './pages/AuditoriaSistemas/Posts/ConceptosInicialesAuditoria/ConceptosInicialesAuditoria';
+
 
 // Router
 const router = createBrowserRouter([
@@ -198,6 +201,13 @@ const router = createBrowserRouter([
     path: "/cursos/auditoria-de-sistemas",
     element: <AuditoriaSistemas />
   },
+  // Posts auditoria de sistemas
+  {
+    path: "/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas",
+
+    element: <ConceptosInicialesAuditoria />
+  },
+
   {
     path: "/contacto",
     element: <Contacto />

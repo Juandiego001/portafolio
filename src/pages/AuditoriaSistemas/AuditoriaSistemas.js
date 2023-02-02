@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AuditoriaSistemas.module.css';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 // Custom components
@@ -46,6 +47,16 @@ const AuditoriaSistemas = () => {
           <h1 className="h1 text-dark">
             Auditoría de sistemas
           </h1>
+
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">Conceptos iniciales de la auditoría de sistemas</h5>
+              <p className="card-text">
+                Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas">Ver entrada</Link>
+            </div>
+          </div>
 
         </div>
 
