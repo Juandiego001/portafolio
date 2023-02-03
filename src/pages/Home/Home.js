@@ -38,6 +38,16 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">Conceptos iniciales de la auditoría de sistemas</h5>
+              <p className="card-text">
+                Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">Aplicación Flask + Swagger + Centos 8</h5>
               <p className="card-text">
                 Desarrollo de práctica para construir una aplicación
@@ -65,8 +75,8 @@ const Home = () => {
               <p className="card-text">
                 Desarrollo de conceptos básicos iniciales de la probabilidad y estadística.
               </p>
-              <Link className="btn btn-dark" 
-              to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
+              <Link className="btn btn-dark"
+                to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
             </div>
           </div>
 
@@ -82,28 +92,6 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Subconjuntos y permutaciones</h5>
-              <p className="card-text">
-                Explicación de algoritmos utilizando recursividad de subconjuntos
-                y permutaciones en el lenguaje C++.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/subconjuntos-y-permutaciones">Ver entrada</Link>
-            </div>
-          </div>
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Android + Node.js + MySQL</h5>
-              <p className="card-text">
-                Desarrollo de práctica para conectar una aplicación Android
-                con un servidor Node.js que a su vez se comunica con una base de
-                datos MySQL.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql">Ver entrada</Link>
-            </div>
-          </div>
         </div>
 
         <Footer />

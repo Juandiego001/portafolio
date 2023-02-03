@@ -16,7 +16,7 @@ const ConceptosInicialesAuditoria = () => {
   return (
     <>
       <Helmet>
-        <title>Conceptos iniciales de la auditoría de sistemas | Bases de datos 2</title>
+        <title>Conceptos iniciales de la auditoría de sistemas | Auditoría de sistemas</title>
         <meta name="author" content="Juan Diego Cobo Cabal"></meta>
         <meta name="description" content="Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal."></meta>
         <meta name="keywords" content="
@@ -233,7 +233,232 @@ const ConceptosInicialesAuditoria = () => {
           </h4>
 
           <p>
-            
+            De acuerdo con la Organización Internacional para la estandarización
+            {' '}<a href="" target="_blank" rel="nofollow,noindex">(2017)</a>:
+            "Una auditoría a sistemas de gestión se define como un
+            proceso sistemático, independiente y documentado para obtener evidencias y
+            evaluarlas de manera objetiva con el fin de determinar el grado en que se
+            cumplen los criterios de auditoría de acuerdo con la norma ISO 9000 del 2015".
+          </p>
+
+          <h2 className="mt-5">
+            En función del alcance que se audita
+          </h2>
+
+          <h4 className="mt-2">
+            Auditorías parciales
+          </h4>
+
+          <p>
+            Son auditorías en las que se evalúan solamente algunas partes de la empresa
+            o algunos procesos.
+          </p>
+
+          <h4 className="mt-2">
+            Auditorías globales
+          </h4>
+
+          <p>
+            Son aquellas en las que se evalúan todo el sistema de gestión o de la totalidad
+            de la empresa.
+          </p>
+
+          <h2 className="mt-5">
+            En función de cuándo se audita
+          </h2>
+
+          <h4 className="mt-2">
+            Auditorías programadas
+          </h4>
+
+          <p>
+            Son aquellas auditorías que responden a una fecha o actividad planificada.
+          </p>
+
+          <h4 className="mt-2">
+            Auditorías extraordinarias
+          </h4>
+
+          <p>
+            Son aquellas que se desarrollan cuando se estimen convenientes o en cualquier momento.
+          </p>
+
+          <h2 className="mt-5">
+            Principios de auditoría
+          </h2>
+
+          <p>
+            De acuerdo con el docente Miguel Navas, la auditoría se caracteriza por depender
+            de varios principios. Estos principios deberían ayudar a hacer de la auditoría
+            una herramienta eficaz y fiable en apoyo de las políticas y controles de gestión,
+            proporcionando información sobre la cual una organización puede actuar para mejorar
+            su desempeño. Así pues, encontramos siete como los principios de la auditoría, los
+            cuales son:
+          </p>
+
+          <ol>
+            <li>Integridad.</li>
+            <li>Presentación imparcial.</li>
+            <li>Debido cuidado profesional.</li>
+            <li>Confidencialidad.</li>
+            <li>Independencia.</li>
+            <li>Enfoque basado en la evidencia.</li>
+            <li>Enfoque basado en el riesgo.</li>
+          </ol>
+
+          <p>
+            La integridad, presentación imparcial, debido cuidado profesional y confidencialidad
+            aluden a la
+            {' '}<span className="badge text-dark m-0 p-0">objetividad</span>{' '} e
+            {' '}<span className="badge text-dark m-0 p-0">imparcialidad</span>{' '} del auditor.
+            Mientras que la independencia y los enfoques basados en evidencias y
+            riesgos corresponden a la objetividad e imparcialidad de la auditoría.
+          </p>
+
+          <h4 className="mt-2">
+            Integridad
+          </h4>
+
+          <p>
+            Desempeñar su trabajo con honestidad, diligencia y responsabilidad (demostrar competencia).
+          </p>
+
+          <h4 className="mt-2">
+            Presentación imparcial
+          </h4>
+
+          <p>
+            La comunicación debe ser verdadera, precisa, objetiva, oportuna, clara y completa.
+          </p>
+
+          <h4 className="mt-2">
+            Debido cuidado profesional
+          </h4>
+
+          <p>
+            Un factor importante al realizar su trabajo con el debido cuidado profesional
+            es tener la habilidad para hacer juicios razonables en todas las situaciones
+            de la auditoría.
+          </p>
+
+          <h4 className="mt-2">
+            Confidencialidad
+          </h4>
+
+          <p>
+            El auditor debe tener discresión en el uso y protección de la información
+            a la que tenga acceso en las auditorías.
+          </p>
+
+          <h4 className="mt-2">
+            Independencia
+          </h4>
+
+          <p>
+            Basada en la imparcialidad de la auditoría y la objetividad de las conclusiones
+            de la auditoría.
+          </p>
+
+          <h4 className="mt-2">
+            Enfoque basado en evidencia
+          </h4>
+
+          <p>
+            Método para alcanzar la confianza en las conclusiones fiables y reproducibles (verificable).
+          </p>
+
+          <h4 className="mt-2">
+            Enfoque basado en riesgos
+          </h4>
+
+          <p>
+            Identificación de los efectos de las incertidumbres empresariales y a la determinación
+            de los riesgos como base para la planificación
+            {' '}<a href="https://www.dqsglobal.com/es-cl/blog/el-enfoque-basado-en-riesgos-en-iso-9001#:~:text=El%20enfoque%20basado%20en%20riesgos%20de%20la%20norma%20ISO%209001,calidad%20no%20es%20totalmente%20nuevo." target="_blank" rel="nofollow,noindex">(Dqsglobal, 2022).</a>
+          </p>
+
+          <h2 className="mt-5">
+            Competencias
+          </h2>
+
+          <p>
+            Es la habilidad para aplicar los conocimientos y habilidades para alcanzar
+            los resultados pretendidos. En las auditorías, las principales competencias
+            comprenden:
+          </p>
+
+          <ul>
+            <li>Conocimientos y habilidades específicos de calidad (SGC).</li>
+            <li>Conocimientos y habilidades específicos de seguridad de la información (SGSI).</li>
+            <li>Conocimientos y habilidades específicos de medio ambiente (SGA).</li>
+          </ul>
+
+          <p>
+            Las competencias abarcan educación, experiencia profesional, formación
+            como auditor, habilidad en auditorías y aptitud para aplicar los
+            conocimientos que permitan alcanzar la objetividad e imparcialidad
+            establecidas en los principios de las
+            auditorías.
+          </p>
+
+          <h2 className="mt-5">
+            Conocimiento específico
+          </h2>
+
+          <p>
+            El docente Miguel Navas establece que para los auditores de sistemas o informáticos,
+            deben existir algunos concocimientos específicos tales como:
+          </p>
+
+          <ul>
+            <li>
+              Gestión de seguridad. Terminología, metodología, riesgo de SI, medición,
+              eficacia.
+            </li>
+
+            <li>
+              Legislación específica. Propiedad intelectual, protección de registros, datos
+              personales, comercio electrónico, intercepción de comunicaciones, vigilancia
+              en el lugar de trabajo, etc.
+            </li>
+
+            <li>
+              Técnicas de seguridad. Control de acceso, vulnerabilidad técnica, seguridad de redes,
+              continuidad, seguridad física, etc.
+            </li>
+
+            <li>
+              Tendencias de actualidad. Amenazas, vulnerabilidades, controles, requisitos.
+            </li>
+
+            <li>
+              Conocimientos en tecnologáis de la información (TICs).
+            </li>
+          </ul>
+          
+          <h2 className="h2 text-dark mt-5">
+            Finaización
+          </h2>
+
+          <p>
+            Esta ha sido una introducción a los conceptos fundamentales
+            de la auditoría de sistemas, definición, tipos, principios
+            y características tanto de auditores como de las auditorías. Si se desea
+            profundizar, se sugiere realizar la lectura del libro: 
+
+            {' '}<i>Auditoría de Seguridad Informática por Ester Chicano Tejada</i>{' '}
+            (centrado en la auditoría de seguirdad informática).
+
+            Cualquier duda, queja, recomendación o donación que deseen realizar me pueden
+            contactar por telegram:
+            {' '}<a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
+            Espero les haya sido de gran ayuda :)
+          </p>
+
+          <p>
+            Fecha de publicación: 03-02-2023.
+            <br />
+            Autor: Juan Diego Cobo Cabal.
           </p>
 
         </div>
