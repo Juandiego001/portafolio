@@ -48,7 +48,7 @@ const AplicacionFlaskMySql = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div className="mb-4">
+      <div>
         <Header />
 
         <div className="container-fluid my-5 px-5">
@@ -157,6 +157,8 @@ const AplicacionFlaskMySql = () => {
                 'sudo sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*\n' +
                 "sudo yum update -y\n" +
                 "sudo yum install epel-release -y\n" +
+                "# En caso de que se desee utilizar Git\n" +
+                "sudo yum install git -y\n" +
                 "sudo yum install python3-pip -y\n" +
                 "pip3 --version\n" +
                 "sudo pip3 install Flask\n" +
@@ -470,7 +472,6 @@ const AplicacionFlaskMySql = () => {
             Para comenzar el desarrollo de <code>templates</code> iniciamos creando un archivo
             {' '}<code>index.html</code> que nos servirá como plantilla. Este archivo tendrá que
             ser creado dentro de la carpeta <code>templates</code> que definimos anteriormente.
-            <br /><br />
             Ahora bien, en este archivo plantilla definiré que utilizaremos bootstrap y
             nos valdremos de algunos componentes (<code>header</code> y <code>footer</code>) ya
             creados que se pueden obtener en la sección de {' '}
@@ -815,9 +816,334 @@ const AplicacionFlaskMySql = () => {
 
             <p>
               Ahora bien, como se puede observar, empleamos código de python para indicarle que por cada dato del <code>article</code> queremos obtener el dato 1
-              {' '}(<code>article[0]</code>,) el dato 2 (<code>article[1]</code>) y así sucesivamente.
+              {' '}(<code>article[0]</code>) el dato 2 (<code>article[1]</code>) y así sucesivamente.
             </p>
           </div>
+
+          <h2 className="mt-5">
+            Actualización de cada artículo
+          </h2>
+
+          <p>
+            Para actualizar cada artículo, podemos agregar un botón que despliegue un <b>modal</b> para digitar los nuevos datos deseados.
+            Esto se puede conseguir con el siguiente código:
+          </p>
+
+          <pre>
+            <code className="language-html">
+              {
+                '{% for article in the_articles %}\n' +
+                '...\n' +
+                '<!-- Modal for updating articles -->\n' +
+                '<div class="modal fade" id="updateArticle{{ article[0] }}" tabindex="-1" aria-labelledby="updateArticle{{ article[0] }}" aria-hidden="true">\n' +
+                '  <div class="modal-dialog">\n' +
+                '    <div class="modal-content">\n' +
+                '      <div class="modal-header">\n' +
+                '        <h1 class="modal-title fs-5" id="exampleModalLabel">Update article</h1>\n' +
+                '        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>\n' +
+                '      </div>\n' +
+                '      <div class="modal-body text-start">\n' +
+                '          <form class="w-75 mx-auto" method="POST" action="{{ url_for(' + "'articlesPut'" + ', id=article[0]) }}">\n' +
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Id</label>\n' +
+                '                  <input id="id" name="id" class="form-control" type="text" placeholder="Default input" aria-label="default input example" value="{{ article[0] }}">\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Title</label>\n' +
+                '                  <input id="title" name="title" class="form-control" type="text" placeholder="Default input" aria-label="default input example" value="{{ article[1] }}">\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Body</label>\n' +
+                '                  <textarea id="body" name="body" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ article[2] }}</textarea>\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Author </label>\n' +
+                '                  <input id="author" name="author" class="form-control" type="text" placeholder="Default input" aria-label="default input example" value="{{ article[3] }}">\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Created at </label><br />\n' +
+                '                  <input id="createdat" name="createdat" type="date" id="datetime-local" value="{{ article[4] }}" >\n' +
+                '              </div>\n' +
+                '              <div class="modal-footer">\n' +
+                '                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>\n' +
+                '                <button type="submit" class="btn btn-primary">Update</button>\n' +
+                '              </div>\n' +
+                '          </form>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
+                '  </div>\n' +
+                '</div>\n' +
+                '...\n' +
+                '{% endfor %}'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Tenemos que tener en cuenta que la clave está en el identificador de cada artículo. Cuando se renderizan los botones,
+            cada uno queda con el valor del identificador del artícul. Así, cuando sean llamados, se modificaran solamente
+            los valores del artículo con dicho identificador.
+          </p>
+
+          <h2 className="mt-5">
+            Eliminación de cada artículo
+          </h2>
+
+          <p>
+            Para agregar un botón que permita eliminar cada artículo, se implementa un código muy similar al anterior.
+            No obstante, la diferencia de este radica en que se despliega un mensaje de confirmación
+            que pregunta al usuario si está de acuerdo con eliminar el artículo en cuestión.
+          </p>
+
+          <pre>
+            <code className="language-html">
+              {
+                '{% for article in the_articles %}\n' +
+                '...\n' +
+                '<!-- Modal for deleting articles -->\n' +
+                '<div class="modal" id="deleteArticle{{ article[0] }}" tabindex="-1" aria-labelledby="deleteArticle{{ article[0] }}" aria-hidden="true">\n' +
+                '    <div class="modal-dialog">\n' +
+                '      <div class="modal-content">\n' +
+                '        <div class="modal-header">\n' +
+                '          <h5 class="modal-title">Ventana de confirmación</h5>\n' +
+                '          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>\n' +
+                '        </div>\n' +
+                '        <div class="modal-body">\n' +
+                '          <p>¿Segur@ que deseas eliminar el artículo con id {{ article[0] }}?</p>\n' +
+                '        </div>\n' +
+                '        <div class="modal-footer">\n' +
+                '            <form method="POST" action="{{ url_for(' + "'articlesDelete'" + ', id=article[0]) }}">\n' +
+                '                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>\n' +
+                '                <button type="submit" class="btn btn-primary">Aceptar</button>\n' +
+                '            </form>\n' +
+                '        </div>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
+                '</div>\n' +
+                '{% endfor %}'
+              }
+            </code>
+          </pre>
+
+          <p>
+            En este punto oficialmente se se han colocado todos los elementos necesarios dentro del <code>for.</code>{' '}
+            El siguiente componente para completar el CRUD, que es agregar, se debe crear por fuera del ciclo actuando
+            como otra opción en la columna de acciones.
+          </p>
+
+          <h2 className="mt-5">Agregar un artículo</h2>
+
+          <p>
+            El modal para agregar un artículo, consiste básicamente en un formulario y luce de la siguiente manera:
+          </p>
+
+          <pre>
+            <code>
+              {
+                '...\n' +
+                '<!-- Modal for adding articles -->\n' +
+                '<div class="modal fade" id="addArticle" tabindex="-1" aria-labelledby="addArticle" aria-hidden="true">\n' +
+                '  <div class="modal-dialog">\n' +
+                '    <div class="modal-content">\n' +
+                '      <div class="modal-header">\n' +
+                '        <h1 class="modal-title fs-5" id="exampleModalLabel">Add article</h1>\n' +
+                '        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>\n' +
+                '      </div>\n' +
+                '      <div class="modal-body text-start">\n' +
+                '          <form class="w-75 mx-auto" method="POST" action="{{ url_for(' + "'articlesPost'" + ') }}">\n' +
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Id</label>\n' +
+                '                  <input id="id" name="id" class="form-control" type="text" placeholder="Default input" aria-label="default input example">\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Title</label>\n' +
+                '                  <input id="title" name="title" class="form-control" type="text" placeholder="Default input" aria-label="default input example">\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Body</label>\n' +
+                '                  <textarea id="body" name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Author </label>\n' +
+                '                  <input id="author" name="author" class="form-control" type="text" placeholder="Default input" aria-label="default input example">\n' +
+                '              </div>\n\n' +
+
+                '              <div class="mb-3">\n' +
+                '                  <label for="exampleFormControlInput1" class="form-label">Created at </label><br />\n' +
+                '                  <input id="createdat" name="createdat" type="date" id="datetime-local">\n' +
+                '              </div>\n' +
+                '              <div class="modal-footer">\n' +
+                '                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>\n' +
+                '                  <button type="submit" class="btn btn-primary">Add</button>\n' +
+                '              </div>\n' +
+                '          </form>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
+                '  </div>\n' +
+                '</div>\n' +
+                '{% endblock %}'
+              }
+            </code>
+          </pre>
+
+          <h2 className="mt-5">
+            Rutas adicionales para los procesos de CRUD
+          </h2>
+
+          <p>
+            Una vez hemos completado toda la parte del diseño frontend, procedemos a la configuración de rutas adicionales para
+            el correcto funcionamiento del aplicativo. Para ello, en el archivo de <code>views.py</code>{' '}
+            tendremos que crear las diferentes funciones o rutas que nos permitan insertar, eliminar, editar y leer artículos
+            de la base de datos. Estas funciones son las siguientes y han sido configuradas contemplando exclusivamente
+            los métodos <code>POST</code> y <code>GET</code> y es por ello que en una misma
+            ruta no se tienen los métodos <code>PUT</code> y <code>DELETE</code>{' '}
+            por lo que se consideró necesario crear más rutas.
+          </p>
+
+          <pre>
+            <code className="language-python">
+              {
+                '# Route to get articles\n' +
+                "@app.route('/articles', methods=['GET', 'POST'])\n" +
+                'def articlesGet():\n' +
+                '    cur = mysql.connection.cursor()\n' +
+                '    cur.execute("SELECT * FROM `the_article`")\n' +
+                '    the_articles = cur.fetchall()\n\n' +
+
+                '    return render_template("articles.html", the_articles=the_articles)\n\n' +
+
+                '# Route to add articles\n' +
+                "@app.route('/add-articles', methods=['GET', 'POST'])\n" +
+                'def articlesPost():\n' +
+                '    form = request.form\n\n' +
+
+                "    id = form['id']\n" +
+                "    title = form['title']\n" +
+                "    body = form['body']\n" +
+                "    author = form['author']\n" +
+                "    created_at = form['createdat']\n\n" +
+
+                '    cur = mysql.connection.cursor()\n' +
+                "    query = " + '"INSERT INTO ' + "`the_article` VALUES(%s, '%s', '%s', '%s', '%s')" + '" % (id, title, body, author, created_at)\n' +
+                '    results = cur.execute(query)\n' +
+                '    mysql.connection.commit()\n\n' +
+
+                "    return redirect('/articles')\n\n" +
+
+                '# Route to update artcles\n' +
+                "@app.route('/edit-articles/<id>', methods=['GET', 'POST'])\n" +
+                'def articlesPut(id):\n' +
+                '    form = request.form\n\n' +
+
+                "    idNueva = form['id']\n" +
+                "    title = form['title']\n" +
+                "    body = form['body']\n" +
+                "    author = form['author']\n" +
+                "    created_at = form['createdat']\n\n" +
+
+                '    cur = mysql.connection.cursor()\n' +
+                '    query = "UPDATE `the_article` SET id = %s, title = ' + "'%s', body = '%s', author = '%s', created_date = '%s' WHERE id = %s" + '" % (idNueva, title, body, author, created_at, id)\n' +
+                '    results = cur.execute(query)\n' +
+                '    mysql.connection.commit()\n' +
+
+                "    return redirect('/articles')\n\n" +
+
+                '# Route to delete artcles\n' +
+                "@app.route('/articles/<id>', methods=['GET', 'POST'])\n" +
+                'def articlesDelete(id):\n' +
+                '    cur = mysql.connection.cursor()\n' +
+                '    query = "DELETE FROM `the_article` WHERE id = %s" % (id)\n' +
+                '    results = cur.execute(query)\n' +
+                '    mysql.connection.commit()\n\n' +
+
+                "    return redirect('/articles')\n"
+              }
+            </code>
+          </pre>
+
+          <h2 className="mt-5">Script de creación de base de datos y tabla</h2>
+
+          <p>
+            Finalmente, antes de probar todas las funcionalidades de nuestro aplicativo, nos queda
+            crear la base de datos y la tabla dentro de nuestra máquina CentOS. Este es
+            un script de ayuda:
+          </p>
+
+          <pre>
+            <code className="language-sql">
+              {
+                '-- Database creation\n' +
+                'CREATE DATABASE app_flask_db;\n' +
+                'use app_flask_db;\n\n' +
+
+                '-- Table creation\n' +
+                'CREATE TABLE the_article(\n' +
+                '    id INTEGER PRIMARY KEY,\n' +
+                '    title VARCHAR(50),\n' +
+                '    body VARCHAR(600),\n' +
+                '    author VARCHAR(50),\n' +
+                '    created_date DATE\n' +
+                ');\n'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Luego de esto, se puede subir todo el código a github y traerlo desde la máquina CentOS
+            o también mediante el directorio compartido se puede pasar el proyecto. Para pasar el proyecto
+            mediante la carpeta compartida, basta simplemente con copiar la carpeta y pegarla
+            donde se encuentra ubicado nuestro <code>.Vagrantfile.</code>
+          </p>
+
+          <h2 className="mt-5">
+            Probar el aplicativo
+          </h2>
+
+          <p>
+            Para probar el aplicativo se debe realizar lo siguiente:
+          </p>
+
+          <ol>
+            <li>Encender la máquina con <code className="text-dark">vagrant up server</code>.</li>
+            <li>Acceder a la máquina con <code className="text-dark">vagrant ssh server</code>.</li>
+            <li>Iniciar como <code>root</code>, ejecutando: <code className="text-dark">sudo -i</code>.</li>
+            <li>Iniciar el servicio de <code>mysqld</code> con <code className="text-dark">systemctl start mysqld</code>.</li>
+            <li>Asegurarse de que están creadas la base de datos y la tabla (de lo contrario ejecutar el script otorgado anteriormente).</li>
+            <li>Dirgirse al proyecto y ejecutar <code>export FLASK_APP=run.py</code> para especficar el archivo de iniciación del servidor.</li>
+            <li>Posteriormente, ejecutar <code>python3 -m flask run --host=0.0.0.0</code>.</li>
+            <li>Verificar en el navegador empleando la IP de la máquina CentOS junto con el puerto 5000.</li>
+          </ol>
+
+          <h2 className="h2 text-dark mt-5">
+            Finalización
+          </h2>
+
+          <p>
+            Esta ha sido una explicación detallada del proceso
+            para desplegar una aplicación web que emplee una base de datos
+            MySQL y sea desplegada utilizando Flask en el sistema operativo
+            de CentOS 8. Si se desea obtener el proyecto del Autor
+            se pueden dirigir 
+            {' '}<a href="https://github.com/Juandiego001/app-flask-mysql-servicios-telematicos" target="_blank" rel="noindex,nofollow">aqui.</a><br /><br />
+
+            Cualquier duda, queja, recomendación o donación que deseen realizar me pueden
+            contactar por telegram:
+            {' '}<a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
+            Espero les haya sido de gran ayuda :)
+          </p>
+
+          <p>
+            Fecha de publicación: 07-02-2023.
+            <br />
+            Autor: Juan Diego Cobo Cabal.
+          </p>
         </div>
 
         <Footer />

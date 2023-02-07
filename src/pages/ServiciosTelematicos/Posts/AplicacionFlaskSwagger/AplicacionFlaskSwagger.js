@@ -62,12 +62,6 @@ const AplicacionFlaskSwagger = () => {
             para ejecutar el proyecto.
           </p>
 
-          {/* TENER EN CUENTA ESTO */}
-          {/* <p className={"p-3 " + styles.BgWarning}>
-            <b>Atención.</b> Se asume que ya se tiene el proyecto inicial configurado, es decir, que ya está funcionando el tema de apache
-            con flask y en general la parte inicial (incluyendo la instalación de los módulos necesarios).
-          </p> */}
-
           <h2 className="h2 text-dark mt-5">
             Definición de máquinas en Vagrantfile
           </h2>
@@ -591,7 +585,7 @@ const AplicacionFlaskSwagger = () => {
           </p>
 
           <h2 className="h2 text-dark mt-5">
-            Finaización
+            Finalización
           </h2>
 
           <p>

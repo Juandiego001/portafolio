@@ -38,6 +38,18 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">Aplicación Flask + MySQL + Centos 8</h5>
+              <p className="card-text">
+                Desarrollo de práctica para construir una aplicación
+                web con el framework de python Flask y MySQL en
+                una máquina Centos 8.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-mysql">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">Conceptos iniciales de la auditoría de sistemas</h5>
               <p className="card-text">
                 Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal.
@@ -77,18 +89,6 @@ const Home = () => {
               </p>
               <Link className="btn btn-dark"
                 to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
-            </div>
-          </div>
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Flask + Centos 7</h5>
-              <p className="card-text">
-                Desarrollo de práctica para construir una aplicación
-                web con el framework de python Flask en una máquina
-                de Centos 7.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-centos">Ver entrada</Link>
             </div>
           </div>
 

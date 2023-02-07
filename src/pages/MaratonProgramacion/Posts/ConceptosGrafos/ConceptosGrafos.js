@@ -236,7 +236,7 @@ const ConceptosGrafos = () => {
           </p>
 
           <h2 className="h2 text-dark mt-5">
-            Finaización
+            Finalización
           </h2>
 
           <p>
