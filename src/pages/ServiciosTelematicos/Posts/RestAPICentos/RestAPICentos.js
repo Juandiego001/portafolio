@@ -45,7 +45,7 @@ const RestApiCentOS = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div className="mb-4">
+      <div>
         <Header />
 
         <div className="container-fluid my-5 px-5">
@@ -57,7 +57,7 @@ const RestApiCentOS = () => {
             En la presente entrada se explicará cómo desarrollar una Rest API con diferentes lenguajes de programación.
             Por un lado, utilizaremos python con el framework de Flask. Para esto clonaremos el repositorio
             del docente Oscar Mondragón. Por otro lado,
-            utilizaremos JavaScript con Node.js empleando el framework de express, proyecto que podrá ser clonado
+            utilizaremos Javascript con Node.js empleando el framework de express, proyecto que podrá ser clonado
             desde el repositorio que se adjunta al final de la entrada, o construirse desde cero.
             Los servicios mencionados serán configurados en un sistema operativo CentOS 8.
             Posteriormente, utilizaremos
@@ -152,45 +152,30 @@ const RestApiCentOS = () => {
                 'sudo yum install -y nodejs\n' +
                 '# Verficación de instalación de node\n' +
                 'node --version\n' +
-                'npm --version'
+                'npm --version\n' +
+                '# Instalación de framework express\n' +
+                'npm i express'
               }
             </code>
           </pre>
 
-
+          <h2 className="mt-5">
+            Clonación, ejecución y testeo del proyecto (REST API con Python)
+          </h2>
 
           <p>
-            A continuación, ejecute desde el usuario <code>root</code> (seguramente ya se encuentre con dicho usuario) el siguiente comando
-            para copiar el repositorio:
+            Ahora bien, desde la máquina CentOS 8, lo que haremos será clonar el repositorio del docente Oscar Mondragón,
+            ejecutarlo y verificar que está funcionando correctamente. Para esto, realizamos lo siguiente:
           </p>
 
           <pre>
-            <code>
+            <code className="language-console">
               {
-                'git clone https://github.com/omondragon/APIRestFlask'
-              }
-            </code>
-          </pre>
+                '# Para clonar el proyecto\n' +
+                'sudo git clone https://github.com/omondragon/APIRestFlask\n\n' +
 
-          <p>
-            Luego para correr el proyecto:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
-                'cd APIRestFlask'
-              }
-            </code>
-          </pre>
-
-          <p>
-            Luego para ejecutar el código:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
+                '# Para ejecutar el proyecto\n' +
+                'cd APIRestFlask\n' +
                 'export FLASK_APP=apirest.py\n' +
                 'export FLASK_ENV=development\n' +
                 'python3 -m flask run --host=0.0.0.0'
@@ -199,52 +184,10 @@ const RestApiCentOS = () => {
           </pre>
 
           <p>
-            Finalmente, para probar que efectivamente está corriendo el aplicativo busque
-            desde el navegador chrome de su máquina anfitrión:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
-                'http://192.168.56.3:5000/books'
-              }
-            </code>
-          </pre>
-
-          <p>
-            Para el siguiente punto (probando el comando <code>curl</code> desde otra máquina), devuelvase
-            a su máquina y ejecute:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
-                'vagrant up client\n' +
-                'vagrant ssh client'
-              }
-            </code>
-          </pre>
-
-          <p>
-            Una vez haya iniciado la máquina <code>client</code> ejecute:
-          </p>
-
-          <pre>
-            <code>
-              {
-                'curl 192.168.56.3:5000/books'
-              }
-            </code>
-          </pre>
-
-          <div className="bg-warning p-3">
-            <b>Atención.</b>
-            <br /><br />
-            <span>La máquina <code>server</code> deberá seguir corriendo el el proyecto.</span>
-          </div>
-
-          <p className="mt-3">
-            Si todo lo anterior retorna:
+            Finalmente, para comprobar que el aplicativo está funcionando correctamente,
+            desde su navegador de preferencia digite:
+            {' '}<span className="badge text-dark m-0 p-0">http://192.168.56.3:5000/books</span>.
+            Si visualizamos lo siguiente, es porque el proceso se ha hecho correctamente.
           </p>
 
           <pre>
@@ -268,92 +211,125 @@ const RestApiCentOS = () => {
             </code>
           </pre>
 
+          <h2 className="mt-5">
+            Clonación, ejecución y testeo del proyecto (REST API con Javascript)
+          </h2>
+
           <p>
-            Es porque se ha terminado de configurar correctamente.
+            Ahora bien, similar a como hicimos con el proyecto de Flask,
+            lo que haremos será copiar el repositorio del autor y empezar
+            a correrlo desde la máquina CentOS. Con esto, el lector
+            podrá realizar modificaciones a su antojo del proyecto y
+            tener la base de una REST API en Javascript con Node.js. Para esto,
+            ejecutamos:
+          </p>
+
+          <pre>
+            <code className="language-console">
+              {
+                '# Clonación del repositorio\n' +
+                'git clone https://github.com/Juandiego001/rest-api-nodejs-servicios-telematicos rest-api\n' +
+                'cd rest-api\n' +
+                '# Ejecución del servidor\n' +
+                'node index.js\n' +
+                '# Si aparece un mensaje indicando que se está escuchando en el puerto 3000,\n' +
+                '# será porque la API estará funcionando correctamente.'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Para comprobar que el aplicativo está funcionando correctamente,
+            desde su navegador de preferencia digite:
+            {' '}<span className="badge text-dark m-0 p-0">http://192.168.56.3:3000/books</span>.
+            Si visualizamos lo siguiente, es porque el proceso se ha hecho correctamente.
+          </p>
+
+          <pre>
+            <code className="language-json">
+              {
+                '"books":[\n' +
+                '    {\n' +
+                '      "author":"Gabo",\n' +
+                '      "description":"Good one",\n' +
+                '      "id":1,\n' +
+                '      "title":"La hojarasca"\n' +
+                '    },\n' +
+                '    {\n' +
+                '      "author":"Gabo",\n' +
+                '      "description":"Interesting",\n' +
+                '      "id":2,\n' +
+                '      "title":"El coronel no tiene quien le escriba"\n' +
+                '    }\n' +
+                ']\n'
+              }
+            </code>
+          </pre>
+
+          <div className="bg-info p-5 my-5">
+            <h2>
+              Peticiones con postman
+            </h2>
+
+            <p>
+              {/* Desde la máquina de Windows es posible comprobar si el proyecto está corriendo
+              correctamente. Para ello deberá instalar 
+              {' '}<a href="https://www.postman.com/downloads/" target="_blank">postman</a>. */}
+
+              <b>Postman</b> es un aplicativo que permite ejecutar todas los tipos de peticiones con una interfaz gráfica
+              más cómoda y eficaz que las consolas de comandos de Windows. Para iniciar, basta con abrir el aplicativo
+              y omitir el registro como se ha señalado en la parte roja de la imagen inferior.
+            </p>
+
+            <div className="text-center">
+              <img className="my-2 w-50 mx-auto" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/instalacion-postman.png"} />
+            </div>
+
+            <p className="mt-5">
+              Luego, para definir la petición se da click en el <b>+</b> del aplicativo y
+              se define la petición, ruta y contenido en el body (se debe establecer que será un JSON si se desean crear datos).
+              En el ejemplo de la imagen, se observa cómo efectuar la creación de un libro enviando un JSON. A su vez,
+              es posible eliminar un libro o editarlo.
+            </p>
+
+            <div className="text-center">
+              <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/utilizacion-postman.png"} />
+            </div>
+          </div>
+
+          <h2 className="mt-5">
+            Aclaraciones
+          </h2>
+
+          <p>
+            La idea de una REST API es permitir insertar, eliminar, editar y leer ciertos datos en específico.
+            Así pues, tanto con el proyecto implementado en Python como el implementado en Javascript,
+            se podrán efectuar las mismas operaciones CRUD. Por otra parte, si se utilizará solo
+            Postman, no habrá nada de que preocuparse, más si de lo contrario se utilizarán
+            los comandos <code>curl</code> de linux, tendrá que investigarse cómo efectuar
+            los comandos correctamente para enviar JSON's y objetos por el estilo.
+          </p>
+
+          <h2 className="mt-5">
+            Finalización
+          </h2>
+
+          <p>
+            Esta ha sido una explicación general para desplegar
+            una REST API en un sistema operativo CentOS 8.
+            Cualquier duda, queja, recomendación o donación que deseen realizar me pueden
+            contactar por telegram:
+            {' '}<a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
+            Espero les haya sido de gran ayuda :)
+          </p>
+
+          <p>
+            Fecha de publicación: 07-02-2023.
+            <br />
+            Autor: Juan Diego Cobo Cabal.
           </p>
         </div>
 
-        <div className="mt-5">
-          <h2>Desarrollo expres - Nodejs</h2>
-          <p>
-            Continuando con Nodejs tendremos que realizar primero la instalación de <code>nodejs</code> desde
-            la máquina de server:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
-                'curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -\n' +
-                'sudo yum install -y nodejs'
-              }
-            </code>
-          </pre>
-
-          <p>
-            Para verificar que <code>nodejs</code> fue correctamente instalado digite:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
-                'node -version\n' +
-                'npm -version'
-              }
-            </code>
-          </pre>
-
-          <p>
-            Luego, proceda a copiar el siguiente repositorio ejecutando:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
-                'git clone https://github.com/Juandiego001/rest-api-nodejs-servicios-telematicos'
-              }
-            </code>
-          </pre>
-
-          <p>
-            Ejecute posteriormente:
-          </p>
-
-          <pre>
-            <code className="language-cmd">
-              {
-                'cd rest-api-nodejs-servicios-telematicos\n' +
-                'node index.js'
-              }
-            </code>
-          </pre>
-
-          <p>
-            Realice la misma prueba que mencionada en la sección anterior
-            para comprobar que todo está funcionando correctamente.
-          </p>
-        </div>
-
-        <div className="bg-info p-5 my-5">
-          <h2>Para hacer diferentes peticiones</h2>
-          <p>
-            Desde la máquina de Windows es posible comprobar si el proyecto está corriendo
-            correctamente. Para ello deberá instalar <a href="https://www.postman.com/downloads/" target="_blank">postman</a>.
-            <br /><br />
-            Este es un aplicativo que permite ejecutar todas las peticiones posibles sin la necesidad de registrarse
-            o iniciar sesión. Para ello, una vez ha finalizado la descarga y ha abierto el programa deberá seleccionar
-            la parte de <b>skip</b> para utilizar postman <b>sin cuenta alguna</b>.
-          </p>
-
-          <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/instalacion-postman.png"} />
-
-          <p className="mt-3">
-            Luego para empezar a hacer las peticiones se da click en el <code>+</code> del aplicativo y
-            se define la petición, ruta y contenido en el body (se debe establecer que será un JSON).
-          </p>
-
-          <img className="my-2 w-50" src={process.env.PUBLIC_URL + "/septimo-semestre/servicios-telematicos/rest-api/utilizacion-postman.png"} />
-
-        </div>
 
         <Footer />
       </div>

@@ -38,6 +38,31 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">JSON Placeholder  + Apache + Centos 8</h5>
+              <p className="card-text">
+                Desarrollo de práctica para crear un aplicativo
+                en una máquina virtual Centos 8 utilizando JSON Placeholder y
+                desplegando el servicio en Apache.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/json-placeholder-centos">Ver entrada</Link>
+            </div>
+          </div>
+
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
+              <h5 className="card-title">Rest API + Centos 8</h5>
+              <p className="card-text">
+                Desarrollo de práctica para crear una Rest API
+                en una máquina virtual Centos 8 utilizando el framework
+                de python flask y nodejs.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/rest-api-centos">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">Aplicación Flask + MySQL + Centos 8</h5>
               <p className="card-text">
                 Desarrollo de práctica para construir una aplicación
@@ -69,29 +94,6 @@ const Home = () => {
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-swagger">Ver entrada</Link>
             </div>
           </div>
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Conceptos iniciales de Grafos</h5>
-              <p className="card-text">
-                Conceptos iniciales de grafos: nodos, caminos, tipos de grafos,
-                algoritmos de recorrido de grafos y demás en el lenguaje C++.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/conceptos-inciales-de-grafos">Ver entrada</Link>
-            </div>
-          </div>
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Teoría inicial de la estadística</h5>
-              <p className="card-text">
-                Desarrollo de conceptos básicos iniciales de la probabilidad y estadística.
-              </p>
-              <Link className="btn btn-dark"
-                to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
-            </div>
-          </div>
-
         </div>
 
         <Footer />

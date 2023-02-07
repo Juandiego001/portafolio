@@ -66,10 +66,11 @@ const ServiciosTelematicos = () => {
 
           <div className="card mt-3">
             <div className="card-body">
-              <h5 className="card-title">Json Placeholder + Centos 8</h5>
+              <h5 className="card-title">JSON Placeholder  + Apache + Centos 8</h5>
               <p className="card-text">
-                Desarrollo de práctica para crear una Rest API
-                en una máquina virtual Centos 8 utilizando JSON Placeholder.
+                Desarrollo de práctica para crear un aplicativo
+                en una máquina virtual Centos 8 utilizando JSON Placeholder y
+                desplegando el servicio en Apache.
               </p>
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/json-placeholder-centos">Ver entrada</Link>
             </div>
