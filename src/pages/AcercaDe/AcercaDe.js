@@ -41,6 +41,32 @@ const AcercaDe = () => {
             Acerca de
           </h1>
 
+          <p>
+            Mi nombre es Juan Diego Cobo Cabal y soy estudiante de Ingeniería Informática
+            de la Universidad Autónoma de Occidente en la ciudad de Cali, Colombia. El motivo
+            por el que desarrollé está plataforma tiene sencillamente dos fines:
+          </p>
+
+          <ol>
+            <li>
+              Dar a conocer tanto para mis compañeros de estudio
+              como para cualquier persona interesada, lo que
+              vayamos aprendiendo a lo largo de la carrera.
+            </li>
+
+            <li>
+              Dar a conocer los proyectos que he desarrollado
+              para presentarme ante las empresas.
+            </li>
+          </ol>
+
+          <p>
+            También, debo destacar que no cuento con múltiples redes sociales
+            y con las que cuento suelen ser más personales. Por lo que
+            suelo utilizar como contacto mi{' '}
+            <a href="https://t.me/Juan_0_0_1" target="_blank" rel="noindex,nofollow">telegram.</a>
+          </p>
+
         </div>
 
         <Footer />
