@@ -38,6 +38,18 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">Aplicación Android + Firebase</h5>
+              <p className="card-text">
+                Desarrollo de práctica para conectar una aplicación Android
+                con el servicio de Google denominado Firebase para el
+                control de usuarios.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-firebase">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">IoT Ubidots</h5>
               <p className="card-text">
                 Desarrollo de una práctica que simula el envío de datos
@@ -82,16 +94,6 @@ const Home = () => {
                 una máquina Centos 8.
               </p>
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-mysql">Ver entrada</Link>
-            </div>
-          </div>
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Conceptos iniciales de la auditoría de sistemas</h5>
-              <p className="card-text">
-                Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas">Ver entrada</Link>
             </div>
           </div>
         </div>

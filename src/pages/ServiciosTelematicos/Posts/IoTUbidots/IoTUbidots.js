@@ -398,6 +398,12 @@ const IoTUbidots = () => {
               por telegram: <a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
               Espero les haya sido de gran ayuda :)
             </p>
+
+            <p>
+            Fecha de publicación: 14-02-2023.
+            <br />
+            Autor: Juan Diego Cobo Cabal.
+          </p>
           </div>
         </div>
 
