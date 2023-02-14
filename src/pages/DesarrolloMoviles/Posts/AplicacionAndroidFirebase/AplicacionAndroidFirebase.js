@@ -54,12 +54,33 @@ const AplicacionAndroidFirebase = () => {
             Aplicación Android + Firebase
           </h1>
 
-          <div>
-            <p>
-              En esta práctica se mostrará como conectar una aplicación Android con el servicio de Google <code>Firebase</code>{' '}
-              para generar un control de usuarios en la nube.
-            </p>
-          </div>
+          <p>
+            En esta práctica se mostrará como conectar una aplicación Android con el servicio de Google <code>Firebase</code>{' '}
+            para generar un control de usuarios en la nube.
+          </p>
+
+          <h2 className="mt-5">Registro e información acerca de Firebase</h2>
+
+          <p>
+            Tal y como lo mencionan en su página Home:
+
+            "Firebase es una plataforma de desarrollo de apps que te ayuda a compilar y
+            desarrollar las apps y los juegos que  les encantan a los usuarios. Con el
+            respaldo de Google y la confianza de millones de empresas de todo el mundo".
+
+            Ahora bien, para comenzar debemos registrarnos en Firebase.
+            Este proceso es muy sencillo ya que si contamos con una cuenta de gmail
+            (creo que no es posible iniciar sesión si no se cuenta con una cuenta de gmail),
+            bastará con dirigirse a este link:
+            {' '}<a href="https://firebase.google.com/" target="_blank">https://firebase.google.com/.</a>{' '}
+          </p>
+
+          <h2 className="mt-5">Configuración del Gradle</h2>
+
+          <p>
+
+          </p>
+
         </div>
 
         <Footer />
