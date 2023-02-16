@@ -38,6 +38,30 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">Aplicación Android + Firebase</h5>
+              <p className="card-text">
+                Desarrollo de práctica para conectar una aplicación Android
+                con el servicio de Google denominado Firebase para el
+                control de usuarios.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-firebase">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
+              <h5 className="card-title">IoT Ubidots</h5>
+              <p className="card-text">
+                Desarrollo de una práctica que simula el envío de datos
+                a la plataforma de IoT Ubidots usando el API Rest
+                que provee la plataforma misma.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/iot-ubidots">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">JSON Placeholder  + Apache + Centos 8</h5>
               <p className="card-text">
                 Desarrollo de práctica para crear un aplicativo
@@ -70,28 +94,6 @@ const Home = () => {
                 una máquina Centos 8.
               </p>
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-mysql">Ver entrada</Link>
-            </div>
-          </div>
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Conceptos iniciales de la auditoría de sistemas</h5>
-              <p className="card-text">
-                Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas">Ver entrada</Link>
-            </div>
-          </div>
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Flask + Swagger + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para construir una aplicación
-                web con el framework de python Flask y documentar
-                la API con Swagger.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-swagger">Ver entrada</Link>
             </div>
           </div>
         </div>

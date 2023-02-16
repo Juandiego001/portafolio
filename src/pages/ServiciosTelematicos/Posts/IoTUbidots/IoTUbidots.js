@@ -55,8 +55,11 @@ const IoTUbidots = () => {
           </h1>
 
           <p>
-            La presente es una práctica para aproximarse al tema de internet de las cosas. Utilizaremos python para hacer las peticiones
-            y la plataforma de Ubidots para las simluaciones.
+            La presente entrada es una práctica para aproximarse al tema de internet de las cosas. Utilizaremos el lenguaje de programación 
+            python para construir una API que permita hacer peticiones
+            a la plataforma de Ubidots. El proyecto en cuestión estará desplegado en una máquina CentOS 8 y, cuando lo ejecutemos,
+            se enviarán los valores a la plataforma mencionada. También, utilizaremos el repositorio del profesor Oscar
+            Mondragón para facilitar el proceso.
           </p>
 
 
@@ -66,8 +69,8 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Para comenzar, tendremos que crear una cuenta en Ubidots. Para ello, nos dirigimos a su <a href="https://ubidots.com/" target="_blank">home.</a>
-              <br /><br />
+              Para comenzar, tendremos que crear una cuenta en Ubidots. Para ello, nos dirigimos a su{' '}
+              <a href="https://ubidots.com/" target="_blank">home.</a>{' '}
               Posterior a ello, tendremos que completar las experiencias de bienvenida para la cual solo tendremos que leer y completar un campo que hace
               referencia a nuestro número de teléfono. Una vez hemos completado eso, ya podremos empezar a operar con Ubidots.
             </p>
@@ -162,8 +165,8 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Posterior a la incialización de la máquina, lo que procedemos a hacer es instalar las librerías necesarias para correr
-              todos los archivos necesarios.
+              Posterior a la incialización de la máquina, procedemos a instalar las librerías necesarias para correr
+              todos los módulos necesarios.
             </p>
 
             <pre>
@@ -199,7 +202,7 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Ahora bien, se debe proceder a clonar el repositorio del profesor Oscar Mondragón:{' '}
+              Después clonamos el repositorio del profesor Oscar Mondragón:{' '}
               <a href="https://github.com/omondragon/UbidotsClient" target="_blank">https://github.com/omondragon/UbidotsClient.</a>{' '}
               Para ello, ejecutamos en nuestra máquina Centos:
             </p>
@@ -219,7 +222,7 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Una vez hemos cloando el repositorio del profesor, tendremos que modificar el valor
+              Una vez hemos clonado el repositorio del profesor, tendremos que modificar el valor
               de la variable <code>TOKEN.</code> Para ello, ejecutamos lo siguiente:
             </p>
 
@@ -245,10 +248,8 @@ const IoTUbidots = () => {
             <p>
               El token se puede encontrar en la página de Ubidots, una vez hemos iniciado sesión, haciendo click
               en nuestro ícono de usuario y posteriormente haciendo click en <code>My Profile</code> y luego
-              dirigiendose a <code>API Credentials.</code>
-              <br /><br />
-              También, haciendo click en el ícono de usuario y posteriormente haciendo click en <code>API Credentials</code>{' '}
-              directamente.
+              dirigiendose a <code>API Credentials.</code> También, haciendo click en el ícono de usuario y 
+              posteriormente haciendo click en <code>API Credentials</code>{' '}directamente.
             </p>
           </div>
 
@@ -258,7 +259,7 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Para verificar que todo está funcionando correctamente deberemos ejecutar:
+              Para verificar que todo está funcionando correctamente debemos ejecutar:
             </p>
 
             <pre>
@@ -341,6 +342,7 @@ const IoTUbidots = () => {
               Aquí lo que se está haciendo es enviar nuevos valores a <code>machine.</code>
               <br /><br />
               Ahora bien, para probar con <code>postman</code> se debe:
+            </p>
 
               <ol>
                 <li>Colocar la url: <code>http://things.ubidots.com/api/v1.6/devices/your-device-label/?token=your-token</code> en <code>postman.</code></li>
@@ -363,7 +365,6 @@ const IoTUbidots = () => {
                   </pre>
                 </li>
               </ol>
-            </p>
 
             <p>
               Si para todos los datos enviados se retorna un valor de <code>201</code> es porque todo habrá funcionado correctamente.
@@ -376,7 +377,7 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Ahora bien, para agregar una alerta nos deberemos dirigir a la sección de <code>devices</code>, seleccionar nuestro dispositivo
+              Ahora bien, para agregar una alerta nos tendremos que dirigir a la sección de <code>devices,</code> seleccionar nuestro dispositivo
               y luego seleccionar <code>data.</code>{' '} Ahí, seleccionar <code>events</code> y  seleccionar el dispositivo, variable y método
               de alerta que deseemos obtener.
             </p>
@@ -392,10 +393,17 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Ante cualquier duda, queja, recomendación o donación que deseen realizar me pueden contactar por telegram: <a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
-              <br />
+              Esta ha sido una explicación corta de cómo conectar un proyecto hecho en Python con la plataforma de 
+              IoT Ubidots. Ante cualquier duda, queja, recomendación o donación que deseen realizar me pueden contactar 
+              por telegram: <a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
               Espero les haya sido de gran ayuda :)
             </p>
+
+            <p>
+            Fecha de publicación: 14-02-2023.
+            <br />
+            Autor: Juan Diego Cobo Cabal.
+          </p>
           </div>
         </div>
 
