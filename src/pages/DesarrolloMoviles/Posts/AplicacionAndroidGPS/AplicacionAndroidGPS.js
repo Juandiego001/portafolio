@@ -428,11 +428,48 @@ const AplicacionAndroidGps = () => {
           </ul>
 
           <p>
-            
-            Así, 
+            Teniendo en cuenta lo anterior, las librerías que tendremos que importar son las siguientes:
           </p>
 
+          <pre className="language-java">
+            <code>
+              {
+                "/* Librerías a utilizar en el proyecto */\n" +
+                "import androidx.annotation.NonNull;\n" +
+                "import androidx.appcompat.app.AppCompatActivity;\n" +
+                "import androidx.core.app.ActivityCompat;\n\n" +
+
+                "import android.Manifest;\n" +
+                "import android.content.Context;\n" +
+                "import android.content.pm.PackageManager;\n" +
+                "import android.location.Address;\n" +
+                "import android.location.Geocoder;\n" +
+                "import android.location.Location;\n" +
+                "import android.location.LocationListener;\n" +
+                "import android.location.LocationManager;\n" +
+                "import android.os.Bundle;\n\n" +
+
+                "import android.os.CancellationSignal;\n" +
+                "import android.util.Log;\n" +
+                "import android.view.View;\n" +
+                "import android.widget.EditText;\n" +
+                "import android.widget.TextView;\n" +
+                "import android.widget.Toast;\n\n" +
+
+                "import java.util.List;\n" +
+                "import java.util.Locale;\n" +
+                "import java.util.concurrent.Executor;\n" +
+                "import java.util.concurrent.FutureTask;\n" +
+                "import java.util.function.Consumer;\n"
+              }
+            </code>
+          </pre>
+
           <h2 className="mt-5">Configuración adicional para ubicación en tiempo real</h2>
+
+          <p>
+
+          </p>
 
         </div>
 

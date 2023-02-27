@@ -50,7 +50,7 @@ import InvestigacionOperaciones from './pages/InvestigacionOperaciones/Investiga
 import PensamientoSistemico from './pages/PensamientoSistemico/PensamientoSistemico';
 import IdentidadesCultura from './pages/IdentidadesCultura/IdentidadesCultura';
 
-// Entradas de:
+// Entradas
 // Desarrollo de software para plataformas moviles
 import AplicacionAndroidNodejsMysql from './pages/DesarrolloMoviles/Posts/AplicacionAndroidNodejsMysql/AplicacionAndroidNodejsMysql';
 import AplicacionAndroidFirebase from './pages/DesarrolloMoviles/Posts/AplicacionAndroidFirebase/AplicacionAndroidFirebase';
@@ -85,6 +85,9 @@ import InsTrigFuncOracle from './pages/BasesDatos2/Posts/InsTrigFuncOracle/InsTr
 // Auditoria de sistemas
 import ConceptosInicialesAuditoria from './pages/AuditoriaSistemas/Posts/ConceptosInicialesAuditoria/ConceptosInicialesAuditoria';
 
+// Evaluaciones
+// Auditoria de sistemas
+import PrimerosCincoCapitulos from './pages/AuditoriaSistemas/Tests/PrimerosCincoCapitulos/PrimerosCincoCapitulos';
 
 // Router
 const router = createBrowserRouter([
@@ -204,10 +207,15 @@ const router = createBrowserRouter([
   // Posts auditoria de sistemas
   {
     path: "/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas",
-
     element: <ConceptosInicialesAuditoria />
   },
-
+  // Fin de posts de auditoría de sistemas
+  // Evaluaciones auditoría de sistemas
+  {
+    path: "/evaluaciones/auditoria-de-sistemas/primeros-cinco-capitulos",
+    element: <PrimerosCincoCapitulos />
+  },
+  // Fin de evaluaciones de auditoría de sistemas
   {
     path: "/contacto",
     element: <Contacto />
