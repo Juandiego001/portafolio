@@ -465,6 +465,227 @@ const AplicacionAndroidGps = () => {
             </code>
           </pre>
 
+          <p>
+            Ahora bien, tendremos que configurar las variables que nos permitirán tomar los datos de las
+            cajas de texto y procesarlas con los métodos de localización de la API de Android. Para ello,
+            establecemos las variables y configuramos su método 
+            {' '}<span className="badge text-dark m-0 p-0">onCreate</span>{' '} 
+            de la siguiente manera:
+          </p>
+
+          <pre>
+            <code className="language-java">
+              {
+                "public class MainActivity extends AppCompatActivity {\n\n" +
+                "  EditText editTextLatitud; // Para obtener los valores ingresados de latitud\n" +
+                "  EditText editTextLongitud; // Para obtener los valores ingresados de longitud\n" +
+                "  TextView textViewAddress; // Para mostrar la dirección encontrada\n" +
+                "  LocationManager mLocManager; // API de localización de Android\n" +
+                "  MyLocationListener mLocListener; // Clase personalizada para escuchar los movimientos del usuario en tiempo real\n" +
+                "  int PERMISO_FINE = 0; // Para verificar los permisos \n" +
+                "  int PERMISO_COARSE = 0; // Para verificar los permisos\n" +
+                "  int providerFound; // Para verificar si se ha encontrado alguna dirección\n\n" +
+
+                "  @Override\n" +
+                "  protected void onCreate(Bundle savedInstanceState) {\n" +
+                "      super.onCreate(savedInstanceState);\n" +
+                "      setContentView(R.layout.activity_main);\n" +
+                "      editTextLatitud = (EditText) findViewById(R.id.editTextLatitud);\n" +
+                "      editTextLongitud = (EditText) findViewById(R.id.editTextLongitud);\n" +
+                "      textViewAddress = (TextView) findViewById(R.id.textViewAddress);\n" +
+                "      mLocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);\n" +
+                "      mLocListener = new MyLocationListener();\n" +
+                "      mLocListener.setMainActivity(this);\n\n" +
+
+                "      askCurrentLocationAndUpdates(); // Método para obtener la posición actual\n" +
+                "  }\n"
+              }
+            </code>
+          </pre>
+
+          <p>
+            Como se puede observar en el código anterior, hay un método denominado
+            {' '}<span className="badge text-dark m-0 p-0">askCurrentLocationAndUpdates()</span>{' '} 
+            el cual nos permitirá determinar la posición actual del usuario. En este método
+            lo que haremos será:
+          </p>
+
+          <ol>
+            <li className="mb-3">
+              Verificar que los permisos han sido otorgados. En caso de que no hayan sido otorgados
+              se solicitarán en tiempo real utilizando el método 
+              {' '}<span className="badge text-dark m-0 p-0">requestPermissions</span>{' '} 
+              de la clase 
+              {' '}<span className="badge text-dark m-0 p-0">ActivityCompat</span>{' '} 
+              el cual llamará a su vez a un
+              {' '}<span className="badge text-dark m-0 p-0">callback</span>{' '} 
+              denominado
+              {' '}<span className="badge text-dark m-0 p-0">onRequestPermissionsResult.</span>{' '} 
+              A partir de este punto pueden ocurrir dos cosas:
+
+              <ol type="a">
+                <li>
+                  Que los permisos ya hayan sido previamente otorgados y se omita 
+                  la función mencionada anteriormente.
+                </li>
+                <li>
+                  Que se soliciten los permisos en tiempo real donde en caso de que 
+                  se otorguen se llama nuevamente a la función
+                  {' '}<span className="badge text-dark m-0 p-0">askCurrentLocationAndUpdates.</span>{' '} 
+                </li>
+                <li>
+                  El usuario no otorga ningún permiso y no se continua con el despliegue de
+                  la aplicación.
+                </li>
+              </ol>
+
+            </li>
+
+            <li className="mb-3">
+              Si el usuario ha otorgado los permisos previamente o se otorgan en tiempo real
+              se procede a tomar todos los
+              {' '}<span className="badge text-dark m-0 p-0">providers</span>{' '} 
+              que tenga el dispositivo para intentar encontrar la ubicación con alguno de ellos.<br />
+              Para que esto se ejecute correctamente, se ha definido previamente una variable denominada
+              {' '}<span className="badge text-dark m-0 p-0">ft</span>{' '} 
+              de tipo
+              {' '}<span className="badge text-dark m-0 p-0">FutureTask</span>{' '} 
+              que nos permite esperar hasta que se complete el intento de determinación
+              de ubicación. También se definieron otras variables importantes
+              para llamar el método de obtener localización.
+            </li>
+
+            <li className="mb-3">
+              Una vez se han denominado todas las variables importantes y se han encontrado
+              todos los
+              {' '}<span className="badge text-dark m-0 p-0">providers</span>{' '} 
+              se procede a ejecutar un ciclo que intenta la determinación de ubicación
+              por cada provider encontrado.
+            </li>
+
+            <li>
+              El método que se llama para determinar la ubicación actual se denomina
+              {' '}<span className="badge text-dark m-0 p-0">getCurrentLocation</span>{' '}
+              el cual a su vez llama a un
+              {' '}<span className="badge text-dark m-0 p-0">callback</span>{' '}
+              que en consecuencia ejecuta la función
+              {' '}<span className="badge text-dark m-0 p-0">accept</span>{' '}
+              de un objeto de tipo 
+              {' '}<span className="badge text-dark m-0 p-0">Consumer,</span>{' '}
+              el cual finalmente ejecutará el método encargado de mostrarnos nuestra
+              ubicación actual.
+            </li>
+          </ol>
+          
+          <p>
+            Los pasos descritos anteriormente reflejan el siguiente código:
+          </p>
+
+          <pre>
+            <code className="language-java">
+              {
+              "  public void askCurrentLocationAndUpdates() {\n" +
+              "    try {\n" +
+              "        providerFound = 0;\n" +
+              "        int PERMISO_FINE = ActivityCompat.checkSelfPermission(this,\n" +
+              "                Manifest.permission.ACCESS_FINE_LOCATION);\n" +
+              "        int PERMISO_COARSE = ActivityCompat.checkSelfPermission(this,\n" +
+              "                Manifest.permission.ACCESS_COARSE_LOCATION);\n\n" +
+
+              "        if (PERMISO_FINE != PackageManager.PERMISSION_GRANTED || PERMISO_COARSE != PackageManager.PERMISSION_GRANTED) {\n" +
+              "            ActivityCompat.requestPermissions(this,\n" +
+              "                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},\n" +
+              "                    1);\n" +
+              "        } else {\n" +
+              "            mLocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,\n" +
+              "                    (LocationListener) mLocListener);\n\n" +
+
+              "            final FutureTask<Boolean> ft = new FutureTask<Boolean>(() -> {}, true);\n\n" +
+
+              "            CancellationSignal cs = new CancellationSignal();\n\n" +
+
+              "            Executor ex = new Executor() {\n" +
+              "                @Override\n" +
+              "                public void execute(Runnable runnable) {\n" +
+              '                    Log.d("Callback", "Callback ejecutado");\n' +
+              "                    runnable.run();\n" +
+              "                }\n" +
+              "            };\n\n" +
+
+              "            Consumer c = new Consumer() {\n" +
+              "                @Override\n" +
+              "                public void accept(Object o) {\n" +
+              "                    try {\n" +
+              "                        if (o != null) {\n" +
+              "                            providerFound++;\n" +
+              "                            Location loc = (Location) o;\n" +
+              "                            setCurrentLocation(loc);\n" +
+              "                        } else {\n" +
+              '                            Log.d("Callback consumer", "Null");\n' +
+              "                        }\n" +
+              "                        ft.run();\n" +
+              "                    } catch (Exception e){\n" +
+              '                        Log.d("Error on customer", e.toString());\n' +
+              "                    }\n" +
+              "                }\n" +
+              "            };\n\n\n" +
+
+
+              "            for (String theProvider : mLocManager.getAllProviders()) {\n" +
+              '                Log.d("Provider", theProvider);\n' +
+              "                mLocManager.getCurrentLocation(theProvider, cs, ex, c);\n" +
+              "                ft.get();\n" +
+              '                Log.d("providerFound", Integer.toString(providerFound));\n' +
+              "                if (providerFound > 0) break;\n" +
+              "            }\n" +
+              "        }\n" +
+              "    } catch (Exception e) {\n" +
+              '        Log.d("Error.", e.toString());\n' +
+              "    }\n" +
+              "}\n"
+              }
+            </code>
+          </pre>
+
+          <p>
+            A su vez, como se mencionó anteriormente en el primer paso del desarrollo del método,
+            hay una función que tendremos que definir en nuestra clase para poder solicitar
+            los datos de la ubicación en caso de que sean modificados. Este método se denomina
+            {' '}<span className="badge text-dark m-0 p-0">onRequestPermissionsResult</span>{' '}
+            y su código se ha definido de la siguiente manera:
+          </p>
+
+          <pre>
+            <code className="language-java">
+              {
+                "@Override\n" +
+                "public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {\n" +
+                "    switch (requestCode) {\n" +
+                "        case 1:\n" +
+                "            if (grantResults.length > 0 &&\n" +
+                "                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {\n" +
+                "                askCurrentLocationAndUpdates();\n" +
+                "            } else {\n" +
+                '                Toast.makeText(this, "Sin los permisos no se podrá mostrar" +\n' +
+                '                         " su localización actual", Toast.LENGTH_LONG).show();\n' +
+                "            }\n" +
+                "            break;\n\n" +
+
+                "        default:\n" +
+                '            Toast.makeText(this, "Sin los permisos no se podrá mostrar" +\n' +
+                '                    " su localización actual", Toast.LENGTH_LONG).show();\n' +
+                "            break;\n" +
+                "    }\n" +
+                "    super.onRequestPermissionsResult(requestCode, permissions, grantResults);\n" +
+                "}\n"
+              }
+            </code>
+          </pre>
+
+          <p>
+            
+          </p>
+
           <h2 className="mt-5">Configuración adicional para ubicación en tiempo real</h2>
 
           <p>
