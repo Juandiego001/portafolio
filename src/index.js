@@ -89,6 +89,9 @@ import ConceptosInicialesAuditoria from './pages/AuditoriaSistemas/Posts/Concept
 // Auditoria de sistemas
 import PrimerosCincoCapitulos from './pages/AuditoriaSistemas/Tests/PrimerosCincoCapitulos/PrimerosCincoCapitulos';
 
+// Informática Forense
+import EstudioPrimerParcial from './pages/InformaticaForense/Tests/EstudioPrimerParcial/EstudioPrimerParcial';
+
 // Router
 const router = createBrowserRouter([
   {
@@ -236,6 +239,12 @@ const router = createBrowserRouter([
     path: "/cursos/informatica-forense",
     element: <InformaticaForense />
   },
+  // Evaluaciones de informática forense
+  {
+    path: "/evaluaciones/informatica-forense/estudio-primer-parcial",
+    element: <EstudioPrimerParcial />
+  },
+  // Fin de evaluaciones de informática forense
   {
     path: "/cursos/proyecto-informatico-1",
     element: <ProyectoInformatico1 />
