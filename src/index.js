@@ -92,6 +92,9 @@ import PrimerosCincoCapitulos from './pages/AuditoriaSistemas/Tests/PrimerosCinc
 // Informática Forense
 import EstudioPrimerParcial from './pages/InformaticaForense/Tests/EstudioPrimerParcial/EstudioPrimerParcial';
 
+// Administración para ingenieros
+import EstudioPrimerParcialAdministracion from './pages/AdministracionIngenieros/Tests/EstudioPrimerParcial/EstudioPrimerParcial';
+
 // Router
 const router = createBrowserRouter([
   {
@@ -203,6 +206,12 @@ const router = createBrowserRouter([
     path: "/cursos/administracion-para-ingenieros",
     element: <AdministracionIngenieros />
   },
+  // Evaluciones de administración para ingenieros
+  {
+    path: "/evaluaciones/administracion-para-ingenieros/estudio-primer-parcial",
+    element: <EstudioPrimerParcialAdministracion />
+  },
+  // Fin de evaluaciones de administración para ingenieros
   {
     path: "/cursos/auditoria-de-sistemas",
     element: <AuditoriaSistemas />

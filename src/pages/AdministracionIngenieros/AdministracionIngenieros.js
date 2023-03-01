@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AdministracionIngenieros.module.css';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 // Custom components
 import Header from '../../components/Header/Header';
@@ -48,6 +49,22 @@ const AdministracionIngenieros = () => {
           <h1 className="h1 text-dark">
             Administración para ingenieros
           </h1>
+
+          <h2 className="mt-5">
+            Evaluaciones
+          </h2>
+
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">Estudio primer parcial</h5>
+              <p className="card-text">
+                Evaluación para comprobar los conocimientos del primer corte de 
+                la materia de Administración para ingenieros.
+              </p>
+              <Link className="btn btn-dark" to="/evaluaciones/administracion-para-ingenieros/estudio-primer-parcial">Tomar evaluación</Link>
+            </div>
+          </div>
+
 
         </div>
 
