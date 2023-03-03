@@ -13,7 +13,8 @@ const Questions = (props) => {
   const [showResults, setShowResults] = useState(0);
   const [resultado, setResultado] = useState(0);
 
-  let letrasOpciones = ["a", "b", "c", "d"];
+  let letrasOpciones = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p",
+    "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   useEffect(() => {
     let allPreguntas = props["preguntas"];

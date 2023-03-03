@@ -144,7 +144,7 @@ const preguntas = [
     pregunta: "Dentro de las principales responsabilidades del auditor informático están:",
     opciones: [
       "Revisar e informar a la dirección de la organización sobre el diseño y funcionamiento de los controles implantados y sobre la"
-        + " fiabilidad de la información suministrada.",
+      + " fiabilidad de la información suministrada.",
       "Diseñar e implementar los controles para evitar la materialización de riesgos.",
       "Implementar los cambios requeridos por el área de TI de la organización.",
       "Todas las anteriores."
@@ -160,15 +160,105 @@ const preguntas = [
       "Todas las anteriores."
     ],
     correcta: 0
+  },
+  {
+    pregunta: "La auditoría realizada con recursos materiales y personas que pertenecen a la empresa auditada se denomina:",
+    opciones: [
+      "Auditoría pública.",
+      "Auditoría externa.",
+      "Auditoría interna.",
+      "Auditoría de tercera parte."
+    ],
+    correcta: 2
+  },
+  {
+    pregunta: "¿Cuál tipo de control intenta reparar el daño causado por el impacto de una vulnerabilidad explotada?",
+    opciones: [
+      "Preventivo.",
+      "Detectivo.",
+      "Correctivo.",
+      "Desviación."
+    ],
+    correcta: 2
+  },
+  {
+    pregunta: "¿Cuál de los siguientes NO es un objetivo de una AI (auditoría informática)?",
+    opciones: [
+      "El mantenimiento de la operatividad.",
+      "La mejora de la eficacia.",
+      "La mejora de la eficiencia.",
+      "La mejora de la seguridad."
+    ],
+    correcta: 2
+  },
+  {
+    pregunta: "La profesión recomendada para un auditor de sistemas/informático es:",
+    opciones: [
+      "Contador e ingeniero.",
+      "Contador con especialización en auditoría.",
+      "Ingeniero de sistemas/informático con especialización en finanzas o auditoría.",
+      "Ingeniero con especialización en auditoría."
+    ],
+    correcta: 3
+  },
+  {
+    pregunta: "Se define un procedimiento de auditoría como:",
+    opciones: [
+      "Las actividades de auditoría que deben desarrollarse para obtener evidencia.",
+      "Conjunto de reglas que le permiten al auditor sacar conclusiones.",
+      "Un manual de usuario final.",
+      "Ninguna de las anteriores."
+    ],
+    correcta: 0
   }
-  // Quedamos en la 15
 ];
 
-const PrimerParcial = () => (
-  <div className={styles.PrimerParcial}>
-    PrimerParcial Component
-  </div>
-);
+const PrimerParcial = () => {
+
+  const [iniciar, setIniciar] = useState(0);
+
+  function iniciarEvaluacion() {
+    setIniciar(1);
+  }
+
+  function finalizarEvaluacion() {
+    setIniciar(0);
+  }
+
+  return (
+    <>
+      <Helmet>
+        <title>Primer parcial de Auditoría de Sistemas | Evaluaciones | Auditoría de Sistemas</title>
+      </Helmet>
+
+      <div>
+        <Header />
+
+        <div className="text-center px-3 my-5">
+          <h1 className={"text-center " + (iniciar == 1 ? "d-none" : "")}>Primer parcial de Auditoría de Sistemas</h1>
+
+          <p className={"text-center " + (iniciar == 1 ? "d-none" : "")}>
+            En esta evaluación se contemplarán las preguntas
+            realizadas en el primer parcial de Auditoría de Sistemas
+            en el periodo 2023-01 con el profesor Miguel Jose Navas Jaime.
+          </p>
+
+          <button className={"text-center btn btn-dark " + (iniciar == 1 ? "d-none" : "")} onClick={iniciarEvaluacion}>Iniciar</button>
+
+          {
+            iniciar == 1 ?
+              <Questions preguntas={preguntas} finalizarEvaluacion={finalizarEvaluacion} />
+              :
+              ""
+          }
+
+        </div>
+
+        <Footer />
+      </div>
+    </>
+  )
+};
 
 PrimerParcial.propTypes = {};
 

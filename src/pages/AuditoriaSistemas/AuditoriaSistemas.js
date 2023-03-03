@@ -74,6 +74,18 @@ const AuditoriaSistemas = () => {
             </div>
           </div>
 
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">Primer parcial de auditoría de sistemas</h5>
+              <p className="card-text">
+                En esta evaluación se contemplarán las preguntas
+                realizadas en el primer parcial de Auditoría de Sistemas
+                en el periodo 2023-01 con el profesor Miguel Jose Navas Jaime.
+              </p>
+              <Link className="btn btn-dark" to="/evaluaciones/auditoria-de-sistemas/primer-parcial-de-auditoria-de-sistemas">Tomar evaluación</Link>
+            </div>
+          </div>
+
         </div>
 
         <Footer />

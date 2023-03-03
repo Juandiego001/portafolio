@@ -2,6 +2,7 @@ import { React, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Evaluaciones.module.css';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 // Custom components
 import Header from '../../components/Header/Header';
@@ -44,6 +45,18 @@ const Evaluaciones = () => {
           <h1 className="h1 text-dark">
             Evaluaciones
           </h1>
+
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">Primer parcial de auditoría de sistemas</h5>
+              <p className="card-text">
+                En esta evaluación se contemplarán las preguntas
+                realizadas en el primer parcial de Auditoría de Sistemas
+                en el periodo 2023-01 con el profesor Miguel Jose Navas Jaime.
+              </p>
+              <Link className="btn btn-dark" to="/evaluaciones/auditoria-de-sistemas/primer-parcial-de-auditoria-de-sistemas">Tomar evaluación</Link>
+            </div>
+          </div>
 
         </div>
 

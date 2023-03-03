@@ -88,6 +88,7 @@ import ConceptosInicialesAuditoria from './pages/AuditoriaSistemas/Posts/Concept
 // Evaluaciones
 // Auditoria de sistemas
 import PrimerosCincoCapitulos from './pages/AuditoriaSistemas/Tests/PrimerosCincoCapitulos/PrimerosCincoCapitulos';
+import PrimerParcialAuditoriaSistemas from './pages/AuditoriaSistemas/Tests/PrimerParcial/PrimerParcial';
 
 // Informática Forense
 import EstudioPrimerParcial from './pages/InformaticaForense/Tests/EstudioPrimerParcial/EstudioPrimerParcial';
@@ -226,6 +227,10 @@ const router = createBrowserRouter([
   {
     path: "/evaluaciones/auditoria-de-sistemas/primeros-cinco-capitulos",
     element: <PrimerosCincoCapitulos />
+  },
+  {
+    path: "/evaluaciones/auditoria-de-sistemas/primer-parcial-de-auditoria-de-sistemas",
+    element: <PrimerParcialAuditoriaSistemas />
   },
   // Fin de evaluaciones de auditoría de sistemas
   {
