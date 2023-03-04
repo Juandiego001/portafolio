@@ -95,6 +95,7 @@ import EstudioPrimerParcial from './pages/InformaticaForense/Tests/EstudioPrimer
 
 // Administración para ingenieros
 import EstudioPrimerParcialAdministracion from './pages/AdministracionIngenieros/Tests/EstudioPrimerParcial/EstudioPrimerParcial';
+import PrimerParcialAdministracionIngenieros from './pages/AdministracionIngenieros/Tests/PrimerParcial/PrimerParcial';
 
 // Router
 const router = createBrowserRouter([
@@ -211,6 +212,10 @@ const router = createBrowserRouter([
   {
     path: "/evaluaciones/administracion-para-ingenieros/estudio-primer-parcial",
     element: <EstudioPrimerParcialAdministracion />
+  },
+  {
+    path: "/evaluaciones/administracion-para-ingenieros/primer-parcial-de-administracion-para-ingenieros",
+    element: <PrimerParcialAdministracionIngenieros />
   },
   // Fin de evaluaciones de administración para ingenieros
   {

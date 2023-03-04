@@ -65,6 +65,18 @@ const AdministracionIngenieros = () => {
             </div>
           </div>
 
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">Primer parcial</h5>
+              <p className="card-text">
+                En esta evaluación se contemplarán las preguntas
+                realizadas en el primer parcial de Administración para ingenieros
+                en el periodo 2023-01 con el profesor Juan Carlos Aguilar.
+              </p>
+              <Link className="btn btn-dark" to="/evaluaciones/administracion-para-ingenieros/primer-parcial-de-administracion-para-ingenieros">Tomar evaluación</Link>
+            </div>
+          </div>
+
 
         </div>
 

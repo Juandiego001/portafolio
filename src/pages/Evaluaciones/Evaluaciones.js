@@ -58,6 +58,18 @@ const Evaluaciones = () => {
             </div>
           </div>
 
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">Primeros cinco capítulos de la norma ISO 19011</h5>
+              <p className="card-text">
+                Evaluación para comprobar los conocimientos del primer corte de 
+                la materia de Auditoría de Sistemas en los que se contemplaron los primeros
+                cinco capítulos de la norma ISO 19011.
+              </p>
+              <Link className="btn btn-dark" to="/evaluaciones/auditoria-de-sistemas/primeros-cinco-capitulos">Tomar evaluación</Link>
+            </div>
+          </div>
+
         </div>
 
         <Footer />
