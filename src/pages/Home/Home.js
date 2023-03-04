@@ -38,6 +38,17 @@ const Home = () => {
 
           <div className="card mx-5 my-4">
             <div className="card-body">
+              <h5 className="card-title">Aplicación Android + GPS</h5>
+              <p className="card-text">
+                Desarrollo de práctica para generar una aplicación Android que
+                permita hacer uso de la API de localización mediante GPS.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-gps">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card mx-5 my-4">
+            <div className="card-body">
               <h5 className="card-title">Aplicación Android + Firebase</h5>
               <p className="card-text">
                 Desarrollo de práctica para conectar una aplicación Android
@@ -85,17 +96,6 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Flask + MySQL + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para construir una aplicación
-                web con el framework de python Flask y MySQL en
-                una máquina Centos 8.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-mysql">Ver entrada</Link>
-            </div>
-          </div>
         </div>
 
         <Footer />

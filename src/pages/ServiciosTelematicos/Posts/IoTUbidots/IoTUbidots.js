@@ -46,7 +46,7 @@ const IoTUbidots = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div className="mb-4">
+      <div className="text-break">
         <Header />
 
         <div className="container-fluid my-5 px-5">

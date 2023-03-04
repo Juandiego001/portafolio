@@ -46,7 +46,7 @@ const AplicacionAndroidGps = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div>
+      <div className="text-break">
         <Header />
 
         <div className="container-fluid my-5 px-5">
@@ -545,7 +545,7 @@ const AplicacionAndroidGps = () => {
               Si el usuario ha otorgado los permisos previamente o se otorgan en tiempo real
               se procede a tomar todos los
               {' '}<span className="badge text-dark m-0 p-0">providers</span>{' '} 
-              que tenga el dispositivo para intentar encontrar la ubicación con alguno de ellos.<br />
+              que tenga el dispositivo para intentar encontrar la ubicación con alguno de ellos.
               Para que esto se ejecute correctamente, se ha definido previamente una variable denominada
               {' '}<span className="badge text-dark m-0 p-0">ft</span>{' '} 
               de tipo
@@ -563,7 +563,7 @@ const AplicacionAndroidGps = () => {
               por cada provider encontrado.
             </li>
 
-            <li>
+            <li className="mb-3">
               El método que se llama para determinar la ubicación actual se denomina
               {' '}<span className="badge text-dark m-0 p-0">getCurrentLocation</span>{' '}
               el cual a su vez llama a un
@@ -572,9 +572,21 @@ const AplicacionAndroidGps = () => {
               {' '}<span className="badge text-dark m-0 p-0">accept</span>{' '}
               de un objeto de tipo 
               {' '}<span className="badge text-dark m-0 p-0">Consumer,</span>{' '}
-              el cual finalmente ejecutará el método encargado de mostrarnos nuestra
-              ubicación actual.
+              el cual ejecutará el método, llamado
+              {' '}<span className="badge text-dark m-0 p-0">setCurrentLocation,</span>{' '}
+              encargado de determinar si se han tomado latitud y longitud.
             </li>
+
+            <li>
+              Si se ha logrado tomar las coordenadas de latitud y longitud,
+              {' '}<span className="badge text-dark m-0 p-0">setCurrentLocation</span>{' '}
+              llamará a la función 
+              {' '}<span className="badge text-dark m-0 p-0">setLocation</span>{' '}
+              la cual será la encargada de transformar los valores de latitud y longitud
+              a una dirección legible por un ser humano.
+            </li>
+
+
           </ol>
           
           <p>
@@ -683,15 +695,239 @@ const AplicacionAndroidGps = () => {
           </pre>
 
           <p>
-            
+            Posteriormente, el método que es ejecutado será
+            {' '}<span className="badge text-dark m-0 p-0">setCurrentLocation,</span>{' '}
+            el cual contiene lo siguiente:
           </p>
+
+          <pre className="language-java">
+            <code>
+              {
+                'public void setCurrentLocation(Location loc) {\n' +
+                '  double theLatitud = loc.getLatitude();\n' +
+                '  double theLongitude = loc.getLongitude();\n\n' +
+
+                '  try {\n' +
+                '      if (theLatitud != 0 && theLongitude != 0) {\n' +
+                '          setLocation(theLatitud, theLongitude);\n' +
+                '      } else {\n' +
+                '          Log.d("Latitud esta vacio o longitud esta vacio", Double.toString(theLatitud));\n' +
+                '          Log.d("Latitud esta vacio o longitud esta vacio", Double.toString(theLongitude));\n' +
+                '      }\n' +
+                '  } catch (Exception e) {\n' +
+                '      Log.d("Error on setLocation", e.toString());\n' +
+                '  }\n' +
+                '}\n'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Y finalmente, el método
+            {' '}<span className="badge text-dark m-0 p-0">setLocation.</span>{' '}
+            Este método utiliza la clase
+            {' '}<span className="badge text-dark m-0 p-0">Geocoder</span>{' '}
+            para convertir la latitud y longitud a una dirección legible.
+            El método encargado de convertir dichas variables a la dirección es
+            {' '}<span className="badge text-dark m-0 p-0">getFromLocation</span>{' '}
+             el cual toma las variables y el máximo número de direcciones que
+             queremos hallar en una
+             {' '}<span className="badge text-dark m-0 p-0">{"List<Address>"}.</span>{' '}
+             Luego por cada dirección hallada creamos una variable 
+             {' '}<span className="badge text-dark m-0 p-0">Address</span>{' '}
+             y se convertirá a texto utilizando el método
+             {' '}<span className="badge text-dark m-0 p-0">getAddressLine(0)</span>{' '}
+             para finalmente mostrarla en el 
+             {' '}<span className="badge text-dark m-0 p-0">textViewAddress</span>{' '}
+             definido anteriormente.
+          </p>
+
+          <pre className="language-java">
+            <code>
+              {
+                'public void setLocation(double latitude, double longitude) {\n' +
+                '  try {\n' +
+                '      Log.d("Latitude", Double.toString(latitude));\n' +
+                '      Log.d("Longitude", Double.toString(longitude));\n' +
+                '      Geocoder geocoder = new Geocoder(this, Locale.getDefault());\n' +
+                '      List<Address> direcciones = geocoder.getFromLocation(latitude, longitude, 1);\n' +
+                '      Log.d("Direcciones", direcciones.toString());\n\n' +
+
+                '      if (!direcciones.isEmpty()) {\n' +
+                '          Address direccion = direcciones.get(0);\n' +
+                '          String theDireccion = direccion.getAddressLine(0);\n' +
+                '          Log.d("Direccion", theDireccion);\n' +
+                '          textViewAddress.setText("La dirección es " +\n' +
+                '                  direccion.getAddressLine(0));\n' +
+                '      } else {\n' +
+                '          Log.d("Direcciones", "Esta vacio");\n' +
+                '          Log.d("Direcciones", Boolean.toString(direcciones.isEmpty()));\n' +
+                '      }\n' +
+                '  } catch (Exception e) {\n' +
+                '      Log.d("Error en el método setLocation", e.toString());\n' +
+                '  }\n' +
+                '}\n'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Tener en cuenta también, el método que nos permitirá tomar ciertas
+            coordenadas por medio de los 
+            {' '}<span className="badge text-dark m-0 p-0">EditText.</span>{' '}
+            Este método fue denominado 
+            {' '}<span className="badge text-dark m-0 p-0">obtenerDireccion</span>{' '}
+            y su código es el siguiente:
+          </p>
+
+          <pre className="language-java">
+            <code>
+              {
+                'public void obtenerDireccion(View v) {\n' +
+                '  Log.d("Impresion", "Se presionó el botón");\n' +
+                '  double theLatitude = Double.parseDouble(editTextLatitud.getText().toString());\n' +
+                '  double theLongitude = Double.parseDouble(editTextLongitud.getText().toString());\n' +
+                '  setLocation(theLatitude, theLongitude);\n' +
+                '}\n'
+              }
+            </code>
+          </pre>
 
           <h2 className="mt-5">Configuración adicional para ubicación en tiempo real</h2>
 
           <p>
-
+            Para la configuración adicional de ubicación en tiempo real tenemos que 
+            utilizar la clase personalizada
+            {' '}<span className="badge text-dark m-0 p-0">MyLocationListener.</span>{' '}
+            Esta clase debe heredar de la superclase 
+            {' '}<span className="badge text-dark m-0 p-0">LocationListener</span>{' '}
+            y debe implementar por sobrecarga los métodos:
           </p>
 
+          <ul>
+            <li>{' '}<span className="badge text-dark m-0 p-0">onProviderEnabled.</span>{' '}</li>
+            <li>{' '}<span className="badge text-dark m-0 p-0">onProviderDisabled.</span>{' '}</li>
+            <li>
+              Y 
+              {' '}<span className="badge text-dark m-0 p-0">onLocationChanged,</span>{' '}
+              el cual será el encargado de actualizar la dirección en caso de que se cambien
+              las coordenadas.
+            </li>
+          </ul>
+
+          <p>
+            Sencillamente lo que se hace es que cuando el 
+            {' '}<span className="badge text-dark m-0 p-0">LocationManager</span>{' '}
+            detecte un cambio en las coordenadas de latitud y longitud, se llamará
+            al método
+            {' '}<span className="badge text-dark m-0 p-0">onLocationChanged</span>{' '}
+            y dentro de este se llamará al método 
+            {' '}<span className="badge text-dark m-0 p-0">setLocation</span>{' '}
+            para agregar la nueva dirección hallada. El código de toda la clase
+            es el siguiente:
+          </p>
+
+          <pre className="language-java">
+            <code>
+              {
+                'package com.example.nombre_del_proyecto;\n\n' +
+
+                'import android.location.Location;\n' +
+                'import android.location.LocationListener;\n' +
+                'import android.util.Log;\n\n' +
+
+                'import androidx.annotation.NonNull;\n\n' +
+
+                'public class MyLocationListener implements LocationListener {\n' +
+                '    private MainActivity mainActivity;\n' +
+                '    private double latitude = 0;\n' +
+                '    private double longitude = 0;\n\n' +
+
+                '    @Override\n' +
+                '    public void onLocationChanged(@NonNull Location location) {\n' +
+                '        // Este método se ejecuta cada vez que se cambia de localización.\n\n' +
+
+                '        double theLatitude = location.getLatitude();\n' +
+                '        double theLongitude = location.getLongitude();\n\n' +
+
+                '        Log.d("MyLocationListener, latitude", Double.toString(theLatitude));\n' +
+                '        Log.d("MyLocationListener, longitude", Double.toString(theLongitude));\n\n' +
+
+                '        mainActivity.setLocation(theLatitude, theLongitude);\n' +
+                '    }\n\n' +
+
+                '    @Override\n' +
+                '    public void onProviderEnabled(@NonNull String provider) {\n' +
+                '        LocationListener.super.onProviderEnabled(provider);\n' +
+                '    }\n\n' +
+
+                '    @Override\n' +
+                '    public void onProviderDisabled(@NonNull String provider) {\n' +
+                '        LocationListener.super.onProviderDisabled(provider);\n' +
+                '    }\n\n' +
+
+                '    public void setLatitude(double latitude) {\n' +
+                '        this.latitude = latitude;\n' +
+                '    }\n\n' +
+
+                '    public void setLongitude(double longitude) {\n' +
+                '        this.longitude = longitude;\n' +
+                '    }\n\n' +
+
+                '    public double getLatitude() {\n' +
+                '        return latitude;\n' +
+                '    }\n\n' +
+
+                '    public double getLongitude() {\n' +
+                '        return longitude;\n' +
+                '    }\n\n' +
+
+                '    public MainActivity getMainActivity() {\n' +
+                '        return mainActivity;\n' +
+                '    }\n\n' +
+
+                '    public void setMainActivity(MainActivity mainActivity) {\n' +
+                '        this.mainActivity = mainActivity;\n' +
+                '    }\n' +
+                '}\n'
+              }
+            </code>
+          </pre>
+
+          <p>
+            Los
+            {' '}<span className="badge text-dark m-0 p-0">getters</span>{' '}
+            y
+            {' '}<span className="badge text-dark m-0 p-0">setters</span>{' '}
+            de los atributos de latitud y longitud en realidad no son utilizados
+            (solamente el 
+            {' '}<span className="badge text-dark m-0 p-0">setter</span>{' '}
+            que se utiliza para la variable 
+            {' '}<span className="badge text-dark m-0 p-0">mainActivity</span>).
+            Sin embargo, el usuario podría tomarlos desde la clase 
+            {' '}<span className="badge text-dark m-0 p-0">MainActivity.</span>{' '}
+          </p>
+          
+          <h2 className="mt-5">
+            Finalización
+          </h2>
+
+          <p>
+            Esta ha sido una explicación detallada para desarollar un aplicativo móvil
+            que maneje la API de localización de Android para determinar la ubicación del usuario.
+            El repositorio del proyecto lo pueden visualizar
+            {' '}<a href="https://github.com/Juandiego001/android-location">aquí.</a>{' '}
+            Cualquier duda, queja, recomendación o donación que deseen realizar me pueden
+            contactar por telegram:
+            {' '}<a href="https://t.me/Juan_0_0_1" target="_blank">https://t.me/Juan_0_0_1</a>.
+            Espero les haya sido de gran ayuda :)
+          </p>
+
+          <p>
+            Fecha de publicación: 04-03-2023.
+            <br />
+            Autor: Juan Diego Cobo Cabal.
+          </p>
         </div>
 
         <Footer />
