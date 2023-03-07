@@ -56,9 +56,18 @@ const ReactTypeScriptMySql = () => {
           </h1>
 
           <p className="mt-3">
-            En la presente entrada se explicará como desarrollar un mini proyecto full stack utilizando React con Typescript en el frontend
-            y Node.js con Javascript en el backend. La idea es hacer un registro de usuarios con imágenes las cuales serán almacenadas
-            en la carpeta public del proyecto frontend.
+            En la presente entrada se explicará como desarrollar un mini proyecto full stack utilizando 
+            {' '}<span className="badge text-dark m-0 p-0">React</span>{' '}
+            con
+            {' '}<span className="badge text-dark m-0 p-0">Typescript</span>{' '}
+            en el frontend y 
+            {' '}<span className="badge text-dark m-0 p-0">Node.js</span>{' '}
+            con
+            {' '}<span className="badge text-dark m-0 p-0">Javascript</span>{' '}
+            en el backend. La idea es hacer un registro de usuarios con imágenes las cuales serán almacenadas
+            en la carpeta
+            {' '}<span className="badge text-dark m-0 p-0">public</span>{' '}
+            del proyecto frontend.
           </p>
 
           <h2 className="mt-5">
@@ -82,8 +91,8 @@ const ReactTypeScriptMySql = () => {
 
           <p>
             Posteriormente, la carpeta frontend deberá ser generada con el comando create-react-app ejecutando:
-            npx create-react-app frontend --template typescript
-            en la carpeta raíz, es decir, ubicado en el nivel de el-proyecto. Con esto ya podremos utilizar typescript con react.
+            {' '}<span className="badge text-dark m-0 p-0">npx create-react-app frontend --template typescript</span>{' '}
+            en la carpeta raíz, es decir, ubicado en el nivel de el-proyecto. Con esto ya podremos utilizar Typescript con react.
           </p>
 
           <p>
