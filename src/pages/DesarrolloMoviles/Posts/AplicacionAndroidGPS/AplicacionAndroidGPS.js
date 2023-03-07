@@ -49,12 +49,12 @@ const AplicacionAndroidGps = () => {
       <div className="text-break">
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Aplicación Android + GPS
           </h1>
 
-          <p>
+          <p className="mt-3">
             En esta práctica se mostrará como conectar una aplicación Android con el API de localización logrando
             obtener tanto ubicación actual, como dadas las coordenadas de latitud y longitud. Además
             se dejará la explicación del código para obtener la ubicación en tiempo real.
@@ -534,7 +534,7 @@ const AplicacionAndroidGps = () => {
                   {' '}<span className="badge text-dark m-0 p-0">askCurrentLocationAndUpdates.</span>{' '} 
                 </li>
                 <li>
-                  El usuario no otorga ningún permiso y no se continua con el despliegue de
+                  El usuario no otorga ningún permiso y no se continúa con el despliegue de
                   la aplicación.
                 </li>
               </ol>
@@ -913,7 +913,7 @@ const AplicacionAndroidGps = () => {
           </h2>
 
           <p>
-            Esta ha sido una explicación detallada para desarollar un aplicativo móvil
+            Esta ha sido una explicación detallada para desarrollar un aplicativo móvil
             que maneje la API de localización de Android para determinar la ubicación del usuario.
             El repositorio del proyecto lo pueden visualizar
             {' '}<a href="https://github.com/Juandiego001/android-location">aquí.</a>{' '}

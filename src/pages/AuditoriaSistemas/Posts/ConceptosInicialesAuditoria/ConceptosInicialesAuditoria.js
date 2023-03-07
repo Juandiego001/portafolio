@@ -38,12 +38,12 @@ const ConceptosInicialesAuditoria = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Conceptos iniciales de la auditoría de sistemas
           </h1>
 
-          <p>
+          <p className="mt-3">
             A continuación se explicarán los conceptos fundamentales de la auditoría de sistemas,
             las diferencias con los distintos tipos de auditorías, principios de la auditoría de
             sistemas y demás.

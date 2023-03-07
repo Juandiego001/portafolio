@@ -49,12 +49,12 @@ const IoTUbidots = () => {
       <div className="text-break">
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Iot Ubidots
           </h1>
 
-          <p>
+          <p className="mt-3">
             La presente entrada es una práctica para aproximarse al tema de internet de las cosas. Utilizaremos el lenguaje de programación 
             python para construir una API que permita hacer peticiones
             a la plataforma de Ubidots. El proyecto en cuestión estará desplegado en una máquina CentOS 8 y, cuando lo ejecutemos,

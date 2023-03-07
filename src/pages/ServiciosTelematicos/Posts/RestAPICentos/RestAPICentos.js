@@ -48,12 +48,12 @@ const RestApiCentOS = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Rest API + CentOS 8
           </h1>
 
-          <p>
+          <p className="mt-3">
             En la presente entrada se explicará cómo desarrollar una Rest API con diferentes lenguajes de programación.
             Por un lado, utilizaremos python con el framework de Flask. Para esto clonaremos el repositorio
             del docente Oscar Mondragón. Por otro lado,

@@ -50,13 +50,13 @@ const JsonPlaceHolderCentos = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
+        <div className="container my-5 px-5">
 
-          <h1>
+          <h1 className="text-center">
             JSON Placeholder + Apache + CentOS 8
           </h1>
 
-          <p>
+          <p className="mt-3">
             En la práctica de hoy se clonará un repositorio del profesor Oscar Mondargón
             con el fin de implementar una especie de aplicativo/función que permita
             interactuar con la fake API de JSON Placeholder.

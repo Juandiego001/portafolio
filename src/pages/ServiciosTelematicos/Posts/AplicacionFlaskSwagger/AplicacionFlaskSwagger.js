@@ -49,12 +49,12 @@ const AplicacionFlaskSwagger = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Aplicación Flask + Swagger + Centos 8
           </h1>
 
-          <p>
+          <p className="mt-3">
             En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de Centos 8
             con la suite de herramientas para analizar API's denominada <span className="badge text-dark m-0 p-0">Swagger.</span>{' '}
             Para ello, se utilizará el repositorio del profesor Oscar Mondragón que contiene un proyecto con Swagger

@@ -462,7 +462,7 @@ const PrimerosCincoCapitulos = () => {
       <div>
         <Header />
 
-        <div className="text-center px-3 my-5">
+        <div className="container text-center px-3 my-5">
           <h1 className={"text-center " + (iniciar == 1 ? "d-none" : "")}>Primeros cinco capítulos de la norma ISO 19011</h1>
 
           <p className={"text-center " + (iniciar == 1 ? "d-none" : "")}>

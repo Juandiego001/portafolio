@@ -48,12 +48,12 @@ const AplicacionFlaskCentos = () => {
       <div className="mb-4">
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Aplicación Flask + CentOS 7
           </h1>
 
-          <p>
+          <p className="mt-3">
             En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de CentOS 7.
             La diferencia a tener en cuenta con otras versiones de CentOS tales como la 8 es la instalación del módulo  <code>mod_wsgi.</code>{' '}
             Lo ideal sería que el proyecto en flask ya estuviese probado y desarrollado en el equipo local. Sin embargo,

@@ -39,12 +39,12 @@ const SubPermut = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Subconjuntos y permutaciones
           </h1>
 
-          <p className="text-start">
+          <p className="mt-3">
             En esta entrada se explicará como funcionan los algoritmos para encontrar todos
             los posibles subconjuntos y permutaciones de un arreglo de números
             (aunque también serviría para cualquier tipo de variable) y

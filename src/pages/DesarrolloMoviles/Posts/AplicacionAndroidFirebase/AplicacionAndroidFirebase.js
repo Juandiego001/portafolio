@@ -49,12 +49,12 @@ const AplicacionAndroidFirebase = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Aplicación Android + Firebase
           </h1>
 
-          <p>
+          <p className="mt-3">
             En esta práctica se mostrará como conectar una aplicación Android con el servicio de Google <code>Firebase</code>{' '}
             para generar un control de usuarios en la nube, con dos interfaces que permitan, iniciar sesión y registarse y mostrar
             el usuario que ha iniciado sesión.

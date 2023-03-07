@@ -50,12 +50,12 @@ const AplicacionAndroidNodejsMysql = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Aplicación Android + Node.js + MySQL
           </h1>
 
-          <p className="text-start">
+          <p className="mt-3">
             En la presente entrada se explicará como desarrollar una aplicación Android que se comunique con un servidor
             en Node.js y que a su vez este se comunique con una base de datos MySQL. La idea será tener una
             aplicación que simule el proceso iniciar sesión y registrarse por lo que se trabajará nada más

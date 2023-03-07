@@ -51,13 +51,13 @@ const AplicacionFlaskMySql = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
+        <div className="container my-5 px-5">
 
-          <h1 className="h1 text-dark">
+          <h1 className="h1 text-dark text-center">
             Aplicación Flask + MySQL + CentOS 8
           </h1>
 
-          <p>
+          <p className="mt-3">
             En la presente entrada se explicará como crear una aplicación web con Flask y MySQL en una máquina virtual CentOS 8.
           </p>
 

@@ -50,12 +50,12 @@ const MetasploitKaliWindowsXp = () => {
       <div className="mb-4">
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Metasploit Kali + Windows XP
           </h1>
 
-          <p>
+          <p className="mt-3">
             En el día de hoy estaremos desarrollando el laboratorio para explotar una vulnerabilidad de Windows XP
             a través del sistema operativo Kali Linux.
           </p>

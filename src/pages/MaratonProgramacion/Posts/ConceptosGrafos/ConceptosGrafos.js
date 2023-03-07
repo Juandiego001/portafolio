@@ -43,12 +43,12 @@ const ConceptosGrafos = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Conceptos iniciales de grafos
           </h1>
 
-          <p>
+          <p className="mt-3">
             En esta entrada se explicarán algunos de los conceptos más importantes de los grafos.
             Además, se implementarán algunos conceptos en código utilizando el lenguaje de programación
             C++.
