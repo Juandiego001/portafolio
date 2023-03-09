@@ -39,7 +39,7 @@ const SubPermut = () => {
       <div>
         <Header />
 
-        <div className="container my-5 px-5">
+        <div className="container my-5">
           <h1 className="h1 text-dark text-center">
             Subconjuntos y permutaciones
           </h1>
@@ -52,7 +52,7 @@ const SubPermut = () => {
             la elaboración de dichos procesos.
           </p>
 
-          <h2 className="text-dark">Subconjuntos</h2>
+          <h2 className="mt-5 text-dark">Subconjuntos</h2>
 
           <p>
             Si tuviesemos un arreglo con los valores: <code>{"{1,2,3},"}</code>{' '} los

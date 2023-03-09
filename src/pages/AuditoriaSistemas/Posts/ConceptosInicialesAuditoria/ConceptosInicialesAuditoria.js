@@ -38,7 +38,7 @@ const ConceptosInicialesAuditoria = () => {
       <div>
         <Header />
 
-        <div className="container my-5 px-5">
+        <div className="container my-5">
           <h1 className="h1 text-dark text-center">
             Conceptos iniciales de la auditoría de sistemas
           </h1>
@@ -120,9 +120,9 @@ const ConceptosInicialesAuditoria = () => {
 
           <p>
             Los actores de una auditoría vendrían siendo:
-            {' '}<span className="badge text-dark m-0 p-0">el auditor</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">el auditor</span>{' '}
             - el cual puede ser interno o externo - y
-            {' '}<span className="badge text-dark m-0 p-0">el auditado</span>,
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">el auditado</span>,
             organización o empresa que se debe auditar. Por otro lado, las partes
             interesadas son múltiples y generalmente corresponden a los grupos de
             interés de la organización tales como proveedores, clientes, etc.
@@ -138,24 +138,24 @@ const ConceptosInicialesAuditoria = () => {
 
           <ul>
             <li>Quién audita:
-              {' '}<span className="badge text-dark m-0 p-0">auditorías internas</span> o
-              {' '}<span className="badge text-dark m-0 p-0">auditorías externas.</span>
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditorías internas</span> o
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditorías externas.</span>
             </li>
 
             <li>Qué se audita:
-              {' '}<span className="badge text-dark m-0 p-0">auditorías legales</span>,
-              {' '}<span className="badge text-dark m-0 p-0">auditorías de procesos</span> o
-              {' '}<span className="badge text-dark m-0 p-0">auditorías sistemas de gestión.</span>
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditorías legales</span>,
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditorías de procesos</span> o
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditorías sistemas de gestión.</span>
             </li>
 
             <li>El alcance que se audita:
-              {' '}<span className="badge text-dark m-0 p-0">auditoría parcial</span> o
-              {' '}<span className="badge text-dark m-0 p-0">auditorías global.</span>
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditoría parcial</span> o
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditorías global.</span>
             </li>
 
             <li>Cuándo se audita:
-              {' '}<span className="badge text-dark m-0 p-0">auditoría programada</span> o
-              {' '}<span className="badge text-dark m-0 p-0">auditoría extraordinaria.</span>
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditoría programada</span> o
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">auditoría extraordinaria.</span>
             </li>
           </ul>
 
@@ -309,8 +309,8 @@ const ConceptosInicialesAuditoria = () => {
           <p>
             La integridad, presentación imparcial, debido cuidado profesional y confidencialidad
             aluden a la
-            {' '}<span className="badge text-dark m-0 p-0">objetividad</span>{' '} e
-            {' '}<span className="badge text-dark m-0 p-0">imparcialidad</span>{' '} del auditor.
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">objetividad</span>{' '} e
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">imparcialidad</span>{' '} del auditor.
             Mientras que la independencia y los enfoques basados en evidencias y
             riesgos corresponden a la objetividad e imparcialidad de la auditoría.
           </p>

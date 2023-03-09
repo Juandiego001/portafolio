@@ -57,16 +57,16 @@ const ReactTypeScriptMySql = () => {
 
           <p className="mt-3">
             En la presente entrada se explicará como desarrollar un mini proyecto full stack utilizando 
-            {' '}<span className="badge text-dark m-0 p-0">React</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">React</span>{' '}
             con
-            {' '}<span className="badge text-dark m-0 p-0">Typescript</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Typescript</span>{' '}
             en el frontend y 
-            {' '}<span className="badge text-dark m-0 p-0">Node.js</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Node.js</span>{' '}
             con
-            {' '}<span className="badge text-dark m-0 p-0">Javascript</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Javascript</span>{' '}
             en el backend. La idea es hacer un registro de usuarios con imágenes las cuales serán almacenadas
             en la carpeta
-            {' '}<span className="badge text-dark m-0 p-0">public</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">public</span>{' '}
             del proyecto frontend.
           </p>
 
@@ -91,7 +91,7 @@ const ReactTypeScriptMySql = () => {
 
           <p>
             Posteriormente, la carpeta frontend deberá ser generada con el comando create-react-app ejecutando:
-            {' '}<span className="badge text-dark m-0 p-0">npx create-react-app frontend --template typescript</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">npx create-react-app frontend --template typescript</span>{' '}
             en la carpeta raíz, es decir, ubicado en el nivel de el-proyecto. Con esto ya podremos utilizar Typescript con react.
           </p>
 

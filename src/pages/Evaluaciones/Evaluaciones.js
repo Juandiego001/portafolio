@@ -41,12 +41,13 @@ const Evaluaciones = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5">
+          <h1 className="h1 text-dark text-center">
             Evaluaciones
           </h1>
 
-          <div className="card mt-3">
+          {/* La primera evaluación siempre debe tener un mt-5 */}
+          <div className="card mt-5">
             <div className="card-body">
               <h5 className="card-title">Primer parcial de auditoría de sistemas</h5>
               <p className="card-text">

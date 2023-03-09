@@ -61,7 +61,7 @@ const RestApiCentOS = () => {
             desde el repositorio que se adjunta al final de la entrada, o construirse desde cero.
             Los servicios mencionados serán configurados en un sistema operativo CentOS 8.
             Posteriormente, utilizaremos
-            {' '}<span className="badge text-dark m-0 p-0">Postman</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Postman</span>{' '}
             para procesar las peticiones.
           </p>
 
@@ -73,7 +73,7 @@ const RestApiCentOS = () => {
           <p>
             Para comenzar con el proyecto inicializaremos la máquina virtual de CentOS 8.
             Para esto, crearemos una carpeta y un
-            {' '}<span className="badge text-dark m-0 p-0">Vagrantfile</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Vagrantfile</span>{' '}
             de la siguiente manera:
           </p>
 
@@ -90,7 +90,7 @@ const RestApiCentOS = () => {
 
           <p>
             Posteriormente, modificamos el
-            {' '}<span className="badge text-dark m-0 p-0">Vagrantfile</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Vagrantfile</span>{' '}
             para declarar la máquina CentOS 8 con las siguientes características:
           </p>
 
@@ -114,9 +114,9 @@ const RestApiCentOS = () => {
           <p>
             Una vez hemos definido la máquina, procederemos a encenderla, acceder
             a ella mediante
-            {' '}<span className="badge text-dark m-0 p-0">SSH</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">SSH</span>{' '}
             e iniciar como
-            {' '}<span className="badge text-dark m-0 p-0">root</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">root</span>{' '}
             para proceder a instalar los módulos necesarios. Esto se hace
             ejecutando los siguientes pasos:
           </p>
@@ -186,7 +186,7 @@ const RestApiCentOS = () => {
           <p>
             Finalmente, para comprobar que el aplicativo está funcionando correctamente,
             desde su navegador de preferencia digite:
-            {' '}<span className="badge text-dark m-0 p-0">http://192.168.56.3:5000/books</span>.
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">http://192.168.56.3:5000/books</span>.
             Si visualizamos lo siguiente, es porque el proceso se ha hecho correctamente.
           </p>
 
@@ -241,7 +241,7 @@ const RestApiCentOS = () => {
           <p>
             Para comprobar que el aplicativo está funcionando correctamente,
             desde su navegador de preferencia digite:
-            {' '}<span className="badge text-dark m-0 p-0">http://192.168.56.3:3000/books</span>.
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">http://192.168.56.3:3000/books</span>.
             Si visualizamos lo siguiente, es porque el proceso se ha hecho correctamente.
           </p>
 

@@ -33,7 +33,7 @@ const Home = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5">
+        <div className="container my-5">
           <h1 className="m-5">Entradas recientes</h1>
 
           <div className="card mx-5 my-4">

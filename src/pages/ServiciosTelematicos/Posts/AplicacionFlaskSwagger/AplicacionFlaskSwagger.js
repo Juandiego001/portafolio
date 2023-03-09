@@ -56,9 +56,9 @@ const AplicacionFlaskSwagger = () => {
 
           <p className="mt-3">
             En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de Centos 8
-            con la suite de herramientas para analizar API's denominada <span className="badge text-dark m-0 p-0">Swagger.</span>{' '}
+            con la suite de herramientas para analizar API's denominada <span className="badge text-dark m-0 p-0 text-wrap">Swagger.</span>{' '}
             Para ello, se utilizará el repositorio del profesor Oscar Mondragón que contiene un proyecto con Swagger
-            ya implementado. Además, configuraremos el servidor <span className="badge text-dark m-0 p-0">Apache</span>{' '}
+            ya implementado. Además, configuraremos el servidor <span className="badge text-dark m-0 p-0 text-wrap">Apache</span>{' '}
             para ejecutar el proyecto.
           </p>
 
@@ -257,7 +257,7 @@ const AplicacionFlaskSwagger = () => {
             medianamente el código para poder agregar libros a una función y que
             se retornen en la función al momento de visualizar los resultados. Para
             esto se crea un archivo llamado <code>articles.py</code> en la carpeta
-            {' '}<span className="badge text-dark m-0 p-0">/app</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">/app</span>{' '}
             donde se encuentre su respectivo archivo <code>__init__.py</code> y que contenga
             una función llamada <code>Articles</code> de la siguiente manera:
           </p>
@@ -286,7 +286,7 @@ const AplicacionFlaskSwagger = () => {
           <p>
             Luego, regresamos a nuestro archivo <code>views.py</code>,
             importamos la función Articles del archivo
-            {' '}<span className="badge text-dark m-0 p-0">articles.py</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">articles.py</span>{' '}
             y modificamos la función de <code>article</code> aludiendo a la función
             que hemos creado:
           </p>
@@ -347,7 +347,7 @@ const AplicacionFlaskSwagger = () => {
 
           <p>
             Para
-            {' '}<span className="badge text-dark m-0 p-0">deshabilitar el firewall</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">deshabilitar el firewall</span>{' '}
             lo único que se debe hacer es ejecutar la siguiente instrucción:
           </p>
 
@@ -364,7 +364,7 @@ const AplicacionFlaskSwagger = () => {
 
           <p>
             Para
-            {' '}<span className="badge text-dark m-0 p-0">agregar reglas al firewall</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">agregar reglas al firewall</span>{' '}
             correspondientes a los servicios web se sugiere ejecutar:
           </p>
 
@@ -442,7 +442,7 @@ const AplicacionFlaskSwagger = () => {
             el cual servirá para definir el path
             donde construiremos la aplicación. Este archivo
             debe ser creado en la carpeta
-            {' '}<span className="badge text-dark m-0 p-0">/var/www/swagger-example/</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">/var/www/swagger-example/</span>{' '}
             y deberá contener lo siguiente:
           </p>
 
@@ -464,9 +464,9 @@ const AplicacionFlaskSwagger = () => {
           <p>
             Finalmente tendremos que modificar el archivo de configuración
             de apache ubicado en
-            {' '}<span className="badge text-dark m-0 p-0">/etc/httpd/conf/httpd.conf</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">/etc/httpd/conf/httpd.conf</span>{' '}
             y agregar nuestro
-            {' '}<span className="badge text-dark m-0 p-0">VirtualHost:</span>
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">VirtualHost:</span>
           </p>
 
           <pre>
@@ -489,7 +489,7 @@ const AplicacionFlaskSwagger = () => {
 
           <p>
             Finalmente, reiniciamos el servicio
-            {' '}<span className="badge text-dark m-0 p-0">httpd</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">httpd</span>{' '}
             y si todo sale bien podremos visualizar la página en el navegador.
           </p>
 
@@ -535,7 +535,7 @@ const AplicacionFlaskSwagger = () => {
             En primer lugar, se debe importar la función <code>CORS</code> de la librería
             de python instalada en pasos previos en el archivo <code>views.py</code>.
             Esta función debe tomar como parámetro la variable
-            {' '}<span className="badge text-dark m-0 p-0">app</span>.
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">app</span>.
             Luego de ello, se debe modificar el archivo
             {' '}<code>index.html</code>{' '}
             similar a como se modificó anteriormente,
@@ -543,7 +543,7 @@ const AplicacionFlaskSwagger = () => {
             {' '}<code>:5000.</code>
             {' '}<b>Importante:</b>{' '}
             ambos cambios deben efectuarse en el directorio
-            {' '}<span className="badge text-dark m-0 p-0">/var/www/swagger-example/.</span>
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">/var/www/swagger-example/.</span>
           </p>
 
           <pre>

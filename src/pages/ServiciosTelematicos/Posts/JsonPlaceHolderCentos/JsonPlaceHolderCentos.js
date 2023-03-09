@@ -156,9 +156,9 @@ const JsonPlaceHolderCentos = () => {
           <p>
             En el archivo de configuración de apache <code>httpd.conf</code>{' '}
             ubicado en
-            {' '}<span className="badge text-dark m-0 p-0">/etc/httpd/conf</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">/etc/httpd/conf</span>{' '}
             tendremos que agregar nuestro
-            {' '}<span className="badge text-dark m-0 p-0">Virtualhost:</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Virtualhost:</span>{' '}
           </p>
 
           <pre>
@@ -180,10 +180,10 @@ const JsonPlaceHolderCentos = () => {
             A su vez, tendremos que verificar los permisos
             de la carpeta y de los archivos
             que se encuentran en la clonación del proyecto (
-            <span className="badge text-dark m-0 p-0">/var/www/jsonph/</span>
+            <span className="badge text-dark m-0 p-0 text-wrap">/var/www/jsonph/</span>
             ). Estos permisos
             se pueden verificar utilizando el comando
-            {' '}<span className="badge text-dark m-0 p-0">ls -l</span> y deben
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">ls -l</span> y deben
             corresponder a:
           </p>
 
@@ -234,16 +234,16 @@ const JsonPlaceHolderCentos = () => {
           <ol>
             <li>
               Editar el archivo denominado de SELinux ejecutando
-              {' '}<span className="badge text-dark m-0 p-0">vim /etc/selinux/config</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">vim /etc/selinux/config</span>{' '}
               y modificando el valor
-              {' '}<span className="badge text-dark m-0 p-0">SELINUX=enforcing</span> por
-              {' '}<span className="badge text-dark m-0 p-0">SELINUX=disabled.</span>
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">SELINUX=enforcing</span> por
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">SELINUX=disabled.</span>
             </li>
 
             <li>Luego se debe reiniciar la máquina y volver a ingresar por ssh.</li>
             <li>
               Una vez se ha ingresado se sugiere detener el servicio de firwalld ejecutando
-              {' '}<span className="badge text-dark m-0 p-0">systemctl stop firwalld.</span>
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">systemctl stop firwalld.</span>
             </li>
           </ol>
 
@@ -257,7 +257,7 @@ const JsonPlaceHolderCentos = () => {
             de añadir algo de estilos (si se desea, se puede saltar este paso y continuar
             directamente con la ejecución de apache). Así pues, el archivo
             main.html lo he renombrado a
-            {' '}<span className="badge text-dark m-0 p-0">index.html</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">index.html</span>{' '}
             y lo he dejado de la siguiente manera:
           </p>
 
@@ -283,7 +283,7 @@ const JsonPlaceHolderCentos = () => {
 
           <p>
             Mientras que al archivo
-            {' '}<span className="badge text-dark m-0 p-0">users.js</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">users.js</span>{' '}
             se configuró de la siguiente manera:
           </p>
 

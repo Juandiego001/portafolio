@@ -17,7 +17,7 @@ const ErrorPage = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
+        <div className="container my-5 px-5">
           <h1 className="h1 text-dark">
             Lo sentimos
           </h1>

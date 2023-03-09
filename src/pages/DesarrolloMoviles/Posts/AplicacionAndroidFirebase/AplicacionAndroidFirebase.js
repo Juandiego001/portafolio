@@ -81,7 +81,7 @@ const AplicacionAndroidFirebase = () => {
             Para ello, lo que hacemos es crear un nuevo proyecto donde tendremos que 
             agregar un nombre y luego sí registrar una aplicación. En este punto, cuando nos encontremos
             registrando la aplicación, tendremos que descargar un archivo denominado 
-            {' '}<span className="badge text-dark m-0 p-0">google-services.json,</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">google-services.json,</span>{' '}
             el cual nos servirá para confirmar nuestras credenciales de vinculación 
             del proyecto con Firebase.
           </p>
@@ -92,19 +92,19 @@ const AplicacionAndroidFirebase = () => {
             Una vez descargado el archivo mencionado anteriormente, tendremos que ubicarlo 
             en la ruta raíz de nuestro proyecto, es decir, donde se encuentran todos los
             archivos de
-            {' '}<span className="badge text-dark m-0 p-0">gradle, build</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">gradle, build</span>{' '}
             y demás. Hecho esto, tendremos que hacerle cambios a nuestro gradle
             para descargar las librerías de autenticación de firebase que necesitamos.
             Para esto, desde Android Studio se deben modificar los archivos:
-            {' '}<span className="badge text-dark m-0 p-0">build.gradle (Project: "nombre-de-tu-app")</span>{' '} y
-            {' '}<span className="badge text-dark m-0 p-0">build.gradle (Module :app).</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle (Project: "nombre-de-tu-app")</span>{' '} y
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle (Module :app).</span>{' '}
           </p>
 
           <p>
             La explicación sencilla de ambos archivos es que mientras uno hace referencia al build.gradle de tu
             proyecto raiz, el segundo hace referencia a nivel de raíz del proyecto,
             el otro hace referencia al módulo como tal. Así, el
-            {' '}<span className="badge text-dark m-0 p-0">build.gradle (Project: "nombre-de-tu-app")</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle (Project: "nombre-de-tu-app")</span>{' '}
             deberá contener lo siguiente:
           </p>
 
@@ -136,7 +136,7 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             Posteriormente, en el archivo
-            {' '}<span className="badge text-dark m-0 p-0">build.gradle (Module :app):</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle (Module :app):</span>{' '}
           </p>
 
           <pre>
@@ -168,7 +168,7 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             Y luego damos click en el botón que nos aparece en la parte superior del IDE
-            denominado {' '}<span className="badge text-dark m-0 p-0">Sync now,</span>{' '}
+            denominado {' '}<span className="badge text-dark m-0 p-0 text-wrap">Sync now,</span>{' '}
             para poder empezar a descargar las librerías.
           </p>
 
@@ -176,7 +176,7 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             Nuestro 
-            {' '}<span className="badge text-dark m-0 p-0">activity_main.xml</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">activity_main.xml</span>{' '}
             contendrá sencillamente dos campos para agregar texto y dos botones. Ambos campos,
             serán para agregar un usuario y una contraseña y los botones serán para
             iniciar sesión o para registrarse. El código luce de la siguiente manera:
@@ -253,7 +253,7 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             En este 
-            {' '}<span className="badge text-dark m-0 p-0">activity_welcome.xml</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">activity_welcome.xml</span>{' '}
             lo que haremos será recibir el nombre de usuario de quien ha iniciado sesión
             y mostrarlo en la interfaz. Su código correspondiente es el siguiente:
           </p>
@@ -285,11 +285,11 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             A su vez, tendremos que crear un archivo 
-            {' '}<span className="badge text-dark m-0 p-0">WelcomeActivity.java</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">WelcomeActivity.java</span>{' '}
             que funcione con el 
-            {' '}<span className="badge text-dark m-0 p-0">layout</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">layout</span>{' '}
             que acabamos de crear y declarar dicho layout en el
-            {' '}<span className="badge text-dark m-0 p-0">AndroidManifest.xml,</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">AndroidManifest.xml,</span>{' '}
             de la siguiente manera:
           </p>
 
@@ -346,7 +346,7 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             En el
-            {' '}<span className="badge text-dark m-0 p-0">MainActivity.java</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">MainActivity.java</span>{' '}
             será donde configuremos las principales características de Firebase.
             En primer lugar lo que haremos será importar las librerías necesarias
             las cuales son:
@@ -396,9 +396,9 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             Después, en el método
-            {' '}<span className="badge text-dark m-0 p-0">onCreate</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">onCreate</span>{' '}
             tendremos que asignar el
-            {' '}<span className="badge text-dark m-0 p-0">layout activity_main.xml</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">layout activity_main.xml</span>{' '}
             y asignar los valores a las variables
             anteriormente declaradas:
           </p>
@@ -424,17 +424,17 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             Posteriormente, crearemos el método
-            {' '}<span className="badge text-dark m-0 p-0">registrarse</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">registrarse</span>{' '}
             el cuál tendrá como parámetro
-            {' '}<span className="badge text-dark m-0 p-0">View v</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">View v</span>{' '}
             para poder recibir el evento click. A su vez,
             se validará que se hayan digitado valores en los campos de texto;
             con el método
-            {' '}<span className="badge text-dark m-0 p-0">createUserWithEmailAndPassword</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">createUserWithEmailAndPassword</span>{' '}
             se iniciará el proceso de registro del usuario; con el método 
-            {' '}<span className="badge text-dark m-0 p-0">onComplete</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">onComplete</span>{' '}
             y el parámetro
-            {' '}<span className="badge text-dark m-0 p-0">task</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">task</span>{' '}
             se verificará cómo ha culminado el proceso;
             y finalmente se omitirá el mensaje de progreso de creación del usuario.
           </p>
@@ -475,11 +475,11 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             Luego, creamos otro método denominado
-            {' '}<span className="badge text-dark m-0 p-0">iniciarSesion</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">iniciarSesion</span>{' '}
             similar al método
-            {' '}<span className="badge text-dark m-0 p-0">registrarse</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">registrarse</span>{' '}
             con el que, dependiendo si los datos son correctos de acuerdo a la 
-            {' '}<span className="badge text-dark m-0 p-0">task</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">task</span>{' '}
             se direccionará al usuario al layout de bienvenida.
           </p>
 

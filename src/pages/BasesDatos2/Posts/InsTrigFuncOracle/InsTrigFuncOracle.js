@@ -38,8 +38,8 @@ const InsTrigFuncOracle = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5">
+          <h1 className="h1 text-dark text-center">
             Inserciones, triggers y funciones en Oracle
           </h1>
 

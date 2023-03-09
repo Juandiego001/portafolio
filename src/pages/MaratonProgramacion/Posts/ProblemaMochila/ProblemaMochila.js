@@ -48,7 +48,7 @@ const ProblemaMochila = () => {
       <div className="mb-4">
         <Header />
 
-        <div className="container my-5 px-5">
+        <div className="container my-5">
           <h1 className="h1 text-dark text-center">
             El problema de la mochila
           </h1>

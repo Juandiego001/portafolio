@@ -64,22 +64,22 @@ const AplicacionAndroidGps = () => {
 
           <p>
             El IDE que se utilizará para desarrollar el proyecto es
-            {' '}<span className="badge text-dark m-0 p-0">Android Studio.</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Android Studio.</span>{' '}
             Por lo cual, una vez creado el proyecto con esta herramienta se tendrá que configurar:
           </p>
 
           <ul>
-            <li>El {' '}<span className="badge text-dark m-0 p-0">build.gradle</span>{' '} (del módulo).</li>
-            <li>El {' '}<span className="badge text-dark m-0 p-0">AndroidManifest.xml.</span>{' '}</li>
-            <li>El {' '}<span className="badge text-dark m-0 p-0">layout activity_main.xml.</span>{' '}</li>
-            <li>Las clases {' '}<span className="badge text-dark m-0 p-0">.java.</span>{' '}</li>
+            <li>El {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle</span>{' '} (del módulo).</li>
+            <li>El {' '}<span className="badge text-dark m-0 p-0 text-wrap">AndroidManifest.xml.</span>{' '}</li>
+            <li>El {' '}<span className="badge text-dark m-0 p-0 text-wrap">layout activity_main.xml.</span>{' '}</li>
+            <li>Las clases {' '}<span className="badge text-dark m-0 p-0 text-wrap">.java.</span>{' '}</li>
           </ul>
 
           <h2 className="mt-5">Configuración del <code>build.gradle</code></h2>
 
           <p>
             Existen dos archivos
-            {' '}<span className="badge text-dark m-0 p-0">build.gradle.</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle.</span>{' '}
             Ambos tienen el mismo nombre, pero si se visualizan desde el IDE de Android Studio,
             uno de ellos hará referencia a todos los proyectos en general y usualmente contiene
             algo similar a:
@@ -104,11 +104,11 @@ const AplicacionAndroidGps = () => {
             </code>
           </pre>
 
-          <p>
+          <p className="text-break">
             Así, el que tendremos que modificar es el segundo
-            {' '}<span className="badge text-dark m-0 p-0">build.gradle,</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle,</span>{' '}
             que generalmente se identifica por denominarse
-            {' '}<span className="badge text-dark m-0 p-0">build.gradle (Module: nombre-del-proyecto.app)</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle (Module: nombre-del-proyecto.app)</span>{' '}
             y este es el que deberá contener lo siguiente:
           </p>
 
@@ -158,10 +158,10 @@ const AplicacionAndroidGps = () => {
 
           <p>
             Del código mostrado anteriormente se debe tener en cuenta la propiedad
-            {' '}<span className="badge text-dark m-0 p-0">minSdk 30,</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">minSdk 30,</span>{' '}
             ya que el método de la API de localización que utilizaremos para obtener
             la posición actual, solo acepta versiones del
-            {' '}<span className="badge text-dark m-0 p-0">Sdk</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Sdk</span>{' '}
             mayores a 29.
           </p>
 
@@ -169,34 +169,34 @@ const AplicacionAndroidGps = () => {
 
           <p>
             Ahora bien, en cuanto al
-            {' '}<span className="badge text-dark m-0 p-0">AndroidManifest.xml</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">AndroidManifest.xml</span>{' '}
             se le debe informar al dispositivo que se utilizarán los siguientes permisos:
           </p>
 
           <ul>
-            <li><span className="badge text-dark m-0 p-0">ACCESS_FINE_LOCATION.</span></li>
-            <li><span className="badge text-dark m-0 p-0">ACCESS_COARSE_LOCATION.</span></li>
-            <li><span className="badge text-dark m-0 p-0">ACCESS_LOCATION_EXTRA_COMMANDS.</span></li>
-            <li><span className="badge text-dark m-0 p-0">INTERNET.</span></li>
-            <li><span className="badge text-dark m-0 p-0">ACCESS_BACKGROUND_LOCATION.</span></li>
-            <li><span className="badge text-dark m-0 p-0">READ_LOGS.</span></li>
+            <li><span className="badge text-dark m-0 p-0 text-wrap">ACCESS_FINE_LOCATION.</span></li>
+            <li><span className="badge text-dark m-0 p-0 text-wrap">ACCESS_COARSE_LOCATION.</span></li>
+            <li><span className="badge text-dark m-0 p-0 text-wrap">ACCESS_LOCATION_EXTRA_COMMANDS.</span></li>
+            <li><span className="badge text-dark m-0 p-0 text-wrap">INTERNET.</span></li>
+            <li><span className="badge text-dark m-0 p-0 text-wrap">ACCESS_BACKGROUND_LOCATION.</span></li>
+            <li><span className="badge text-dark m-0 p-0 text-wrap">READ_LOGS.</span></li>
           </ul>
 
           <p>
             Tanto
-            {' '}<span className="badge text-dark m-0 p-0">ACCESS_FINE_LOCATION</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">ACCESS_FINE_LOCATION</span>{' '}
             como
-            {' '}<span className="badge text-dark m-0 p-0">ACCESS_COARSE_LOCATION</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">ACCESS_COARSE_LOCATION</span>{' '}
             son permisos primordiales para poder obtener la ubicación por GPS. Los demás, son
             permisos secundarios que nos permitirán obtener la ubicación por
-            {' '}<span className="badge text-dark m-0 p-0">network (internet),</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">network (internet),</span>{' '}
             verificar constantemente los cambios de ubicación
-            {' '}<span className="badge text-dark m-0 p-0">(ACCESS_BACKGROUND_LOCATION)</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">(ACCESS_BACKGROUND_LOCATION)</span>{' '}
             y, en caso de ser necesario, acceder a la consola y leer y enviar información
             a la aplicación
-            {' '}<span className="badge text-dark m-0 p-0">(READ_LOGS).</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">(READ_LOGS).</span>{' '}
             Por ello, el
-            {' '}<span className="badge text-dark m-0 p-0">manifest</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">manifest</span>{' '}
             debe ser similar a:
           </p>
 
@@ -248,7 +248,7 @@ const AplicacionAndroidGps = () => {
           <p>
             Ahora en cuanto a la configuración del diseño tendremos algo muy simple: una única
             vista o
-            {' '}<span className="badge text-dark m-0 p-0">layout</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">layout</span>{' '}
             que será la principal y lucirá similar a:
           </p>
 
@@ -275,7 +275,7 @@ const AplicacionAndroidGps = () => {
 
           <p className="mt-5">
             Así, el código del
-            {' '}<span className="badge text-dark m-0 p-0">layout activity_main</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">layout activity_main</span>{' '}
             será el siguiente:
           </p>
 
@@ -364,11 +364,11 @@ const AplicacionAndroidGps = () => {
             <p>
               Tal y como se visualiza en el código anterior, en la definición del botón,
               se ha establecido un método denominado
-              {' '}<span className="badge text-dark m-0 p-0">obtenerDireccion</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">obtenerDireccion</span>{' '}
               el cual será ejecutado una vez se presione el mismo. Sin embargo,
               se puede denominar como el usuario lo considere adecuado siempre
               y cuando se modifique en su respectiva clase
-              {' '}<span className="badge text-dark m-0 p-0">.java.</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">.java.</span>{' '}
             </p>
           </div>
 
@@ -469,7 +469,7 @@ const AplicacionAndroidGps = () => {
             Ahora bien, tendremos que configurar las variables que nos permitirán tomar los datos de las
             cajas de texto y procesarlas con los métodos de localización de la API de Android. Para ello,
             establecemos las variables y configuramos su método 
-            {' '}<span className="badge text-dark m-0 p-0">onCreate</span>{' '} 
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">onCreate</span>{' '} 
             de la siguiente manera:
           </p>
 
@@ -505,7 +505,7 @@ const AplicacionAndroidGps = () => {
 
           <p>
             Como se puede observar en el código anterior, hay un método denominado
-            {' '}<span className="badge text-dark m-0 p-0">askCurrentLocationAndUpdates()</span>{' '} 
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">askCurrentLocationAndUpdates()</span>{' '} 
             el cual nos permitirá determinar la posición actual del usuario. En este método
             lo que haremos será:
           </p>
@@ -514,13 +514,13 @@ const AplicacionAndroidGps = () => {
             <li className="mb-3">
               Verificar que los permisos han sido otorgados. En caso de que no hayan sido otorgados
               se solicitarán en tiempo real utilizando el método 
-              {' '}<span className="badge text-dark m-0 p-0">requestPermissions</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">requestPermissions</span>{' '} 
               de la clase 
-              {' '}<span className="badge text-dark m-0 p-0">ActivityCompat</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">ActivityCompat</span>{' '} 
               el cual llamará a su vez a un
-              {' '}<span className="badge text-dark m-0 p-0">callback</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">callback</span>{' '} 
               denominado
-              {' '}<span className="badge text-dark m-0 p-0">onRequestPermissionsResult.</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">onRequestPermissionsResult.</span>{' '} 
               A partir de este punto pueden ocurrir dos cosas:
 
               <ol type="a">
@@ -531,7 +531,7 @@ const AplicacionAndroidGps = () => {
                 <li>
                   Que se soliciten los permisos en tiempo real donde en caso de que 
                   se otorguen se llama nuevamente a la función
-                  {' '}<span className="badge text-dark m-0 p-0">askCurrentLocationAndUpdates.</span>{' '} 
+                  {' '}<span className="badge text-dark m-0 p-0 text-wrap">askCurrentLocationAndUpdates.</span>{' '} 
                 </li>
                 <li>
                   El usuario no otorga ningún permiso y no se continúa con el despliegue de
@@ -544,12 +544,12 @@ const AplicacionAndroidGps = () => {
             <li className="mb-3">
               Si el usuario ha otorgado los permisos previamente o se otorgan en tiempo real
               se procede a tomar todos los
-              {' '}<span className="badge text-dark m-0 p-0">providers</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">providers</span>{' '} 
               que tenga el dispositivo para intentar encontrar la ubicación con alguno de ellos.
               Para que esto se ejecute correctamente, se ha definido previamente una variable denominada
-              {' '}<span className="badge text-dark m-0 p-0">ft</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">ft</span>{' '} 
               de tipo
-              {' '}<span className="badge text-dark m-0 p-0">FutureTask</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">FutureTask</span>{' '} 
               que nos permite esperar hasta que se complete el intento de determinación
               de ubicación. También se definieron otras variables importantes
               para llamar el método de obtener localización.
@@ -558,30 +558,30 @@ const AplicacionAndroidGps = () => {
             <li className="mb-3">
               Una vez se han denominado todas las variables importantes y se han encontrado
               todos los
-              {' '}<span className="badge text-dark m-0 p-0">providers</span>{' '} 
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">providers</span>{' '} 
               se procede a ejecutar un ciclo que intenta la determinación de ubicación
               por cada provider encontrado.
             </li>
 
             <li className="mb-3">
               El método que se llama para determinar la ubicación actual se denomina
-              {' '}<span className="badge text-dark m-0 p-0">getCurrentLocation</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">getCurrentLocation</span>{' '}
               el cual a su vez llama a un
-              {' '}<span className="badge text-dark m-0 p-0">callback</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">callback</span>{' '}
               que en consecuencia ejecuta la función
-              {' '}<span className="badge text-dark m-0 p-0">accept</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">accept</span>{' '}
               de un objeto de tipo 
-              {' '}<span className="badge text-dark m-0 p-0">Consumer,</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">Consumer,</span>{' '}
               el cual ejecutará el método, llamado
-              {' '}<span className="badge text-dark m-0 p-0">setCurrentLocation,</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">setCurrentLocation,</span>{' '}
               encargado de determinar si se han tomado latitud y longitud.
             </li>
 
             <li>
               Si se ha logrado tomar las coordenadas de latitud y longitud,
-              {' '}<span className="badge text-dark m-0 p-0">setCurrentLocation</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">setCurrentLocation</span>{' '}
               llamará a la función 
-              {' '}<span className="badge text-dark m-0 p-0">setLocation</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">setLocation</span>{' '}
               la cual será la encargada de transformar los valores de latitud y longitud
               a una dirección legible por un ser humano.
             </li>
@@ -663,7 +663,7 @@ const AplicacionAndroidGps = () => {
             A su vez, como se mencionó anteriormente en el primer paso del desarrollo del método,
             hay una función que tendremos que definir en nuestra clase para poder solicitar
             los datos de la ubicación en caso de que sean modificados. Este método se denomina
-            {' '}<span className="badge text-dark m-0 p-0">onRequestPermissionsResult</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">onRequestPermissionsResult</span>{' '}
             y su código se ha definido de la siguiente manera:
           </p>
 
@@ -696,7 +696,7 @@ const AplicacionAndroidGps = () => {
 
           <p>
             Posteriormente, el método que es ejecutado será
-            {' '}<span className="badge text-dark m-0 p-0">setCurrentLocation,</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">setCurrentLocation,</span>{' '}
             el cual contiene lo siguiente:
           </p>
 
@@ -724,21 +724,21 @@ const AplicacionAndroidGps = () => {
 
           <p>
             Y finalmente, el método
-            {' '}<span className="badge text-dark m-0 p-0">setLocation.</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">setLocation.</span>{' '}
             Este método utiliza la clase
-            {' '}<span className="badge text-dark m-0 p-0">Geocoder</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">Geocoder</span>{' '}
             para convertir la latitud y longitud a una dirección legible.
             El método encargado de convertir dichas variables a la dirección es
-            {' '}<span className="badge text-dark m-0 p-0">getFromLocation</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">getFromLocation</span>{' '}
              el cual toma las variables y el máximo número de direcciones que
              queremos hallar en una
-             {' '}<span className="badge text-dark m-0 p-0">{"List<Address>"}.</span>{' '}
+             {' '}<span className="badge text-dark m-0 p-0 text-wrap">{"List<Address>"}.</span>{' '}
              Luego por cada dirección hallada creamos una variable 
-             {' '}<span className="badge text-dark m-0 p-0">Address</span>{' '}
+             {' '}<span className="badge text-dark m-0 p-0 text-wrap">Address</span>{' '}
              y se convertirá a texto utilizando el método
-             {' '}<span className="badge text-dark m-0 p-0">getAddressLine(0)</span>{' '}
+             {' '}<span className="badge text-dark m-0 p-0 text-wrap">getAddressLine(0)</span>{' '}
              para finalmente mostrarla en el 
-             {' '}<span className="badge text-dark m-0 p-0">textViewAddress</span>{' '}
+             {' '}<span className="badge text-dark m-0 p-0 text-wrap">textViewAddress</span>{' '}
              definido anteriormente.
           </p>
 
@@ -774,9 +774,9 @@ const AplicacionAndroidGps = () => {
           <p>
             Tener en cuenta también, el método que nos permitirá tomar ciertas
             coordenadas por medio de los 
-            {' '}<span className="badge text-dark m-0 p-0">EditText.</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">EditText.</span>{' '}
             Este método fue denominado 
-            {' '}<span className="badge text-dark m-0 p-0">obtenerDireccion</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">obtenerDireccion</span>{' '}
             y su código es el siguiente:
           </p>
 
@@ -798,18 +798,18 @@ const AplicacionAndroidGps = () => {
           <p>
             Para la configuración adicional de ubicación en tiempo real tenemos que 
             utilizar la clase personalizada
-            {' '}<span className="badge text-dark m-0 p-0">MyLocationListener.</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">MyLocationListener.</span>{' '}
             Esta clase debe heredar de la superclase 
-            {' '}<span className="badge text-dark m-0 p-0">LocationListener</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">LocationListener</span>{' '}
             y debe implementar por sobrecarga los métodos:
           </p>
 
           <ul>
-            <li>{' '}<span className="badge text-dark m-0 p-0">onProviderEnabled.</span>{' '}</li>
-            <li>{' '}<span className="badge text-dark m-0 p-0">onProviderDisabled.</span>{' '}</li>
+            <li>{' '}<span className="badge text-dark m-0 p-0 text-wrap">onProviderEnabled.</span>{' '}</li>
+            <li>{' '}<span className="badge text-dark m-0 p-0 text-wrap">onProviderDisabled.</span>{' '}</li>
             <li>
               Y 
-              {' '}<span className="badge text-dark m-0 p-0">onLocationChanged,</span>{' '}
+              {' '}<span className="badge text-dark m-0 p-0 text-wrap">onLocationChanged,</span>{' '}
               el cual será el encargado de actualizar la dirección en caso de que se cambien
               las coordenadas.
             </li>
@@ -817,12 +817,12 @@ const AplicacionAndroidGps = () => {
 
           <p>
             Sencillamente lo que se hace es que cuando el 
-            {' '}<span className="badge text-dark m-0 p-0">LocationManager</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">LocationManager</span>{' '}
             detecte un cambio en las coordenadas de latitud y longitud, se llamará
             al método
-            {' '}<span className="badge text-dark m-0 p-0">onLocationChanged</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">onLocationChanged</span>{' '}
             y dentro de este se llamará al método 
-            {' '}<span className="badge text-dark m-0 p-0">setLocation</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">setLocation</span>{' '}
             para agregar la nueva dirección hallada. El código de toda la clase
             es el siguiente:
           </p>
@@ -896,16 +896,16 @@ const AplicacionAndroidGps = () => {
 
           <p>
             Los
-            {' '}<span className="badge text-dark m-0 p-0">getters</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">getters</span>{' '}
             y
-            {' '}<span className="badge text-dark m-0 p-0">setters</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">setters</span>{' '}
             de los atributos de latitud y longitud en realidad no son utilizados
             (solamente el 
-            {' '}<span className="badge text-dark m-0 p-0">setter</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">setter</span>{' '}
             que se utiliza para la variable 
-            {' '}<span className="badge text-dark m-0 p-0">mainActivity</span>).
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">mainActivity</span>).
             Sin embargo, el usuario podría tomarlos desde la clase 
-            {' '}<span className="badge text-dark m-0 p-0">MainActivity.</span>{' '}
+            {' '}<span className="badge text-dark m-0 p-0 text-wrap">MainActivity.</span>{' '}
           </p>
           
           <h2 className="mt-5">

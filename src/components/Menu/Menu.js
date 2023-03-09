@@ -47,9 +47,9 @@ const Menu = (props) => {
   }
 
   return (
-    <div className={"bg-dark " + styles.MenuPosition}>
-      <button className={"btn border-0 bg-dark text-light m-0 p-0 h-100 " + styles.OffCanvasMenu} onClick={handleShowMenu}>
-        <h1 className="bg-dark m-0 p-0 h-100 border-start border-light d-flex justify-content-center align-items-center px-4">
+    <div className="m-0 p-0 h-100">
+      <button className={"btn border-0 text-light m-0 p-0 h-100 w-100 " + styles.OffCanvasMenu} onClick={handleShowMenu}>
+        <h1 className="bg-dark m-0 p-0 h-100 border-start border-light d-flex justify-content-center align-items-center">
           <FontAwesomeIcon icon={faBars} />
         </h1>
       </button>

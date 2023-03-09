@@ -37,10 +37,18 @@ const Fisica2 = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5">
+          <h1 className="h1 text-dark text-center">
             Física 2
           </h1>
+
+          <h2 className="mt-5">
+            Entradas
+          </h2>
+
+          <h2 className="mt-5">
+            Evaluacione
+          </h2>
         </div>
 
         <Footer />

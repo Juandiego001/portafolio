@@ -9,14 +9,18 @@ import Menu from '../Menu/Menu.js';
 const Header = () => {
 
   return (
-    <div className={"container-fluid p-0 m-0 bg-dark d-flex align-items-center position-relative"}>
-      <Link to="/" className="nav-link h1 py-3 m-0 text-light w-100 d-flex justify-content-center">
-        <h1 className={"p-0 m-0 w-50 text-center " + styles.FontGoogle}>
-          Juan Diego Cobo Cabal
-        </h1>
-      </Link>
+    <div className={"container-fluid p-0 m-0 bg-dark row position-relative"}>
+      <div className="m-0 p-0 col-10">
+        <Link to="/" className="nav-link m-0 p-0 py-3 text-light w-100 text-center">
+          <h1 className={"p-0 m-0 text-center " + styles.FontGoogle}>
+            Juan Diego Cobo Cabal
+          </h1>
+        </Link>
+      </div>
 
-      <Menu />
+      <div className="m-0 p-0 col-2">
+        <Menu />
+      </div>
     </div>
   )
 };
