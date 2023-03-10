@@ -45,10 +45,10 @@ const ProblemaGasolinera = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div className="mb-4">
+      <div>
         <Header />
 
-        <div className="container my-5">
+        <div className="container my-5 px-5">
           <h1 className="h1 text-dark text-center">
             El problema de la gasolinera
           </h1>

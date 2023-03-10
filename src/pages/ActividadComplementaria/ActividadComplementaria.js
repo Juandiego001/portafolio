@@ -31,10 +31,14 @@ const ActividadComplementaria = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Actividad complementaria
           </h1>
+
+          <h2 className="mt-5">
+            Entradas
+          </h2>
         </div>
 
         <Footer />

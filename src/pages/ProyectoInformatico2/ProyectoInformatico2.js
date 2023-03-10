@@ -45,10 +45,14 @@ const ProyectoInformatico2 = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="text-dark text-center">
             Proyecto Informático 2
           </h1>
+
+          <h2 className="mt-5">
+            Entradas
+          </h2>
 
           <div className="card mt-3">
             <div className="card-body">
@@ -61,6 +65,10 @@ const ProyectoInformatico2 = () => {
               <Link className="btn btn-dark" to="/cursos/proyecto-informatico-2/entradas/react-typescript-mysql-imgs">Ver entrada</Link>
             </div>
           </div>
+
+          <h2 className="mt-5">
+            Evaluaciones
+          </h2>
         </div>
 
         <Footer />

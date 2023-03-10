@@ -38,11 +38,14 @@ const ProbabilidadEstadistica = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5">
+          <h1 className="h1 text-dark text-center">
             Probabilidad y estadística
           </h1>
 
+          <h2 className="mt-5">
+            Entradas
+          </h2>
 
           <div className="card mt-3">
             <div className="card-body">
@@ -54,6 +57,10 @@ const ProbabilidadEstadistica = () => {
               to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
             </div>
           </div>
+
+          <h2 className="mt-5">
+            Evaluaciones
+          </h2>
         </div>
 
         <Footer />

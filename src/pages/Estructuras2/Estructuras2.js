@@ -35,7 +35,7 @@ const Estructuras2 = () => {
       <div>
         <Header />
 
-        <div className="container my-5">
+        <div className="container my-5 px-5">
           <h1 className="h1 text-dark text-center">
             Estructuras de datos y algoritmos 2
           </h1>

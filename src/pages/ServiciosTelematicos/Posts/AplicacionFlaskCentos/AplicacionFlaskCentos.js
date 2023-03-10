@@ -68,8 +68,8 @@ const AplicacionFlaskCentos = () => {
             Para iniciar tendremos en cuenta el siguiente <code>Vagrantfile:</code>
           </p>
 
-          <pre className="language-ruby">
-            <code>
+          <pre>
+            <code className="language-ruby">
               {
                 "# -*- mode: ruby -*-\n" +
                 "# vi: set ft=ruby :\n\n" +
@@ -95,7 +95,7 @@ const AplicacionFlaskCentos = () => {
             <a href="https://github.com/Juandiego001/app-flask-servicios-telematicos" target="_blank">link.</a>
           </p>
 
-          <pre >
+          <pre>
             <code className="language-console">
               {
                 "# Para ingresar como root (contraseña 'vagrant', opcional)\n" +
@@ -142,10 +142,10 @@ const AplicacionFlaskCentos = () => {
             Para poder visualizar el aplicativo basta con dirigirse al navegador y
             digitar en la barra de búsqueda la dirección IP de la máquina servidor
             - que de acuerdo al{' '}
-            <pre className="d-inline"><code className="nohighlight">Vagrantfile</code></pre>{' '} 
+            <code className="nohighlight">Vagrantfile</code>{' '} 
             es <code>192.168.56.3</code> -
             junto con el puerto <code>5000</code>, es decir,{' '}
-            <pre className="d-inline"><code className="nohighlight">192.168.56.3:5000.</code></pre>
+            <code className="nohighlight">192.168.56.3:5000.</code>
           </p>
 
           <h2 className="h2 text-dark mt-5">

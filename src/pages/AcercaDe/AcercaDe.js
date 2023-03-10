@@ -36,12 +36,12 @@ const AcercaDe = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Acerca de
           </h1>
 
-          <p>
+          <p className="mt-5">
             Mi nombre es Juan Diego Cobo Cabal y soy estudiante de Ingeniería Informática
             de la Universidad Autónoma de Occidente en la ciudad de Cali, Colombia. El motivo
             por el que desarrollé está plataforma tiene sencillamente dos fines:

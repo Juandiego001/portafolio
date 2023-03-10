@@ -61,24 +61,27 @@ const AplicacionFlaskMySql = () => {
             En la presente entrada se explicará como crear una aplicación web con Flask y MySQL en una máquina virtual CentOS 8.
           </p>
 
-          <p className="bg-warning p-3">
-            <b>¡Atención!</b><br /><br />
+          <div className="bg-warning p-3">
+            <h6>¡Atención!</h6>
 
-            Para poder ejecutar el proyecto de Flask con MySQL se deben instalar todos los módulos que se presentan en la guía.
-            Sin embargo, el código de python se puede desarrollar desde la máquina anfitrión para que sea
-            más cómodo, pues podría utilizarse un IDE como <code>Visual Studio Code</code> en vez de únicamente <b>vim.</b>{' '}
-            Por mi parte utilizaré Code y por ello se deben tener <b>todos los módulos de python</b> y el manejador
-            de MySQL instalado. Los módulos de python se pueden instalar en la máquina local ejecutando:
-          </p>
+            <p>
+              Para poder ejecutar el proyecto de Flask con MySQL se deben instalar todos los módulos que se presentan en la guía.
+              Sin embargo, el código de python se puede desarrollar desde la máquina anfitrión para que sea
+              más cómodo, pues podría utilizarse un IDE como <code>Visual Studio Code</code> en vez de únicamente <b>vim.</b>{' '}
+              Por mi parte utilizaré Code y por ello se deben tener <b>todos los módulos de python</b> y el manejador
+              de MySQL instalado. Los módulos de python se pueden instalar en la máquina local ejecutando:
+            </p>
+            
+            <pre>
+              <code className="bg-warning language-cmd">
+                {
+                  "pip3 install Flask\n" +
+                  "pip3 install flask-mysqldb"
+                }
+              </code>
+            </pre>
+          </div>
 
-          <pre>
-            <code className="bg-warning py-3 language-cmd">
-              {
-                "pip3 install Flask\n" +
-                "pip3 install flask-mysqldb"
-              }
-            </code>
-          </pre>
 
           <h2 className="h2 text-dark mt-5">
             Introducción
@@ -340,127 +343,142 @@ const AplicacionFlaskMySql = () => {
             El primer archivo que se aconseja modificar es el <code>__init__.py</code> donde se inicializará el servidor Flask,
             se agregará el archivo de las rutas (<code>views.py</code>) y la configuración adicional que se desee agregar (<code>config.py</code>). Este archivo
             deberá quedar de la siguiente manera:
+          </p>
 
-            <pre>
-              <code className="language-python">
-                {
-                  '# app/__init__.py\n' +
-                  'from flask import Flask\n' +
-                  'app = Flask(__name__, instance_relative_config=True)\n\n' +
+          <pre>
+            <code className="language-python">
+              {
+                '# app/__init__.py\n' +
+                'from flask import Flask\n' +
+                'app = Flask(__name__, instance_relative_config=True)\n\n' +
 
-                  'from app import views\n' +
-                  'app.config.from_object("config")'
-                }
-              </code>
-            </pre>
+                'from app import views\n' +
+                'app.config.from_object("config")'
+              }
+            </code>
+          </pre>
 
+          <p>
             Posteriormente, modificamos el archivo de <code>config.py</code> para personalizar la configuración del servidor. En este caso,
             nada más añadiremos que la opción <code>DEBUG</code> se encuentre activa para no tener que reiniciar la consola manualmente
             sino que se haga automáticamente. Este archivo deberá lucir así:
+          </p>
 
-            <pre>
-              <code className="language-python">
-                {
-                  '# config.py\n' +
-                  'DEBUG=True'
-                }
-              </code>
-            </pre>
+          <pre>
+            <code className="language-python">
+              {
+                '# config.py\n' +
+                'DEBUG=True'
+              }
+            </code>
+          </pre>
 
+          <p>
             Luego el <code>run.py</code> se debe encargar de correr el servidor cuando lo ejecutemos. Por ello debe importar la declaración del <code>__init__.py</code>
             {' '} e iniciarlo de la siguiente manera:
+          </p>
 
-            <pre>
-              <code className="language-python">
-                {
-                  "# run.py\n" +
-                  "from app import app\n\n" +
+          <pre>
+            <code className="language-python">
+              {
+                "# run.py\n" +
+                "from app import app\n\n" +
 
-                  "if __name__ == '__main__':\n" +
-                  "    app.run()\n"
-                }
-              </code>
-            </pre>
+                "if __name__ == '__main__':\n" +
+                "    app.run()\n"
+              }
+            </code>
+          </pre>
 
+          <p>
             En este punto ya se puede iniciar el servidor ejecutando el comando <code>python run.py</code> (recordar ubicarse en la consola donde se encuentre el archivo).
             Si todo funciona correctamente, se deben visualizar las siguientes líneas en la consola:
+          </p>
 
-            <pre>
-              <code className="language-python">
-                {
-                  " * Serving Flask app 'app'\n" +
-                  " * Debug mode: on\n" +
-                  "WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.\n" +
-                  " * Running on http://127.0.0.1:5000\n" +
-                  "Press CTRL+C to quit\n" +
-                  " * Restarting with stat\n" +
-                  " * Debugger is active!\n" +
-                  " * Debugger PIN: 496-576-666\n"
-                }
-              </code>
-            </pre>
+          <pre>
+            <code className="language-python">
+              {
+                " * Serving Flask app 'app'\n" +
+                " * Debug mode: on\n" +
+                "WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.\n" +
+                " * Running on http://127.0.0.1:5000\n" +
+                "Press CTRL+C to quit\n" +
+                " * Restarting with stat\n" +
+                " * Debugger is active!\n" +
+                " * Debugger PIN: 496-576-666\n"
+              }
+            </code>
+          </pre>
 
+          <p>
             Esto indica que el servidor estará corriendo en el <code>localhost</code> en el puerto 5000.
           </p>
 
-          <p className="p-3 bg-info">
-            Si usted se encuentra realizando todo este proceso en la máquina de CentOS, bastará con colocar:
-            {' '}<code>http://ip-del-centos:5000</code> para verificar el funcionamiento del proyecto. Pero,
-            si se encuentra desarrollandolo localmente: <code>http://localhost:5000</code>. Si está,
-            funcionando correctamente se deberá visualizar el mensaje en pantalla:
+          <div className="p-3 bg-info">
+            <p>
+              Si usted se encuentra realizando todo este proceso en la máquina de CentOS, bastará con colocar:
+              {' '}<code>http://ip-del-centos:5000</code> para verificar el funcionamiento del proyecto. Pero,
+              si se encuentra desarrollandolo localmente: <code>http://localhost:5000</code>. Si está,
+              funcionando correctamente se deberá visualizar el mensaje en pantalla:
+            </p>
 
             <pre>
-              <code className="bg-info pt-3 pb-0 language-cmd">
+              <code className="bg-info language-cmd">
                 {
                   "Not Found\n" +
                   "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\n"
                 }
               </code>
             </pre>
-          </p>
+          </div>
 
           <p>
             Ahora lo que debemos hacer es agregar las rutas correspondientes. Para esto modificaremos
             el archivo <code>views.py</code> de la siguiente manera:
+          </p>
 
-            <pre className="m-0">
-              <code className="p-3 language-python">
-                {
-                  '# app/views.py\n' +
-                  'from app import app\n' +
-                  'from flask import render_template\n\n' +
+          <pre>
+            <code className="language-python">
+              {
+                '# app/views.py\n' +
+                'from app import app\n' +
+                'from flask import render_template\n\n' +
 
-                  '@app.route("/")\n' +
-                  'def index():\n' +
-                  '    return "This is the route /"\n\n' +
+                '@app.route("/")\n' +
+                'def index():\n' +
+                '    return "This is the route /"\n\n' +
 
-                  '@app.route("/about")\n' +
-                  'def about():\n' +
-                  '    return "This is the route /about"\n\n' +
+                '@app.route("/about")\n' +
+                'def about():\n' +
+                '    return "This is the route /about"\n\n' +
 
-                  '@app.route("/contact")\n' +
-                  'def contact():\n' +
-                  '    return "This is the route /contact"\n\n' +
+                '@app.route("/contact")\n' +
+                'def contact():\n' +
+                '    return "This is the route /contact"\n\n' +
 
-                  '@app.route("/articles")\n' +
-                  'def articles():\n' +
-                  '    return "This is the route /articles"'
-                }
-              </code>
-            </pre>
+                '@app.route("/articles")\n' +
+                'def articles():\n' +
+                '    return "This is the route /articles"'
+              }
+            </code>
+          </pre>
 
+          <p>
             Esta es una configuración inicial para verificar que estén funcionando las rutas. Así, cuando accedemos a:
-            <pre>
-              <code>
-                {
-                  'http://localhost:5000 -> Mensaje: This is the route /\n' +
-                  'http://localhost:5000/about -> Mensaje: This is the route /about\n' +
-                  'http://localhost:5000/contact -> Mensaje: This is the route /contact\n' +
-                  'http://localhost:5000/articles -> Mensaje: This is the route /articles'
-                }
-              </code>
-            </pre>
+          </p>
 
+          <pre>
+            <code>
+              {
+                'http://localhost:5000 -> Mensaje: This is the route /\n' +
+                'http://localhost:5000/about -> Mensaje: This is the route /about\n' +
+                'http://localhost:5000/contact -> Mensaje: This is the route /contact\n' +
+                'http://localhost:5000/articles -> Mensaje: This is the route /articles'
+              }
+            </code>
+          </pre>
+
+          <p>
             Si los mensajes se retornan correctamente, podemos iniciar con la creación de los templates.
           </p>
 
@@ -477,66 +495,66 @@ const AplicacionFlaskMySql = () => {
             creados que se pueden obtener en la sección de {' '}
             <a href="https://getbootstrap.com/docs/5.2/examples/" target="_blank">examples</a> de bootstrap.
             Este archivo ha de lucir así:
-
-            <pre>
-              <code className="language-html">
-                {
-                  '<!DOCTYPE html>\n' +
-                  '<html lang="es">\n' +
-                  '<head>\n' +
-                  '    <meta charset="UTF-8">\n' +
-                  '    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n' +
-                  '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-                  '    <title>Página principal</title>\n' +
-                  '    <!-- CSS only -->\n' +
-                  '    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">\n' +
-                  '</head>\n' +
-                  '<body>\n' +
-                  '    <!-- SI LO DESEA REEMPLAZE ESTE HEADER -->\n' +
-                  '    <div class="container">\n' +
-                  '        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">\n' +
-                  '          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">\n' +
-                  '            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>\n' +
-                  '            <span class="fs-4">Simple header</span>\n' +
-                  '          </a>\n\n' +
-
-                  '          <ul class="nav nav-pills">\n' +
-                  '            <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>\n' +
-                  '            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>\n' +
-                  '            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>\n' +
-                  '            <li class="nav-item"><a href="/articles" class="nav-link">Articles</a></li>\n' +
-                  '          </ul>\n' +
-                  '        </header>\n' +
-                  '    </div>\n' +
-                  '    <!-- ************************************** -->\n\n' +
-
-                  '    <!-- NO ELIMINAR -->\n' +
-                  '    <div id="content" class="container-fluid text-center vh-100">\n' +
-                  '            {% block content %}\n' +
-                  '            {% endblock %}\n' +
-                  '    </div>\n' +
-                  '    <!-- ************************************** -->\n\n' +
-
-                  '    <!-- SI LO DESEA REEMPLAZA ESTE FOOTER -->\n' +
-                  '    <div class="container">\n' +
-                  '    <footer class="py-3 my-4">\n' +
-                  '                <ul class="nav justify-content-center border-bottom pb-3 mb-3">\n' +
-                  '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>\n' +
-                  '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>\n' +
-                  '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>\n' +
-                  '                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>\n' +
-                  '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>\n' +
-                  '                </ul>\n' +
-                  '            <p class="text-center text-muted">© 2022 Company, Inc</p>\n' +
-                  '    </footer>\n' +
-                  '  </div>\n' +
-                  '  <!-- ************************************** -->\n' +
-                  '</body>\n' +
-                  '</html>\n'
-                }
-              </code>
-            </pre>
           </p>
+
+          <pre>
+            <code className="language-html">
+              {
+                '<!DOCTYPE html>\n' +
+                '<html lang="es">\n' +
+                '<head>\n' +
+                '    <meta charset="UTF-8">\n' +
+                '    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n' +
+                '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+                '    <title>Página principal</title>\n' +
+                '    <!-- CSS only -->\n' +
+                '    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">\n' +
+                '</head>\n' +
+                '<body>\n' +
+                '    <!-- SI LO DESEA REEMPLAZE ESTE HEADER -->\n' +
+                '    <div class="container">\n' +
+                '        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">\n' +
+                '          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">\n' +
+                '            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>\n' +
+                '            <span class="fs-4">Simple header</span>\n' +
+                '          </a>\n\n' +
+
+                '          <ul class="nav nav-pills">\n' +
+                '            <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>\n' +
+                '            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>\n' +
+                '            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>\n' +
+                '            <li class="nav-item"><a href="/articles" class="nav-link">Articles</a></li>\n' +
+                '          </ul>\n' +
+                '        </header>\n' +
+                '    </div>\n' +
+                '    <!-- ************************************** -->\n\n' +
+
+                '    <!-- NO ELIMINAR -->\n' +
+                '    <div id="content" class="container-fluid text-center vh-100">\n' +
+                '            {% block content %}\n' +
+                '            {% endblock %}\n' +
+                '    </div>\n' +
+                '    <!-- ************************************** -->\n\n' +
+
+                '    <!-- SI LO DESEA REEMPLAZA ESTE FOOTER -->\n' +
+                '    <div class="container">\n' +
+                '    <footer class="py-3 my-4">\n' +
+                '                <ul class="nav justify-content-center border-bottom pb-3 mb-3">\n' +
+                '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>\n' +
+                '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>\n' +
+                '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>\n' +
+                '                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>\n' +
+                '                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>\n' +
+                '                </ul>\n' +
+                '            <p class="text-center text-muted">© 2022 Company, Inc</p>\n' +
+                '    </footer>\n' +
+                '  </div>\n' +
+                '  <!-- ************************************** -->\n' +
+                '</body>\n' +
+                '</html>\n'
+              }
+            </code>
+          </pre>
 
           <div className="bg-info p-3 p">
             <h4 className="my-3">¿Cómo agregar componentes <code>examples</code> de bootstrap?</h4>
@@ -773,52 +791,50 @@ const AplicacionFlaskMySql = () => {
             </pre>
           </div>
 
-          <div>
-            <h2 className="h2 text-dark mt-5">
-              Continuación de <code>articles.html</code>
-            </h2>
+          <h2 className="h2 text-dark mt-5">
+            Continuación de <code>articles.html</code>
+          </h2>
 
-            <p>
-              Continuando con el código del template, tenemos que indicarle al HTML que renderizaremos una fila por cada artículo que se encuentre en la base de datos.
-              Esto se hace de la siguiente manera:
-            </p>
+          <p>
+            Continuando con el código del template, tenemos que indicarle al HTML que renderizaremos una fila por cada artículo que se encuentre en la base de datos.
+            Esto se hace de la siguiente manera:
+          </p>
 
-            <pre>
-              <code className="language-html">
-                {
-                  '{% for article in the_articles %}\n' +
-                  '<div class="row text-center mx-5">\n' +
-                  '    <div class="col p-3 border">\n' +
-                  '        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateArticle{{ article[0] }}">\n' +
-                  '            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">\n' +
-                  '                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>\n' +
-                  '            </svg>\n' +
-                  '        </button>\n\n' +
+          <pre>
+            <code className="language-html">
+              {
+                '{% for article in the_articles %}\n' +
+                '<div class="row text-center mx-5">\n' +
+                '    <div class="col p-3 border">\n' +
+                '        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateArticle{{ article[0] }}">\n' +
+                '            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">\n' +
+                '                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>\n' +
+                '            </svg>\n' +
+                '        </button>\n\n' +
 
-                  '        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteArticle{{ article[0] }}">\n' +
-                  '            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">\n' +
-                  '                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>\n' +
-                  '            </svg>\n' +
-                  '        </button>\n' +
-                  '    </div>\n\n' +
+                '        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteArticle{{ article[0] }}">\n' +
+                '            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">\n' +
+                '                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>\n' +
+                '            </svg>\n' +
+                '        </button>\n' +
+                '    </div>\n\n' +
 
-                  '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[0] }}</div>\n' +
-                  '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[1] }}</div>\n' +
-                  '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[2] }}</div>\n' +
-                  '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[3] }}</div>\n' +
-                  '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[4] }}</div>\n' +
-                  '</div>\n' +
-                  '...\n' +
-                  '{% endfor %}'
-                }
-              </code>
-            </pre>
+                '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[0] }}</div>\n' +
+                '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[1] }}</div>\n' +
+                '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[2] }}</div>\n' +
+                '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[3] }}</div>\n' +
+                '    <div class="col p-3 border d-flex justify-content-center align-items-center">{{ article[4] }}</div>\n' +
+                '</div>\n' +
+                '...\n' +
+                '{% endfor %}'
+              }
+            </code>
+          </pre>
 
-            <p>
-              Ahora bien, como se puede observar, empleamos código de python para indicarle que por cada dato del <code>article</code> queremos obtener el dato 1
-              {' '}(<code>article[0]</code>) el dato 2 (<code>article[1]</code>) y así sucesivamente.
-            </p>
-          </div>
+          <p>
+            Ahora bien, como se puede observar, empleamos código de python para indicarle que por cada dato del <code>article</code> queremos obtener el dato 1
+            {' '}(<code>article[0]</code>) el dato 2 (<code>article[1]</code>) y así sucesivamente.
+          </p>
 
           <h2 className="mt-5">
             Actualización de cada artículo
@@ -1130,7 +1146,7 @@ const AplicacionFlaskMySql = () => {
             para desplegar una aplicación web que emplee una base de datos
             MySQL y sea desplegada utilizando Flask en el sistema operativo
             de CentOS 8. Si se desea obtener el proyecto del Autor
-            se pueden dirigir 
+            se pueden dirigir
             {' '}<a href="https://github.com/Juandiego001/app-flask-mysql-servicios-telematicos" target="_blank" rel="noindex,nofollow">aqui.</a><br /><br />
 
             Cualquier duda, queja, recomendación o donación que deseen realizar me pueden

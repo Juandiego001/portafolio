@@ -48,8 +48,8 @@ const IdeasOportunidades = () => {
       <div>
         <Header />
 
-        <div className="container my-5">
-          <h1 className="text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="text-dark text-center">
             Ideas y oportunidades de negocio
           </h1>
 

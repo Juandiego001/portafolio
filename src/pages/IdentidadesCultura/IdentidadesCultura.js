@@ -35,7 +35,7 @@ const IdentidadesCultura = () => {
         <Header />
 
         <div className="container my-5">
-          <h1 className="h1 text-dark">
+          <h1 className="h1 text-dark text-center">
             Identidades y cultura
           </h1>
 

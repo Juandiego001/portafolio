@@ -33,10 +33,23 @@ const Home = () => {
       <div>
         <Header />
 
-        <div className="container my-5">
-          <h1 className="m-5">Entradas recientes</h1>
+        <div className="container my-5 px-5">
+          <h1 className="text-center">Entradas recientes</h1>
 
-          <div className="card mx-5 my-4">
+          <div className="card my-5">
+            <div className="card-body">
+              <h5 className="card-title">React + TypeScript + MySQL + Imgs</h5>
+              <p className="card-text">
+                Desarrollo de una aplicación web
+                con React, utilizando el lenguaje Typescript que
+                garantice la subida de imágenes a una base de datos.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/proyecto-informatico-2/entradas/react-typescript-mysql-imgs">Ver entrada</Link>
+            </div>
+          </div>
+
+
+          <div className="card my-5">
             <div className="card-body">
               <h5 className="card-title">Aplicación Android + GPS</h5>
               <p className="card-text">
@@ -47,7 +60,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card mx-5 my-4">
+          <div className="card my-5">
             <div className="card-body">
               <h5 className="card-title">Aplicación Android + Firebase</h5>
               <p className="card-text">
@@ -59,7 +72,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card mx-5 my-4">
+          <div className="card my-5">
             <div className="card-body">
               <h5 className="card-title">IoT Ubidots</h5>
               <p className="card-text">
@@ -71,7 +84,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="card mx-5 my-4">
+          <div className="card my-5">
             <div className="card-body">
               <h5 className="card-title">JSON Placeholder  + Apache + Centos 8</h5>
               <p className="card-text">
@@ -80,19 +93,6 @@ const Home = () => {
                 desplegando el servicio en Apache.
               </p>
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/json-placeholder-centos">Ver entrada</Link>
-            </div>
-          </div>
-
-
-          <div className="card mx-5 my-4">
-            <div className="card-body">
-              <h5 className="card-title">Rest API + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para crear una Rest API
-                en una máquina virtual Centos 8 utilizando el framework
-                de python flask y nodejs.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/rest-api-centos">Ver entrada</Link>
             </div>
           </div>
 

@@ -47,10 +47,14 @@ const ServiciosTelematicos = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Servicios telemáticos
           </h1>
+
+          <h2 className="mt-5">
+            Entradas
+          </h2>
 
           <div className="card mt-3">
             <div className="card-body">
@@ -123,6 +127,11 @@ const ServiciosTelematicos = () => {
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-centos">Ver entrada</Link>
             </div>
           </div>
+
+          <h2 className="mt-5">
+            Evaluaciones
+          </h2>
+
         </div>
 
         <Footer />

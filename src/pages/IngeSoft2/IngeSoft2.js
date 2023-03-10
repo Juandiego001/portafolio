@@ -37,7 +37,7 @@ const IngeSoft2 = () => {
       <div>
         <Header />
 
-        <div className="container my-5">
+        <div className="container my-5 px-5">
           <h1 className="h1 text-dark text-center">
             Ingeniería de software 2
           </h1>

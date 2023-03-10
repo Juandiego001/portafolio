@@ -191,7 +191,7 @@ const AplicacionFlaskSwagger = () => {
             Los archivos más importantes para implementar la API de Swagger son el{' '}
             <code>views.py</code> y la carpeta de <code>static.</code> Lo que hacemos
             es copiar  la carpeta static (que se encuentra en{' '}
-            <pre className="d-inline"><code className="nohighlight">/swagger-example/app/</code></pre>)
+            <code className="nohighlight">/swagger-example/app/</code>)
             ejecutando la siguiente instrucción:
           </p>
 

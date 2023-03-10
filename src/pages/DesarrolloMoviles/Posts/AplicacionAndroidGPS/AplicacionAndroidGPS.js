@@ -85,8 +85,8 @@ const AplicacionAndroidGps = () => {
             algo similar a:
           </p>
 
-          <pre className="language-gradle">
-            <code>
+          <pre>
+            <code className="language-gradle">
               {
                 "/* build.gradle (Project: nombre-del-proyecto) */\n" +
                 "/* Este archivo puede cambiar de acuerdo a su versión de Android Studio */\n" +
@@ -112,8 +112,8 @@ const AplicacionAndroidGps = () => {
             y este es el que deberá contener lo siguiente:
           </p>
 
-          <pre className="language-gradle">
-            <code>
+          <pre>
+            <code className="language-gradle">
               {
                 "plugins {\n" +
                 "    id 'com.android.application'\n" +
@@ -200,8 +200,8 @@ const AplicacionAndroidGps = () => {
             debe ser similar a:
           </p>
 
-          <pre className="language-xml">
-            <code>
+          <pre>
+            <code className="language-xml">
               {
                 '<?xml version="1.0" encoding="utf-8"?>\n' +
                 '<manifest xmlns:android="http://schemas.android.com/apk/res/android"\n' +
@@ -279,8 +279,8 @@ const AplicacionAndroidGps = () => {
             será el siguiente:
           </p>
 
-          <pre className="language-xml">
-            <code>
+          <pre>
+            <code className="language-xml">
               {
                 '<?xml version="1.0" encoding="utf-8"?>\n' +
                 '<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"\n' +
@@ -360,7 +360,7 @@ const AplicacionAndroidGps = () => {
           </pre>
 
           <div className="bg-info p-3 m-0">
-            <p className="fw-bold">Nota.</p>
+            <h6 className="fw-bold">Nota</h6>
             <p>
               Tal y como se visualiza en el código anterior, en la definición del botón,
               se ha establecido un método denominado
@@ -431,8 +431,8 @@ const AplicacionAndroidGps = () => {
             Teniendo en cuenta lo anterior, las librerías que tendremos que importar son las siguientes:
           </p>
 
-          <pre className="language-java">
-            <code>
+          <pre>
+            <code className="language-java">
               {
                 "/* Librerías a utilizar en el proyecto */\n" +
                 "import androidx.annotation.NonNull;\n" +
@@ -700,8 +700,8 @@ const AplicacionAndroidGps = () => {
             el cual contiene lo siguiente:
           </p>
 
-          <pre className="language-java">
-            <code>
+          <pre>
+            <code className="language-java">
               {
                 'public void setCurrentLocation(Location loc) {\n' +
                 '  double theLatitud = loc.getLatitude();\n' +
@@ -742,8 +742,8 @@ const AplicacionAndroidGps = () => {
              definido anteriormente.
           </p>
 
-          <pre className="language-java">
-            <code>
+          <pre>
+            <code className="language-java">
               {
                 'public void setLocation(double latitude, double longitude) {\n' +
                 '  try {\n' +
@@ -780,8 +780,8 @@ const AplicacionAndroidGps = () => {
             y su código es el siguiente:
           </p>
 
-          <pre className="language-java">
-            <code>
+          <pre>
+            <code className="language-java">
               {
                 'public void obtenerDireccion(View v) {\n' +
                 '  Log.d("Impresion", "Se presionó el botón");\n' +
@@ -827,8 +827,8 @@ const AplicacionAndroidGps = () => {
             es el siguiente:
           </p>
 
-          <pre className="language-java">
-            <code>
+          <pre>
+            <code className="language-java">
               {
                 'package com.example.nombre_del_proyecto;\n\n' +
 

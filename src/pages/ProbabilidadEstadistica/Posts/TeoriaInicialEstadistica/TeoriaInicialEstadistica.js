@@ -36,12 +36,12 @@ const TeoriaInicialEstadistica = () => {
       <div>
         <Header />
 
-        <div className="container-fluid my-5 px-5">
-          <h1 className="h1 text-dark">
+        <div className="container my-5 px-5">
+          <h1 className="h1 text-dark text-center">
             Teoría inicial de la estadística
           </h1>
 
-          <p className="text-start">
+          <p className="text-start mt-3">
             En esta entrada se explicarán algunos de los conceptos más fundamentales 
             de la estadística. Además, antes de finalizar se resolverá una actividad
             de clasificación de variables y de escalas de medición.

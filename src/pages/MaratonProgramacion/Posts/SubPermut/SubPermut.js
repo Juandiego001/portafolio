@@ -39,7 +39,7 @@ const SubPermut = () => {
       <div>
         <Header />
 
-        <div className="container my-5">
+        <div className="container my-5 px-5">
           <h1 className="h1 text-dark text-center">
             Subconjuntos y permutaciones
           </h1>
@@ -62,8 +62,8 @@ const SubPermut = () => {
             el siguiente:
           </p>
 
-          <pre className="language-c++">
-            <code>
+          <pre>
+            <code className="language-c++">
               {
                 "void search(int k) {\n" +
                 "\tif (k == n+1) {\n" +
@@ -91,8 +91,8 @@ const SubPermut = () => {
             a cualquier elemento, el algoritmo debe ser modificado similar a la siguiente forma:
           </p>
 
-          <pre className="language-c++">
-            <code>
+          <pre>
+            <code className="language-c++">
               {
                 "void algoritmoModificado(int k, vector<int> v) {\n" +
                 "\tif (k == v.size()){\n" +
@@ -126,8 +126,8 @@ const SubPermut = () => {
             hallar todas las permutaciones posibles de los elementos, tendríamos que retornar los siguientes valores:
           </p>
 
-          <pre className="language-html">
-            <code>
+          <pre>
+            <code className="language-text">
               {
                 "{1, 2, 3}\n" +
                 "{1, 3, 2}\n" +
@@ -145,8 +145,8 @@ const SubPermut = () => {
             añadido a la permutación en cuestión. El algoritmo que nos proporciona el libro es:
           </p>
 
-          <pre className="language-c++">
-            <code>
+          <pre>
+            <code className="language-c++">
               {
                 "void search() {\n" +
                 "\tif (permutation.size() == n) {\n" +
@@ -175,8 +175,8 @@ const SubPermut = () => {
             o no:
           </p>
 
-          <pre className="language-c++">
-            <code>
+          <pre>
+            <code className="language-c++">
               {
                 "void algoritmoModificado() {\n" +
                 "\tif (permutation2.size() == n2) {\n" +
@@ -219,8 +219,8 @@ const SubPermut = () => {
           
           <h5>Código</h5>
 
-          <pre className="language-c++">
-            <code>
+          <pre>
+            <code className="language-c++">
               {
                 "vector<int> v = {1,2,3};\n" +
                 'cout << next_permutation(v.begin(), v.end()) << "\\n";\n' +
@@ -231,8 +231,8 @@ const SubPermut = () => {
 
           <h5>Salida</h5>
 
-          <pre className="language-plain">
-            <code>
+          <pre>
+            <code className="language-text">
               {
                 "1\n" +
                 "1 3 2"
@@ -242,8 +242,8 @@ const SubPermut = () => {
 
           <h5>Código</h5>
 
-          <pre className="language-c++">
-            <code>
+          <pre>
+            <code className="language-c++">
               {
                 "vector<int> v = {3,2,1};\n" +
                 'cout << prev_permutation(v.begin(), v.end()) << "\\n";\n' +
@@ -254,8 +254,8 @@ const SubPermut = () => {
 
           <h5>Salida</h5>
 
-          <pre className="language-plain">
-            <code>
+          <pre>
+            <code className="language-text">
               {
                 "1\n" +
                 "3 1 2"

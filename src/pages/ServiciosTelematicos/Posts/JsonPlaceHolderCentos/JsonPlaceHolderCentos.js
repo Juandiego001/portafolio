@@ -188,7 +188,7 @@ const JsonPlaceHolderCentos = () => {
           </p>
 
           <pre>
-            <code className="language-linux">
+            <code>
               {
                 '# Permisos de la carpetas ubicadas en www\n' +
                 'drwxr-xr-x. 2 root root    6 Nov 12  2021 cgi-bin\n' +

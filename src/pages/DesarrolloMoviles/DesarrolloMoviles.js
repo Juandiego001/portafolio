@@ -56,9 +56,13 @@ const DesarrolloMoviles = () => {
         <Header />
 
         <div className="container my-5 px-5">
-          <h1 className="h1 text-dark">
+          <h1 className="h1 text-dark text-center">
             Desarrollo de software para plataformas móviles
           </h1>
+
+          <h2 className="mt-5">
+            Entradas
+          </h2>
 
           <div className="card mt-3">
             <div className="card-body">
@@ -94,6 +98,10 @@ const DesarrolloMoviles = () => {
               <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql">Ver entrada</Link>
             </div>
           </div>
+
+          <h2 className="mt-5">
+            Evaluaciones
+          </h2>
         </div>
 
         <Footer />

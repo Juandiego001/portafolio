@@ -38,11 +38,11 @@ const Contacto = () => {
         <Header />
 
         <div className="container my-5 px-5">
-          <h1 className="h1 text-dark">
+          <h1 className="h1 text-dark text-center">
             Contacto
           </h1>
 
-          <p>
+          <p className="mt-5">
             Por el momento, mi red social principal y mi manera de contacto será
             mi{' '}
             <a href="https://t.me/Juan_0_0_1" target="_blank" rel="noindex,nofollow">telegram.</a>
