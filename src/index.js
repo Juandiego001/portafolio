@@ -85,6 +85,9 @@ import InsTrigFuncOracle from './pages/BasesDatos2/Posts/InsTrigFuncOracle/InsTr
 // Auditoria de sistemas
 import ConceptosInicialesAuditoria from './pages/AuditoriaSistemas/Posts/ConceptosInicialesAuditoria/ConceptosInicialesAuditoria';
 
+// Hacking ético
+import InstalacionFoca from './pages/HackingEtico/Posts/InstalacionFoca/InstalacionFoca';
+
 // Evaluaciones
 // Auditoria de sistemas
 import PrimerosCincoCapitulos from './pages/AuditoriaSistemas/Tests/PrimerosCincoCapitulos/PrimerosCincoCapitulos';
@@ -253,6 +256,11 @@ const router = createBrowserRouter([
   {
     path: "/cursos/hacking-etico",
     element: <HackingEtico />
+  },
+  // Posts de Hacking Ético
+  {
+    path: "/cursos/hacking-etico/entradas/como-instalar-la-foca",
+    element: <InstalacionFoca />
   },
   {
     path: "/cursos/informatica-forense",

@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './HackingEtico.module.css';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 // Custom components
 import Header from '../../components/Header/Header';
@@ -50,6 +51,17 @@ const HackingEtico = () => {
           <h2 className="mt-5">
             Entradas
           </h2>
+
+          <div className="card mt-3">
+            <div className="card-body">
+              <h5 className="card-title">¿Cómo instalar la FOCA?</h5>
+              <p className="card-text">
+                Tutorial corto de cómo instalar la herramienta para la extracción y
+                análisis de metadatos: La FOCA.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/hacking-etico/entradas/como-instalar-la-foca">Ver entrada</Link>
+            </div>
+          </div>
 
           <h2 className="mt-5">
             Evaluaciones
