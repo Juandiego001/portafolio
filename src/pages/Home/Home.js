@@ -38,6 +38,17 @@ const Home = () => {
 
           <div className="card my-5">
             <div className="card-body">
+              <h5 className="card-title">¿Cómo instalar la FOCA?</h5>
+              <p className="card-text">
+                Tutorial corto de cómo instalar la herramienta para la extracción y
+                análisis de metadatos: La FOCA.
+              </p>
+              <Link className="btn btn-dark" to="/cursos/hacking-etico/entradas/como-instalar-la-foca">Ver entrada</Link>
+            </div>
+          </div>
+
+          <div className="card my-5">
+            <div className="card-body">
               <h5 className="card-title">React + TypeScript + MySQL + Imgs</h5>
               <p className="card-text">
                 Desarrollo de una aplicación web
@@ -81,18 +92,6 @@ const Home = () => {
                 que provee la plataforma misma.
               </p>
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/iot-ubidots">Ver entrada</Link>
-            </div>
-          </div>
-
-          <div className="card my-5">
-            <div className="card-body">
-              <h5 className="card-title">JSON Placeholder  + Apache + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para crear un aplicativo
-                en una máquina virtual Centos 8 utilizando JSON Placeholder y
-                desplegando el servicio en Apache.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/json-placeholder-centos">Ver entrada</Link>
             </div>
           </div>
 
