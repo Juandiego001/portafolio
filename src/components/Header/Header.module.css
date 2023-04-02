@@ -1,10 +1,198 @@
+/* Contenedor principal del header */
 .ContainerHeader {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.FontGoogle {
-    font-family: 'Yellowtail', cursive;
+/* Barra de navegación del header  */
+.NavHeader {
+    background-color: rgb(33, 37, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor al colapsar la barra de navegación */
+.NavContainer {
+    background-color: rgb(33, 37, 41);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+/* Menú de la barra de navegación */
+.NavUl {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0;
+    margin-bottom: 0;
+    background-color: rgb(33, 37, 41);
+    list-style: none;
+}
+
+/* Link de cada menú de navegación */
+.LinkMenu {
+    color: rgba(248, 249, 250, 1);
+    display: block;
+    text-decoration: none;
+    padding: 1.5rem;
+}
+
+/* Línea debajo de cada item del menú */
+.LinkMenu::after {
+    display: block;
+    content: "";
+    height: 0.25rem;
+    width: 100%;
+    background-color: rgba(248, 249, 250, 1);
+    transition: width .5s ease, background-color 0s ease;
+}
+
+.LinkMenu:hover {
+    color: rgba(248, 249, 250, 1);
+    cursor: pointer;
+}
+
+.LinkMenu:hover::after {
+    width: 0%;
+}
+
+/* Contenedor de cursos */
+.ContainerCourses {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Para mostrar los cursos cuando se hace un efecto hover sobre el item de cursos */
+.ContainerCourses:hover {
+    overflow: visible;
+}
+
+/* Submenú de cursos */
+.SubmenuCourses {
+    cursor: default;
+    font-weight: 400;
+    min-width: 50rem;
+    padding: 1.5rem;
+    top: calc(24.8px + 3rem);
+    position: absolute;
+    z-index: 2;
+    color: rgb(248, 249, 250);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 2rem;
+    background-color: rgba(33, 37, 41, 1);
+}
+
+.SubmenuCourses p {
+    font-weight: bold;
+}
+
+.SubmenuCourses div {
+    border-left: 0.15rem solid rgb(248, 249, 250);
+    ;
+}
+
+.SubmenuCourses ul {
+    list-style-type: none;
+}
+
+.SubmenuCourses ul li {
+    margin: .25rem 0;
+}
+
+.SubmenuCourses ul li a {
+    color: rgb(248, 249, 250);
+    text-decoration: none;
+}
+
+.SubmenuCourses ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Media querys para manejar el tema del responsive design */
+@media (max-width: 1230px) {
+    .SubmenuCourses {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .NavHeader {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 575px) {
+
+    /* Para mostrar el menú cuando se colapse */
+    .NavContainer {
+        display: flex;
+        z-index: 2;
+    }
+
+    .NavUl {
+        position: absolute;
+        display: block;
+        padding-left: 1.5rem;
+        z-index: 1;
+        top: 0px;
+        transform: translateY(80px);
+        transition: transform 0.5s ease;
+    }
+
+    .LinkMenu {
+        display: inline-block;
+    }
+
+    /* Para la X de cerrar el menú */
+    .BtnCloseMenu {
+        height: 2rem;
+        width: 2rem;
+        position: relative;
+        color: rgb(248, 249, 250);
+        display: grid;
+        grid-template-rows: auto auto auto;
+        align-content: space-around;
+    }
+
+    .BtnCloseMenu:hover {
+        color: #d3d4d5;
+        cursor: pointer;
+    }
+
+    .BtnCloseMenu div {
+        content: "";
+        width: 100%;
+        height: 0.05rem;
+        background-color: rgb(248, 249, 250);
+        transition: transform 0.5s ease;
+    }
+
+    /* Para convertir a una X el menú hamburguesa */
+    .MakeX {
+        position: absolute;
+        transform: translateY(50%);
+        top: 50%;
+    }
+
+    .MakeX:nth-child(1) {
+        transform: rotate(45deg);
+    }
+
+    .MakeX:nth-child(2),
+    .MakeX:nth-child(3) {
+        transform: rotate(135deg);
+    }
+
+    .ShowMenu {
+        transform: translateY(-100%);
+    }
 }
