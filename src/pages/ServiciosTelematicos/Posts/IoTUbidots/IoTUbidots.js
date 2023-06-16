@@ -165,7 +165,7 @@ const IoTUbidots = () => {
             </h2>
 
             <p>
-              Posterior a la incialización de la máquina, procedemos a instalar las librerías necesarias para correr
+              Posterior a la inicialización de la máquina, procedemos a instalar las librerías necesarias para correr
               todos los módulos necesarios.
             </p>
 
@@ -248,7 +248,7 @@ const IoTUbidots = () => {
             <p>
               El token se puede encontrar en la página de Ubidots, una vez hemos iniciado sesión, haciendo click
               en nuestro ícono de usuario y posteriormente haciendo click en <code>My Profile</code> y luego
-              dirigiendose a <code>API Credentials.</code> También, haciendo click en el ícono de usuario y 
+              dirigiéndose a <code>API Credentials.</code> También, haciendo click en el ícono de usuario y 
               posteriormente haciendo click en <code>API Credentials</code>{' '}directamente.
             </p>
           </div>
@@ -389,7 +389,7 @@ const IoTUbidots = () => {
 
           <div className="mt-5">
             <h2>
-              Finalziación
+              Finalización
             </h2>
 
             <p>

@@ -56,7 +56,7 @@ const AplicacionAndroidFirebase = () => {
 
           <p className="mt-3">
             En esta práctica se mostrará como conectar una aplicación Android con el servicio de Google <code>Firebase</code>{' '}
-            para generar un control de usuarios en la nube, con dos interfaces que permitan, iniciar sesión y registarse y mostrar
+            para generar un control de usuarios en la nube, con dos interfaces que permitan, iniciar sesión y registrarse y mostrar
             el usuario que ha iniciado sesión.
           </p>
 
@@ -102,7 +102,7 @@ const AplicacionAndroidFirebase = () => {
 
           <p>
             La explicación sencilla de ambos archivos es que mientras uno hace referencia al build.gradle de tu
-            proyecto raiz, el segundo hace referencia a nivel de raíz del proyecto,
+            proyecto raíz, el segundo hace referencia a nivel de raíz del proyecto,
             el otro hace referencia al módulo como tal. Así, el
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">build.gradle (Project: "nombre-de-tu-app")</span>{' '}
             deberá contener lo siguiente:
@@ -348,7 +348,7 @@ const AplicacionAndroidFirebase = () => {
             En el
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">MainActivity.java</span>{' '}
             será donde configuremos las principales características de Firebase.
-            En primer lugar lo que haremos será importar las librerías necesarias
+            En primer lugar, lo que haremos será importar las librerías necesarias
             las cuales son:
           </p>
 
@@ -425,7 +425,7 @@ const AplicacionAndroidFirebase = () => {
           <p>
             Posteriormente, crearemos el método
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">registrarse</span>{' '}
-            el cuál tendrá como parámetro
+            el cual tendrá como parámetro
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">View v</span>{' '}
             para poder recibir el evento click. A su vez,
             se validará que se hayan digitado valores en los campos de texto;
@@ -535,7 +535,7 @@ const AplicacionAndroidFirebase = () => {
           </h2>
 
           <p>
-            Esta ha sido una explicación algo detallada para desarollar un aplicativo móvil
+            Esta ha sido una explicación algo detallada para desarrollar un aplicativo móvil
             que maneje autenticación de usuarios en Android Studio utilizando el servicio de google Firebase.
             El repositorio del proyecto lo pueden visualizar
             {' '}<a href="https://github.com/Juandiego001/android-firebase">aquí.</a>{' '}

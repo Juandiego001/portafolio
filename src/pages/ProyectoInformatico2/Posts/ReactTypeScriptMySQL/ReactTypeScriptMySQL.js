@@ -234,7 +234,7 @@ const ReactTypeScriptMySql = () => {
           <p>
             Después llamaremos al hook
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">useEffect</span>{' '}
-            para solicitar los usuarios registrados. Estos, serán almcenados en la variable
+            para solicitar los usuarios registrados. Estos, serán almacenados en la variable
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">theUsers</span>{' '}
             de la siguiente manera:
           </p>
@@ -342,7 +342,7 @@ const ReactTypeScriptMySql = () => {
             Lo que hace esta función es iterar por cada elemento encontrado, tomando
             el valor de dicho elemento y su índice. En nuestro caso, lo que hacemos es retornar
             ciertos elementos en HTML con la información especificada para cada usuario. Así,
-            en caso de que se tenga por ejemplo:
+            en caso de que se tenga, por ejemplo:
           </p>
 
           <pre>
@@ -416,7 +416,7 @@ const ReactTypeScriptMySql = () => {
             <h6>Nota</h6>
 
             <p>
-              Es importante tener en cuenta que la clave para el registro de usuarios con fotos,
+              Es importante tener en cuenta que la clave para el registro de usuarios con fotos
               está en la especificación en el headers del
               {' '}<span className="badge text-dark m-0 p-0 text-wrap">"Content-Type": "multipart/form-data"</span>{' '}
               el cual permite hacer entender al servidor que se envía un formulario
@@ -536,7 +536,7 @@ const ReactTypeScriptMySql = () => {
               Es una librería opcional que nos permite utilizar un archivo de
               {' '}<span className="badge text-dark m-0 p-0 text-wrap">environment</span>{' '}
               el cual no es subido a un repositorio lo que permite guardar contraseñas, rutas
-              y demás aspectos que no quisieramos mostrar al público.
+              y demás aspectos que no quisiéramos mostrar al público.
             </li>
             <li>
               {' '}<span className="badge text-dark m-0 p-0 text-wrap">mysql.</span>{' '}
@@ -571,7 +571,7 @@ const ReactTypeScriptMySql = () => {
             donde y con qué nombre tendrá que guardar nuestras imágenes. Para esto,
             utilizamos la función
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">diskStorage</span>{' '}
-            y le específicamos dos funciones anónimas correspondientes a cada
+            y le especificamos dos funciones anónimas correspondientes a cada
             parámetro
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">destination</span>{' '}
             y
@@ -650,7 +650,7 @@ const ReactTypeScriptMySql = () => {
               {' '}<span className="badge text-dark m-0 p-0 text-wrap">imagen.png</span>{' '}
               por el campo
               {' '}<span className="badge text-dark m-0 p-0 text-wrap">email</span>{' '}
-              y con el sufijo extraido, ya tendremos nuestro nombre de archivo final.
+              y con el sufijo extraído, ya tendremos nuestro nombre de archivo final.
               La idea es guardar la imagen con el correo correspondiente
               independiente del tipo de archivo que sea.
             </p>
@@ -789,7 +789,7 @@ const ReactTypeScriptMySql = () => {
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">código 200</span>{' '}
             o fracaso
             {' '}<span className="badge text-dark m-0 p-0 text-wrap">código 201</span>{' '}
-            (es una estructura de respuesta que he acostumbrado mas quien lo desee puede
+            (es una estructura de respuesta que he acostumbrado más quien lo desee puede
             estructurar sus respuestas a conveniencia).
           </p>
 
