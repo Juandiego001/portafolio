@@ -268,7 +268,7 @@ const PrimerParcial = () => {
         <title>Primer parcial de Administración para ingenieros | Evaluaciones | Administración para ingenieros</title>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="text-center px-3 my-5">

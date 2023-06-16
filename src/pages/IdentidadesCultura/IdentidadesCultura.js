@@ -31,7 +31,7 @@ const IdentidadesCultura = () => {
           Identidades y cultura Juan Diego Cobo Cabal" />
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5">

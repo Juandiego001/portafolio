@@ -32,7 +32,7 @@ const Estructuras2 = () => {
           Estructuras de datos y algoritmos Juan Diego Cobo Cabal" />
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

@@ -231,7 +231,7 @@ const PrimerParcial = () => {
         <title>Primer parcial de Auditoría de Sistemas | Evaluaciones | Auditoría de Sistemas</title>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container text-center px-3 my-5">

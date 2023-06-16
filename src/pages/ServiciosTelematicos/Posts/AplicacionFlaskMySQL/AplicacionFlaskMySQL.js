@@ -48,7 +48,7 @@ const AplicacionFlaskMySql = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

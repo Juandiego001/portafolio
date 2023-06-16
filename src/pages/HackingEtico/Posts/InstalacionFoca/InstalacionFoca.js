@@ -33,11 +33,11 @@ const InstalacionFoca = () => {
           descargar la foca"/>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">
-          <h1>
+          <h1 className="text-center">
             ¿Cómo instalar La FOCA?
           </h1>
 

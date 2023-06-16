@@ -14,7 +14,7 @@ const ErrorPage = () => {
         <title>Page not found 404 | Juan Diego Cobo Cabal</title>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

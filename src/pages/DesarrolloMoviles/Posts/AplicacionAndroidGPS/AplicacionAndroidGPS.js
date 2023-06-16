@@ -46,7 +46,7 @@ const AplicacionAndroidGps = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div className="text-break">
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

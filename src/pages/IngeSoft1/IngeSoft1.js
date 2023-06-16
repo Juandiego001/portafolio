@@ -33,7 +33,7 @@ const IngeSoft1 = () => {
           Ingeniería de software Juan Diego Cobo Cabal" />
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

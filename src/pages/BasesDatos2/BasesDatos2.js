@@ -41,7 +41,7 @@ const BasesDatos2 = () => {
           JDCC, Juan Cobo, Juan Cabal, Juan Diego"></meta>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

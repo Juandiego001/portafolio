@@ -47,7 +47,7 @@ const MetasploitKaliWindowsXp = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div className="mb-4">
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

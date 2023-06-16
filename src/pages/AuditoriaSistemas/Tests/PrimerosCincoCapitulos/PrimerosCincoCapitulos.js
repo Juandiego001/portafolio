@@ -459,7 +459,7 @@ const PrimerosCincoCapitulos = () => {
         <title>Primeros cinco capítulos de la norma ISO 19011 | Evaluaciones</title>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container text-center px-3 my-5">

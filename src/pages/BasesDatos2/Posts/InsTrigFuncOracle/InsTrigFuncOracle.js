@@ -35,7 +35,7 @@ const InsTrigFuncOracle = () => {
           " />
       </Helmet>
 
-      <div className={styles.ContainerPage}>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5">

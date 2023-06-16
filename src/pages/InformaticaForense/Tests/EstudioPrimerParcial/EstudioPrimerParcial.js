@@ -50,7 +50,7 @@ const EstudioPrimerParcial = () => {
         <title>Evaluación de estudio para primer parcial | Evaluaciones | Informática Forense</title>
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="text-center px-3 my-5">

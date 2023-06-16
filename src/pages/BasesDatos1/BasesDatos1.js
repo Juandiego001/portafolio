@@ -33,7 +33,7 @@ const BasesDatos1 = () => {
           Bases de datos 1 Juan Diego Cobo Cabal" />
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">

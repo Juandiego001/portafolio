@@ -40,7 +40,7 @@ const HackingEtico = () => {
           Hacking etico Juan" />
       </Helmet>
 
-      <div>
+      <div className="all-pages">
         <Header />
 
         <div className="container my-5 px-5">
