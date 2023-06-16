@@ -35,14 +35,13 @@ const InsTrigFuncOracle = () => {
           " />
       </Helmet>
 
-      <div>
+      <div className={styles.ContainerPage}>
         <Header />
 
         <div className="container my-5">
           <h1 className="h1 text-dark text-center">
             Inserciones, triggers y funciones en Oracle
           </h1>
-
         </div>
 
         <Footer />

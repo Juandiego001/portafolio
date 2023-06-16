@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="container-fluid row m-0 p-0 g-0">
-
+    <div className={"container-fluid row m-0 p-0 g-0 " + styles.FooterBottom}>
       <div className="row g-0 gx-3 py-4 m-0 bg-dark justify-content-md-center">
         <div className="col-md-3 ">
           <div className="row g-0 m-0">
