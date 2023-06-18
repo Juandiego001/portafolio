@@ -54,7 +54,7 @@ const AplicacionFlaskCentos = () => {
           </h1>
 
           <p className="mt-3">
-            En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de CentOS 7.
+            En la presente entrada se explicará cómo crear una aplicación web con Flask en una máquina virtual de CentOS 7.
             La diferencia a tener en cuenta con otras versiones de CentOS tales como la 8 es la instalación del módulo  <code>mod_wsgi.</code>{' '}
             Lo ideal sería que el proyecto en flask ya estuviese probado y desarrollado en el equipo local. Sin embargo,
             se brindará el código del proyecto de Flask realizado por el autor de esta entrada.
@@ -102,7 +102,7 @@ const AplicacionFlaskCentos = () => {
                 "su -\n" +
                 "# Para actualizar el repositorio\n" +
                 "sudo yum update -y\n" +
-                "# Se instala el modulo python en cuestión\n" +
+                "# Se instala el módulo python en cuestión\n" +
                 "sudo yum install -y python3\n" +
                 "# Instalación de git\n" +
                 "sudo yum install git -y\n" +
@@ -121,8 +121,8 @@ const AplicacionFlaskCentos = () => {
 
           <p>
             Posteriormente, nos dirigimos a la carpeta del proyecto, generamos una variable
-            de entorno correspondiente al nombre del archivo de incialización del servidor y
-            finalmente inciamos el servidor con un comando propio de flask.
+            de entorno correspondiente al nombre del archivo de inicialización del servidor y
+            finalmente iniciamos el servidor con un comando propio de flask.
           </p>
 
           <pre>

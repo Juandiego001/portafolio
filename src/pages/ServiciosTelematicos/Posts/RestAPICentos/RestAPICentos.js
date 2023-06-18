@@ -305,7 +305,7 @@ const RestApiCentOS = () => {
             La idea de una REST API es permitir insertar, eliminar, editar y leer ciertos datos en específico.
             Así pues, tanto con el proyecto implementado en Python como el implementado en Javascript,
             se podrán efectuar las mismas operaciones CRUD. Por otra parte, si se utilizará solo
-            Postman, no habrá nada de que preocuparse, más si de lo contrario se utilizarán
+            Postman, no habrá nada de qué preocuparse, más si de lo contrario se utilizarán
             los comandos <code>curl</code> de linux, tendrá que investigarse cómo efectuar
             los comandos correctamente para enviar JSON's y objetos por el estilo.
           </p>

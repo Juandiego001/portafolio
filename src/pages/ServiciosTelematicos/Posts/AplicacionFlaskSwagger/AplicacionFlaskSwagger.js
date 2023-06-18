@@ -55,7 +55,7 @@ const AplicacionFlaskSwagger = () => {
           </h1>
 
           <p className="mt-3">
-            En la presente entrada se explicará como crear una aplicación web con Flask en una máquina virtual de Centos 8
+            En la presente entrada se explicará cómo crear una aplicación web con Flask en una máquina virtual de Centos 8
             con la suite de herramientas para analizar API's denominada <span className="badge text-dark m-0 p-0 text-wrap">Swagger.</span>{' '}
             Para ello, se utilizará el repositorio del profesor Oscar Mondragón que contiene un proyecto con Swagger
             ya implementado. Además, configuraremos el servidor <span className="badge text-dark m-0 p-0 text-wrap">Apache</span>{' '}
@@ -89,7 +89,7 @@ const AplicacionFlaskSwagger = () => {
 
           <p>
             Posteriormente desde una consola de comandos nos dirigiremos a la carpeta del Vagrantfile e
-            incializaremos la máquina y accederemos a ella con los comandos:
+            inicializaremos la máquina y accederemos a ella con los comandos:
           </p>
 
           <pre>
@@ -102,7 +102,7 @@ const AplicacionFlaskSwagger = () => {
           </pre>
 
           <h2 className="h2 text-dark">
-            Instalación de modulos necesarios
+            Instalación de módulos necesarios
           </h2>
 
           <p>
@@ -116,7 +116,7 @@ const AplicacionFlaskSwagger = () => {
           <pre>
             <code className="language-console">
               {
-                "# Para inciar como root (contraseña 'vagrant', opcional)\n" +
+                "# Para iniciar como root (contraseña 'vagrant', opcional)\n" +
                 "su -\n" +
                 "# ¡Importante! Se debe actualizar el mirror, de lo contrario no se podrá actualizar el repositrio\n" +
                 'sudo sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*\n' +
@@ -160,7 +160,7 @@ const AplicacionFlaskSwagger = () => {
           </h2>
 
           <p>
-            El proyecto clonado se puede probar dirigiendose a la carpeta donde
+            El proyecto clonado se puede probar dirigiéndose a la carpeta donde
             se clonó el repo y ejecutando los siguientes comandos:
           </p>
 
@@ -398,7 +398,7 @@ const AplicacionFlaskSwagger = () => {
           </h3>
 
           <p>
-            Antes de configurar el servidor apache tendremos que instalar los siguientes modulos:
+            Antes de configurar el servidor apache tendremos que instalar los siguientes módulos:
           </p>
 
           <pre>
@@ -522,7 +522,7 @@ const AplicacionFlaskSwagger = () => {
 
           <p>
             Es porque el proyecto se ha cargado correctamente en Apache. De lo contrario,
-            observe el error con el comando mostrado y corriga en los archivos
+            observe el error con el comando mostrado y corrija en los archivos
             como corresponde.
           </p>
 

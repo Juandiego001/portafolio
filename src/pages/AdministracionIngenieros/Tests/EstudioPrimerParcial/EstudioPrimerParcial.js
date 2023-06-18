@@ -313,7 +313,7 @@ const EstudioPrimerParcial = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="text-center px-3 my-5">
+        <div className="container text-center px-5 my-5">
           <h1 className={"text-center " + (iniciar == 1 ? "d-none" : "")}>Evaluación de estudio para primer parcial de Administración para ingenieros</h1>
 
           <p className={"text-center " + (iniciar == 1 ? "d-none" : "")}>

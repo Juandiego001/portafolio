@@ -234,7 +234,7 @@ const PrimerParcial = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container text-center px-3 my-5">
+        <div className="container text-center px-5 my-5">
           <h1 className={"text-center " + (iniciar == 1 ? "d-none" : "")}>Primer parcial de Auditoría de Sistemas</h1>
 
           <p className={"text-center " + (iniciar == 1 ? "d-none" : "")}>

@@ -351,7 +351,7 @@ const AplicacionAndroidNodejsMysql = () => {
           </p>
 
           <p>
-            Es posible que surga un error acerca de los protocolos de autenticación de MySQL, es decir, nos sale un error simiar a:
+            Es posible que surja un error acerca de los protocolos de autenticación de MySQL, es decir, nos sale un error similar a:
           </p>
 
           <pre>
@@ -371,7 +371,7 @@ const AplicacionAndroidNodejsMysql = () => {
           </pre>
 
           <p>
-            Donde <code>root</code> corresponde al usuario del MySQL, <code>localhost</code> a la direccion IP (se puede dejar como <code>localhost </code>
+            Donde <code>root</code> corresponde al usuario del MySQL, <code>localhost</code> a la dirección IP (se puede dejar como <code>localhost </code>
             si se está trabajando en una máquina de manera local) y <code>password</code> como la contraseña del usuario de MySQL.
           </p>
 
@@ -548,7 +548,7 @@ const AplicacionAndroidNodejsMysql = () => {
 
           <p>
             Luego de esto, procedemos a realizar algunas pruebas cargando el aplicativo en nuestro teléfono, o con uno de los emuladores de Android Studio. Para
-            este caso, utilizaré el emulador. Ahora la cuestión sería que cuando hiciesemos click en el botón de iniciar sesión, se debería, por el momento, enviar una petición
+            este caso, utilizaré el emulador. Ahora la cuestión sería que cuando hiciésemos click en el botón de iniciar sesión, se debería, por el momento, enviar una petición
             <code> GET</code> al servidor y con esa petición GET obtener la misma respuesta que obtuvimos cuando ejecutamos el servidor
             y accedimos a <code>localhost:3001.</code> En mi caso, cuando hice click en el emulador y visualicé el siguiente mensaje:
           </p>
@@ -565,8 +565,8 @@ const AplicacionAndroidNodejsMysql = () => {
             <h6>Nota</h6>
 
             <p>
-              En caso de que surga un error de conexión y se haya verificado anteriormente la dirección ip, es posible
-              que esto se deba a temas de firewall y seguridad de las redes del entorno (por ejemplo en universidades,
+              En caso de que surja un error de conexión y se haya verificado anteriormente la dirección ip, es posible
+              que esto se deba a temas de firewall y seguridad de las redes del entorno (por ejemplo, en universidades,
               colegios y entidades del gobierno es posible que no funcione por dichas características de la red).
             </p>
 
@@ -585,7 +585,7 @@ const AplicacionAndroidNodejsMysql = () => {
           <p>
             Si todo lo anterior nos ha funcionado podemos empezar a realizar las configuraciones que de verdad nos atañen. Para comenzar
             con la configuración <code>get</code> de inicio de sesión, debemos tener algo muy similar al código pasado. Lo único que varía
-            es que envíaremos los datos como un <code>query</code> en la url de la siguiente manera:
+            es que enviaremos los datos como un <code>query</code> en la url de la siguiente manera:
           </p>
 
           <pre>
@@ -1203,8 +1203,8 @@ const AplicacionAndroidNodejsMysql = () => {
 
           <p className="p-3 bg-info">
             También es importante tener en cuenta la parte final del método. Debido a que se están utilizando hilos
-            se buscó preveer algún error relacionado a la memoria, pues si creamos múltiples hilos puede
-            generar problemas para el dispositivo. Por ello, lo que se hace es que <b>si el hilo existe,</b>{' '}
+            se buscó prever algún error relacionado a la memoria, pues si creamos múltiples hilos puede
+            generar problemas para el dispositivo. Por ello, lo que se hace es que, <b>si el hilo existe,</b>{' '}
             que lo detenga y cree uno nuevo.
           </p>
 

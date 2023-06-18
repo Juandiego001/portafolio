@@ -69,7 +69,7 @@ const JsonPlaceHolderCentos = () => {
           <p>
             Para comenzar, definiremos la máquina y la iniciaremos. Para esto, desde una consola de
             comandos crearemos una carpeta y dentro de ella generaremos el archivo
-            <span className="badge text-dark">Vagrantfile.</span>
+            {' '}<span className="badge text-dark">Vagrantfile.</span>
           </p>
 
           <pre>

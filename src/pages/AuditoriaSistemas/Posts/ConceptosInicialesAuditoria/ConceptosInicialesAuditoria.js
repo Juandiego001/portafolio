@@ -44,7 +44,7 @@ const ConceptosInicialesAuditoria = () => {
           </h1>
 
           <p className="mt-3">
-            A continuación se explicarán los conceptos fundamentales de la auditoría de sistemas,
+            A continuación, se explicarán los conceptos fundamentales de la auditoría de sistemas,
             las diferencias con los distintos tipos de auditorías, principios de la auditoría de
             sistemas y demás.
           </p>
@@ -346,7 +346,7 @@ const ConceptosInicialesAuditoria = () => {
           </h4>
 
           <p>
-            El auditor debe tener discresión en el uso y protección de la información
+            El auditor debe tener discreción en el uso y protección de la información
             a la que tenga acceso en las auditorías.
           </p>
 
@@ -406,8 +406,8 @@ const ConceptosInicialesAuditoria = () => {
           </h2>
 
           <p>
-            El docente Miguel Navas establece que para los auditores de sistemas o informáticos,
-            deben existir algunos concocimientos específicos tales como:
+            El docente Miguel Navas establece que, para los auditores de sistemas o informáticos,
+            deben existir algunos conocimientos específicos tales como:
           </p>
 
           <ul>
@@ -432,7 +432,7 @@ const ConceptosInicialesAuditoria = () => {
             </li>
 
             <li>
-              Conocimientos en tecnologáis de la información (TICs).
+              Conocimientos en tecnologías de la información (TICs).
             </li>
           </ul>
           
@@ -447,7 +447,7 @@ const ConceptosInicialesAuditoria = () => {
             profundizar, se sugiere realizar la lectura del libro: 
 
             {' '}<i>Auditoría de Seguridad Informática por Ester Chicano Tejada</i>{' '}
-            (centrado en la auditoría de seguirdad informática).
+            (centrado en la auditoría de seguridad informática).
 
             Cualquier duda, queja, recomendación o donación que deseen realizar me pueden
             contactar por telegram:

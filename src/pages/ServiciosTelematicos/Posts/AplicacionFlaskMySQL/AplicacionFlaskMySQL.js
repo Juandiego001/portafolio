@@ -58,7 +58,7 @@ const AplicacionFlaskMySql = () => {
           </h1>
 
           <p className="mt-3">
-            En la presente entrada se explicará como crear una aplicación web con Flask y MySQL en una máquina virtual CentOS 8.
+            En la presente entrada se explicará cómo crear una aplicación web con Flask y MySQL en una máquina virtual CentOS 8.
           </p>
 
           <div className="bg-warning p-3">
@@ -146,7 +146,7 @@ const AplicacionFlaskMySql = () => {
           </h2>
 
           <p>
-            A continuación accedemos a la máquina utilizando el comando: <code>vagrant ssh server.</code>{' '}
+            A continuación, accedemos a la máquina utilizando el comando: <code>vagrant ssh server.</code>{' '}
             Si la máquina se encuentra apagada, ejecutar primero: <code>vagrant up server</code>{' '}
             y luego sí el comando anterior.
 
@@ -250,7 +250,7 @@ const AplicacionFlaskMySql = () => {
           </pre>
 
           <p>
-            Así pues, cuando observamos el log, vemos que en nuestro caso, se generó una contraseña vacía por lo que tendremos que cambiarla accediendo a MySQL. Para esto
+            Así pues, cuando observamos el log, vemos que, en nuestro caso, se generó una contraseña vacía por lo que tendremos que cambiarla accediendo a MySQL. Para esto
             se deben ejecutar los siguientes comandos:
           </p>
 
@@ -290,7 +290,7 @@ const AplicacionFlaskMySql = () => {
           </p>
 
           <p className="bg-info p-3">
-            Para salir de MySQL basta con ejecutar<code className="bg-info p-2 language-cmd">exit.</code>
+            Para salir de MySQL basta con ejecutar <code className="bg-info language-cmd">exit.</code>
           </p>
 
           <h2 className="h2 text-dark mt-5">
@@ -360,7 +360,7 @@ const AplicacionFlaskMySql = () => {
 
           <p>
             Posteriormente, modificamos el archivo de <code>config.py</code> para personalizar la configuración del servidor. En este caso,
-            nada más añadiremos que la opción <code>DEBUG</code> se encuentre activa para no tener que reiniciar la consola manualmente
+            nada más añadiremos que la opción <code>DEBUG</code> se encuentre activa para no tener que reiniciar la consola manualmente,
             sino que se haga automáticamente. Este archivo deberá lucir así:
           </p>
 
@@ -418,7 +418,7 @@ const AplicacionFlaskMySql = () => {
             <p>
               Si usted se encuentra realizando todo este proceso en la máquina de CentOS, bastará con colocar:
               {' '}<code>http://ip-del-centos:5000</code> para verificar el funcionamiento del proyecto. Pero,
-              si se encuentra desarrollandolo localmente: <code>http://localhost:5000</code>. Si está,
+              si se encuentra desarrollándolo localmente: <code>http://localhost:5000</code>. Si está,
               funcionando correctamente se deberá visualizar el mensaje en pantalla:
             </p>
 
@@ -483,7 +483,7 @@ const AplicacionFlaskMySql = () => {
           </p>
 
           <h2 className="h2 text-dark mt-5">
-            Desarollo de <code>templates</code>
+            Desarrollo de <code>templates</code>
           </h2>
 
           <p>
@@ -570,7 +570,7 @@ const AplicacionFlaskMySql = () => {
           </div>
 
           <p className="mt-3">
-            El contenedor <code>{'<div id="content">'}</code> es el que utilzaremos como referencia para agregar
+            El contenedor <code>{'<div id="content">'}</code> es el que utilizaremos como referencia para agregar
             todo el contenido de las demás páginas ya que solo cambiará el contenido, pero el <code>header</code>{' '}
             y el <code>footer</code> permanecerán igual (por esto le llamamos plantilla). Ahora, procederemos agregando algo
             sencillo en el <code>about.html</code> y en el <code>contact.html</code>:
@@ -628,7 +628,7 @@ const AplicacionFlaskMySql = () => {
           </p>
 
           <h2 className="h2 text-dark mt-5">
-            Desarollo de <code>articles.html</code>
+            Desarrollo de <code>articles.html</code>
           </h2>
 
           <p>
@@ -686,7 +686,7 @@ const AplicacionFlaskMySql = () => {
             <p>
               Ahora bien, es importante tener en cuenta que el motor de renderizados de plantillas se denomina <code>jinja.</code> Este
               nos permite ejecutar código python inmerso en html. Similar a lo vendría siendo <code>Handlebars</code>, <code>Java NET</code>, entre otros.
-              Con lo anterior, podemos por ejemplo, ejecutar ciclos que nos permitan renderizar múltiples elementos HTML enviados a través un arreglo.
+              Con lo anterior, podemos, por ejemplo, ejecutar ciclos que nos permitan renderizar múltiples elementos HTML enviados a través un arreglo.
               En nuestro caso, lo que queremos es enviar un arreglo de todos los artículos que se obtienen a partir de la consulta a la base de
               datos. Por ello, desde el archivo <code>views.py</code> tenemos que establecer la ruta inicial de los artículos de esta manera:
             </p>
@@ -710,7 +710,7 @@ const AplicacionFlaskMySql = () => {
             <p>
               Lo que se hace en esta función es simplemente conectar Flask con MySQL, ejecutar la consulta de los artículos en la
               base de datos y posteriormente retornarlos a la vista de <code>articles.hmtl.</code> Sin embargo, seguramente quede
-              la pregunta de ¿cómo conectar MySQL con Flask? Para ello, prosegurié explicando esta parte y luego continuaré con
+              la pregunta de ¿cómo conectar MySQL con Flask? Para ello, proseguiré explicando esta parte y luego continuaré
               explicando articles.
             </p>
           </div>
@@ -737,7 +737,7 @@ const AplicacionFlaskMySql = () => {
             <p>
               Claro está, se deben establecer la contraseña y los usuarios correspondientes a los de su máquina.
               Posteriormente lo que se debe hacer es importar dichas configuraciones en el <code>__init__.py</code>
-              {' '}utilizando la librería que se instaló en un principió:
+              {' '}utilizando la librería que se instaló en un principio:
             </p>
 
             <pre>
@@ -901,7 +901,7 @@ const AplicacionFlaskMySql = () => {
 
           <p>
             Tenemos que tener en cuenta que la clave está en el identificador de cada artículo. Cuando se renderizan los botones,
-            cada uno queda con el valor del identificador del artícul. Así, cuando sean llamados, se modificaran solamente
+            cada uno queda con el valor del identificador del artículo. Así, cuando sean llamados, se modificarán solamente
             los valores del artículo con dicho identificador.
           </p>
 
@@ -954,7 +954,7 @@ const AplicacionFlaskMySql = () => {
           <h2 className="mt-5">Agregar un artículo</h2>
 
           <p>
-            El modal para agregar un artículo, consiste básicamente en un formulario y luce de la siguiente manera:
+            El modal para agregar un artículo consiste básicamente en un formulario y luce de la siguiente manera:
           </p>
 
           <pre>

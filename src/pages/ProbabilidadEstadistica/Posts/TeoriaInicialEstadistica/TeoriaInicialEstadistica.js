@@ -142,7 +142,7 @@ const TeoriaInicialEstadistica = () => {
           </h2>
 
           <p>
-            A continuación se presentan algunas características de los
+            A continuación, se presentan algunas características de los
             estudiantes de la facultad de Ingeniería en la UAO (Universidad Autónoma de Occidente).
             De acuerdo a los valores que pueden tomar estas variables, menciona si corresponden a
             una variable cuantitativa continua, cuantitativa discreta o cualitativa.
