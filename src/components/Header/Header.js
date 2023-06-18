@@ -31,7 +31,12 @@ const Header = () => {
         </div>
 
         <ul className={styles.NavUl + " " + (showMenu ? styles.ShowMenu : "")}>
-          <li className="nav-item"><Link className={styles.LinkMenu} to="/">Home</Link></li>
+          <li className="nav-item">
+            <Link className={styles.LinkMenu} to="/">
+              
+            </Link>
+          </li>
+
           <li className="nav-item">
             <div tabIndex={0} className={styles.ContainerCourses}>
               <Link to="/cursos" className={styles.LinkMenu}>Cursos</Link>

@@ -44,23 +44,9 @@
     padding: 1.5rem;
 }
 
-/* Línea debajo de cada item del menú */
-.LinkMenu::after {
-    display: block;
-    content: "";
-    height: 0.25rem;
-    width: 100%;
-    background-color: rgba(248, 249, 250, 1);
-    transition: width .5s ease, background-color 0s ease;
-}
-
 .LinkMenu:hover {
     color: rgba(248, 249, 250, 1);
     cursor: pointer;
-}
-
-.LinkMenu:hover::after {
-    width: 0%;
 }
 
 /* Contenedor de cursos */
