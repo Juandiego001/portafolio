@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const MaratonProgramacion = () => {
@@ -54,56 +55,60 @@ const MaratonProgramacion = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5">
-          <h1 className="h1 text-dark text-center">
-            Maratón de programación
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5">
+            <h1 className="h1 text-dark text-center">
+              Maratón de programación
+            </h1>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Conceptos iniciales de Grafos</h5>
-              <p className="card-text">
-                Conceptos iniciales de grafos: nodos, caminos, tipos de grafos,
-                algoritmos de recorrido de grafos y demás en el lenguaje C++.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/conceptos-inciales-de-grafos">Ver entrada</Link>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Conceptos iniciales de Grafos</h5>
+                <p className="card-text">
+                  Conceptos iniciales de grafos: nodos, caminos, tipos de grafos,
+                  algoritmos de recorrido de grafos y demás en el lenguaje C++.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/conceptos-inciales-de-grafos">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Subconjuntos y permutaciones</h5>
-              <p className="card-text">
-                Explicación de algoritmos utilizando recursividad de subconjuntos
-                y permutaciones en el lenguaje C++.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/subconjuntos-y-permutaciones">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Subconjuntos y permutaciones</h5>
+                <p className="card-text">
+                  Explicación de algoritmos utilizando recursividad de subconjuntos
+                  y permutaciones en el lenguaje C++.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/subconjuntos-y-permutaciones">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">El problema de la gasolinera</h5>
-              <p className="card-text">
-                Análisis y solución del problema de la gasolinera.
-                Una variante del problema de la mochila.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">El problema de la gasolinera</h5>
+                <p className="card-text">
+                  Análisis y solución del problema de la gasolinera.
+                  Una variante del problema de la mochila.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/el-problema-de-la-gasolinera">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">El problema de la mochila</h5>
-              <p className="card-text">
-                Análisis y solución de uno de los problemas más
-                famosos de la programación dinámica.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">El problema de la mochila</h5>
+                <p className="card-text">
+                  Análisis y solución de uno de los problemas más
+                  famosos de la programación dinámica.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/maraton-de-programacion/entradas/el-problema-de-la-mochila">Ver entrada</Link>
+              </div>
             </div>
           </div>
         </div>

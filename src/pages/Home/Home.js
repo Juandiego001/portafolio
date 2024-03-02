@@ -30,10 +30,10 @@ const Home = () => {
           Juan Diego Cobo Cabal"></meta>
       </Helmet>
 
-      <div className="all-pages">
+      <div className="all-page">
         <Header />
 
-        <div className="container my-5 px-5">
+        <div className="container px-5 my-5">
           <h1 className="text-center">Entradas recientes</h1>
 
           <div className="card my-5">
@@ -94,7 +94,6 @@ const Home = () => {
               <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/iot-ubidots">Ver entrada</Link>
             </div>
           </div>
-
         </div>
 
         <Footer />

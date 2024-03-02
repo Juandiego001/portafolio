@@ -4,6 +4,6 @@
 }
 
 .FooterBottom {
-    position: absolute;
+    position: static;
     bottom: 0;
 }

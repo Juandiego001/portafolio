@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../../../components/Header/Header';
+import Menu from '../../../../components/Menu/Menu';
 import Footer from '../../../../components/Footer/Footer';
 
 const ProblemaMochila = () => {
@@ -48,28 +49,32 @@ const ProblemaMochila = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            El problema de la mochila
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="h2 text-dark mt-5">
-            Contexto
-          </h2>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              El problema de la mochila
+            </h1>
 
-          <p>
-            Un excursionista debe decidir, entre <code>n</code> objetos, cuales de ellos va a llevarse en su
-            mochila. Cada objeto supone para el excursionista un beneficio <code>c<sub>j</sub></code> y ocupa una capacidad de <code>a<sub>j</sub></code>.
-            La mochila tiene una capacidad máxima <code>b.</code>
-          </p>
+            <h2 className="h2 text-dark mt-5">
+              Contexto
+            </h2>
 
-          <h2 className="h2 text-dark mt-5">
-            Solución del problema
-          </h2>
+            <p>
+              Un excursionista debe decidir, entre <code>n</code> objetos, cuales de ellos va a llevarse en su
+              mochila. Cada objeto supone para el excursionista un beneficio <code>c<sub>j</sub></code> y ocupa una capacidad de <code>a<sub>j</sub></code>.
+              La mochila tiene una capacidad máxima <code>b.</code>
+            </p>
 
-          <p>
-            El código de la solución del ejercicio se encuentra <a href="https://replit.com/@JUANDIEGODIEG45/Geometria#main.cpp" target="_blank">aqui.</a>
-          </p>
+            <h2 className="h2 text-dark mt-5">
+              Solución del problema
+            </h2>
+
+            <p>
+              El código de la solución del ejercicio se encuentra <a href="https://replit.com/@JUANDIEGODIEG45/Geometria#main.cpp" target="_blank">aqui.</a>
+            </p>
+          </div>
         </div>
 
         <Footer />

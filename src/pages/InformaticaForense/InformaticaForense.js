@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const InformaticaForense = () => {
@@ -39,31 +40,34 @@ const InformaticaForense = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Informática forense
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Informática forense
+            </h1>
 
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Evaluación de estudio para primer parcial</h5>
-              <p className="card-text">
-                Evaluación para comprobar los conocimientos del primer corte de 
-                la materia de Informática Forense en los que se contemplaron los primeros
-                conceptos de la materia.
-              </p>
-              <Link className="btn btn-dark" to="/evaluaciones/informatica-forense/estudio-primer-parcial">Tomar evaluación</Link>
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Evaluación de estudio para primer parcial</h5>
+                <p className="card-text">
+                  Evaluación para comprobar los conocimientos del primer corte de
+                  la materia de Informática Forense en los que se contemplaron los primeros
+                  conceptos de la materia.
+                </p>
+                <Link className="btn btn-dark" to="/evaluaciones/informatica-forense/estudio-primer-parcial">Tomar evaluación</Link>
+              </div>
             </div>
           </div>
-
         </div>
 
         <Footer />

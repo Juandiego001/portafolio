@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../../../components/Header/Header';
+import Menu from '../../../../components/Menu/Menu';
 import Footer from '../../../../components/Footer/Footer';
 
 const InsTrigFuncOracle = () => {
@@ -38,10 +39,14 @@ const InsTrigFuncOracle = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5">
-          <h1 className="h1 text-dark text-center">
-            Inserciones, triggers y funciones en Oracle
-          </h1>
+        <div className="the-page">
+          <Menu />
+
+          <div className="container my-5">
+            <h1 className="h1 text-dark text-center">
+              Inserciones, triggers y funciones en Oracle
+            </h1>
+          </div>
         </div>
 
         <Footer />

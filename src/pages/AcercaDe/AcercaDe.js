@@ -64,7 +64,7 @@ const AcercaDe = () => {
             También, debo destacar que no cuento con múltiples redes sociales
             y con las que cuento suelen ser más personales. Por lo que
             suelo utilizar como contacto mi{' '}
-            <a href="https://t.me/Juan_0_0_1" target="_blank" rel="noindex,nofollow">telegram.</a>
+            <a href="https://t.me/Juan0_1" target="_blank" rel="noindex,nofollow">telegram.</a>
           </p>
 
         </div>

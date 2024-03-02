@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const Fisica2 = () => {
@@ -37,18 +38,22 @@ const Fisica2 = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Física 2
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container px-5 my-5">
+            <h1 className="h1 text-dark text-center">
+              Física 2
+            </h1>
 
-          <h2 className="mt-5">
-            Evaluacione
-          </h2>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
+          </div>
         </div>
 
         <Footer />

@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const ProbabilidadEstadistica = () => {
@@ -38,29 +39,33 @@ const ProbabilidadEstadistica = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5">
-          <h1 className="h1 text-dark text-center">
-            Probabilidad y estadística
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5">
+            <h1 className="h1 text-dark text-center">
+              Probabilidad y estadística
+            </h1>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Teoría inicial de la estadística</h5>
-              <p className="card-text">
-                Desarrollo de conceptos básicos iniciales de la probabilidad y estadística.
-              </p>
-              <Link className="btn btn-dark" 
-              to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Teoría inicial de la estadística</h5>
+                <p className="card-text">
+                  Desarrollo de conceptos básicos iniciales de la probabilidad y estadística.
+                </p>
+                <Link className="btn btn-dark"
+                  to="/cursos/probabilidad-y-estadistica/entradas/teoria-inicial-de-la-estadistica">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
+          </div>
         </div>
 
         <Footer />

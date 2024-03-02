@@ -45,7 +45,7 @@ const Contacto = () => {
           <p className="mt-5">
             Por el momento, mi red social principal y mi manera de contacto será
             mi{' '}
-            <a href="https://t.me/Juan_0_0_1" target="_blank" rel="noindex,nofollow">telegram.</a>
+            <a href="https://t.me/Juan0_1" target="_blank" rel="noindex,nofollow">telegram.</a>
           </p>
 
         </div>

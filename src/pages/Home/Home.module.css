@@ -1,1 +1,11 @@
-.Home {}
+.ContainerPage {
+    position: relative;
+    display: grid;
+    grid-template-rows: 10vh auto auto;
+    min-height: 100vh;
+}
+
+.Page {
+    display: grid;
+    grid-template-columns: 15% 85%;
+}

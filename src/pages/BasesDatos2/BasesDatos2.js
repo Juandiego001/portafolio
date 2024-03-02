@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const BasesDatos2 = () => {
@@ -44,30 +45,34 @@ const BasesDatos2 = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Bases de datos 2
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Bases de datos 2
+            </h1>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Inserciones, triggers y funciones en Oracle</h5>
-              <p className="card-text">
-                Solución de actividad de bases de datos 2 en la que se plantean
-                la creación de inserciones, triggers y funciones en el manejador
-                de bases de datos Oracle.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/bases-de-datos-2/entradas/inserciones-triggers-funciones-oracle">Ver entrada</Link>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Inserciones, triggers y funciones en Oracle</h5>
+                <p className="card-text">
+                  Solución de actividad de bases de datos 2 en la que se plantean
+                  la creación de inserciones, triggers y funciones en el manejador
+                  de bases de datos Oracle.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/bases-de-datos-2/entradas/inserciones-triggers-funciones-oracle">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
+          </div>
         </div>
 
         <Footer />

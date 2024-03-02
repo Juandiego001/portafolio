@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const AuditoriaSistemas = () => {
@@ -43,53 +44,56 @@ const AuditoriaSistemas = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Auditoría de sistemas
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Auditoría de sistemas
+            </h1>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Conceptos iniciales de la auditoría de sistemas</h5>
-              <p className="card-text">
-                Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas">Ver entrada</Link>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Conceptos iniciales de la auditoría de sistemas</h5>
+                <p className="card-text">
+                  Conceptos o teoría inicial de la materia de auditoría de sistemas por Juan Diego Cobo Cabal.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/auditoria-de-sistemas/entradas/conceptos-iniciales-de-la-auditoria-de-sistemas">Ver entrada</Link>
+              </div>
+            </div>
+
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Primeros cinco capítulos de la norma ISO 19011</h5>
+                <p className="card-text">
+                  Evaluación para comprobar los conocimientos del primer corte de
+                  la materia de Auditoría de Sistemas en los que se contemplaron los primeros
+                  cinco capítulos de la norma ISO 19011.
+                </p>
+                <Link className="btn btn-dark" to="/evaluaciones/auditoria-de-sistemas/primeros-cinco-capitulos">Tomar evaluación</Link>
+              </div>
+            </div>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Primer parcial de auditoría de sistemas</h5>
+                <p className="card-text">
+                  En esta evaluación se contemplarán las preguntas
+                  realizadas en el primer parcial de Auditoría de Sistemas
+                  en el periodo 2023-01 con el profesor Miguel Jose Navas Jaime.
+                </p>
+                <Link className="btn btn-dark" to="/evaluaciones/auditoria-de-sistemas/primer-parcial-de-auditoria-de-sistemas">Tomar evaluación</Link>
+              </div>
             </div>
           </div>
-
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
-
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Primeros cinco capítulos de la norma ISO 19011</h5>
-              <p className="card-text">
-                Evaluación para comprobar los conocimientos del primer corte de 
-                la materia de Auditoría de Sistemas en los que se contemplaron los primeros
-                cinco capítulos de la norma ISO 19011.
-              </p>
-              <Link className="btn btn-dark" to="/evaluaciones/auditoria-de-sistemas/primeros-cinco-capitulos">Tomar evaluación</Link>
-            </div>
-          </div>
-
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Primer parcial de auditoría de sistemas</h5>
-              <p className="card-text">
-                En esta evaluación se contemplarán las preguntas
-                realizadas en el primer parcial de Auditoría de Sistemas
-                en el periodo 2023-01 con el profesor Miguel Jose Navas Jaime.
-              </p>
-              <Link className="btn btn-dark" to="/evaluaciones/auditoria-de-sistemas/primer-parcial-de-auditoria-de-sistemas">Tomar evaluación</Link>
-            </div>
-          </div>
-
         </div>
 
         <Footer />

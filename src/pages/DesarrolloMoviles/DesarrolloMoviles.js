@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const DesarrolloMoviles = () => {
@@ -55,53 +56,57 @@ const DesarrolloMoviles = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Desarrollo de software para plataformas móviles
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Desarrollo de software para plataformas móviles
+            </h1>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Android + GPS</h5>
-              <p className="card-text">
-                Desarrollo de práctica para generar una aplicación Android que
-                permita hacer uso de la API de localización mediante GPS.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-gps">Ver entrada</Link>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Aplicación Android + GPS</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para generar una aplicación Android que
+                  permita hacer uso de la API de localización mediante GPS.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-gps">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Android + Firebase</h5>
-              <p className="card-text">
-                Desarrollo de práctica para conectar una aplicación Android
-                con el servicio de Google denominado Firebase para el
-                control de usuarios.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-firebase">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Aplicación Android + Firebase</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para conectar una aplicación Android
+                  con el servicio de Google denominado Firebase para el
+                  control de usuarios.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-firebase">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Android + Node.js + MySQL</h5>
-              <p className="card-text">
-                Desarrollo de práctica para conectar una aplicación Android
-                con un servidor Node.js que a su vez se comunica con una base de
-                datos MySQL.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Aplicación Android + Node.js + MySQL</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para conectar una aplicación Android
+                  con un servidor Node.js que a su vez se comunica con una base de
+                  datos MySQL.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/desarrollo-de-software-para-plataformas-moviles/entradas/aplicacion-android-nodejs-mysql">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
+          </div>
         </div>
 
         <Footer />

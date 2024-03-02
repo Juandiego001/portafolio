@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const SeminarioInformatica = () => {
@@ -43,19 +44,22 @@ const SeminarioInformatica = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Seminario de ingeniería informática
-          </h1>
+        <div className="the-page">
+          <Menu />
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Seminario de ingeniería informática
+            </h1>
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
 
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
 
+          </div>
         </div>
 
         <Footer />

@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../../../components/Header/Header';
+import Menu from '../../../../components/Menu/Menu';
 import Footer from '../../../../components/Footer/Footer';
 
 const MetasploitKaliWindowsXp = () => {
@@ -50,20 +51,23 @@ const MetasploitKaliWindowsXp = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Metasploit Kali + Windows XP
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <p className="mt-3">
-            En el día de hoy estaremos desarrollando el laboratorio para explotar una vulnerabilidad de Windows XP
-            a través del sistema operativo Kali Linux.
-          </p>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Metasploit Kali + Windows XP
+            </h1>
 
-          <div className="mt-5">
-            <h2>Actualización del <code>apt</code></h2>
+            <p className="mt-3">
+              En el día de hoy estaremos desarrollando el laboratorio para explotar una vulnerabilidad de Windows XP
+              a través del sistema operativo Kali Linux.
+            </p>
+
+            <div className="mt-5">
+              <h2>Actualización del <code>apt</code></h2>
+            </div>
           </div>
-
         </div>
 
         <Footer />

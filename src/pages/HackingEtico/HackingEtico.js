@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const HackingEtico = () => {
@@ -43,30 +44,33 @@ const HackingEtico = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Hacking ético
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Hacking ético
+            </h1>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">¿Cómo instalar la FOCA?</h5>
-              <p className="card-text">
-                Tutorial corto de cómo instalar la herramienta para la extracción y
-                análisis de metadatos: La FOCA.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/hacking-etico/entradas/como-instalar-la-foca">Ver entrada</Link>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">¿Cómo instalar la FOCA?</h5>
+                <p className="card-text">
+                  Tutorial corto de cómo instalar la herramienta para la extracción y
+                  análisis de metadatos: La FOCA.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/hacking-etico/entradas/como-instalar-la-foca">Ver entrada</Link>
+              </div>
             </div>
+
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
           </div>
-
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
-
         </div>
 
         <Footer />

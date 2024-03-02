@@ -1,5 +1,16 @@
 .all-pages {
     position: relative;
+    display: grid;
+    grid-template-rows: 10vh auto auto;
     min-height: 100vh;
-    padding-bottom: 10rem;
+}
+
+
+@media (min-width: 992px) {
+    .the-page {
+        display: grid;
+        grid-template-areas: "sidebar main";
+        grid-template-columns: 1.25fr 4.75fr;
+        gap: 1.5rem;
+    }
 }

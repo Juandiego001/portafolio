@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const ProyectoInformatico2 = () => {
@@ -45,30 +46,33 @@ const ProyectoInformatico2 = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="text-dark text-center">
-            Proyecto Informático 2
-          </h1>
+        <div className="the-page">
+          <Menu />
+          <div className="container my-5 px-5">
+            <h1 className="text-dark text-center">
+              Proyecto Informático 2
+            </h1>
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">React + TypeScript + MySQL + Imgs</h5>
-              <p className="card-text">
-                Desarrollo de una aplicación web
-                con React, utilizando el lenguaje Typescript que
-                garantice la subida de imágenes a una base de datos.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/proyecto-informatico-2/entradas/react-typescript-mysql-imgs">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">React + TypeScript + MySQL + Imgs</h5>
+                <p className="card-text">
+                  Desarrollo de una aplicación web
+                  con React, utilizando el lenguaje Typescript que
+                  garantice la subida de imágenes a una base de datos.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/proyecto-informatico-2/entradas/react-typescript-mysql-imgs">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
+          </div>
         </div>
 
         <Footer />

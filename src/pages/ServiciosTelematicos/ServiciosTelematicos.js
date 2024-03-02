@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 
 // Custom components
 import Header from '../../components/Header/Header';
+import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer';
 
 const ServiciosTelematicos = () => {
@@ -47,95 +48,98 @@ const ServiciosTelematicos = () => {
       <div className="all-pages">
         <Header />
 
-        <div className="container my-5 px-5">
-          <h1 className="h1 text-dark text-center">
-            Servicios telemáticos
-          </h1>
+        <div className="the-page">
+          <Menu />
 
-          <h2 className="mt-5">
-            Entradas
-          </h2>
+          <div className="container my-5 px-5">
+            <h1 className="h1 text-dark text-center">
+              Servicios telemáticos
+            </h1>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">IoT Ubidots</h5>
-              <p className="card-text">
-                Desarrollo de una práctica que simula el envío de datos
-                a la plataforma de IoT Ubidots usando el API Rest
-                que provee la plataforma misma.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/iot-ubidots">Ver entrada</Link>
+            <h2 className="mt-5">
+              Entradas
+            </h2>
+
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">IoT Ubidots</h5>
+                <p className="card-text">
+                  Desarrollo de una práctica que simula el envío de datos
+                  a la plataforma de IoT Ubidots usando el API Rest
+                  que provee la plataforma misma.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/iot-ubidots">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">JSON Placeholder  + Apache + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para crear un aplicativo
-                en una máquina virtual Centos 8 utilizando JSON Placeholder y
-                desplegando el servicio en Apache.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/json-placeholder-centos">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">JSON Placeholder  + Apache + Centos 8</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para crear un aplicativo
+                  en una máquina virtual Centos 8 utilizando JSON Placeholder y
+                  desplegando el servicio en Apache.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/json-placeholder-centos">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Rest API + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para crear una Rest API
-                en una máquina virtual Centos 8 utilizando el framework
-                de python flask y nodejs.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/rest-api-centos">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Rest API + Centos 8</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para crear una Rest API
+                  en una máquina virtual Centos 8 utilizando el framework
+                  de python flask y nodejs.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/rest-api-centos">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Flask + MySQL + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para construir una aplicación
-                web con el framework de python Flask y MySQL en
-                una máquina Centos 8.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-mysql">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Aplicación Flask + MySQL + Centos 8</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para construir una aplicación
+                  web con el framework de python Flask y MySQL en
+                  una máquina Centos 8.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-mysql">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Flask + Swagger + Centos 8</h5>
-              <p className="card-text">
-                Desarrollo de práctica para construir una aplicación
-                web con el framework de python Flask y documentar
-                la API con Swagger.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-swagger">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Aplicación Flask + Swagger + Centos 8</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para construir una aplicación
+                  web con el framework de python Flask y documentar
+                  la API con Swagger.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-swagger">Ver entrada</Link>
+              </div>
             </div>
-          </div>
 
-          <div className="card mt-3">
-            <div className="card-body">
-              <h5 className="card-title">Aplicación Flask + Centos 7</h5>
-              <p className="card-text">
-                Desarrollo de práctica para construir una aplicación
-                web con el framework de python Flask en una máquina
-                de Centos 7.
-              </p>
-              <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-centos">Ver entrada</Link>
+            <div className="card mt-3">
+              <div className="card-body">
+                <h5 className="card-title">Aplicación Flask + Centos 7</h5>
+                <p className="card-text">
+                  Desarrollo de práctica para construir una aplicación
+                  web con el framework de python Flask en una máquina
+                  de Centos 7.
+                </p>
+                <Link className="btn btn-dark" to="/cursos/servicios-telematicos/entradas/aplicacion-flask-centos">Ver entrada</Link>
+              </div>
             </div>
+
+            <h2 className="mt-5">
+              Evaluaciones
+            </h2>
           </div>
-
-          <h2 className="mt-5">
-            Evaluaciones
-          </h2>
-
         </div>
 
-        <Footer />
-      </div>
+      <Footer />
+    </div >
     </>
   )
 };
